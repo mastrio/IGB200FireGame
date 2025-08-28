@@ -7,17 +7,6 @@ public class UIRevealAnimation : MonoBehaviour
     [SerializeField] private float damp = 8f;
 
     private SpringDampenerVector3 scaleAnimation;
-    private SpringDampenerFloat rotationAnimation;
-
-    void Start()
-    {
-        //rotationAnimation = new SpringDampenerFloat(
-        //    spring,
-        //    damp,
-        //    0.0f,
-        //    startDelay
-        //);
-    }
 
     void Update()
     {

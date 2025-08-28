@@ -12,7 +12,7 @@ public class MainMenu : MonoBehaviour
 
     public void PlayButtonPressed()
     {
-
+        Debug.Log("nah");
     }
 
     public void SettingsButtonPressed()

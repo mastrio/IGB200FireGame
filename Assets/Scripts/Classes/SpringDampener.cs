@@ -1,13 +1,17 @@
 using System;
 using UnityEngine;
 
+// I was hoping to use generics to have a single "SpringDampener" class that
+// would work with any math supporting data type (e.g. float, Vector2/3)
+// but alas it does not seem to be possible, so instead we have this mess.
+
 public class SpringDampenerVector3
 {
     public float spring;
     public float damp;
     public Vector3 targetVal;
 
-    private float startTime;
+    private float startDelay;
     private Vector3 velocity;
 
     public SpringDampenerVector3(float spring, float damp, Vector3 targetVal, float startDelay = 0.0f)
@@ -15,12 +19,14 @@ public class SpringDampenerVector3
         this.spring = spring;
         this.damp = damp;
         this.targetVal = targetVal;
-        this.startTime = Time.time + startDelay;
+        this.startDelay = Time.time + startDelay;
     }
 
+    // Needs to be called in the Update function of whatever script is using an instance of this class.
+    // Example: value = springDampenerVar.Update(value);
     public Vector3 Update(Vector3 value)
     {
-        if (Time.time < startTime) return value;
+        if (Time.time < startDelay) return value;
 
         // Spring Dampener
         velocity += (targetVal - value) * (spring * Time.deltaTime);
@@ -35,7 +41,7 @@ public class SpringDampenerFloat
     public float damp;
     public float targetVal;
 
-    private float startTime;
+    private float startDelay;
     private float velocity;
 
     public SpringDampenerFloat(float spring, float damp, float targetVal, float startDelay = 0.0f)
@@ -43,16 +49,17 @@ public class SpringDampenerFloat
         this.spring = spring;
         this.damp = damp;
         this.targetVal = targetVal;
-        this.startTime = Time.time + startDelay;
+        this.startDelay = Time.time + startDelay;
     }
 
+    // Needs to be called in the Update function of whatever script is using an instance of this class.
     public float Update(float value)
     {
-        if (Time.time < startTime) return value;
+        if (Time.time < startDelay) return value;
 
         // Spring Dampener
-        velocity += (targetVal - value) * spring;
-        velocity -= velocity * damp;
+        velocity += (targetVal - value) * (spring * Time.deltaTime);
+        velocity -= velocity * (damp * Time.deltaTime);
         return value + velocity;
     }
 }
