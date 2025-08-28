@@ -53,8 +53,8 @@ public class PhoneUI : MonoBehaviour
         targetColour = Color.white;
 
         movementAnimation = new SpringDampenerVector3(
-            2.5f,
-            14.0f,
+            2.0f,
+            30.0f,
             startPos
         );
         motionRootObject.transform.localPosition = startPos - new Vector3(0.0f, 600.0f);

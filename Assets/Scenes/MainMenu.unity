@@ -514,7 +514,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startDelay: 0.6
   spring: 1
-  damp: 8
+  damp: 12
 --- !u!1 &659547651
 GameObject:
   m_ObjectHideFlags: 0
@@ -905,7 +905,7 @@ MonoBehaviour:
     m_FadeDuration: 0.1
   m_SpriteState:
     m_HighlightedSprite: {fileID: 0}
-    m_PressedSprite: {fileID: 1993036258, guid: 6487f4507ef46614580ac0ed884823a8, type: 3}
+    m_PressedSprite: {fileID: -1148426810, guid: 48797329c20dc144b8b7207d75ee8aec, type: 3}
     m_SelectedSprite: {fileID: 0}
     m_DisabledSprite: {fileID: 0}
   m_AnimationTriggers:
@@ -951,7 +951,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 1839955068, guid: 6487f4507ef46614580ac0ed884823a8, type: 3}
+  m_Sprite: {fileID: 1647034829, guid: 48797329c20dc144b8b7207d75ee8aec, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

@@ -63,4 +63,3 @@ public class SpringDampenerFloat
         return value + velocity;
     }
 }
-
