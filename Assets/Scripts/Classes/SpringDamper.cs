@@ -5,7 +5,7 @@ using UnityEngine;
 // would work with any math supporting data type (e.g. float, Vector2/3)
 // but alas it does not seem to be possible, so instead we have this mess.
 
-public class SpringDampenerVector3
+public class SpringDamperVector3
 {
     public float spring;
     public float damp;
@@ -14,7 +14,7 @@ public class SpringDampenerVector3
     private float startDelay;
     private Vector3 velocity;
 
-    public SpringDampenerVector3(float spring, float damp, Vector3 targetVal, float startDelay = 0.0f)
+    public SpringDamperVector3(float spring, float damp, Vector3 targetVal, float startDelay = 0.0f)
     {
         this.spring = spring;
         this.damp = damp;
@@ -28,14 +28,18 @@ public class SpringDampenerVector3
     {
         if (Time.time < startDelay) return value;
 
-        // Spring Dampener
-        velocity += (targetVal - value) * (spring * Time.deltaTime);
-        velocity -= velocity * (damp * Time.deltaTime);
-        return value + velocity;
+        // Spring Damper
+        // Now rewritten to ACTUALLY be frame independent
+        velocity = Vector3.Lerp(
+            velocity,
+            (targetVal - value) * spring,
+            1f - Mathf.Exp(-damp * Time.deltaTime)
+        );
+        return value + (velocity * Time.deltaTime);
     }
 }
 
-public class SpringDampenerFloat
+public class SpringDamperFloat
 {
     public float spring;
     public float damp;
@@ -44,7 +48,7 @@ public class SpringDampenerFloat
     private float startDelay;
     private float velocity;
 
-    public SpringDampenerFloat(float spring, float damp, float targetVal, float startDelay = 0.0f)
+    public SpringDamperFloat(float spring, float damp, float targetVal, float startDelay = 0.0f)
     {
         this.spring = spring;
         this.damp = damp;
@@ -57,9 +61,12 @@ public class SpringDampenerFloat
     {
         if (Time.time < startDelay) return value;
 
-        // Spring Dampener
-        velocity += (targetVal - value) * (spring * Time.deltaTime);
-        velocity -= velocity * (damp * Time.deltaTime);
-        return value + velocity;
+        // Spring Damper
+        velocity = Mathf.Lerp(
+            velocity,
+            (targetVal - value) * spring,
+            1f - Mathf.Exp(-damp * Time.deltaTime)
+        );
+        return value + (velocity * Time.deltaTime);
     }
 }
