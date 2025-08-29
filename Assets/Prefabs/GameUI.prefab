@@ -146,8 +146,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startDelay: 0.5
-  spring: 1
-  damp: 8
+  spring: 50
+  damp: 25
 --- !u!1 &3705844446833309692
 GameObject:
   m_ObjectHideFlags: 0
@@ -312,7 +312,7 @@ GameObject:
   - component: {fileID: 1541776444390328872}
   - component: {fileID: 2403767648091652123}
   - component: {fileID: 946787871357993739}
-  - component: {fileID: 250826229983117772}
+  - component: {fileID: 5729659134543587068}
   m_Layer: 5
   m_Name: StartCoolburnButton
   m_TagString: Untagged
@@ -433,7 +433,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &250826229983117772
+--- !u!114 &5729659134543587068
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -445,9 +445,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bab61c8dd68d7ae44b8e95bc61e8c0f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startDelay: 0.7
-  spring: 1
-  damp: 8
+  startDelay: 0.6
+  spring: 50
+  damp: 25
 --- !u!1 &6116574395894656530
 GameObject:
   m_ObjectHideFlags: 0
@@ -460,7 +460,7 @@ GameObject:
   - component: {fileID: 4718211088669014463}
   - component: {fileID: 7915422566992423823}
   - component: {fileID: 200093482439372560}
-  - component: {fileID: 7638467826041317656}
+  - component: {fileID: 4452621206831246454}
   m_Layer: 5
   m_Name: OpenPhoneButton
   m_TagString: Untagged
@@ -581,7 +581,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &7638467826041317656
+--- !u!114 &4452621206831246454
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -593,9 +593,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bab61c8dd68d7ae44b8e95bc61e8c0f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startDelay: 1.1
-  spring: 1
-  damp: 8
+  startDelay: 0.8
+  spring: 50
+  damp: 25
 --- !u!1 &7357923997943960686
 GameObject:
   m_ObjectHideFlags: 0
@@ -608,7 +608,7 @@ GameObject:
   - component: {fileID: 3083351270365713527}
   - component: {fileID: 9160835046593791115}
   - component: {fileID: 3892158503112443218}
-  - component: {fileID: 778962763654966031}
+  - component: {fileID: 6753900510041723996}
   m_Layer: 5
   m_Name: OpenMapButton
   m_TagString: Untagged
@@ -729,7 +729,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &778962763654966031
+--- !u!114 &6753900510041723996
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -741,9 +741,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bab61c8dd68d7ae44b8e95bc61e8c0f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startDelay: 1.3
-  spring: 1
-  damp: 8
+  startDelay: 0.9
+  spring: 50
+  damp: 25
 --- !u!1 &8047182935117655913
 GameObject:
   m_ObjectHideFlags: 0
@@ -756,7 +756,7 @@ GameObject:
   - component: {fileID: 9037093615202575008}
   - component: {fileID: 2450517845589375043}
   - component: {fileID: 7709265839845634866}
-  - component: {fileID: 4235216707909544467}
+  - component: {fileID: 5502759121533784211}
   m_Layer: 5
   m_Name: SprayWaterButton
   m_TagString: Untagged
@@ -877,7 +877,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &4235216707909544467
+--- !u!114 &5502759121533784211
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -889,6 +889,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bab61c8dd68d7ae44b8e95bc61e8c0f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startDelay: 0.9
-  spring: 1
-  damp: 8
+  startDelay: 0.7
+  spring: 50
+  damp: 25

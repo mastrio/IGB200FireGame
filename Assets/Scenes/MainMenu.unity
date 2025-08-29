@@ -365,8 +365,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startDelay: 0.1
-  spring: 2
-  damp: 8
+  spring: 50
+  damp: 10
 --- !u!1 &529747614
 GameObject:
   m_ObjectHideFlags: 0
@@ -513,8 +513,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startDelay: 0.6
-  spring: 1
-  damp: 12
+  spring: 50
+  damp: 25
 --- !u!1 &659547651
 GameObject:
   m_ObjectHideFlags: 0
@@ -819,8 +819,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startDelay: 0.2
-  spring: 1
-  damp: 6
+  spring: 50
+  damp: 25
 --- !u!1 &1504253621
 GameObject:
   m_ObjectHideFlags: 0
@@ -833,7 +833,7 @@ GameObject:
   - component: {fileID: 1504253626}
   - component: {fileID: 1504253625}
   - component: {fileID: 1504253624}
-  - component: {fileID: 1504253623}
+  - component: {fileID: 1504253627}
   m_Layer: 5
   m_Name: LeaveSettingsButton
   m_TagString: Untagged
@@ -860,21 +860,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: -80}
   m_SizeDelta: {x: 120, y: 120}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1504253623
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1504253621}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bab61c8dd68d7ae44b8e95bc61e8c0f5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  startDelay: 0.4
-  spring: 1
-  damp: 8
 --- !u!114 &1504253624
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -969,6 +954,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1504253621}
   m_CullTransparentMesh: 1
+--- !u!114 &1504253627
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1504253621}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bab61c8dd68d7ae44b8e95bc61e8c0f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startDelay: 0.4
+  spring: 50
+  damp: 25
 --- !u!1 &1613838924
 GameObject:
   m_ObjectHideFlags: 0
@@ -1115,8 +1115,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startDelay: 0.3
-  spring: 1
-  damp: 8
+  spring: 50
+  damp: 25
 --- !u!1 &1712129181
 GameObject:
   m_ObjectHideFlags: 0
@@ -1756,8 +1756,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startDelay: 0.25
-  spring: 1
-  damp: 6
+  spring: 50
+  damp: 25
 --- !u!1 &2071410409
 GameObject:
   m_ObjectHideFlags: 0
@@ -1983,8 +1983,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startDelay: 0.1
-  spring: 2
-  damp: 8
+  spring: 50
+  damp: 10
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

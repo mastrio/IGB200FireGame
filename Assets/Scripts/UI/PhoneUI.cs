@@ -6,10 +6,10 @@ public class PhoneUI : MonoBehaviour
     [SerializeField] private GameObject motionRootObject;
     [SerializeField] private GameObject bgCloseButtonObject;
 
-    private SpringDampenerVector3 movementAnimation;
+    private SpringDamperVector3 movementAnimation;
 
     private Color targetColour = Color.white;
-    private float colourLerpSpeed = 8.0f;
+    private float colourLerpSpeed = 4.0f;
 
     private Vector3 startPos;
 
@@ -26,7 +26,8 @@ public class PhoneUI : MonoBehaviour
         for (int i = 0; i < motionRootObject.transform.childCount; i++)
         {
             Image childImage = motionRootObject.transform.GetChild(i).gameObject.GetComponent<Image>();
-            childImage.color = Color.Lerp(childImage.color, targetColour, colourLerpSpeed * Time.deltaTime);
+            float blend = 1 - Mathf.Pow(colourLerpSpeed, Time.deltaTime * colourLerpSpeed); // this equation makes a blend value for the lerp function that SHOULD work correctly no matter the framerate
+            childImage.color = Color.Lerp(childImage.color, targetColour, blend);
         }
 
         // Movement Animation
@@ -52,9 +53,9 @@ public class PhoneUI : MonoBehaviour
 
         targetColour = Color.white;
 
-        movementAnimation = new SpringDampenerVector3(
-            2.0f,
-            30.0f,
+        movementAnimation = new SpringDamperVector3(
+            25.0f,
+            40.0f,
             startPos
         );
         motionRootObject.transform.localPosition = startPos - new Vector3(0.0f, 600.0f);
@@ -66,9 +67,9 @@ public class PhoneUI : MonoBehaviour
 
         targetColour = new Color(1.0f, 1.0f, 1.0f, 0.0f);
 
-        movementAnimation = new SpringDampenerVector3(
-            3.0f,
-            14.0f,
+        movementAnimation = new SpringDamperVector3(
+            35.0f,
+            40.0f,
             startPos + new Vector3(0.0f, -600.0f)
         );
     }
