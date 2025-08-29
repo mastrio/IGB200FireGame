@@ -8,7 +8,7 @@ using UnityEngine.InputSystem;
 // https://youtu.be/zZDiC0aOXDY?si=nLyKQO07EBWIuBTb
 //Full refrence present in refrence list within ReadMe file
 
-
+//[RequireComponent(typeof(CharacterController))]
 
 //Might Change from rb to character controller
 [RequireComponent(typeof(Rigidbody))]
@@ -19,12 +19,15 @@ public class ClicktoMove : MonoBehaviour
     [SerializeField] private float rotationSpeed = 3f;
     private Camera mainCamera;
     private Coroutine coroutine;
+    //Will be used if swap is made after prototype
+    //private CharacterController cc;
     private Rigidbody rb;
 
     private int groundLayer;
     private void Awake()
     {
         mainCamera = Camera.main;
+        //cc = GetComponent<CharacterController>();
         rb = GetComponent<Rigidbody>();
         groundLayer = LayerMask.NameToLayer("Ground");
     }
@@ -63,6 +66,9 @@ public class ClicktoMove : MonoBehaviour
 
             Vector3 direction = target - transform.position;
             Vector3 movement = direction.normalized * (playerSpeed * Time.deltaTime);
+
+            //Want to look at changing to character controller and navmesh for pathfinding after prototype
+            //CharacterController.Move(movement);
 
             rb.linearVelocity = direction.normalized * playerSpeed;
 
