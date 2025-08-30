@@ -5,9 +5,12 @@ public class GameUI : MonoBehaviour
 {
     [SerializeField] private GameObject phoneUIObject;
     [SerializeField] private GameObject mapUIObject;
+    [SerializeField] private CoolBurnStart coolburnStart;
+    [SerializeField] private ClicktoMove clicktoMove;
 
     private PopupUIAnimation phoneUIAnim;
     private PopupUIAnimation mapUIAnim;
+   
 
     void Start()
     {
@@ -22,7 +25,10 @@ public class GameUI : MonoBehaviour
 
     public void StartCoolburnButtonPressed()
     {
-        Debug.Log("tbh I dont think the burn is very cool im pretty sure fire is hot actually but hey thats just my opinion maybe im wrong who knows.");
+        //sets bool to true to spawn fire on next click
+         coolburnStart.CoolButtonTrigger();
+       //  clicktoMove.disablemoveButtonPress();
+         Debug.Log("pressed");
     }
 
     public void SprayWaterButtonPressed()
