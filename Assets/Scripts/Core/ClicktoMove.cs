@@ -17,34 +17,38 @@ public class ClicktoMove : MonoBehaviour
     [SerializeField] private InputAction MouseClick;
     [SerializeField] private float playerSpeed = 10f;
     [SerializeField] private float rotationSpeed = 3f;
+    [SerializeField] private GameObject FireParticlePrefab;
     private Camera mainCamera;
     private Coroutine coroutine;
+    private Coroutine fireCoroutine;
     //Will be used if swap is made after prototype
     //private CharacterController cc;
     private Rigidbody rb;
 
     private int groundLayer;
+    private int coolburnLayer;
     private void Awake()
     {
         mainCamera = Camera.main;
         //cc = GetComponent<CharacterController>();
         rb = GetComponent<Rigidbody>();
         groundLayer = LayerMask.NameToLayer("Ground");
+        coolburnLayer = LayerMask.NameToLayer("Coolburn");
     }
 
     private void OnEnable()
     {
         MouseClick.Enable();
-        MouseClick.performed += Move;
+        MouseClick.performed += mouseActionCheck;
     }
 
     private void OnDisable()
     {
         MouseClick.Disable();
-        MouseClick.performed -= Move;
+        MouseClick.performed -= mouseActionCheck;
     }
 
-    private void Move(InputAction.CallbackContext context)
+    private void mouseActionCheck(InputAction.CallbackContext context)
     {
         Ray ray = mainCamera.ScreenPointToRay(Mouse.current.position.ReadValue());
         if (Physics.Raycast(ray: ray, hitInfo: out RaycastHit hit) && hit.collider && hit.collider.gameObject.layer.CompareTo(groundLayer) == 0)
@@ -52,6 +56,14 @@ public class ClicktoMove : MonoBehaviour
             //Stops if player is already midway through click
             if (coroutine != null) StopCoroutine(coroutine);
             coroutine = StartCoroutine(PlayerMoveTowards(hit.point));
+        }
+        else if (Physics.Raycast(ray: ray, hitInfo: out RaycastHit firehit) && firehit.collider && firehit.collider.gameObject.layer.CompareTo(coolburnLayer) == 0)
+        {
+            float distanceFromPlayer = Vector3.Distance(transform.position, hit.point);
+           
+            if (fireCoroutine != null) StopCoroutine(fireCoroutine);
+            fireCoroutine = StartCoroutine(FireBegin(hit.point));
+        
         }
     }
 
@@ -77,6 +89,12 @@ public class ClicktoMove : MonoBehaviour
             yield return null;
         }
     }
+    private IEnumerator FireBegin(Vector3 target)
+    {
+        Instantiate(FireParticlePrefab, target, Quaternion.identity);
+        yield return null;
+    }
+
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
