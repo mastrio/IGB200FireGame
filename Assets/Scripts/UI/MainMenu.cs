@@ -13,8 +13,7 @@ public class MainMenu : MonoBehaviour
 
     public void PlayButtonPressed()
     {
-        //SceneManager.LoadScene("g");
-        Debug.Log("nah");
+        SceneManager.LoadScene("Game");
     }
 
     public void SettingsButtonPressed()

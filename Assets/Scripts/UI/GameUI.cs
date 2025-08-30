@@ -1,19 +1,23 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameUI : MonoBehaviour
 {
     [SerializeField] private GameObject phoneUIObject;
+    [SerializeField] private GameObject mapUIObject;
 
-    private PhoneUI phoneUI;
+    private PopupUIAnimation phoneUIAnim;
+    private PopupUIAnimation mapUIAnim;
 
     void Start()
     {
-        phoneUI = phoneUIObject.GetComponent<PhoneUI>();
+        phoneUIAnim = phoneUIObject.GetComponent<PopupUIAnimation>();
+        mapUIAnim = mapUIObject.GetComponent<PopupUIAnimation>();
     }
 
     public void PauseButtonPressed()
     {
-        Debug.Log("NOT paused!!!");
+        SceneManager.LoadScene("MainMenu");
     }
 
     public void StartCoolburnButtonPressed()
@@ -28,11 +32,11 @@ public class GameUI : MonoBehaviour
 
     public void OpenMapButtonPressed()
     {
-        Debug.Log("no, use your eyes.");
+        mapUIAnim.OpenUI();
     }
 
     public void OpenPhoneButtonPressed()
     {
-        phoneUI.OpenPhone();
+        phoneUIAnim.OpenUI();
     }
 }
