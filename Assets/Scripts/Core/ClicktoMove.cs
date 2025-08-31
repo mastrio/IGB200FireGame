@@ -1,8 +1,11 @@
 using System;
 using System.Collections;
+using System.Collections.Generic;
+using NUnit.Framework;
 using UnityEditor.PackageManager;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.EventSystems;
 
 // Adapts Tutorial "Click to Move in 3d 2/ Input System - Unity Tutorial" by SamYam
 // https://youtu.be/zZDiC0aOXDY?si=nLyKQO07EBWIuBTb
@@ -17,23 +20,24 @@ public class ClicktoMove : MonoBehaviour
     [SerializeField] private InputAction MouseClick;
     [SerializeField] private float playerSpeed = 10f;
     [SerializeField] private float rotationSpeed = 3f;
-    [SerializeField] private GameObject FireParticlePrefab;
+    
     private Camera mainCamera;
     private Coroutine coroutine;
-    private Coroutine fireCoroutine;
+   
     //Will be used if swap is made after prototype
     //private CharacterController cc;
     private Rigidbody rb;
 
     private int groundLayer;
-    private int coolburnLayer;
+    private int uiLayer;
+    private bool movedisabledButtonPress = false;
     private void Awake()
     {
         mainCamera = Camera.main;
         //cc = GetComponent<CharacterController>();
         rb = GetComponent<Rigidbody>();
         groundLayer = LayerMask.NameToLayer("Ground");
-        coolburnLayer = LayerMask.NameToLayer("Coolburn");
+        uiLayer = LayerMask.NameToLayer("UI");
     }
 
     private void OnEnable()
@@ -47,25 +51,54 @@ public class ClicktoMove : MonoBehaviour
         MouseClick.Disable();
         MouseClick.performed -= mouseActionCheck;
     }
+    //not done yet
+    public void disablemoveButtonPress()
+    {
+        movedisabledButtonPress = true;
+    }
 
+    //Checks if the mouse click is over ui 
+    public bool MouseOverUi()
+    {
+
+        PointerEventData mousepointInfo = new PointerEventData(EventSystem.current);
+        //Checks the mouses current position as a value
+        mousepointInfo.position = Mouse.current.position.ReadValue();
+
+        //list the graphics raycasts results and if it hit a ui element then it will be >0
+        List<RaycastResult> listofrays = new List<RaycastResult>();
+        EventSystem.current.RaycastAll(mousepointInfo, listofrays);
+        if (listofrays.Count > 0)
+        {
+            Debug.Log("true");
+            return true;
+        }
+        else
+        {
+            Debug.Log("false");
+            return false;
+        }
+
+    }
     private void mouseActionCheck(InputAction.CallbackContext context)
     {
-        Ray ray = mainCamera.ScreenPointToRay(Mouse.current.position.ReadValue());
-        if (Physics.Raycast(ray: ray, hitInfo: out RaycastHit hit) && hit.collider && hit.collider.gameObject.layer.CompareTo(groundLayer) == 0)
+        if (!movedisabledButtonPress)
         {
-            //Stops if player is already midway through click
-            if (coroutine != null) StopCoroutine(coroutine);
-            coroutine = StartCoroutine(PlayerMoveTowards(hit.point));
-        }
-        else if (Physics.Raycast(ray: ray, hitInfo: out RaycastHit firehit) && firehit.collider && firehit.collider.gameObject.layer.CompareTo(coolburnLayer) == 0)
-        {
-            float distanceFromPlayer = Vector3.Distance(transform.position, hit.point);
-           
-            if (fireCoroutine != null) StopCoroutine(fireCoroutine);
-            fireCoroutine = StartCoroutine(FireBegin(hit.point));
-        
+            Ray ray = mainCamera.ScreenPointToRay(Mouse.current.position.ReadValue());
+            if (MouseOverUi())
+            {
+                return;
+            }
+            else if (Physics.Raycast(ray: ray, hitInfo: out RaycastHit hit) && hit.collider &&
+                     hit.collider.gameObject.layer.CompareTo(groundLayer) == 0)
+            {
+                //Stops if player is already midway through click
+                if (coroutine != null) StopCoroutine(coroutine);
+                coroutine = StartCoroutine(PlayerMoveTowards(hit.point));
+            }
         }
     }
+
 
     private IEnumerator PlayerMoveTowards(Vector3 target)
     {
@@ -88,23 +121,5 @@ public class ClicktoMove : MonoBehaviour
                 rotationSpeed * Time.deltaTime);
             yield return null;
         }
-    }
-    private IEnumerator FireBegin(Vector3 target)
-    {
-        Instantiate(FireParticlePrefab, target, Quaternion.identity);
-        yield return null;
-    }
-
-
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }
