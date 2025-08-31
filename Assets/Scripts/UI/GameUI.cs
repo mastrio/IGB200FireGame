@@ -5,12 +5,12 @@ public class GameUI : MonoBehaviour
 {
     [SerializeField] private GameObject phoneUIObject;
     [SerializeField] private GameObject mapUIObject;
+    [SerializeField] private GameObject pauseUIObject;
     [SerializeField] private CoolBurnStart coolburnStart;
     [SerializeField] private ClicktoMove clicktoMove;
 
     private PopupUIAnimation phoneUIAnim;
     private PopupUIAnimation mapUIAnim;
-   
 
     void Start()
     {
@@ -20,7 +20,7 @@ public class GameUI : MonoBehaviour
 
     public void PauseButtonPressed()
     {
-        SceneManager.LoadScene("MainMenu");
+        pauseUIObject.SetActive(true);
     }
 
     public void StartCoolburnButtonPressed()
