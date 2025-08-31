@@ -308,7 +308,8 @@ PrefabInstance:
       value: GameUI
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 6691310904805340828, guid: ca7136900f6d1e84a8649cd21d0d04e9, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ca7136900f6d1e84a8649cd21d0d04e9, type: 3}
@@ -414,6 +415,7 @@ GameObject:
   - component: {fileID: 1337861502}
   - component: {fileID: 1337861501}
   - component: {fileID: 1337861500}
+  - component: {fileID: 1337861504}
   m_Layer: 6
   m_Name: Sphere
   m_TagString: Untagged
@@ -510,6 +512,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1337861504
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1337861499}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f25f376dace69c47947a5f490f1049d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  FireParticlePrefab: {fileID: 5023430038305224826, guid: b69c18c3cd016a740ac92bd40357a695, type: 3}
 --- !u!1 &1918866999 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3765978263604548780, guid: abfb47a790ba581489420e21ad143f40, type: 3}
@@ -543,6 +558,7 @@ GameObject:
   - component: {fileID: 2003143918}
   - component: {fileID: 2003143917}
   - component: {fileID: 2003143916}
+  - component: {fileID: 2003143920}
   m_Layer: 6
   m_Name: Cube (1)
   m_TagString: Untagged
@@ -639,6 +655,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2003143920
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2003143915}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f25f376dace69c47947a5f490f1049d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  FireParticlePrefab: {fileID: 5023430038305224826, guid: ee5e4a959bfae6f46b9b152de991513e, type: 3}
 --- !u!1 &2045411468
 GameObject:
   m_ObjectHideFlags: 0

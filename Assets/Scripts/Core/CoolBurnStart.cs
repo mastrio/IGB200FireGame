@@ -7,13 +7,13 @@ using UnityEngine.InputSystem;
 public class CoolBurnStart : MonoBehaviour
 {
     [SerializeField] private InputAction MouseClick;
-    [SerializeField] private float targetoffsetY = 0f;
     [SerializeField] private GameObject player;
     [SerializeField] private GameObject FireParticlePrefab;
     [SerializeField] private ClicktoMove clicktoMove;
+    [SerializeField] private GameObject fireParticlePrefab;
 
     private Camera mainCamera;
-    public Coroutine fireCoroutine;
+
     public Coroutine buttonCoroutine;
     private int coolburnLayer;
 
@@ -65,8 +65,11 @@ public class CoolBurnStart : MonoBehaviour
                // float distanceFromPlayer = Vector3.Distance(player.transform.position, firehit.point);
                 //if (distanceFromPlayer < 1f)
                 //{
-                if (fireCoroutine != null) StopCoroutine(fireCoroutine);
-                fireCoroutine = StartCoroutine(FireBegin(firehit.point));
+
+                if (firehit.collider.TryGetComponent<CoolBurnableObject>(out CoolBurnableObject coolBurnable))
+                {
+                    coolBurnable.CoolBurnIgnition(30f);
+                }
 
                 CoolbuttonPressed = false;
                 //}
@@ -74,12 +77,5 @@ public class CoolBurnStart : MonoBehaviour
         }
         
     }
-    //spawns the fire sligtly below the click position
-    private IEnumerator FireBegin(Vector3 target)
-    {
-        float offsettedtarget = targetoffsetY - target.y;
-        target.y += offsettedtarget;
-        Instantiate(FireParticlePrefab, target, Quaternion.identity);
-        yield return null;
-    }
+    
 }
