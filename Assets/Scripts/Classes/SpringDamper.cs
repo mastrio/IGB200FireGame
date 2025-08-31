@@ -33,9 +33,9 @@ public class SpringDamperVector3
         velocity = Vector3.Lerp(
             velocity,
             (targetVal - value) * spring,
-            1f - Mathf.Exp(-damp * Time.deltaTime)
+            1f - Mathf.Exp(-damp * Time.unscaledDeltaTime)
         );
-        return value + (velocity * Time.deltaTime);
+        return value + (velocity * Time.unscaledDeltaTime);
     }
 }
 
@@ -59,14 +59,14 @@ public class SpringDamperFloat
     // Needs to be called in the Update function of whatever script is using an instance of this class.
     public float Update(float value)
     {
-        if (Time.time < startDelay) return value;
+        if (Time.unscaledTime < startDelay) return value;
 
         // Spring Damper
         velocity = Mathf.Lerp(
             velocity,
             (targetVal - value) * spring,
-            1f - Mathf.Exp(-damp * Time.deltaTime)
+            1f - Mathf.Exp(-damp * Time.unscaledDeltaTime)
         );
-        return value + (velocity * Time.deltaTime);
+        return value + (velocity * Time.unscaledDeltaTime);
     }
 }

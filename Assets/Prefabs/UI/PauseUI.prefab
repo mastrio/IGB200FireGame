@@ -45,6 +45,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 14839236658029545b4babdefd04e118, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameUIObject: {fileID: 0}
 --- !u!1 &200374371467631063
 GameObject:
   m_ObjectHideFlags: 0
@@ -112,7 +113,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 1839955068, guid: 6487f4507ef46614580ac0ed884823a8, type: 3}
+  m_Sprite: {fileID: -1317359684, guid: b9c34d0f001be4c49b17cb48a1168b4b, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -152,7 +153,7 @@ MonoBehaviour:
     m_FadeDuration: 0.1
   m_SpriteState:
     m_HighlightedSprite: {fileID: 0}
-    m_PressedSprite: {fileID: 1993036258, guid: 6487f4507ef46614580ac0ed884823a8, type: 3}
+    m_PressedSprite: {fileID: -593851994, guid: b9c34d0f001be4c49b17cb48a1168b4b, type: 3}
     m_SelectedSprite: {fileID: 0}
     m_DisabledSprite: {fileID: 0}
   m_AnimationTriggers:
@@ -190,7 +191,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bab61c8dd68d7ae44b8e95bc61e8c0f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startDelay: 0.1
+  startDelay: 0
   spring: 50
   damp: 25
 --- !u!1 &4115946846300640506
@@ -335,7 +336,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 1839955068, guid: 6487f4507ef46614580ac0ed884823a8, type: 3}
+  m_Sprite: {fileID: -1169133256, guid: ba76e6266a7c69249b7f30a8719958f7, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -375,7 +376,7 @@ MonoBehaviour:
     m_FadeDuration: 0.1
   m_SpriteState:
     m_HighlightedSprite: {fileID: 0}
-    m_PressedSprite: {fileID: 1993036258, guid: 6487f4507ef46614580ac0ed884823a8, type: 3}
+    m_PressedSprite: {fileID: 999387692, guid: ba76e6266a7c69249b7f30a8719958f7, type: 3}
     m_SelectedSprite: {fileID: 0}
     m_DisabledSprite: {fileID: 0}
   m_AnimationTriggers:
@@ -413,7 +414,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bab61c8dd68d7ae44b8e95bc61e8c0f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startDelay: 0.2
+  startDelay: 0
   spring: 50
   damp: 25
 --- !u!1 &7097138561106973760

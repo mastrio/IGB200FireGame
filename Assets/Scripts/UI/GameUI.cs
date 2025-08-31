@@ -11,16 +11,18 @@ public class GameUI : MonoBehaviour
 
     private PopupUIAnimation phoneUIAnim;
     private PopupUIAnimation mapUIAnim;
+    private PauseUI pauseUI;
 
     void Start()
     {
         phoneUIAnim = phoneUIObject.GetComponent<PopupUIAnimation>();
         mapUIAnim = mapUIObject.GetComponent<PopupUIAnimation>();
+        pauseUI = pauseUIObject.GetComponent<PauseUI>();
     }
 
     public void PauseButtonPressed()
     {
-        pauseUIObject.SetActive(true);
+        pauseUI.Pause();
     }
 
     public void StartCoolburnButtonPressed()

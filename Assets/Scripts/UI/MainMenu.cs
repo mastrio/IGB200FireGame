@@ -22,6 +22,11 @@ public class MainMenu : MonoBehaviour
         settingsMenu.SetActive(true);
     }
 
+    public void QuitButtonPressed()
+    {
+        Application.Quit();
+    }
+
     public void LeaveSettingsButtonPressed()
     {
         settingsMenu.SetActive(false);

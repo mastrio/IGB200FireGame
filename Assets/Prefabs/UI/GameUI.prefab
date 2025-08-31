@@ -145,7 +145,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bab61c8dd68d7ae44b8e95bc61e8c0f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startDelay: 0.5
+  startDelay: 0.1
   spring: 50
   damp: 10
 --- !u!1 &3705844446833309692
@@ -302,6 +302,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   phoneUIObject: {fileID: 0}
   mapUIObject: {fileID: 0}
+  pauseUIObject: {fileID: 0}
   coolburnStart: {fileID: 0}
   clicktoMove: {fileID: 0}
 --- !u!1 &6048912157407413449
@@ -449,7 +450,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bab61c8dd68d7ae44b8e95bc61e8c0f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startDelay: 0.6
+  startDelay: 0.2
   spring: 50
   damp: 10
 --- !u!1 &6116574395894656530
@@ -597,7 +598,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bab61c8dd68d7ae44b8e95bc61e8c0f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startDelay: 0.8
+  startDelay: 0.4
   spring: 50
   damp: 10
 --- !u!1 &6691310904805340828
@@ -881,7 +882,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bab61c8dd68d7ae44b8e95bc61e8c0f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startDelay: 0.9
+  startDelay: 0.5
   spring: 50
   damp: 10
 --- !u!1 &8047182935117655913
@@ -1029,6 +1030,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bab61c8dd68d7ae44b8e95bc61e8c0f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startDelay: 0.7
+  startDelay: 0.3
   spring: 50
   damp: 10
