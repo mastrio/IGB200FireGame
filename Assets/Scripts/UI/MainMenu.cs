@@ -4,16 +4,21 @@ using UnityEngine.SceneManagement;
 public class MainMenu : MonoBehaviour
 {
     [SerializeField] private GameObject mainMenu;
+    [SerializeField] private GameObject scenarioMenu;
     [SerializeField] private GameObject settingsMenu;
 
     void Start()
     {
         settingsMenu.SetActive(false);
+        scenarioMenu.SetActive(false);
+
+        Global.ResetData();
     }
 
     public void PlayButtonPressed()
     {
-        SceneManager.LoadScene("Game");
+        mainMenu.SetActive(false);
+        scenarioMenu.SetActive(true);
     }
 
     public void SettingsButtonPressed()
@@ -27,8 +32,9 @@ public class MainMenu : MonoBehaviour
         Application.Quit();
     }
 
-    public void LeaveSettingsButtonPressed()
+    public void ReturnToMainButtonPressed()
     {
+        scenarioMenu.SetActive(false);
         settingsMenu.SetActive(false);
         mainMenu.SetActive(true);
     }
