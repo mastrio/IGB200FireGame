@@ -271,11 +271,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ce0bc84ca7ed1344a867b401fa44eae8, type: 3}
---- !u!1 &398148065 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3208064637022155364, guid: ce0bc84ca7ed1344a867b401fa44eae8, type: 3}
+--- !u!114 &398148066 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7473608492080801875, guid: ce0bc84ca7ed1344a867b401fa44eae8, type: 3}
   m_PrefabInstance: {fileID: 398148064}
   m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad6e0349f6d5b714aa0b2048f1623f94, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &410087039
 GameObject:
   m_ObjectHideFlags: 0
@@ -546,7 +552,7 @@ PrefabInstance:
     - target: {fileID: 1414899561382175979, guid: ca7136900f6d1e84a8649cd21d0d04e9, type: 3}
       propertyPath: coolburnStart
       value: 
-      objectReference: {fileID: 398148065}
+      objectReference: {fileID: 398148066}
     - target: {fileID: 1414899561382175979, guid: ca7136900f6d1e84a8649cd21d0d04e9, type: 3}
       propertyPath: pauseUIObject
       value: 

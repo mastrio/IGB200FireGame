@@ -14,11 +14,12 @@ public class CoolBurnableObject : MonoBehaviour
 
     //Cortoutine variables
     private Coroutine BurnabbleCoroutine;
-    private bool currentlyBurning;
+    private bool currentlyBurning = false;
     private float currentFireIntensity;
     private float fireMaxIntensity = 100f;
     private float currentFireTimer;
-    private float maxFireTime;
+    private int maxFireTime = 15;
+    private int nearbyBurnablesExist = 0;
     
 
 
@@ -34,6 +35,7 @@ public class CoolBurnableObject : MonoBehaviour
             GameObject fireinstance = Instantiate(FireParticlePrefab, transform.position, Quaternion.Euler(new Vector3(-90.0f, 0.0f, 0.0f)), transform);
             firePS = fireinstance.GetComponent<ParticleSystem>();
             currentlyBurning = true;
+
             if (BurnabbleCoroutine != null) StopCoroutine(BurnabbleCoroutine);
             BurnabbleCoroutine = StartCoroutine(BurningIntensifys(startBurnIntensity));
         }
@@ -56,34 +58,54 @@ public class CoolBurnableObject : MonoBehaviour
            psSize.startSize = Mathf.Lerp(0.4f, 4f, fireIntensity / 100f);
             Debug.Log("intensity =" + currentFireIntensity + randomFloat);
             //Not Working Yet
-            if (fireIntensity >= 90f)
+            if (currentFireIntensity >= 90f)
             {
-                //TEMP RAIDUS SETTING
-                BurnableLayer = LayerMask.NameToLayer("Burnable");
-                Collider[] hitColliders = Physics.OverlapSphere(this.transform.position, 9f);
-                if (hitColliders.Length > 0)
+                if (nearbyBurnablesExist == 0 || nearbyBurnablesExist == 1)
                 {
-                    //Sorts Array to be the closest collider that was hit
-                    var orderedBurnables = hitColliders
-                        .OrderBy(c => (c.transform.position - this.transform.position).sqrMagnitude).ToArray();
-                    GameObject closestsBurnableObject = orderedBurnables[0].gameObject;
-                    closestsBurnableObject.TryGetComponent<CoolBurnableObject>(out CoolBurnableObject closestBurnable);
-                    if (closestBurnable.currentlyBurning == false)
+                    //TEMP RAIDUS SETTING
+                    BurnableLayer = 1 << LayerMask.NameToLayer("Burnable");
+                    Collider[] hitColliders = Physics.OverlapSphere(this.transform.position, 9f, BurnableLayer);
+                    Debug.Log("Collider list" + hitColliders.Length);
+                    if (hitColliders.Length > 0)
                     {
-                        Debug.Log("Expensive Please Fix");
-                        // closestBurnable.CoolBurnIgnition(20f);
+                        nearbyBurnablesExist = 1;
+
+                        foreach (var collidershit in hitColliders)
+                        {
+                            Debug.Log("" + collidershit.GameObject().name);
+                        }
+                        //Sorts Array to be the closest collider that was hit
+                        var orderedBurnables = hitColliders
+                            .OrderBy(c => (c.transform.position - this.transform.position).sqrMagnitude).ToArray();
+                        GameObject closestsBurnableObject = orderedBurnables[1].gameObject;
+                        closestsBurnableObject.TryGetComponent<CoolBurnableObject>(out CoolBurnableObject closestBurnable);
+                        if (closestBurnable.currentlyBurning == false)
+                        {
+                            Debug.Log("Expensive Please Fix");
+                            closestBurnable.CoolBurnIgnition(20f);
+                        }
+                    }
+                    else if (hitColliders.Length == 0)
+                    {
+                        nearbyBurnablesExist = 2;
                     }
                 }
+                else if (nearbyBurnablesExist == 2)
+                {
+                    yield return new WaitForSeconds(30f);
+                    nearbyBurnablesExist = 0;
+                }
             }
+
             yield return new WaitForSeconds(5f);
            
-        }
+       }
 
        // Once Max Fire Intensity is reached then hold it for 20 seconds (editable) before destorying
 
-       while (currentFireIntensity == fireMaxIntensity && currentFireTimer != maxFireTime)
+       while (currentFireIntensity >= fireMaxIntensity && currentFireTimer < maxFireTime)
        {
-           currentFireIntensity += Time.deltaTime;
+           currentFireTimer += Time.deltaTime;
            yield return null;
        }
 
@@ -91,6 +113,6 @@ public class CoolBurnableObject : MonoBehaviour
        {
            currentlyBurning = false;
            Destroy(this.GameObject());
-        }
+       }
     }
 }

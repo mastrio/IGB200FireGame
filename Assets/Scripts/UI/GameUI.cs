@@ -6,7 +6,7 @@ public class GameUI : MonoBehaviour
     [SerializeField] private GameObject phoneUIObject;
     [SerializeField] private GameObject mapUIObject;
     [SerializeField] private GameObject pauseUIObject;
-    [SerializeField] private GameObject coolburnStart;
+    [SerializeField] private CoolBurnStart coolburnStart;
     //[SerializeField] private ClicktoMove clicktoMove;
 
     private PopupUIAnimation phoneUIAnim;
@@ -19,7 +19,6 @@ public class GameUI : MonoBehaviour
         phoneUIAnim = phoneUIObject.GetComponent<PopupUIAnimation>();
         mapUIAnim = mapUIObject.GetComponent<PopupUIAnimation>();
         pauseUI = pauseUIObject.GetComponent<PauseUI>();
-        coolBurnStarter = coolburnStart.GetComponent<CoolBurnStart>();
     }
 
     public void PauseButtonPressed()
@@ -30,9 +29,9 @@ public class GameUI : MonoBehaviour
     public void StartCoolburnButtonPressed()
     {
         //sets bool to true to spawn fire on next click
-         coolBurnStarter.CoolButtonTrigger();
-       //  clicktoMove.disablemoveButtonPress();
-         Debug.Log("pressed");
+        coolburnStart.CoolButtonTrigger();
+        //  clicktoMove.disablemoveButtonPress();
+        Debug.Log("pressed");
     }
 
     public void SprayWaterButtonPressed()
