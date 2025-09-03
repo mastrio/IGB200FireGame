@@ -3,7 +3,8 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 3
-  tags: []
+  tags:
+  - Burnable
   layers:
   - Default
   - TransparentFX
@@ -11,10 +12,10 @@ TagManager:
   - Ground
   - Water
   - UI
-  - Coolburn
+  - Burnable
+  - UnBurnable
   - Map
   - Character Preview
-  - 
   - 
   - 
   - 

@@ -21,7 +21,7 @@ public class CoolBurnStart : MonoBehaviour
     private void Awake()
     {
         mainCamera = Camera.main;
-        coolburnLayer = LayerMask.NameToLayer("Coolburn");
+        coolburnLayer = LayerMask.NameToLayer("Burnable");
     }
     private void OnEnable()
     {

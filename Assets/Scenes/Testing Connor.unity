@@ -418,7 +418,7 @@ GameObject:
   - component: {fileID: 1337861504}
   m_Layer: 6
   m_Name: Sphere
-  m_TagString: Untagged
+  m_TagString: Burnable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -506,7 +506,7 @@ Transform:
   m_GameObject: {fileID: 1337861499}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.386, z: 2.323}
+  m_LocalPosition: {x: -3.23, y: 1.386, z: 0.488}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -561,7 +561,7 @@ GameObject:
   - component: {fileID: 2003143920}
   m_Layer: 6
   m_Name: Cube (1)
-  m_TagString: Untagged
+  m_TagString: Burnable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -667,7 +667,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f25f376dace69c47947a5f490f1049d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  FireParticlePrefab: {fileID: 5023430038305224826, guid: ee5e4a959bfae6f46b9b152de991513e, type: 3}
+  FireParticlePrefab: {fileID: 5023430038305224826, guid: b69c18c3cd016a740ac92bd40357a695, type: 3}
 --- !u!1 &2045411468
 GameObject:
   m_ObjectHideFlags: 0
@@ -870,6 +870,14 @@ PrefabInstance:
       propertyPath: clicktoMove
       value: 
       objectReference: {fileID: 1918867005}
+    - target: {fileID: 7473608492080801875, guid: ce0bc84ca7ed1344a867b401fa44eae8, type: 3}
+      propertyPath: FireParticlePrefab
+      value: 
+      objectReference: {fileID: 5023430038305224826, guid: b69c18c3cd016a740ac92bd40357a695, type: 3}
+    - target: {fileID: 7473608492080801875, guid: ce0bc84ca7ed1344a867b401fa44eae8, type: 3}
+      propertyPath: fireParticlePrefab
+      value: 
+      objectReference: {fileID: 5023430038305224826, guid: b69c18c3cd016a740ac92bd40357a695, type: 3}
     - target: {fileID: 8359217192538650031, guid: ce0bc84ca7ed1344a867b401fa44eae8, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
