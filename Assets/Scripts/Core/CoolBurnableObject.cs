@@ -19,7 +19,7 @@ public class CoolBurnableObject : MonoBehaviour
     private float fireMaxIntensity = 100f;
     private float currentFireTimer;
     private float maxFireTime;
-    private float intensityGrowthRate = 5f;
+    
 
 
 

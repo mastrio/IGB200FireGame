@@ -9,9 +9,7 @@ public class CoolBurnStart : MonoBehaviour
     [SerializeField] private InputAction MouseClick;
     [SerializeField] private GameObject player;
     [SerializeField] private GameObject FireParticlePrefab;
-    [SerializeField] private ClicktoMove clicktoMove;
-    [SerializeField] private GameObject fireParticlePrefab;
-
+  
     private Camera mainCamera;
 
     public Coroutine buttonCoroutine;
@@ -53,6 +51,7 @@ public class CoolBurnStart : MonoBehaviour
         //only triggers if the bool is true
         if (CoolbuttonPressed)
         {
+            player.TryGetComponent <ClicktoMove>(out ClicktoMove clicktoMove);
             Debug.Log("itworked");
             Ray ray = mainCamera.ScreenPointToRay(Mouse.current.position.ReadValue());
             if (clicktoMove.MouseOverUi())

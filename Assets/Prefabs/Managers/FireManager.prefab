@@ -61,7 +61,5 @@ MonoBehaviour:
       m_Action: Mouse Click
       m_Flags: 0
     m_Flags: 0
-  targetoffsetY: 1
-  player: {fileID: 0}
-  FireParticlePrefab: {fileID: 5023430038305224826, guid: ee5e4a959bfae6f46b9b152de991513e, type: 3}
-  clicktoMove: {fileID: 0}
+  player: {fileID: 3765978263604548780, guid: abfb47a790ba581489420e21ad143f40, type: 3}
+  FireParticlePrefab: {fileID: 5023430038305224826, guid: b69c18c3cd016a740ac92bd40357a695, type: 3}
