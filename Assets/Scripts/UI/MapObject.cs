@@ -18,7 +18,7 @@ public class MapObject : MonoBehaviour
         transform.localPosition = new Vector3(
             linkedObject.transform.position.x * OBJECT_SCALE.x,
             linkedObject.transform.position.z * OBJECT_SCALE.y,
-            0.0f
+            linkedObject.transform.position.z * 0.01f
         );
     }
 }

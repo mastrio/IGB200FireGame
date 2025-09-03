@@ -16,8 +16,7 @@ public class CoolBurnableObject : MonoBehaviour
         //Checks if object already on fire
         if (firePS == null)
         {
-            GameObject fireinstance = Instantiate(FireParticlePrefab, transform.position, Quaternion.identity,transform);
-           
+            GameObject fireinstance = Instantiate(FireParticlePrefab, transform.position, Quaternion.Euler(new Vector3(-90.0f, 0.0f, 0.0f)) ,transform);
             firePS = fireinstance.GetComponent<ParticleSystem>();
         }
             

@@ -4,6 +4,9 @@ using UnityEngine;
 // e.g. what scenario is being played
 public static class Global
 {
+    // Enable when playtesting.
+    public static bool playtestMode = true;
+
     public static int scenarioNum = 1;
 
     // Method for resetting global data.
