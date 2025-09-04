@@ -6,7 +6,6 @@ using Unity.VisualScripting;
 
 public class CoolBurnableObject : MonoBehaviour
 {
-    private float fireIntensity = 0f;
     private float fireLifeSpan;
     [SerializeField] private GameObject FireParticlePrefab;
     private ParticleSystem firePS;
@@ -55,7 +54,7 @@ public class CoolBurnableObject : MonoBehaviour
            int randomFloat = UnityEngine.Random.Range(2, 30);
            currentFireIntensity += randomFloat;
            var psSize = firePS.main;
-           psSize.startSize = Mathf.Lerp(0.4f, 4f, fireIntensity / 100f);
+           psSize.startSize = Mathf.Lerp(0.1f, 3f, currentFireIntensity / 100f);
             Debug.Log("intensity =" + currentFireIntensity + randomFloat);
             //Not Working Yet
             if (currentFireIntensity >= 90f)
@@ -77,6 +76,7 @@ public class CoolBurnableObject : MonoBehaviour
                         //Sorts Array to be the closest collider that was hit
                         var orderedBurnables = hitColliders
                             .OrderBy(c => (c.transform.position - this.transform.position).sqrMagnitude).ToArray();
+                        //Breaks if radius is lowered fix this
                         GameObject closestsBurnableObject = orderedBurnables[1].gameObject;
                         closestsBurnableObject.TryGetComponent<CoolBurnableObject>(out CoolBurnableObject closestBurnable);
                         if (closestBurnable.currentlyBurning == false)
