@@ -13,7 +13,7 @@ public class CoolBurnableObject : MonoBehaviour
 
     //Cortoutine variables
     private Coroutine BurnabbleCoroutine;
-    private bool currentlyBurning = false;
+    public bool currentlyBurning = false;
     private float currentFireIntensity;
     private float fireMaxIntensity = 100f;
     private float currentFireTimer;

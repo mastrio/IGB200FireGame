@@ -923,6 +923,63 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ce0bc84ca7ed1344a867b401fa44eae8, type: 3}
+--- !u!1001 &3493539817209408178
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 7061815914656108431, guid: 7576cd8e3041b8b4caaee7f6f08cf230, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.65357983
+      objectReference: {fileID: 0}
+    - target: {fileID: 7061815914656108431, guid: 7576cd8e3041b8b4caaee7f6f08cf230, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 3.41
+      objectReference: {fileID: 0}
+    - target: {fileID: 7061815914656108431, guid: 7576cd8e3041b8b4caaee7f6f08cf230, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.3151257
+      objectReference: {fileID: 0}
+    - target: {fileID: 7061815914656108431, guid: 7576cd8e3041b8b4caaee7f6f08cf230, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7061815914656108431, guid: 7576cd8e3041b8b4caaee7f6f08cf230, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7061815914656108431, guid: 7576cd8e3041b8b4caaee7f6f08cf230, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7061815914656108431, guid: 7576cd8e3041b8b4caaee7f6f08cf230, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7061815914656108431, guid: 7576cd8e3041b8b4caaee7f6f08cf230, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7061815914656108431, guid: 7576cd8e3041b8b4caaee7f6f08cf230, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7061815914656108431, guid: 7576cd8e3041b8b4caaee7f6f08cf230, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7352452752921479539, guid: 7576cd8e3041b8b4caaee7f6f08cf230, type: 3}
+      propertyPath: m_Name
+      value: 'CoolburnGround '
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 7576cd8e3041b8b4caaee7f6f08cf230, type: 3}
 --- !u!1001 &6563609334034820841
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -993,3 +1050,4 @@ SceneRoots:
   - {fileID: 2091766271327130322}
   - {fileID: 819114124}
   - {fileID: 982681089}
+  - {fileID: 3493539817209408178}
