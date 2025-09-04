@@ -19,9 +19,13 @@ public class CoolBurnableObject : MonoBehaviour
     private float currentFireTimer;
     private int maxFireTime = 15;
     private int nearbyBurnablesExist = 0;
-    
 
 
+    void Update()
+    {
+        // Dev key, burns everything, kinda funny.
+        if (Input.GetKeyDown(KeyCode.F1) && Global.devMode) CoolBurnIgnition(100.0f);
+    }
 
     //New Method for starting cool Burn, Will allow for slider and managment
     public void CoolBurnIgnition(float startBurnIntensity)

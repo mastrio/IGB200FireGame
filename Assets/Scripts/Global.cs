@@ -3,7 +3,7 @@
 public static class Global
 {
     // Enable when playtesting.
-    public static bool playtestMode = true;
+    public static bool playtestMode = false;
     // Disable before release.
     // Enables dev cheat keys (F1, etc.)
     public static bool devMode = true;
