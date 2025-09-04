@@ -121,4 +121,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b2cba4fc90e8714ea4ff4f1b1c2b65e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mapObjectPrefab: {fileID: 2997753746736485047, guid: 806e6f7d020a7fd4a8dbb9315f39cda6, type: 3}
+  mapObjectPrefab: {fileID: 2997753746736485047, guid: bf670e43f7590674fbd13add5700d477, type: 3}

@@ -7,12 +7,16 @@ public class ScenarioButton : MonoBehaviour
 
     void Start()
     {
-        if (scenarioNumber == 1)
+        if (Global.playtestMode)
         {
-            transform.localPosition = new Vector3(0.0f, 0.0f, 0.0f);
-        } else if (scenarioNumber == 2)
-        {
-            gameObject.SetActive(false);
+            if (scenarioNumber == 1)
+            {
+                transform.localPosition = new Vector3(0.0f, 0.0f, 0.0f);
+            }
+            else if (scenarioNumber == 2)
+            {
+                gameObject.SetActive(false);
+            }
         }
     }
 

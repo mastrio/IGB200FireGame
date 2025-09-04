@@ -3,6 +3,7 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
+    [SerializeField] private GameObject playtestBuildText;
     [SerializeField] private GameObject mainMenu;
     [SerializeField] private GameObject scenarioMenu;
     [SerializeField] private GameObject settingsMenu;
@@ -13,6 +14,8 @@ public class MainMenu : MonoBehaviour
         scenarioMenu.SetActive(false);
 
         Global.ResetData();
+
+        if (!Global.playtestMode) playtestBuildText.SetActive(false);
     }
 
     public void PlayButtonPressed()
