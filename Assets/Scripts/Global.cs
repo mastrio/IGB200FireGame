@@ -1,11 +1,12 @@
-using UnityEngine;
-
 // static class for storing any data that needs to be shared across scenes.
 // e.g. what scenario is being played
 public static class Global
 {
     // Enable when playtesting.
     public static bool playtestMode = true;
+    // Disable before release.
+    // Enables dev cheat keys (F1, etc.)
+    public static bool devMode = true;
 
     public static int scenarioNum = 1;
 

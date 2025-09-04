@@ -1,5 +1,5 @@
-using System;
 using CharacterCustomizationTool.Extensions;
+using System;
 using UnityEngine;
 
 namespace CharacterCustomizationTool.FaceManagement

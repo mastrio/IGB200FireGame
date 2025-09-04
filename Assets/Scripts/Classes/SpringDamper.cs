@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 
 // I was hoping to use generics to have a single "SpringDampener" class that

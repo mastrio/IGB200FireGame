@@ -1,4 +1,3 @@
-using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -8,7 +7,7 @@ public class CoolBurnStart : MonoBehaviour
     [SerializeField] private InputAction MouseClick;
     [SerializeField] private GameObject player;
     [SerializeField] private GameObject FireParticlePrefab;
-  
+
     private Camera mainCamera;
 
     public Coroutine buttonCoroutine;
@@ -50,7 +49,7 @@ public class CoolBurnStart : MonoBehaviour
         //only triggers if the bool is true
         if (CoolbuttonPressed)
         {
-            player.TryGetComponent <ClicktoMove>(out ClicktoMove clicktoMove);
+            player.TryGetComponent<ClicktoMove>(out ClicktoMove clicktoMove);
             Debug.Log("itworked");
             Ray ray = mainCamera.ScreenPointToRay(Mouse.current.position.ReadValue());
             if (clicktoMove.MouseOverUi())
@@ -60,7 +59,7 @@ public class CoolBurnStart : MonoBehaviour
             }
             if (Physics.Raycast(ray: ray, hitInfo: out RaycastHit firehit) && firehit.collider && firehit.collider.gameObject.layer.CompareTo(coolburnLayer) == 0)
             {
-               // float distanceFromPlayer = Vector3.Distance(player.transform.position, firehit.point);
+                // float distanceFromPlayer = Vector3.Distance(player.transform.position, firehit.point);
                 //if (distanceFromPlayer < 1f)
                 //{
 
@@ -73,7 +72,7 @@ public class CoolBurnStart : MonoBehaviour
                 //}
             }
         }
-        
+
     }
-    
+
 }

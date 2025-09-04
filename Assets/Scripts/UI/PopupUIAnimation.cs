@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.UI;
 
 public class PopupUIAnimation : MonoBehaviour
 {
@@ -18,7 +17,7 @@ public class PopupUIAnimation : MonoBehaviour
     {
         startPos = motionRootObject.transform.localPosition;
         //motionRootObject.transform.localScale = new Vector3(0.0f, 0.0f, 1.0f);
-        
+
         gameObject.SetActive(false);
     }
 

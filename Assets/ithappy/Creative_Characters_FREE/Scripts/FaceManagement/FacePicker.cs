@@ -1,6 +1,6 @@
+using CharacterCustomizationTool.Extensions;
 using System;
 using System.Linq;
-using CharacterCustomizationTool.Extensions;
 using UnityEngine;
 
 namespace CharacterCustomizationTool.FaceManagement

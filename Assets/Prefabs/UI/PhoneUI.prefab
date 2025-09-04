@@ -804,7 +804,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animationSpeed: 1
-  animationHeight: 5
+  animationHeight: 6
 --- !u!1 &4723218836111193755
 GameObject:
   m_ObjectHideFlags: 0

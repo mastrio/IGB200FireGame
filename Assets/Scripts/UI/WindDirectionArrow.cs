@@ -1,5 +1,3 @@
-using System;
-using Unity.Mathematics;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -20,5 +18,8 @@ public class WindDirectionArrow : MonoBehaviour
                 Random.Range(0.0f, 360.0f)
             ));
         }
+
+        // For playtest
+        transform.localRotation = Quaternion.Euler(new Vector3(0.0f, 0.0f, 0.0f));
     }
 }

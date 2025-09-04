@@ -40,13 +40,14 @@ namespace Controller
             m_Transform = transform;
 
             m_Target = new GameObject($"Target_{gameObject.name}").transform;
-            if(m_Transform.parent != null)
+            if (m_Transform.parent != null)
             {
                 m_Target.transform.parent = m_Transform.parent;
             }
         }
 
-        public void SetPlayer(Transform player) {
+        public void SetPlayer(Transform player)
+        {
             m_Player = player;
         }
 
