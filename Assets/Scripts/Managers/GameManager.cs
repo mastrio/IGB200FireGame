@@ -5,6 +5,8 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
 
+    public GameObject playerObject;
+
     [SerializeField] private GameObject mapObjectContainer;
     [SerializeField] private GameObject[] levelList;
 

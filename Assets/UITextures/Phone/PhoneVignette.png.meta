@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 2562a2584dd927d44a943e00374a74e9
+guid: e40c27b338848c04490c11ccedca17c9
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -136,23 +136,23 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: FireIcon_0
+      name: PhoneVignette_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 216
-        height: 244
+        width: 1392
+        height: 2392
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 576e44608c4c4de44b6284ce77a034f3
-      internalID: -1354745110
+      spriteID: ba03e84ce52211941b01473341c2c623
+      internalID: -2147339512
       vertices: []
       indices: 
       edges: []
@@ -161,7 +161,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: fb8ca498d050e0d40ab8401deb9715f7
+    spriteID: 77a9287ec157ad74e9d07bc587961cdb
     internalID: 0
     vertices: []
     indices: 
@@ -171,7 +171,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      FireIcon_0: -1354745110
+      PhoneVignette_0: -2147339512
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
