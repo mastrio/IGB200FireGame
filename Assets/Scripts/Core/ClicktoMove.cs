@@ -1,11 +1,8 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
-using NUnit.Framework;
-using UnityEditor.PackageManager;
 using UnityEngine;
-using UnityEngine.InputSystem;
 using UnityEngine.EventSystems;
+using UnityEngine.InputSystem;
 
 // Adapts Tutorial "Click to Move in 3d 2/ Input System - Unity Tutorial" by SamYam
 // https://youtu.be/zZDiC0aOXDY?si=nLyKQO07EBWIuBTb
@@ -20,10 +17,10 @@ public class ClicktoMove : MonoBehaviour
     [SerializeField] private InputAction MouseClick;
     [SerializeField] private float playerSpeed = 10f;
     [SerializeField] private float rotationSpeed = 3f;
-    
+
     private Camera mainCamera;
     private Coroutine coroutine;
-   
+
     //Will be used if swap is made after prototype
     //private CharacterController cc;
     private Rigidbody rb;

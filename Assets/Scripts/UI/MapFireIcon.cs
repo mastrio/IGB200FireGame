@@ -2,10 +2,18 @@ using UnityEngine;
 
 public class MapFireIcon : MonoBehaviour
 {
-    private static readonly int UPDATE_COUNTDOWN_MIN = 30;
-    private static readonly int UPDATE_COUNTDOWN_MAX = 50;
+    private static readonly int UPDATE_COUNTDOWN_MIN = 10;
+    private static readonly int UPDATE_COUNTDOWN_MAX = 60;
 
     private int countdown = 0;
+
+    void Start()
+    {
+        countdown = Random.Range(
+            UPDATE_COUNTDOWN_MIN,
+            UPDATE_COUNTDOWN_MAX
+        );
+    }
 
     void FixedUpdate()
     {

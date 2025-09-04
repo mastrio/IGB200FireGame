@@ -9,8 +9,6 @@ public class MapObject : MonoBehaviour
 
     [NonSerialized] public GameObject linkedObject;
 
-    private float targetAlpha = 1.0f;
-
     void Update()
     {
         if (linkedObject == null)

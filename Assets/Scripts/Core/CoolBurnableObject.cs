@@ -1,8 +1,7 @@
-using System;
 using System.Collections;
-using UnityEngine;
 using System.Linq;
 using Unity.VisualScripting;
+using UnityEngine;
 
 public class CoolBurnableObject : MonoBehaviour
 {
@@ -20,9 +19,12 @@ public class CoolBurnableObject : MonoBehaviour
     private float currentFireTimer;
     private int maxFireTime = 15;
     private int nearbyBurnablesExist = 0;
-    
 
-
+    void Update()
+    {
+        // Dev key, burns everything, kinda funny.
+        if (Input.GetKeyDown(KeyCode.F1) && Global.devMode) CoolBurnIgnition(100.0f);
+    }
 
     //New Method for starting cool Burn, Will allow for slider and managment
     public void CoolBurnIgnition(float startBurnIntensity)
@@ -39,23 +41,23 @@ public class CoolBurnableObject : MonoBehaviour
             if (BurnabbleCoroutine != null) StopCoroutine(BurnabbleCoroutine);
             BurnabbleCoroutine = StartCoroutine(BurningIntensifys(startBurnIntensity));
         }
-            
+
 
     }
 
     private IEnumerator BurningIntensifys(float StartingFireIntensity)
     {
-       currentlyBurning = true;
-       currentFireIntensity = StartingFireIntensity;
-       currentFireTimer = 0f;
+        currentlyBurning = true;
+        currentFireIntensity = StartingFireIntensity;
+        currentFireTimer = 0f;
 
-       //Temp version since it doesnt allow for fire slider managment
-       while (currentFireIntensity < fireMaxIntensity)
-       {
-           int randomFloat = UnityEngine.Random.Range(2, 30);
-           currentFireIntensity += randomFloat;
-           var psSize = firePS.main;
-           psSize.startSize = Mathf.Lerp(0.4f, 4f, fireIntensity / 100f);
+        //Temp version since it doesnt allow for fire slider managment
+        while (currentFireIntensity < fireMaxIntensity)
+        {
+            int randomFloat = UnityEngine.Random.Range(2, 30);
+            currentFireIntensity += randomFloat;
+            var psSize = firePS.main;
+            psSize.startSize = Mathf.Lerp(0.4f, 4f, fireIntensity / 100f);
             Debug.Log("intensity =" + currentFireIntensity + randomFloat);
             //Not Working Yet
             if (currentFireIntensity >= 90f)
@@ -98,21 +100,21 @@ public class CoolBurnableObject : MonoBehaviour
             }
 
             yield return new WaitForSeconds(5f);
-           
-       }
 
-       // Once Max Fire Intensity is reached then hold it for 20 seconds (editable) before destorying
+        }
 
-       while (currentFireIntensity >= fireMaxIntensity && currentFireTimer < maxFireTime)
-       {
-           currentFireTimer += Time.deltaTime;
-           yield return null;
-       }
+        // Once Max Fire Intensity is reached then hold it for 20 seconds (editable) before destorying
 
-       if (currentFireIntensity >= fireMaxIntensity && currentFireTimer >= maxFireTime)
-       {
-           currentlyBurning = false;
-           Destroy(this.GameObject());
-       }
+        while (currentFireIntensity >= fireMaxIntensity && currentFireTimer < maxFireTime)
+        {
+            currentFireTimer += Time.deltaTime;
+            yield return null;
+        }
+
+        if (currentFireIntensity >= fireMaxIntensity && currentFireTimer >= maxFireTime)
+        {
+            currentlyBurning = false;
+            Destroy(this.GameObject());
+        }
     }
 }
