@@ -1,12 +1,19 @@
+using System;
 using System.Collections;
+using System.Runtime.CompilerServices;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.UI;
 
-public class CoolBurnStart : MonoBehaviour
+public class FireManager : MonoBehaviour
 {
     [SerializeField] private InputAction MouseClick;
     [SerializeField] private GameObject player;
     [SerializeField] private GameObject FireParticlePrefab;
+
+    private bool fireSlidersVisible = false;
+
+    private CoolburnGroundItem sliderTarget;
 
     private Camera mainCamera;
 
@@ -15,12 +22,14 @@ public class CoolBurnStart : MonoBehaviour
     private int coolburnLayer;
 
     private bool CoolbuttonPressed = false;
+
     private void Awake()
     {
         mainCamera = Camera.main;
         burnableLayer = LayerMask.NameToLayer("Burnable");
         coolburnLayer = LayerMask.NameToLayer("Coolburn");
     }
+
     private void OnEnable()
     {
         MouseClick.Enable();
@@ -44,8 +53,8 @@ public class CoolBurnStart : MonoBehaviour
     private IEnumerator delayCoolbuttonTrigger()
     {
         yield return null;
-      //  CoolbuttonPressed = true;
-       // Debug.Log("ITWORKED");
+        //  CoolbuttonPressed = true;
+        // Debug.Log("ITWORKED");
     }
 
     private void mouseActionCheck(InputAction.CallbackContext context)
@@ -55,7 +64,7 @@ public class CoolBurnStart : MonoBehaviour
         {
             return;
         }
-        
+
         player.TryGetComponent<ClicktoMove>(out ClicktoMove clicktoMove);
         Debug.Log("itworked");
         Ray ray = mainCamera.ScreenPointToRay(Mouse.current.position.ReadValue());
@@ -65,7 +74,9 @@ public class CoolBurnStart : MonoBehaviour
             ClicktoMove.movedisabled = false;
             return;
         }
-        if (Physics.Raycast(ray: ray, hitInfo: out RaycastHit burnablehit) && burnablehit.collider && burnablehit.collider.gameObject.layer.CompareTo(burnableLayer) == 0)
+
+        if (Physics.Raycast(ray: ray, hitInfo: out RaycastHit burnablehit) && burnablehit.collider &&
+            burnablehit.collider.gameObject.layer.CompareTo(burnableLayer) == 0)
         {
             // float distanceFromPlayer = Vector3.Distance(player.transform.position, firehit.point);
             //if (distanceFromPlayer < 1f)
@@ -88,13 +99,23 @@ public class CoolBurnStart : MonoBehaviour
             }
 
         }
+
         ClicktoMove.movedisabled = false;
         CoolbuttonPressed = false;
-       
+
         Debug.Log("Cool disable Move enable");
     }
 
-    
 
 
+    public void ShowFireSlider()
+    {
+        //flips is the button is pressed
+        fireSlidersVisible = !fireSlidersVisible;
+        var coolburnObjects = FindObjectsByType<CoolburnGroundItem>(FindObjectsSortMode.None);
+        foreach (var coolburn in coolburnObjects)
+        {
+            coolburn.SetFireSliderVisible(fireSlidersVisible);
+        }
+    }
 }

@@ -127,6 +127,30 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 725810822311896032, guid: 7576cd8e3041b8b4caaee7f6f08cf230, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1074172316231791702, guid: 7576cd8e3041b8b4caaee7f6f08cf230, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1205042451475408256, guid: 7576cd8e3041b8b4caaee7f6f08cf230, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1460160953930756662, guid: 7576cd8e3041b8b4caaee7f6f08cf230, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2052257946072260087, guid: 7576cd8e3041b8b4caaee7f6f08cf230, type: 3}
+      propertyPath: fireSlider
+      value: 
+      objectReference: {fileID: 506909836}
+    - target: {fileID: 2052257946072260087, guid: 7576cd8e3041b8b4caaee7f6f08cf230, type: 3}
+      propertyPath: gameWorldCanvas
+      value: 
+      objectReference: {fileID: 208869533}
     - target: {fileID: 7061815914656108431, guid: 7576cd8e3041b8b4caaee7f6f08cf230, type: 3}
       propertyPath: m_LocalPosition.x
       value: 1.2736993
@@ -171,11 +195,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: 'CoolburnGround '
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6509526859570785036, guid: 7576cd8e3041b8b4caaee7f6f08cf230, type: 3}
+    - {fileID: 9184018336399877739, guid: 7576cd8e3041b8b4caaee7f6f08cf230, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7576cd8e3041b8b4caaee7f6f08cf230, type: 3}
+--- !u!223 &208869533 stripped
+Canvas:
+  m_CorrespondingSourceObject: {fileID: 846992166854513052, guid: 7576cd8e3041b8b4caaee7f6f08cf230, type: 3}
+  m_PrefabInstance: {fileID: 102448856}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &397092599
 GameObject:
   m_ObjectHideFlags: 0
@@ -284,6 +315,17 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &506909836 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8838516185883589635, guid: 7576cd8e3041b8b4caaee7f6f08cf230, type: 3}
+  m_PrefabInstance: {fileID: 102448856}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &819114124
 PrefabInstance:
   m_ObjectHideFlags: 0

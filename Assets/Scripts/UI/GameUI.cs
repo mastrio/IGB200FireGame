@@ -5,13 +5,13 @@ public class GameUI : MonoBehaviour
     [SerializeField] private GameObject phoneUIObject;
     [SerializeField] private GameObject mapUIObject;
     [SerializeField] private GameObject pauseUIObject;
-    [SerializeField] private CoolBurnStart coolburnStart;
+    [SerializeField] private FireManager coolburnStart;
     //[SerializeField] private ClicktoMove clicktoMove;
 
     private PopupUIAnimation phoneUIAnim;
     private PopupUIAnimation mapUIAnim;
     private PauseUI pauseUI;
-    private CoolBurnStart coolBurnStarter;
+    private FireManager coolBurnStarter;
 
     void Start()
     {
@@ -36,7 +36,7 @@ public class GameUI : MonoBehaviour
 
     public void SprayWaterButtonPressed()
     {
-        Debug.Log("psssssssssssss");
+        coolburnStart.ShowFireSlider();
     }
 
     public void OpenMapButtonPressed()

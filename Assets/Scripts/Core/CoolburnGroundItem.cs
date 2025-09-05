@@ -1,10 +1,12 @@
 using System;
 using System.Collections;
+using System.Collections.Specialized;
 using UnityEngine;
 using UnityEngine.UI;
 using System.Linq;
 using System.Numerics;
 using Unity.VisualScripting;
+using UnityEditor.Rendering.Universal;
 using Quaternion = UnityEngine.Quaternion;
 using Vector3 = UnityEngine.Vector3;
 
@@ -33,11 +35,23 @@ public class CoolburnGroundItem : MonoBehaviour
 
     //Time Variables
     private float currentFireTimer;
+    private float weakFireTime;
     private float currentMaxIntensityFireTimer;
     private int maxFireTime = 15;
 
     //Slider
+    [Header("Ui Slider")]
     [SerializeField] private Slider fireSlider;
+    [SerializeField] private Canvas gameWorldCanvas;
+  
+
+    private void Awake()
+    {
+        if (gameWorldCanvas != null)
+        {
+            gameWorldCanvas.gameObject.SetActive(false);
+        }
+    }
 
     private void Start()
     {
@@ -45,22 +59,25 @@ public class CoolburnGroundItem : MonoBehaviour
         {
             fireSlider.onValueChanged.AddListener(OnSliderValueChanged);
         }
+      
     }
 
-    private void OnSliderValueChanged(float sliderfireIntensityValue)
+    public void OnSliderValueChanged(float sliderfireIntensityValue)
     {
         if (sliderfireIntensityValue < currentFireIntensity)
         {
             currentFireIntensity = sliderfireIntensityValue;
+            if (firePS != null)
+            {
+                var firePSShape = firePS.shape;
+                Vector3 minUpdatedPsScale = new Vector3(1f, 1f, 1f);
+                Vector3 maxUpdatedPsScale = new Vector3(9.17f, 9.823f, 3f);
 
-            var firePSShape = firePS.shape;
-            Vector3 minUpdatedPsScale = new Vector3(1f, 1f, 1f);
-            Vector3 maxUpdatedPsScale = new Vector3(9.17f, 9.823f, 3f);
 
-
-            Vector3 ChangeFireIntestintyScaleManuel = Vector3.Lerp(minUpdatedPsScale, maxUpdatedPsScale,
-                currentFireIntensity / fireMaxIntensity);
-
+                Vector3 ChangeFireIntestintyScaleManuel = Vector3.Lerp(minUpdatedPsScale, maxUpdatedPsScale,
+                    currentFireIntensity / fireMaxIntensity);
+                firePSShape.scale = ChangeFireIntestintyScaleManuel;
+            }
         }
         else
         {
@@ -72,7 +89,25 @@ public class CoolburnGroundItem : MonoBehaviour
     {
         // Dev key, burns everything, kinda funny.
         if (Input.GetKeyDown(KeyCode.F1) && Global.devMode) CoolBurnIgnition(100.0f);
+
+        if (currentlyBurning && fireSlider != null)
+        {
+            if (fireSlider.value != currentFireIntensity)
+            {
+                fireSlider.value = currentFireIntensity;
+            }
+        }
     }
+
+    public void SetFireSliderVisible(bool fireSliderVisibility)
+    {
+        //If prefab has canvas then set it to active 
+        if (gameWorldCanvas != null)
+        {
+            gameWorldCanvas.gameObject.SetActive(fireSliderVisibility);
+        }
+    }
+
 
     //New Method for starting cool Burn, Will allow for slider and managment
     public void CoolBurnIgnition(float startBurnIntensity)
@@ -98,10 +133,11 @@ public class CoolburnGroundItem : MonoBehaviour
         currentlyBurning = true;
         currentFireIntensity = StartingFireIntensity;
         currentFireTimer = 0f;
+        weakFireTime = 0f;
         fireMaxIntensity = 150f;
 
         float coolBurnSpreadDelay = 5f;
-        float coolBurnSpreadTimer = 0f;
+        float coolBurnSpreadTimer = 5f;
         float spreadCheckRate = 3f;
 
         //9.17 X and 9.823 Z
@@ -116,83 +152,105 @@ public class CoolburnGroundItem : MonoBehaviour
 
 
         //Temp version since it doesnt allow for fire slider managment
-        while (currentFireIntensity < fireMaxIntensity)
+        while (currentlyBurning)
         {
-            yield return new WaitForSeconds(1f);
-            int randomFloat = UnityEngine.Random.Range(2, 30);
-            currentFireIntensity += randomFloat;
-            fireSlider.value = currentFireIntensity;
+            //This Only Grows if its below the max value
+            if (currentFireIntensity < fireMaxIntensity)
+            {
+                int randomFloat = UnityEngine.Random.Range(2, 30);
+                currentFireIntensity += randomFloat;
+            }
+
+
+
+            if (fireSlider != null)
+            {
+                fireSlider.value = currentFireIntensity;
+            }
+
 
             var firePsShape = firePS.shape;
-
+            //Make Null Exception
             Vector3 UpdatingIntensityScale =
                 Vector3.Lerp(MinFirePsScale, MaxFirePsScale, currentFireIntensity / fireMaxIntensity);
             firePsShape.scale = UpdatingIntensityScale;
-            Debug.Log("intensity =" + currentFireIntensity + randomFloat);
 
+            //Timer Changes 
+            currentFireTimer += 1f;
+            coolBurnSpreadTimer += 1f;
 
-            currentFireTimer += 1;
-            coolBurnSpreadTimer += 1;
-            Debug.Log("Current Times" + currentFireTimer + coolBurnSpreadTimer );
             //Spread to new coolburn area nearby if there is any
             if (currentFireIntensity >= 100f && coolBurnSpreadTimer >= coolBurnSpreadDelay)
             {
-                Debug.Log("Got To Try and Spread");
                 SpreadToCoolBurn();
                 coolBurnSpreadTimer = -spreadCheckRate;
             }
-            
-            yield return null;
-            
-            /*
-            //Spread to nearby object
-            if (currentFireIntensity >= 150f)
+
+            if (currentFireIntensity < 45f)
             {
-                if (nearbyBurnablesExist == true)
-                {
-                    //TEMP RAIDUS SETTING
-                    BurnableLayer = 1 << LayerMask.NameToLayer("Burnable");
-                    Collider[] hitColliders = Physics.OverlapSphere(this.transform.position, 9f, BurnableLayer);
-                    Debug.Log("Collider list" + hitColliders.Length);
-                    if (hitColliders.Length > 0)
-                    {
-                        nearbyBurnablesExist = true;
-
-                        foreach (var collidershit in hitColliders)
-                        {
-                            Debug.Log("" + collidershit.GameObject().name);
-                        }
-
-                        //Sorts Array to be the closest collider that was hit
-                        var orderedBurnables = hitColliders
-                            .OrderBy(c => (c.transform.position - this.transform.position).sqrMagnitude).ToArray();
-                        //Breaks if radius is lowered fix this
-                        GameObject closestsBurnableObject = orderedBurnables[1].gameObject;
-                        closestsBurnableObject.TryGetComponent<BurnableObject>(
-                            out BurnableObject closestBurnable);
-                        if (closestBurnable.currentlyBurning == false)
-                        {
-                            Debug.Log("Expensive Please Fix");
-                            closestBurnable.CoolBurnIgnition(20f);
-                        }
-                    }
-                    else if (hitColliders.Length == 0)
-                    {
-                        nearbyBurnablesExist = false;
-                    }
-                }
+                weakFireTime += 1f;
+            }
+            else if (currentFireIntensity > 45f)
+            {
+                weakFireTime = 0f;
             }
 
-            yield return new WaitForSeconds(5f);
-             */
+            if (currentFireIntensity < 45f && currentFireTimer > 20f)
+            {
+                Destroy(firePS.gameObject);
+            }
+            yield return new WaitForSeconds(1f);
+
         }
+        /*
+        //Spread to nearby object
+        if (currentFireIntensity >= 150f)
+        {
+            if (nearbyBurnablesExist == true)
+            {
+                //TEMP RAIDUS SETTING
+                BurnableLayer = 1 << LayerMask.NameToLayer("Burnable");
+                Collider[] hitColliders = Physics.OverlapSphere(this.transform.position, 9f, BurnableLayer);
+                Debug.Log("Collider list" + hitColliders.Length);
+                if (hitColliders.Length > 0)
+                {
+                    nearbyBurnablesExist = true;
+
+                    foreach (var collidershit in hitColliders)
+                    {
+                        Debug.Log("" + collidershit.GameObject().name);
+                    }
+
+                    //Sorts Array to be the closest collider that was hit
+                    var orderedBurnables = hitColliders
+                        .OrderBy(c => (c.transform.position - this.transform.position).sqrMagnitude).ToArray();
+                    //Breaks if radius is lowered fix this
+                    GameObject closestsBurnableObject = orderedBurnables[1].gameObject;
+                    closestsBurnableObject.TryGetComponent<BurnableObject>(
+                        out BurnableObject closestBurnable);
+                    if (closestBurnable.currentlyBurning == false)
+                    {
+                        Debug.Log("Expensive Please Fix");
+                        closestBurnable.CoolBurnIgnition(20f);
+                    }
+                }
+                else if (hitColliders.Length == 0)
+                {
+                    nearbyBurnablesExist = false;
+                }
+            }
+        }
+
+        yield return new WaitForSeconds(5f);
+         */
+        
 
 
         // Once Max Fire Intensity is reached then hold it for 20 seconds (editable) before destorying
 
-        while (currentFireIntensity >= fireMaxIntensity && currentMaxIntensityFireTimer < 120f)
+        while (currentFireIntensity >= fireMaxIntensity && currentMaxIntensityFireTimer < 60f)
         {
-            currentMaxIntensityFireTimer += Time.deltaTime;
+            currentMaxIntensityFireTimer += 1f;
             yield return null;
         }
 
@@ -200,7 +258,7 @@ public class CoolburnGroundItem : MonoBehaviour
         {
             Debug.Log("Destoryed");
             currentlyBurning = false;
-           // Destroy(this.GameObject());
+            Destroy(this.GameObject());
         }
     }
 
@@ -312,14 +370,20 @@ public class CoolburnGroundItem : MonoBehaviour
             Debug.Log("" + collidershit.GameObject().name);
         }
 
-        GameObject closestCoolburnObject = orderedCoolburnables[0].gameObject;
-        closestCoolburnObject.TryGetComponent<CoolburnGroundItem>(
-            out CoolburnGroundItem closestCoolburn);
-        if (closestCoolburn.currentlyBurning == false)
+        foreach (var colliderHit in orderedCoolburnables)
         {
-            Debug.Log("Tried to set other");
-            closestCoolburn.CoolBurnIgnition(20f);
+            GameObject closestCoolburnObject = colliderHit.gameObject;
+            closestCoolburnObject.TryGetComponent<CoolburnGroundItem>(
+                out CoolburnGroundItem closestCoolburn);
+            if (closestCoolburn.currentlyBurning == false)
+            {
+                Debug.Log("Tried to set other");
+                closestCoolburn.CoolBurnIgnition(20f);
+                break;
+            }
         }
+       
+        
     }
 
 }
