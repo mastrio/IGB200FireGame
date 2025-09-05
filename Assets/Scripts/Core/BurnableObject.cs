@@ -4,7 +4,7 @@ using UnityEngine;
 using System.Linq;
 using Unity.VisualScripting;
 
-public class CoolBurnableObject : MonoBehaviour
+public class BurnableObject : MonoBehaviour
 {
     private float fireLifeSpan;
     [SerializeField] private GameObject FireParticlePrefab;
@@ -82,7 +82,7 @@ public class CoolBurnableObject : MonoBehaviour
                             .OrderBy(c => (c.transform.position - this.transform.position).sqrMagnitude).ToArray();
                         //Breaks if radius is lowered fix this
                         GameObject closestsBurnableObject = orderedBurnables[1].gameObject;
-                        closestsBurnableObject.TryGetComponent<CoolBurnableObject>(out CoolBurnableObject closestBurnable);
+                        closestsBurnableObject.TryGetComponent<BurnableObject>(out BurnableObject closestBurnable);
                         if (closestBurnable.currentlyBurning == false)
                         {
                             Debug.Log("Expensive Please Fix");

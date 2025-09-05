@@ -27,6 +27,7 @@ public class GameUI : MonoBehaviour
 
     public void StartCoolburnButtonPressed()
     {
+     
         //sets bool to true to spawn fire on next click
         coolburnStart.CoolButtonTrigger();
         //  clicktoMove.disablemoveButtonPress();
