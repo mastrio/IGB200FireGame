@@ -78,15 +78,18 @@ public class FireManager : MonoBehaviour
         if (Physics.Raycast(ray: ray, hitInfo: out RaycastHit burnablehit) && burnablehit.collider &&
             burnablehit.collider.gameObject.layer.CompareTo(burnableLayer) == 0)
         {
+            CoolbuttonPressed = false;
+            ClicktoMove.movedisabled = false;
+            return;
             // float distanceFromPlayer = Vector3.Distance(player.transform.position, firehit.point);
             //if (distanceFromPlayer < 1f)
             //{
-
+            /*
             if (burnablehit.collider.TryGetComponent<BurnableObject>(out BurnableObject coolBurnable))
             {
-                coolBurnable.CoolBurnIgnition(30f);
+                coolBurnable.BurnableIgnition(30f);
             }
-
+            */
             //}
         }
         else if (Physics.Raycast(ray: ray, hitInfo: out RaycastHit firehit) && firehit.collider &&
