@@ -150,6 +150,40 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 8361364982187891885}
+  - {fileID: 1011959291119756121}
+  - {fileID: 3034400520275753028}
+  m_Father: {fileID: 7529480086816493695}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &4212312177988430744
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1011959291119756121}
+  m_Layer: 0
+  m_Name: UnBurnables
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1011959291119756121
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4212312177988430744}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
   - {fileID: 7012762246328925844}
   - {fileID: 5912826712477534238}
   - {fileID: 3995275579934396459}
@@ -162,6 +196,42 @@ Transform:
   - {fileID: 2731920104939700540}
   - {fileID: 1945958488511819200}
   - {fileID: 1829922654175233518}
+  - {fileID: 7772518729582227500}
+  - {fileID: 1409897897146431484}
+  - {fileID: 8565096598716869528}
+  - {fileID: 6083684381651530752}
+  - {fileID: 6293213809173286638}
+  m_Father: {fileID: 3633919690521902739}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &7086601910167762627
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8361364982187891885}
+  m_Layer: 0
+  m_Name: Burnables
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8361364982187891885
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7086601910167762627}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
   - {fileID: 5601524867444752625}
   - {fileID: 9049796305750828610}
   - {fileID: 8979893131461921279}
@@ -245,11 +315,6 @@ Transform:
   - {fileID: 1961114055960015292}
   - {fileID: 501938975526457261}
   - {fileID: 1013910154723686595}
-  - {fileID: 7772518729582227500}
-  - {fileID: 1409897897146431484}
-  - {fileID: 8565096598716869528}
-  - {fileID: 6083684381651530752}
-  - {fileID: 6293213809173286638}
   - {fileID: 8100863698057985964}
   - {fileID: 5938093015893305374}
   - {fileID: 2928070392066892149}
@@ -309,7 +374,7 @@ Transform:
   - {fileID: 8084008026914008525}
   - {fileID: 7098983475674351507}
   - {fileID: 6040621923496173952}
-  m_Father: {fileID: 7529480086816493695}
+  m_Father: {fileID: 3633919690521902739}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7584857021624622145
 GameObject:
@@ -343,6 +408,37 @@ Transform:
   - {fileID: 2887290842653245183}
   - {fileID: 8863814491874754261}
   - {fileID: 3633919690521902739}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &8574658932648644387
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3034400520275753028}
+  m_Layer: 0
+  m_Name: CoolBurns
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3034400520275753028
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8574658932648644387}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
   - {fileID: 5041713581321257313}
   - {fileID: 8869040748261253932}
   - {fileID: 8282693158533519651}
@@ -351,7 +447,7 @@ Transform:
   - {fileID: 7406054192210905732}
   - {fileID: 3896486412319565004}
   - {fileID: 4332031702755324433}
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 3633919690521902739}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &19157271613867617
 PrefabInstance:
@@ -359,7 +455,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 3633919690521902739}
+    m_TransformParent: {fileID: 8361364982187891885}
     m_Modifications:
     - target: {fileID: 496414244250911419, guid: ace71641151416049aa3e3c14d2b6c54, type: 3}
       propertyPath: m_LocalPosition.x
@@ -441,13 +537,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FireParticlePrefab: {fileID: 5023430038305224826, guid: b69c18c3cd016a740ac92bd40357a695, type: 3}
   currentlyBurning: 0
+  fireSlider: {fileID: 0}
+  gameWorldCanvas: {fileID: 0}
 --- !u!1001 &79312223582427477
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 3633919690521902739}
+    m_TransformParent: {fileID: 1011959291119756121}
     m_Modifications:
     - target: {fileID: 6218409583285721019, guid: 8f6b30c8fe6ffd448b0ad38411cf3a47, type: 3}
       propertyPath: m_LocalPosition.x
@@ -509,7 +607,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 3633919690521902739}
+    m_TransformParent: {fileID: 8361364982187891885}
     m_Modifications:
     - target: {fileID: 2858411044530043308, guid: 87a58077fb875314ab1f2a306ba41984, type: 3}
       propertyPath: m_Name
@@ -586,6 +684,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FireParticlePrefab: {fileID: 5023430038305224826, guid: b69c18c3cd016a740ac92bd40357a695, type: 3}
   currentlyBurning: 0
+  fireSlider: {fileID: 0}
+  gameWorldCanvas: {fileID: 0}
 --- !u!4 &3298376895472987485 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3233810068867932950, guid: 87a58077fb875314ab1f2a306ba41984, type: 3}
@@ -597,7 +697,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 3633919690521902739}
+    m_TransformParent: {fileID: 8361364982187891885}
     m_Modifications:
     - target: {fileID: 496414244250911419, guid: ace71641151416049aa3e3c14d2b6c54, type: 3}
       propertyPath: m_LocalPosition.x
@@ -679,13 +779,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FireParticlePrefab: {fileID: 5023430038305224826, guid: b69c18c3cd016a740ac92bd40357a695, type: 3}
   currentlyBurning: 0
+  fireSlider: {fileID: 0}
+  gameWorldCanvas: {fileID: 0}
 --- !u!1001 &238814588957366578
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 3633919690521902739}
+    m_TransformParent: {fileID: 8361364982187891885}
     m_Modifications:
     - target: {fileID: 2858411044530043308, guid: 87a58077fb875314ab1f2a306ba41984, type: 3}
       propertyPath: m_Name
@@ -762,6 +864,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FireParticlePrefab: {fileID: 5023430038305224826, guid: b69c18c3cd016a740ac92bd40357a695, type: 3}
   currentlyBurning: 0
+  fireSlider: {fileID: 0}
+  gameWorldCanvas: {fileID: 0}
 --- !u!4 &3436454897766660644 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3233810068867932950, guid: 87a58077fb875314ab1f2a306ba41984, type: 3}
@@ -773,7 +877,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 3633919690521902739}
+    m_TransformParent: {fileID: 8361364982187891885}
     m_Modifications:
     - target: {fileID: 496414244250911419, guid: ace71641151416049aa3e3c14d2b6c54, type: 3}
       propertyPath: m_LocalPosition.x
@@ -855,13 +959,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FireParticlePrefab: {fileID: 5023430038305224826, guid: b69c18c3cd016a740ac92bd40357a695, type: 3}
   currentlyBurning: 0
+  fireSlider: {fileID: 0}
+  gameWorldCanvas: {fileID: 0}
 --- !u!1001 &306901860726866531
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 3633919690521902739}
+    m_TransformParent: {fileID: 8361364982187891885}
     m_Modifications:
     - target: {fileID: 2858411044530043308, guid: 87a58077fb875314ab1f2a306ba41984, type: 3}
       propertyPath: m_Name
@@ -938,6 +1044,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FireParticlePrefab: {fileID: 5023430038305224826, guid: b69c18c3cd016a740ac92bd40357a695, type: 3}
   currentlyBurning: 0
+  fireSlider: {fileID: 0}
+  gameWorldCanvas: {fileID: 0}
 --- !u!4 &2928070392066892149 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3233810068867932950, guid: 87a58077fb875314ab1f2a306ba41984, type: 3}
@@ -949,7 +1057,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 3633919690521902739}
+    m_TransformParent: {fileID: 8361364982187891885}
     m_Modifications:
     - target: {fileID: 496414244250911419, guid: ace71641151416049aa3e3c14d2b6c54, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1031,13 +1139,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FireParticlePrefab: {fileID: 5023430038305224826, guid: b69c18c3cd016a740ac92bd40357a695, type: 3}
   currentlyBurning: 0
+  fireSlider: {fileID: 0}
+  gameWorldCanvas: {fileID: 0}
 --- !u!1001 &344256146908972299
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 7529480086816493695}
+    m_TransformParent: {fileID: 3034400520275753028}
     m_Modifications:
     - target: {fileID: 725810822311896032, guid: 7576cd8e3041b8b4caaee7f6f08cf230, type: 3}
       propertyPath: m_AnchorMax.x
@@ -1107,7 +1217,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 3633919690521902739}
+    m_TransformParent: {fileID: 8361364982187891885}
     m_Modifications:
     - target: {fileID: 3794896871722181480, guid: 6ea2642d8879762469232c853cac580a, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1189,13 +1299,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FireParticlePrefab: {fileID: 5023430038305224826, guid: b69c18c3cd016a740ac92bd40357a695, type: 3}
   currentlyBurning: 0
+  fireSlider: {fileID: 0}
+  gameWorldCanvas: {fileID: 0}
 --- !u!1001 &375054047881452995
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 3633919690521902739}
+    m_TransformParent: {fileID: 8361364982187891885}
     m_Modifications:
     - target: {fileID: 496414244250911419, guid: ace71641151416049aa3e3c14d2b6c54, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1277,13 +1389,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FireParticlePrefab: {fileID: 5023430038305224826, guid: b69c18c3cd016a740ac92bd40357a695, type: 3}
   currentlyBurning: 0
+  fireSlider: {fileID: 0}
+  gameWorldCanvas: {fileID: 0}
 --- !u!1001 &403610673228584279
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 3633919690521902739}
+    m_TransformParent: {fileID: 1011959291119756121}
     m_Modifications:
     - target: {fileID: 8305970590946459343, guid: f20a11d6c420f5d4385c919c63d697ce, type: 3}
       propertyPath: m_LocalScale.x
@@ -1357,7 +1471,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 3633919690521902739}
+    m_TransformParent: {fileID: 8361364982187891885}
     m_Modifications:
     - target: {fileID: 496414244250911419, guid: ace71641151416049aa3e3c14d2b6c54, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1439,13 +1553,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FireParticlePrefab: {fileID: 5023430038305224826, guid: b69c18c3cd016a740ac92bd40357a695, type: 3}
   currentlyBurning: 0
+  fireSlider: {fileID: 0}
+  gameWorldCanvas: {fileID: 0}
 --- !u!1001 &455884297976857881
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 3633919690521902739}
+    m_TransformParent: {fileID: 8361364982187891885}
     m_Modifications:
     - target: {fileID: 496414244250911419, guid: ace71641151416049aa3e3c14d2b6c54, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1527,13 +1643,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FireParticlePrefab: {fileID: 5023430038305224826, guid: b69c18c3cd016a740ac92bd40357a695, type: 3}
   currentlyBurning: 0
+  fireSlider: {fileID: 0}
+  gameWorldCanvas: {fileID: 0}
 --- !u!1001 &517003880836445262
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 3633919690521902739}
+    m_TransformParent: {fileID: 8361364982187891885}
     m_Modifications:
     - target: {fileID: 3794896871722181480, guid: 6ea2642d8879762469232c853cac580a, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1615,13 +1733,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FireParticlePrefab: {fileID: 5023430038305224826, guid: b69c18c3cd016a740ac92bd40357a695, type: 3}
   currentlyBurning: 0
+  fireSlider: {fileID: 0}
+  gameWorldCanvas: {fileID: 0}
 --- !u!1001 &596285289351820547
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 3633919690521902739}
+    m_TransformParent: {fileID: 8361364982187891885}
     m_Modifications:
     - target: {fileID: 3794896871722181480, guid: 6ea2642d8879762469232c853cac580a, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1698,6 +1818,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FireParticlePrefab: {fileID: 5023430038305224826, guid: b69c18c3cd016a740ac92bd40357a695, type: 3}
   currentlyBurning: 0
+  fireSlider: {fileID: 0}
+  gameWorldCanvas: {fileID: 0}
 --- !u!4 &4389955026905650795 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3794896871722181480, guid: 6ea2642d8879762469232c853cac580a, type: 3}
@@ -1709,7 +1831,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 3633919690521902739}
+    m_TransformParent: {fileID: 1011959291119756121}
     m_Modifications:
     - target: {fileID: 7030891011163993441, guid: 8ecd1aab74590a24f98711d6f9c34949, type: 3}
       propertyPath: m_LocalScale.x
@@ -1783,7 +1905,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 3633919690521902739}
+    m_TransformParent: {fileID: 8361364982187891885}
     m_Modifications:
     - target: {fileID: 496414244250911419, guid: ace71641151416049aa3e3c14d2b6c54, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1860,6 +1982,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FireParticlePrefab: {fileID: 5023430038305224826, guid: b69c18c3cd016a740ac92bd40357a695, type: 3}
   currentlyBurning: 0
+  fireSlider: {fileID: 0}
+  gameWorldCanvas: {fileID: 0}
 --- !u!4 &884628626295804369 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 496414244250911419, guid: ace71641151416049aa3e3c14d2b6c54, type: 3}
@@ -1871,7 +1995,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 3633919690521902739}
+    m_TransformParent: {fileID: 8361364982187891885}
     m_Modifications:
     - target: {fileID: 496414244250911419, guid: ace71641151416049aa3e3c14d2b6c54, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1948,6 +2072,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FireParticlePrefab: {fileID: 5023430038305224826, guid: b69c18c3cd016a740ac92bd40357a695, type: 3}
   currentlyBurning: 0
+  fireSlider: {fileID: 0}
+  gameWorldCanvas: {fileID: 0}
 --- !u!4 &891696284889952785 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 496414244250911419, guid: ace71641151416049aa3e3c14d2b6c54, type: 3}
@@ -1959,7 +2085,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 3633919690521902739}
+    m_TransformParent: {fileID: 8361364982187891885}
     m_Modifications:
     - target: {fileID: 2858411044530043308, guid: 87a58077fb875314ab1f2a306ba41984, type: 3}
       propertyPath: m_Name
@@ -2041,13 +2167,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FireParticlePrefab: {fileID: 5023430038305224826, guid: b69c18c3cd016a740ac92bd40357a695, type: 3}
   currentlyBurning: 0
+  fireSlider: {fileID: 0}
+  gameWorldCanvas: {fileID: 0}
 --- !u!1001 &995467173495381574
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 3633919690521902739}
+    m_TransformParent: {fileID: 8361364982187891885}
     m_Modifications:
     - target: {fileID: 496414244250911419, guid: ace71641151416049aa3e3c14d2b6c54, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2124,6 +2252,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FireParticlePrefab: {fileID: 5023430038305224826, guid: b69c18c3cd016a740ac92bd40357a695, type: 3}
   currentlyBurning: 0
+  fireSlider: {fileID: 0}
+  gameWorldCanvas: {fileID: 0}
 --- !u!4 &806991226757979389 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 496414244250911419, guid: ace71641151416049aa3e3c14d2b6c54, type: 3}
@@ -2135,7 +2265,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 3633919690521902739}
+    m_TransformParent: {fileID: 8361364982187891885}
     m_Modifications:
     - target: {fileID: 496414244250911419, guid: ace71641151416049aa3e3c14d2b6c54, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2212,6 +2342,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FireParticlePrefab: {fileID: 5023430038305224826, guid: b69c18c3cd016a740ac92bd40357a695, type: 3}
   currentlyBurning: 0
+  fireSlider: {fileID: 0}
+  gameWorldCanvas: {fileID: 0}
 --- !u!4 &581883816356001462 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 496414244250911419, guid: ace71641151416049aa3e3c14d2b6c54, type: 3}
@@ -2223,7 +2355,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 3633919690521902739}
+    m_TransformParent: {fileID: 8361364982187891885}
     m_Modifications:
     - target: {fileID: 3794896871722181480, guid: 6ea2642d8879762469232c853cac580a, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2300,6 +2432,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FireParticlePrefab: {fileID: 5023430038305224826, guid: b69c18c3cd016a740ac92bd40357a695, type: 3}
   currentlyBurning: 0
+  fireSlider: {fileID: 0}
+  gameWorldCanvas: {fileID: 0}
 --- !u!4 &4302064056878280251 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3794896871722181480, guid: 6ea2642d8879762469232c853cac580a, type: 3}
@@ -2311,7 +2445,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 3633919690521902739}
+    m_TransformParent: {fileID: 8361364982187891885}
     m_Modifications:
     - target: {fileID: 496414244250911419, guid: ace71641151416049aa3e3c14d2b6c54, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2388,6 +2522,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FireParticlePrefab: {fileID: 5023430038305224826, guid: b69c18c3cd016a740ac92bd40357a695, type: 3}
   currentlyBurning: 0
+  fireSlider: {fileID: 0}
+  gameWorldCanvas: {fileID: 0}
 --- !u!4 &692605192806143074 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 496414244250911419, guid: ace71641151416049aa3e3c14d2b6c54, type: 3}
@@ -2399,7 +2535,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 3633919690521902739}
+    m_TransformParent: {fileID: 8361364982187891885}
     m_Modifications:
     - target: {fileID: 2858411044530043308, guid: 87a58077fb875314ab1f2a306ba41984, type: 3}
       propertyPath: m_Name
@@ -2476,6 +2612,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FireParticlePrefab: {fileID: 5023430038305224826, guid: b69c18c3cd016a740ac92bd40357a695, type: 3}
   currentlyBurning: 0
+  fireSlider: {fileID: 0}
+  gameWorldCanvas: {fileID: 0}
 --- !u!4 &4337248608079514229 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3233810068867932950, guid: 87a58077fb875314ab1f2a306ba41984, type: 3}
@@ -2487,7 +2625,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 7529480086816493695}
+    m_TransformParent: {fileID: 3034400520275753028}
     m_Modifications:
     - target: {fileID: 725810822311896032, guid: 7576cd8e3041b8b4caaee7f6f08cf230, type: 3}
       propertyPath: m_AnchorMax.x
@@ -2557,7 +2695,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 3633919690521902739}
+    m_TransformParent: {fileID: 8361364982187891885}
     m_Modifications:
     - target: {fileID: 8197673384583163336, guid: 8706aca6a800085418f9968de1dc9383, type: 3}
       propertyPath: m_Name
@@ -2634,6 +2772,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FireParticlePrefab: {fileID: 5023430038305224826, guid: b69c18c3cd016a740ac92bd40357a695, type: 3}
   currentlyBurning: 0
+  fireSlider: {fileID: 0}
+  gameWorldCanvas: {fileID: 0}
 --- !u!4 &7495591792362586751 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8829355645580916594, guid: 8706aca6a800085418f9968de1dc9383, type: 3}
@@ -2645,7 +2785,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 3633919690521902739}
+    m_TransformParent: {fileID: 8361364982187891885}
     m_Modifications:
     - target: {fileID: 3918528055899108970, guid: 7da6d36dd1fae8647a3044f9911e510d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2727,13 +2867,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FireParticlePrefab: {fileID: 5023430038305224826, guid: b69c18c3cd016a740ac92bd40357a695, type: 3}
   currentlyBurning: 0
+  fireSlider: {fileID: 0}
+  gameWorldCanvas: {fileID: 0}
 --- !u!1001 &1351703139370216247
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 3633919690521902739}
+    m_TransformParent: {fileID: 8361364982187891885}
     m_Modifications:
     - target: {fileID: 3603640096412904551, guid: 85292898922356445bb9748cd9b9e416, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2815,13 +2957,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FireParticlePrefab: {fileID: 5023430038305224826, guid: b69c18c3cd016a740ac92bd40357a695, type: 3}
   currentlyBurning: 0
+  fireSlider: {fileID: 0}
+  gameWorldCanvas: {fileID: 0}
 --- !u!1001 &1612627823525026797
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 3633919690521902739}
+    m_TransformParent: {fileID: 8361364982187891885}
     m_Modifications:
     - target: {fileID: 3794896871722181480, guid: 6ea2642d8879762469232c853cac580a, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2903,13 +3047,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FireParticlePrefab: {fileID: 5023430038305224826, guid: b69c18c3cd016a740ac92bd40357a695, type: 3}
   currentlyBurning: 0
+  fireSlider: {fileID: 0}
+  gameWorldCanvas: {fileID: 0}
 --- !u!1001 &1625283265345184168
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 3633919690521902739}
+    m_TransformParent: {fileID: 8361364982187891885}
     m_Modifications:
     - target: {fileID: 496414244250911419, guid: ace71641151416049aa3e3c14d2b6c54, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2991,13 +3137,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FireParticlePrefab: {fileID: 5023430038305224826, guid: b69c18c3cd016a740ac92bd40357a695, type: 3}
   currentlyBurning: 0
+  fireSlider: {fileID: 0}
+  gameWorldCanvas: {fileID: 0}
 --- !u!1001 &1654281322212799931
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 3633919690521902739}
+    m_TransformParent: {fileID: 8361364982187891885}
     m_Modifications:
     - target: {fileID: 496414244250911419, guid: ace71641151416049aa3e3c14d2b6c54, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3079,13 +3227,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FireParticlePrefab: {fileID: 5023430038305224826, guid: b69c18c3cd016a740ac92bd40357a695, type: 3}
   currentlyBurning: 0
+  fireSlider: {fileID: 0}
+  gameWorldCanvas: {fileID: 0}
 --- !u!1001 &1708378469134230181
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 3633919690521902739}
+    m_TransformParent: {fileID: 8361364982187891885}
     m_Modifications:
     - target: {fileID: 3918528055899108970, guid: 7da6d36dd1fae8647a3044f9911e510d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3167,13 +3317,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FireParticlePrefab: {fileID: 5023430038305224826, guid: b69c18c3cd016a740ac92bd40357a695, type: 3}
   currentlyBurning: 0
+  fireSlider: {fileID: 0}
+  gameWorldCanvas: {fileID: 0}
 --- !u!1001 &1723644027692314244
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 3633919690521902739}
+    m_TransformParent: {fileID: 8361364982187891885}
     m_Modifications:
     - target: {fileID: 496414244250911419, guid: ace71641151416049aa3e3c14d2b6c54, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3255,13 +3407,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FireParticlePrefab: {fileID: 5023430038305224826, guid: b69c18c3cd016a740ac92bd40357a695, type: 3}
   currentlyBurning: 0
+  fireSlider: {fileID: 0}
+  gameWorldCanvas: {fileID: 0}
 --- !u!1001 &1746105021368072284
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 3633919690521902739}
+    m_TransformParent: {fileID: 8361364982187891885}
     m_Modifications:
     - target: {fileID: 2858411044530043308, guid: 87a58077fb875314ab1f2a306ba41984, type: 3}
       propertyPath: m_Name
@@ -3343,14 +3497,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FireParticlePrefab: {fileID: 5023430038305224826, guid: b69c18c3cd016a740ac92bd40357a695, type: 3}
   currentlyBurning: 0
+  fireSlider: {fileID: 0}
+  gameWorldCanvas: {fileID: 0}
 --- !u!1001 &1807550639229938851
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 7529480086816493695}
+    m_TransformParent: {fileID: 3034400520275753028}
     m_Modifications:
+    - target: {fileID: 725810822311896032, guid: 7576cd8e3041b8b4caaee7f6f08cf230, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1074172316231791702, guid: 7576cd8e3041b8b4caaee7f6f08cf230, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7061815914656108431, guid: 7576cd8e3041b8b4caaee7f6f08cf230, type: 3}
       propertyPath: m_LocalPosition.x
       value: 15.58
@@ -3411,7 +3575,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 3633919690521902739}
+    m_TransformParent: {fileID: 8361364982187891885}
     m_Modifications:
     - target: {fileID: 2858411044530043308, guid: 87a58077fb875314ab1f2a306ba41984, type: 3}
       propertyPath: m_Name
@@ -3493,13 +3657,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FireParticlePrefab: {fileID: 5023430038305224826, guid: b69c18c3cd016a740ac92bd40357a695, type: 3}
   currentlyBurning: 0
+  fireSlider: {fileID: 0}
+  gameWorldCanvas: {fileID: 0}
 --- !u!1001 &1912766224720935953
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 3633919690521902739}
+    m_TransformParent: {fileID: 1011959291119756121}
     m_Modifications:
     - target: {fileID: 3711618276212617156, guid: db98f8f06bc038c44829d924e78cec9d, type: 3}
       propertyPath: m_Name
@@ -3573,7 +3739,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 3633919690521902739}
+    m_TransformParent: {fileID: 8361364982187891885}
     m_Modifications:
     - target: {fileID: 2858411044530043308, guid: 87a58077fb875314ab1f2a306ba41984, type: 3}
       propertyPath: m_Name
@@ -3655,13 +3821,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FireParticlePrefab: {fileID: 5023430038305224826, guid: b69c18c3cd016a740ac92bd40357a695, type: 3}
   currentlyBurning: 0
+  fireSlider: {fileID: 0}
+  gameWorldCanvas: {fileID: 0}
 --- !u!1001 &1995352564840861627
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 3633919690521902739}
+    m_TransformParent: {fileID: 8361364982187891885}
     m_Modifications:
     - target: {fileID: 2858411044530043308, guid: 87a58077fb875314ab1f2a306ba41984, type: 3}
       propertyPath: m_Name
@@ -3743,13 +3911,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FireParticlePrefab: {fileID: 5023430038305224826, guid: b69c18c3cd016a740ac92bd40357a695, type: 3}
   currentlyBurning: 0
+  fireSlider: {fileID: 0}
+  gameWorldCanvas: {fileID: 0}
 --- !u!1001 &2036722264349268902
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 3633919690521902739}
+    m_TransformParent: {fileID: 8361364982187891885}
     m_Modifications:
     - target: {fileID: 496414244250911419, guid: ace71641151416049aa3e3c14d2b6c54, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3826,6 +3996,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FireParticlePrefab: {fileID: 5023430038305224826, guid: b69c18c3cd016a740ac92bd40357a695, type: 3}
   currentlyBurning: 0
+  fireSlider: {fileID: 0}
+  gameWorldCanvas: {fileID: 0}
 --- !u!4 &1918667838347794717 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 496414244250911419, guid: ace71641151416049aa3e3c14d2b6c54, type: 3}
@@ -3837,7 +4009,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 3633919690521902739}
+    m_TransformParent: {fileID: 1011959291119756121}
     m_Modifications:
     - target: {fileID: 8305970590946459343, guid: f20a11d6c420f5d4385c919c63d697ce, type: 3}
       propertyPath: m_LocalScale.x
@@ -3911,11 +4083,11 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 3633919690521902739}
+    m_TransformParent: {fileID: 1011959291119756121}
     m_Modifications:
     - target: {fileID: 7030891011163993441, guid: 8ecd1aab74590a24f98711d6f9c34949, type: 3}
       propertyPath: m_LocalScale.x
-      value: 200.00002
+      value: 200.00003
       objectReference: {fileID: 0}
     - target: {fileID: 7030891011163993441, guid: 8ecd1aab74590a24f98711d6f9c34949, type: 3}
       propertyPath: m_LocalScale.y
@@ -3923,7 +4095,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7030891011163993441, guid: 8ecd1aab74590a24f98711d6f9c34949, type: 3}
       propertyPath: m_LocalScale.z
-      value: 200.00002
+      value: 200.00003
       objectReference: {fileID: 0}
     - target: {fileID: 7030891011163993441, guid: 8ecd1aab74590a24f98711d6f9c34949, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3985,7 +4157,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 3633919690521902739}
+    m_TransformParent: {fileID: 8361364982187891885}
     m_Modifications:
     - target: {fileID: 496414244250911419, guid: ace71641151416049aa3e3c14d2b6c54, type: 3}
       propertyPath: m_LocalPosition.x
@@ -4062,6 +4234,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FireParticlePrefab: {fileID: 5023430038305224826, guid: b69c18c3cd016a740ac92bd40357a695, type: 3}
   currentlyBurning: 0
+  fireSlider: {fileID: 0}
+  gameWorldCanvas: {fileID: 0}
 --- !u!4 &1999052103887233147 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 496414244250911419, guid: ace71641151416049aa3e3c14d2b6c54, type: 3}
@@ -4073,7 +4247,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 3633919690521902739}
+    m_TransformParent: {fileID: 8361364982187891885}
     m_Modifications:
     - target: {fileID: 3794896871722181480, guid: 6ea2642d8879762469232c853cac580a, type: 3}
       propertyPath: m_LocalPosition.x
@@ -4150,6 +4324,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FireParticlePrefab: {fileID: 5023430038305224826, guid: b69c18c3cd016a740ac92bd40357a695, type: 3}
   currentlyBurning: 0
+  fireSlider: {fileID: 0}
+  gameWorldCanvas: {fileID: 0}
 --- !u!4 &3016336246388937578 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3794896871722181480, guid: 6ea2642d8879762469232c853cac580a, type: 3}
@@ -4161,7 +4337,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 3633919690521902739}
+    m_TransformParent: {fileID: 8361364982187891885}
     m_Modifications:
     - target: {fileID: 2858411044530043308, guid: 87a58077fb875314ab1f2a306ba41984, type: 3}
       propertyPath: m_Name
@@ -4243,13 +4419,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FireParticlePrefab: {fileID: 5023430038305224826, guid: b69c18c3cd016a740ac92bd40357a695, type: 3}
   currentlyBurning: 0
+  fireSlider: {fileID: 0}
+  gameWorldCanvas: {fileID: 0}
 --- !u!1001 &2149581481549280007
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 3633919690521902739}
+    m_TransformParent: {fileID: 8361364982187891885}
     m_Modifications:
     - target: {fileID: 496414244250911419, guid: ace71641151416049aa3e3c14d2b6c54, type: 3}
       propertyPath: m_LocalPosition.x
@@ -4326,6 +4504,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FireParticlePrefab: {fileID: 5023430038305224826, guid: b69c18c3cd016a740ac92bd40357a695, type: 3}
   currentlyBurning: 0
+  fireSlider: {fileID: 0}
+  gameWorldCanvas: {fileID: 0}
 --- !u!4 &1961114055960015292 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 496414244250911419, guid: ace71641151416049aa3e3c14d2b6c54, type: 3}
@@ -4337,7 +4517,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 3633919690521902739}
+    m_TransformParent: {fileID: 8361364982187891885}
     m_Modifications:
     - target: {fileID: 496414244250911419, guid: ace71641151416049aa3e3c14d2b6c54, type: 3}
       propertyPath: m_LocalPosition.x
@@ -4414,6 +4594,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FireParticlePrefab: {fileID: 5023430038305224826, guid: b69c18c3cd016a740ac92bd40357a695, type: 3}
   currentlyBurning: 0
+  fireSlider: {fileID: 0}
+  gameWorldCanvas: {fileID: 0}
 --- !u!4 &1811584227712702667 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 496414244250911419, guid: ace71641151416049aa3e3c14d2b6c54, type: 3}
@@ -4425,7 +4607,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 3633919690521902739}
+    m_TransformParent: {fileID: 8361364982187891885}
     m_Modifications:
     - target: {fileID: 496414244250911419, guid: ace71641151416049aa3e3c14d2b6c54, type: 3}
       propertyPath: m_LocalPosition.x
@@ -4507,13 +4689,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FireParticlePrefab: {fileID: 5023430038305224826, guid: b69c18c3cd016a740ac92bd40357a695, type: 3}
   currentlyBurning: 0
+  fireSlider: {fileID: 0}
+  gameWorldCanvas: {fileID: 0}
 --- !u!1001 &2548464684968609572
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 3633919690521902739}
+    m_TransformParent: {fileID: 8361364982187891885}
     m_Modifications:
     - target: {fileID: 3918528055899108970, guid: 7da6d36dd1fae8647a3044f9911e510d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -4595,13 +4779,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FireParticlePrefab: {fileID: 5023430038305224826, guid: b69c18c3cd016a740ac92bd40357a695, type: 3}
   currentlyBurning: 0
+  fireSlider: {fileID: 0}
+  gameWorldCanvas: {fileID: 0}
 --- !u!1001 &2616674143568884938
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 3633919690521902739}
+    m_TransformParent: {fileID: 8361364982187891885}
     m_Modifications:
     - target: {fileID: 496414244250911419, guid: ace71641151416049aa3e3c14d2b6c54, type: 3}
       propertyPath: m_LocalPosition.x
@@ -4683,13 +4869,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FireParticlePrefab: {fileID: 5023430038305224826, guid: b69c18c3cd016a740ac92bd40357a695, type: 3}
   currentlyBurning: 0
+  fireSlider: {fileID: 0}
+  gameWorldCanvas: {fileID: 0}
 --- !u!1001 &2616694724376640118
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 3633919690521902739}
+    m_TransformParent: {fileID: 8361364982187891885}
     m_Modifications:
     - target: {fileID: 2858411044530043308, guid: 87a58077fb875314ab1f2a306ba41984, type: 3}
       propertyPath: m_Name
@@ -4766,6 +4954,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FireParticlePrefab: {fileID: 5023430038305224826, guid: b69c18c3cd016a740ac92bd40357a695, type: 3}
   currentlyBurning: 0
+  fireSlider: {fileID: 0}
+  gameWorldCanvas: {fileID: 0}
 --- !u!4 &626159653472950624 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3233810068867932950, guid: 87a58077fb875314ab1f2a306ba41984, type: 3}
@@ -4777,7 +4967,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 3633919690521902739}
+    m_TransformParent: {fileID: 8361364982187891885}
     m_Modifications:
     - target: {fileID: 496414244250911419, guid: ace71641151416049aa3e3c14d2b6c54, type: 3}
       propertyPath: m_LocalPosition.x
@@ -4859,13 +5049,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FireParticlePrefab: {fileID: 5023430038305224826, guid: b69c18c3cd016a740ac92bd40357a695, type: 3}
   currentlyBurning: 0
+  fireSlider: {fileID: 0}
+  gameWorldCanvas: {fileID: 0}
 --- !u!1001 &2783116858312854907
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 3633919690521902739}
+    m_TransformParent: {fileID: 8361364982187891885}
     m_Modifications:
     - target: {fileID: 3603640096412904551, guid: 85292898922356445bb9748cd9b9e416, type: 3}
       propertyPath: m_LocalPosition.x
@@ -4947,13 +5139,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FireParticlePrefab: {fileID: 5023430038305224826, guid: b69c18c3cd016a740ac92bd40357a695, type: 3}
   currentlyBurning: 0
+  fireSlider: {fileID: 0}
+  gameWorldCanvas: {fileID: 0}
 --- !u!1001 &2878887768935318677
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 3633919690521902739}
+    m_TransformParent: {fileID: 8361364982187891885}
     m_Modifications:
     - target: {fileID: 496414244250911419, guid: ace71641151416049aa3e3c14d2b6c54, type: 3}
       propertyPath: m_LocalPosition.x
@@ -5035,14 +5229,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FireParticlePrefab: {fileID: 5023430038305224826, guid: b69c18c3cd016a740ac92bd40357a695, type: 3}
   currentlyBurning: 0
+  fireSlider: {fileID: 0}
+  gameWorldCanvas: {fileID: 0}
 --- !u!1001 &2879875913270267630
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 7529480086816493695}
+    m_TransformParent: {fileID: 3034400520275753028}
     m_Modifications:
+    - target: {fileID: 725810822311896032, guid: 7576cd8e3041b8b4caaee7f6f08cf230, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1074172316231791702, guid: 7576cd8e3041b8b4caaee7f6f08cf230, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7061815914656108431, guid: 7576cd8e3041b8b4caaee7f6f08cf230, type: 3}
       propertyPath: m_LocalPosition.x
       value: 15.55287
@@ -5103,7 +5307,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 3633919690521902739}
+    m_TransformParent: {fileID: 8361364982187891885}
     m_Modifications:
     - target: {fileID: 2858411044530043308, guid: 87a58077fb875314ab1f2a306ba41984, type: 3}
       propertyPath: m_Name
@@ -5185,13 +5389,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FireParticlePrefab: {fileID: 5023430038305224826, guid: b69c18c3cd016a740ac92bd40357a695, type: 3}
   currentlyBurning: 0
+  fireSlider: {fileID: 0}
+  gameWorldCanvas: {fileID: 0}
 --- !u!1001 &2940822171827098918
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 3633919690521902739}
+    m_TransformParent: {fileID: 8361364982187891885}
     m_Modifications:
     - target: {fileID: 3603640096412904551, guid: 85292898922356445bb9748cd9b9e416, type: 3}
       propertyPath: m_LocalPosition.x
@@ -5268,6 +5474,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FireParticlePrefab: {fileID: 5023430038305224826, guid: b69c18c3cd016a740ac92bd40357a695, type: 3}
   currentlyBurning: 0
+  fireSlider: {fileID: 0}
+  gameWorldCanvas: {fileID: 0}
 --- !u!4 &1931294081260157249 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3603640096412904551, guid: 85292898922356445bb9748cd9b9e416, type: 3}
@@ -5279,7 +5487,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 3633919690521902739}
+    m_TransformParent: {fileID: 8361364982187891885}
     m_Modifications:
     - target: {fileID: 8197673384583163336, guid: 8706aca6a800085418f9968de1dc9383, type: 3}
       propertyPath: m_Name
@@ -5361,13 +5569,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FireParticlePrefab: {fileID: 5023430038305224826, guid: b69c18c3cd016a740ac92bd40357a695, type: 3}
   currentlyBurning: 0
+  fireSlider: {fileID: 0}
+  gameWorldCanvas: {fileID: 0}
 --- !u!1001 &2988097448497144511
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 3633919690521902739}
+    m_TransformParent: {fileID: 8361364982187891885}
     m_Modifications:
     - target: {fileID: 496414244250911419, guid: ace71641151416049aa3e3c14d2b6c54, type: 3}
       propertyPath: m_LocalPosition.x
@@ -5444,6 +5654,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FireParticlePrefab: {fileID: 5023430038305224826, guid: b69c18c3cd016a740ac92bd40357a695, type: 3}
   currentlyBurning: 0
+  fireSlider: {fileID: 0}
+  gameWorldCanvas: {fileID: 0}
 --- !u!4 &3428440997710356484 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 496414244250911419, guid: ace71641151416049aa3e3c14d2b6c54, type: 3}
@@ -5455,7 +5667,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 3633919690521902739}
+    m_TransformParent: {fileID: 8361364982187891885}
     m_Modifications:
     - target: {fileID: 496414244250911419, guid: ace71641151416049aa3e3c14d2b6c54, type: 3}
       propertyPath: m_LocalPosition.x
@@ -5532,6 +5744,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FireParticlePrefab: {fileID: 5023430038305224826, guid: b69c18c3cd016a740ac92bd40357a695, type: 3}
   currentlyBurning: 0
+  fireSlider: {fileID: 0}
+  gameWorldCanvas: {fileID: 0}
 --- !u!4 &3392015654706034163 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 496414244250911419, guid: ace71641151416049aa3e3c14d2b6c54, type: 3}
@@ -5543,7 +5757,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 3633919690521902739}
+    m_TransformParent: {fileID: 8361364982187891885}
     m_Modifications:
     - target: {fileID: 2858411044530043308, guid: 87a58077fb875314ab1f2a306ba41984, type: 3}
       propertyPath: m_Name
@@ -5625,13 +5839,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FireParticlePrefab: {fileID: 5023430038305224826, guid: b69c18c3cd016a740ac92bd40357a695, type: 3}
   currentlyBurning: 0
+  fireSlider: {fileID: 0}
+  gameWorldCanvas: {fileID: 0}
 --- !u!1001 &3261886057539212432
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 3633919690521902739}
+    m_TransformParent: {fileID: 8361364982187891885}
     m_Modifications:
     - target: {fileID: 496414244250911419, guid: ace71641151416049aa3e3c14d2b6c54, type: 3}
       propertyPath: m_LocalPosition.x
@@ -5708,6 +5924,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FireParticlePrefab: {fileID: 5023430038305224826, guid: b69c18c3cd016a740ac92bd40357a695, type: 3}
   currentlyBurning: 0
+  fireSlider: {fileID: 0}
+  gameWorldCanvas: {fileID: 0}
 --- !u!4 &3145502889211434539 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 496414244250911419, guid: ace71641151416049aa3e3c14d2b6c54, type: 3}
@@ -5719,7 +5937,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 3633919690521902739}
+    m_TransformParent: {fileID: 8361364982187891885}
     m_Modifications:
     - target: {fileID: 2858411044530043308, guid: 87a58077fb875314ab1f2a306ba41984, type: 3}
       propertyPath: m_Name
@@ -5801,13 +6019,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FireParticlePrefab: {fileID: 5023430038305224826, guid: b69c18c3cd016a740ac92bd40357a695, type: 3}
   currentlyBurning: 0
+  fireSlider: {fileID: 0}
+  gameWorldCanvas: {fileID: 0}
 --- !u!1001 &3439440196257174256
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 3633919690521902739}
+    m_TransformParent: {fileID: 1011959291119756121}
     m_Modifications:
     - target: {fileID: 3711618276212617156, guid: db98f8f06bc038c44829d924e78cec9d, type: 3}
       propertyPath: m_Name
@@ -5881,7 +6101,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 3633919690521902739}
+    m_TransformParent: {fileID: 8361364982187891885}
     m_Modifications:
     - target: {fileID: 2858411044530043308, guid: 87a58077fb875314ab1f2a306ba41984, type: 3}
       propertyPath: m_Name
@@ -5958,6 +6178,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FireParticlePrefab: {fileID: 5023430038305224826, guid: b69c18c3cd016a740ac92bd40357a695, type: 3}
   currentlyBurning: 0
+  fireSlider: {fileID: 0}
+  gameWorldCanvas: {fileID: 0}
 --- !u!4 &2037848752443245161 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3233810068867932950, guid: 87a58077fb875314ab1f2a306ba41984, type: 3}
@@ -5969,7 +6191,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 3633919690521902739}
+    m_TransformParent: {fileID: 8361364982187891885}
     m_Modifications:
     - target: {fileID: 3918528055899108970, guid: 7da6d36dd1fae8647a3044f9911e510d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -6051,6 +6273,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FireParticlePrefab: {fileID: 5023430038305224826, guid: b69c18c3cd016a740ac92bd40357a695, type: 3}
   currentlyBurning: 0
+  fireSlider: {fileID: 0}
+  gameWorldCanvas: {fileID: 0}
 --- !u!1001 &3605063773767321389
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6119,7 +6343,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 3633919690521902739}
+    m_TransformParent: {fileID: 8361364982187891885}
     m_Modifications:
     - target: {fileID: 3794896871722181480, guid: 6ea2642d8879762469232c853cac580a, type: 3}
       propertyPath: m_LocalPosition.x
@@ -6201,13 +6425,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FireParticlePrefab: {fileID: 5023430038305224826, guid: b69c18c3cd016a740ac92bd40357a695, type: 3}
   currentlyBurning: 0
+  fireSlider: {fileID: 0}
+  gameWorldCanvas: {fileID: 0}
 --- !u!1001 &3718894185185590655
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 3633919690521902739}
+    m_TransformParent: {fileID: 1011959291119756121}
     m_Modifications:
     - target: {fileID: 7030891011163993441, guid: 8ecd1aab74590a24f98711d6f9c34949, type: 3}
       propertyPath: m_LocalScale.x
@@ -6281,7 +6507,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 3633919690521902739}
+    m_TransformParent: {fileID: 8361364982187891885}
     m_Modifications:
     - target: {fileID: 496414244250911419, guid: ace71641151416049aa3e3c14d2b6c54, type: 3}
       propertyPath: m_LocalPosition.x
@@ -6363,13 +6589,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FireParticlePrefab: {fileID: 5023430038305224826, guid: b69c18c3cd016a740ac92bd40357a695, type: 3}
   currentlyBurning: 0
+  fireSlider: {fileID: 0}
+  gameWorldCanvas: {fileID: 0}
 --- !u!1001 &3860597648602051725
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 3633919690521902739}
+    m_TransformParent: {fileID: 8361364982187891885}
     m_Modifications:
     - target: {fileID: 2858411044530043308, guid: 87a58077fb875314ab1f2a306ba41984, type: 3}
       propertyPath: m_Name
@@ -6446,6 +6674,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FireParticlePrefab: {fileID: 5023430038305224826, guid: b69c18c3cd016a740ac92bd40357a695, type: 3}
   currentlyBurning: 0
+  fireSlider: {fileID: 0}
+  gameWorldCanvas: {fileID: 0}
 --- !u!4 &1833901852116539291 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3233810068867932950, guid: 87a58077fb875314ab1f2a306ba41984, type: 3}
@@ -6457,7 +6687,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 3633919690521902739}
+    m_TransformParent: {fileID: 8361364982187891885}
     m_Modifications:
     - target: {fileID: 496414244250911419, guid: ace71641151416049aa3e3c14d2b6c54, type: 3}
       propertyPath: m_LocalPosition.x
@@ -6539,13 +6769,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FireParticlePrefab: {fileID: 5023430038305224826, guid: b69c18c3cd016a740ac92bd40357a695, type: 3}
   currentlyBurning: 0
+  fireSlider: {fileID: 0}
+  gameWorldCanvas: {fileID: 0}
 --- !u!1001 &3890873312792068449
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 3633919690521902739}
+    m_TransformParent: {fileID: 1011959291119756121}
     m_Modifications:
     - target: {fileID: 7030891011163993441, guid: 8ecd1aab74590a24f98711d6f9c34949, type: 3}
       propertyPath: m_LocalScale.x
@@ -6619,7 +6851,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 3633919690521902739}
+    m_TransformParent: {fileID: 8361364982187891885}
     m_Modifications:
     - target: {fileID: 4665215540439113268, guid: 33d6f5f3586d2b942b0ab5319450d67a, type: 3}
       propertyPath: m_Name
@@ -6696,6 +6928,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FireParticlePrefab: {fileID: 5023430038305224826, guid: b69c18c3cd016a740ac92bd40357a695, type: 3}
   currentlyBurning: 0
+  fireSlider: {fileID: 0}
+  gameWorldCanvas: {fileID: 0}
 --- !u!4 &8979893131461921279 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5473558538258285710, guid: 33d6f5f3586d2b942b0ab5319450d67a, type: 3}
@@ -6707,7 +6941,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 3633919690521902739}
+    m_TransformParent: {fileID: 8361364982187891885}
     m_Modifications:
     - target: {fileID: 496414244250911419, guid: ace71641151416049aa3e3c14d2b6c54, type: 3}
       propertyPath: m_LocalPosition.x
@@ -6784,6 +7018,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FireParticlePrefab: {fileID: 5023430038305224826, guid: b69c18c3cd016a740ac92bd40357a695, type: 3}
   currentlyBurning: 0
+  fireSlider: {fileID: 0}
+  gameWorldCanvas: {fileID: 0}
 --- !u!4 &4493620592798850936 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 496414244250911419, guid: ace71641151416049aa3e3c14d2b6c54, type: 3}
@@ -6795,7 +7031,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 3633919690521902739}
+    m_TransformParent: {fileID: 8361364982187891885}
     m_Modifications:
     - target: {fileID: 2858411044530043308, guid: 87a58077fb875314ab1f2a306ba41984, type: 3}
       propertyPath: m_Name
@@ -6877,13 +7113,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FireParticlePrefab: {fileID: 5023430038305224826, guid: b69c18c3cd016a740ac92bd40357a695, type: 3}
   currentlyBurning: 0
+  fireSlider: {fileID: 0}
+  gameWorldCanvas: {fileID: 0}
 --- !u!1001 &4118119079276260321
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 3633919690521902739}
+    m_TransformParent: {fileID: 8361364982187891885}
     m_Modifications:
     - target: {fileID: 2858411044530043308, guid: 87a58077fb875314ab1f2a306ba41984, type: 3}
       propertyPath: m_Name
@@ -6965,13 +7203,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FireParticlePrefab: {fileID: 5023430038305224826, guid: b69c18c3cd016a740ac92bd40357a695, type: 3}
   currentlyBurning: 0
+  fireSlider: {fileID: 0}
+  gameWorldCanvas: {fileID: 0}
 --- !u!1001 &4129672753202495548
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 3633919690521902739}
+    m_TransformParent: {fileID: 8361364982187891885}
     m_Modifications:
     - target: {fileID: 496414244250911419, guid: ace71641151416049aa3e3c14d2b6c54, type: 3}
       propertyPath: m_LocalPosition.x
@@ -7048,6 +7288,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FireParticlePrefab: {fileID: 5023430038305224826, guid: b69c18c3cd016a740ac92bd40357a695, type: 3}
   currentlyBurning: 0
+  fireSlider: {fileID: 0}
+  gameWorldCanvas: {fileID: 0}
 --- !u!4 &4588065610486481543 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 496414244250911419, guid: ace71641151416049aa3e3c14d2b6c54, type: 3}
@@ -7059,7 +7301,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 3633919690521902739}
+    m_TransformParent: {fileID: 8361364982187891885}
     m_Modifications:
     - target: {fileID: 496414244250911419, guid: ace71641151416049aa3e3c14d2b6c54, type: 3}
       propertyPath: m_LocalPosition.x
@@ -7136,6 +7378,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FireParticlePrefab: {fileID: 5023430038305224826, guid: b69c18c3cd016a740ac92bd40357a695, type: 3}
   currentlyBurning: 0
+  fireSlider: {fileID: 0}
+  gameWorldCanvas: {fileID: 0}
 --- !u!4 &4576735913492906531 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 496414244250911419, guid: ace71641151416049aa3e3c14d2b6c54, type: 3}
@@ -7147,7 +7391,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 3633919690521902739}
+    m_TransformParent: {fileID: 8361364982187891885}
     m_Modifications:
     - target: {fileID: 3794896871722181480, guid: 6ea2642d8879762469232c853cac580a, type: 3}
       propertyPath: m_LocalPosition.x
@@ -7224,6 +7468,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FireParticlePrefab: {fileID: 5023430038305224826, guid: b69c18c3cd016a740ac92bd40357a695, type: 3}
   currentlyBurning: 0
+  fireSlider: {fileID: 0}
+  gameWorldCanvas: {fileID: 0}
 --- !u!4 &1013910154723686595 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3794896871722181480, guid: 6ea2642d8879762469232c853cac580a, type: 3}
@@ -7235,7 +7481,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 3633919690521902739}
+    m_TransformParent: {fileID: 8361364982187891885}
     m_Modifications:
     - target: {fileID: 2858411044530043308, guid: 87a58077fb875314ab1f2a306ba41984, type: 3}
       propertyPath: m_Name
@@ -7317,13 +7563,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FireParticlePrefab: {fileID: 5023430038305224826, guid: b69c18c3cd016a740ac92bd40357a695, type: 3}
   currentlyBurning: 0
+  fireSlider: {fileID: 0}
+  gameWorldCanvas: {fileID: 0}
 --- !u!1001 &4296256804915057162
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 3633919690521902739}
+    m_TransformParent: {fileID: 8361364982187891885}
     m_Modifications:
     - target: {fileID: 2858411044530043308, guid: 87a58077fb875314ab1f2a306ba41984, type: 3}
       propertyPath: m_Name
@@ -7405,13 +7653,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FireParticlePrefab: {fileID: 5023430038305224826, guid: b69c18c3cd016a740ac92bd40357a695, type: 3}
   currentlyBurning: 0
+  fireSlider: {fileID: 0}
+  gameWorldCanvas: {fileID: 0}
 --- !u!1001 &4553896564571663967
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 3633919690521902739}
+    m_TransformParent: {fileID: 8361364982187891885}
     m_Modifications:
     - target: {fileID: 2858411044530043308, guid: 87a58077fb875314ab1f2a306ba41984, type: 3}
       propertyPath: m_Name
@@ -7493,13 +7743,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FireParticlePrefab: {fileID: 5023430038305224826, guid: b69c18c3cd016a740ac92bd40357a695, type: 3}
   currentlyBurning: 0
+  fireSlider: {fileID: 0}
+  gameWorldCanvas: {fileID: 0}
 --- !u!1001 &4637804387049016886
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 3633919690521902739}
+    m_TransformParent: {fileID: 8361364982187891885}
     m_Modifications:
     - target: {fileID: 2858411044530043308, guid: 87a58077fb875314ab1f2a306ba41984, type: 3}
       propertyPath: m_Name
@@ -7576,6 +7828,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FireParticlePrefab: {fileID: 5023430038305224826, guid: b69c18c3cd016a740ac92bd40357a695, type: 3}
   currentlyBurning: 0
+  fireSlider: {fileID: 0}
+  gameWorldCanvas: {fileID: 0}
 --- !u!4 &7835145815532924192 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3233810068867932950, guid: 87a58077fb875314ab1f2a306ba41984, type: 3}
@@ -7587,7 +7841,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 3633919690521902739}
+    m_TransformParent: {fileID: 8361364982187891885}
     m_Modifications:
     - target: {fileID: 3794896871722181480, guid: 6ea2642d8879762469232c853cac580a, type: 3}
       propertyPath: m_LocalPosition.x
@@ -7669,13 +7923,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FireParticlePrefab: {fileID: 5023430038305224826, guid: b69c18c3cd016a740ac92bd40357a695, type: 3}
   currentlyBurning: 0
+  fireSlider: {fileID: 0}
+  gameWorldCanvas: {fileID: 0}
 --- !u!1001 &4739254132715416731
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 3633919690521902739}
+    m_TransformParent: {fileID: 8361364982187891885}
     m_Modifications:
     - target: {fileID: 2858411044530043308, guid: 87a58077fb875314ab1f2a306ba41984, type: 3}
       propertyPath: m_Name
@@ -7752,6 +8008,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FireParticlePrefab: {fileID: 5023430038305224826, guid: b69c18c3cd016a740ac92bd40357a695, type: 3}
   currentlyBurning: 0
+  fireSlider: {fileID: 0}
+  gameWorldCanvas: {fileID: 0}
 --- !u!4 &7864968962599653261 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3233810068867932950, guid: 87a58077fb875314ab1f2a306ba41984, type: 3}
@@ -7763,7 +8021,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 7529480086816493695}
+    m_TransformParent: {fileID: 3034400520275753028}
     m_Modifications:
     - target: {fileID: 725810822311896032, guid: 7576cd8e3041b8b4caaee7f6f08cf230, type: 3}
       propertyPath: m_AnchorMax.x
@@ -7833,7 +8091,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 3633919690521902739}
+    m_TransformParent: {fileID: 8361364982187891885}
     m_Modifications:
     - target: {fileID: 2858411044530043308, guid: 87a58077fb875314ab1f2a306ba41984, type: 3}
       propertyPath: m_Name
@@ -7910,6 +8168,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FireParticlePrefab: {fileID: 5023430038305224826, guid: b69c18c3cd016a740ac92bd40357a695, type: 3}
   currentlyBurning: 0
+  fireSlider: {fileID: 0}
+  gameWorldCanvas: {fileID: 0}
 --- !u!4 &7553489434586031460 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3233810068867932950, guid: 87a58077fb875314ab1f2a306ba41984, type: 3}
@@ -7921,7 +8181,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 3633919690521902739}
+    m_TransformParent: {fileID: 8361364982187891885}
     m_Modifications:
     - target: {fileID: 496414244250911419, guid: ace71641151416049aa3e3c14d2b6c54, type: 3}
       propertyPath: m_LocalPosition.x
@@ -8003,13 +8263,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FireParticlePrefab: {fileID: 5023430038305224826, guid: b69c18c3cd016a740ac92bd40357a695, type: 3}
   currentlyBurning: 0
+  fireSlider: {fileID: 0}
+  gameWorldCanvas: {fileID: 0}
 --- !u!1001 &4940652692397143049
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 3633919690521902739}
+    m_TransformParent: {fileID: 8361364982187891885}
     m_Modifications:
     - target: {fileID: 2858411044530043308, guid: 87a58077fb875314ab1f2a306ba41984, type: 3}
       propertyPath: m_Name
@@ -8086,6 +8348,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FireParticlePrefab: {fileID: 5023430038305224826, guid: b69c18c3cd016a740ac92bd40357a695, type: 3}
   currentlyBurning: 0
+  fireSlider: {fileID: 0}
+  gameWorldCanvas: {fileID: 0}
 --- !u!4 &7525642991942031135 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3233810068867932950, guid: 87a58077fb875314ab1f2a306ba41984, type: 3}
@@ -8097,7 +8361,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 3633919690521902739}
+    m_TransformParent: {fileID: 8361364982187891885}
     m_Modifications:
     - target: {fileID: 2858411044530043308, guid: 87a58077fb875314ab1f2a306ba41984, type: 3}
       propertyPath: m_Name
@@ -8174,6 +8438,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FireParticlePrefab: {fileID: 5023430038305224826, guid: b69c18c3cd016a740ac92bd40357a695, type: 3}
   currentlyBurning: 0
+  fireSlider: {fileID: 0}
+  gameWorldCanvas: {fileID: 0}
 --- !u!4 &7511349226634284987 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3233810068867932950, guid: 87a58077fb875314ab1f2a306ba41984, type: 3}
@@ -8185,7 +8451,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 3633919690521902739}
+    m_TransformParent: {fileID: 8361364982187891885}
     m_Modifications:
     - target: {fileID: 2858411044530043308, guid: 87a58077fb875314ab1f2a306ba41984, type: 3}
       propertyPath: m_Name
@@ -8262,6 +8528,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FireParticlePrefab: {fileID: 5023430038305224826, guid: b69c18c3cd016a740ac92bd40357a695, type: 3}
   currentlyBurning: 0
+  fireSlider: {fileID: 0}
+  gameWorldCanvas: {fileID: 0}
 --- !u!4 &7690497707618164864 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3233810068867932950, guid: 87a58077fb875314ab1f2a306ba41984, type: 3}
@@ -8273,7 +8541,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 3633919690521902739}
+    m_TransformParent: {fileID: 8361364982187891885}
     m_Modifications:
     - target: {fileID: 3603640096412904551, guid: 85292898922356445bb9748cd9b9e416, type: 3}
       propertyPath: m_LocalPosition.x
@@ -8355,13 +8623,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FireParticlePrefab: {fileID: 5023430038305224826, guid: b69c18c3cd016a740ac92bd40357a695, type: 3}
   currentlyBurning: 0
+  fireSlider: {fileID: 0}
+  gameWorldCanvas: {fileID: 0}
 --- !u!1001 &5099608249013617237
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 3633919690521902739}
+    m_TransformParent: {fileID: 8361364982187891885}
     m_Modifications:
     - target: {fileID: 2858411044530043308, guid: 87a58077fb875314ab1f2a306ba41984, type: 3}
       propertyPath: m_Name
@@ -8438,6 +8708,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FireParticlePrefab: {fileID: 5023430038305224826, guid: b69c18c3cd016a740ac92bd40357a695, type: 3}
   currentlyBurning: 0
+  fireSlider: {fileID: 0}
+  gameWorldCanvas: {fileID: 0}
 --- !u!4 &7648730308181729603 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3233810068867932950, guid: 87a58077fb875314ab1f2a306ba41984, type: 3}
@@ -8449,7 +8721,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 3633919690521902739}
+    m_TransformParent: {fileID: 8361364982187891885}
     m_Modifications:
     - target: {fileID: 8197673384583163336, guid: 8706aca6a800085418f9968de1dc9383, type: 3}
       propertyPath: m_Name
@@ -8526,6 +8798,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FireParticlePrefab: {fileID: 5023430038305224826, guid: b69c18c3cd016a740ac92bd40357a695, type: 3}
   currentlyBurning: 0
+  fireSlider: {fileID: 0}
+  gameWorldCanvas: {fileID: 0}
 --- !u!4 &4466671843886493137 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8829355645580916594, guid: 8706aca6a800085418f9968de1dc9383, type: 3}
@@ -8537,7 +8811,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 3633919690521902739}
+    m_TransformParent: {fileID: 8361364982187891885}
     m_Modifications:
     - target: {fileID: 496414244250911419, guid: ace71641151416049aa3e3c14d2b6c54, type: 3}
       propertyPath: m_LocalPosition.x
@@ -8614,6 +8888,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FireParticlePrefab: {fileID: 5023430038305224826, guid: b69c18c3cd016a740ac92bd40357a695, type: 3}
   currentlyBurning: 0
+  fireSlider: {fileID: 0}
+  gameWorldCanvas: {fileID: 0}
 --- !u!4 &5623982583161622765 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 496414244250911419, guid: ace71641151416049aa3e3c14d2b6c54, type: 3}
@@ -8625,7 +8901,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 3633919690521902739}
+    m_TransformParent: {fileID: 8361364982187891885}
     m_Modifications:
     - target: {fileID: 2858411044530043308, guid: 87a58077fb875314ab1f2a306ba41984, type: 3}
       propertyPath: m_Name
@@ -8707,13 +8983,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FireParticlePrefab: {fileID: 5023430038305224826, guid: b69c18c3cd016a740ac92bd40357a695, type: 3}
   currentlyBurning: 0
+  fireSlider: {fileID: 0}
+  gameWorldCanvas: {fileID: 0}
 --- !u!1001 &5373192930783731376
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 3633919690521902739}
+    m_TransformParent: {fileID: 8361364982187891885}
     m_Modifications:
     - target: {fileID: 3794896871722181480, guid: 6ea2642d8879762469232c853cac580a, type: 3}
       propertyPath: m_LocalPosition.x
@@ -8790,6 +9068,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FireParticlePrefab: {fileID: 5023430038305224826, guid: b69c18c3cd016a740ac92bd40357a695, type: 3}
   currentlyBurning: 0
+  fireSlider: {fileID: 0}
+  gameWorldCanvas: {fileID: 0}
 --- !u!4 &9095938749576838616 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3794896871722181480, guid: 6ea2642d8879762469232c853cac580a, type: 3}
@@ -8801,7 +9081,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 3633919690521902739}
+    m_TransformParent: {fileID: 8361364982187891885}
     m_Modifications:
     - target: {fileID: 496414244250911419, guid: ace71641151416049aa3e3c14d2b6c54, type: 3}
       propertyPath: m_LocalPosition.x
@@ -8878,6 +9158,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FireParticlePrefab: {fileID: 5023430038305224826, guid: b69c18c3cd016a740ac92bd40357a695, type: 3}
   currentlyBurning: 0
+  fireSlider: {fileID: 0}
+  gameWorldCanvas: {fileID: 0}
 --- !u!4 &5601524867444752625 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 496414244250911419, guid: ace71641151416049aa3e3c14d2b6c54, type: 3}
@@ -8889,7 +9171,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 3633919690521902739}
+    m_TransformParent: {fileID: 8361364982187891885}
     m_Modifications:
     - target: {fileID: 496414244250911419, guid: ace71641151416049aa3e3c14d2b6c54, type: 3}
       propertyPath: m_LocalPosition.x
@@ -8966,6 +9248,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FireParticlePrefab: {fileID: 5023430038305224826, guid: b69c18c3cd016a740ac92bd40357a695, type: 3}
   currentlyBurning: 0
+  fireSlider: {fileID: 0}
+  gameWorldCanvas: {fileID: 0}
 --- !u!4 &5390273594867587459 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 496414244250911419, guid: ace71641151416049aa3e3c14d2b6c54, type: 3}
@@ -8977,7 +9261,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 7529480086816493695}
+    m_TransformParent: {fileID: 3034400520275753028}
     m_Modifications:
     - target: {fileID: 725810822311896032, guid: 7576cd8e3041b8b4caaee7f6f08cf230, type: 3}
       propertyPath: m_AnchorMax.x
@@ -9047,7 +9331,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 3633919690521902739}
+    m_TransformParent: {fileID: 8361364982187891885}
     m_Modifications:
     - target: {fileID: 2858411044530043308, guid: 87a58077fb875314ab1f2a306ba41984, type: 3}
       propertyPath: m_Name
@@ -9129,13 +9413,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FireParticlePrefab: {fileID: 5023430038305224826, guid: b69c18c3cd016a740ac92bd40357a695, type: 3}
   currentlyBurning: 0
+  fireSlider: {fileID: 0}
+  gameWorldCanvas: {fileID: 0}
 --- !u!1001 &5648757223279846533
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 3633919690521902739}
+    m_TransformParent: {fileID: 8361364982187891885}
     m_Modifications:
     - target: {fileID: 2858411044530043308, guid: 87a58077fb875314ab1f2a306ba41984, type: 3}
       propertyPath: m_Name
@@ -9217,13 +9503,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FireParticlePrefab: {fileID: 5023430038305224826, guid: b69c18c3cd016a740ac92bd40357a695, type: 3}
   currentlyBurning: 0
+  fireSlider: {fileID: 0}
+  gameWorldCanvas: {fileID: 0}
 --- !u!1001 &5664234638500775187
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 3633919690521902739}
+    m_TransformParent: {fileID: 8361364982187891885}
     m_Modifications:
     - target: {fileID: 496414244250911419, guid: ace71641151416049aa3e3c14d2b6c54, type: 3}
       propertyPath: m_LocalPosition.x
@@ -9300,6 +9588,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FireParticlePrefab: {fileID: 5023430038305224826, guid: b69c18c3cd016a740ac92bd40357a695, type: 3}
   currentlyBurning: 0
+  fireSlider: {fileID: 0}
+  gameWorldCanvas: {fileID: 0}
 --- !u!4 &5222197841380263848 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 496414244250911419, guid: ace71641151416049aa3e3c14d2b6c54, type: 3}
@@ -9311,7 +9601,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 3633919690521902739}
+    m_TransformParent: {fileID: 1011959291119756121}
     m_Modifications:
     - target: {fileID: 6218409583285721019, guid: 8f6b30c8fe6ffd448b0ad38411cf3a47, type: 3}
       propertyPath: m_LocalPosition.x
@@ -9388,6 +9678,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FireParticlePrefab: {fileID: 5023430038305224826, guid: b69c18c3cd016a740ac92bd40357a695, type: 3}
   currentlyBurning: 0
+  fireSlider: {fileID: 0}
+  gameWorldCanvas: {fileID: 0}
 --- !u!4 &1829922654175233518 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6218409583285721019, guid: 8f6b30c8fe6ffd448b0ad38411cf3a47, type: 3}
@@ -9399,7 +9691,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 3633919690521902739}
+    m_TransformParent: {fileID: 8361364982187891885}
     m_Modifications:
     - target: {fileID: 496414244250911419, guid: ace71641151416049aa3e3c14d2b6c54, type: 3}
       propertyPath: m_LocalPosition.x
@@ -9476,6 +9768,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FireParticlePrefab: {fileID: 5023430038305224826, guid: b69c18c3cd016a740ac92bd40357a695, type: 3}
   currentlyBurning: 0
+  fireSlider: {fileID: 0}
+  gameWorldCanvas: {fileID: 0}
 --- !u!4 &5306105456829306527 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 496414244250911419, guid: ace71641151416049aa3e3c14d2b6c54, type: 3}
@@ -9487,7 +9781,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 3633919690521902739}
+    m_TransformParent: {fileID: 8361364982187891885}
     m_Modifications:
     - target: {fileID: 3603640096412904551, guid: 85292898922356445bb9748cd9b9e416, type: 3}
       propertyPath: m_LocalPosition.x
@@ -9564,6 +9858,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FireParticlePrefab: {fileID: 5023430038305224826, guid: b69c18c3cd016a740ac92bd40357a695, type: 3}
   currentlyBurning: 0
+  fireSlider: {fileID: 0}
+  gameWorldCanvas: {fileID: 0}
 --- !u!4 &9073687772016028937 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3603640096412904551, guid: 85292898922356445bb9748cd9b9e416, type: 3}
@@ -9575,7 +9871,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 3633919690521902739}
+    m_TransformParent: {fileID: 8361364982187891885}
     m_Modifications:
     - target: {fileID: 8197673384583163336, guid: 8706aca6a800085418f9968de1dc9383, type: 3}
       propertyPath: m_Name
@@ -9652,6 +9948,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FireParticlePrefab: {fileID: 5023430038305224826, guid: b69c18c3cd016a740ac92bd40357a695, type: 3}
   currentlyBurning: 0
+  fireSlider: {fileID: 0}
+  gameWorldCanvas: {fileID: 0}
 --- !u!4 &3169817095686981777 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8829355645580916594, guid: 8706aca6a800085418f9968de1dc9383, type: 3}
@@ -9663,7 +9961,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 3633919690521902739}
+    m_TransformParent: {fileID: 8361364982187891885}
     m_Modifications:
     - target: {fileID: 2858411044530043308, guid: 87a58077fb875314ab1f2a306ba41984, type: 3}
       propertyPath: m_Name
@@ -9740,6 +10038,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FireParticlePrefab: {fileID: 5023430038305224826, guid: b69c18c3cd016a740ac92bd40357a695, type: 3}
   currentlyBurning: 0
+  fireSlider: {fileID: 0}
+  gameWorldCanvas: {fileID: 0}
 --- !u!4 &9049796305750828610 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3233810068867932950, guid: 87a58077fb875314ab1f2a306ba41984, type: 3}
@@ -9751,7 +10051,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 7529480086816493695}
+    m_TransformParent: {fileID: 3034400520275753028}
     m_Modifications:
     - target: {fileID: 725810822311896032, guid: 7576cd8e3041b8b4caaee7f6f08cf230, type: 3}
       propertyPath: m_AnchorMax.x
@@ -9821,7 +10121,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 3633919690521902739}
+    m_TransformParent: {fileID: 8361364982187891885}
     m_Modifications:
     - target: {fileID: 496414244250911419, guid: ace71641151416049aa3e3c14d2b6c54, type: 3}
       propertyPath: m_LocalPosition.x
@@ -9903,13 +10203,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FireParticlePrefab: {fileID: 5023430038305224826, guid: b69c18c3cd016a740ac92bd40357a695, type: 3}
   currentlyBurning: 0
+  fireSlider: {fileID: 0}
+  gameWorldCanvas: {fileID: 0}
 --- !u!1001 &6128974431843768702
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 3633919690521902739}
+    m_TransformParent: {fileID: 8361364982187891885}
     m_Modifications:
     - target: {fileID: 496414244250911419, guid: ace71641151416049aa3e3c14d2b6c54, type: 3}
       propertyPath: m_LocalPosition.x
@@ -9991,13 +10293,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FireParticlePrefab: {fileID: 5023430038305224826, guid: b69c18c3cd016a740ac92bd40357a695, type: 3}
   currentlyBurning: 0
+  fireSlider: {fileID: 0}
+  gameWorldCanvas: {fileID: 0}
 --- !u!1001 &6186777845086992702
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 3633919690521902739}
+    m_TransformParent: {fileID: 8361364982187891885}
     m_Modifications:
     - target: {fileID: 2858411044530043308, guid: 87a58077fb875314ab1f2a306ba41984, type: 3}
       propertyPath: m_Name
@@ -10074,6 +10378,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FireParticlePrefab: {fileID: 5023430038305224826, guid: b69c18c3cd016a740ac92bd40357a695, type: 3}
   currentlyBurning: 0
+  fireSlider: {fileID: 0}
+  gameWorldCanvas: {fileID: 0}
 --- !u!4 &8735598665967524392 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3233810068867932950, guid: 87a58077fb875314ab1f2a306ba41984, type: 3}
@@ -10085,7 +10391,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 3633919690521902739}
+    m_TransformParent: {fileID: 8361364982187891885}
     m_Modifications:
     - target: {fileID: 3794896871722181480, guid: 6ea2642d8879762469232c853cac580a, type: 3}
       propertyPath: m_LocalPosition.x
@@ -10167,13 +10473,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FireParticlePrefab: {fileID: 5023430038305224826, guid: b69c18c3cd016a740ac92bd40357a695, type: 3}
   currentlyBurning: 0
+  fireSlider: {fileID: 0}
+  gameWorldCanvas: {fileID: 0}
 --- !u!1001 &6245655828877656051
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 3633919690521902739}
+    m_TransformParent: {fileID: 1011959291119756121}
     m_Modifications:
     - target: {fileID: 8305970590946459343, guid: f20a11d6c420f5d4385c919c63d697ce, type: 3}
       propertyPath: m_LocalScale.x
@@ -10247,11 +10555,11 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 3633919690521902739}
+    m_TransformParent: {fileID: 1011959291119756121}
     m_Modifications:
     - target: {fileID: 7030891011163993441, guid: 8ecd1aab74590a24f98711d6f9c34949, type: 3}
       propertyPath: m_LocalScale.x
-      value: 200.00002
+      value: 200.00003
       objectReference: {fileID: 0}
     - target: {fileID: 7030891011163993441, guid: 8ecd1aab74590a24f98711d6f9c34949, type: 3}
       propertyPath: m_LocalScale.y
@@ -10259,7 +10567,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7030891011163993441, guid: 8ecd1aab74590a24f98711d6f9c34949, type: 3}
       propertyPath: m_LocalScale.z
-      value: 200.00002
+      value: 200.00003
       objectReference: {fileID: 0}
     - target: {fileID: 7030891011163993441, guid: 8ecd1aab74590a24f98711d6f9c34949, type: 3}
       propertyPath: m_LocalPosition.x
@@ -10321,7 +10629,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 3633919690521902739}
+    m_TransformParent: {fileID: 8361364982187891885}
     m_Modifications:
     - target: {fileID: 3918528055899108970, guid: 7da6d36dd1fae8647a3044f9911e510d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -10403,13 +10711,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FireParticlePrefab: {fileID: 5023430038305224826, guid: b69c18c3cd016a740ac92bd40357a695, type: 3}
   currentlyBurning: 0
+  fireSlider: {fileID: 0}
+  gameWorldCanvas: {fileID: 0}
 --- !u!1001 &6444807224641236037
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 3633919690521902739}
+    m_TransformParent: {fileID: 8361364982187891885}
     m_Modifications:
     - target: {fileID: 496414244250911419, guid: ace71641151416049aa3e3c14d2b6c54, type: 3}
       propertyPath: m_LocalPosition.x
@@ -10486,6 +10796,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FireParticlePrefab: {fileID: 5023430038305224826, guid: b69c18c3cd016a740ac92bd40357a695, type: 3}
   currentlyBurning: 0
+  fireSlider: {fileID: 0}
+  gameWorldCanvas: {fileID: 0}
 --- !u!4 &6886866011993779966 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 496414244250911419, guid: ace71641151416049aa3e3c14d2b6c54, type: 3}
@@ -10497,7 +10809,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 3633919690521902739}
+    m_TransformParent: {fileID: 1011959291119756121}
     m_Modifications:
     - target: {fileID: 3711618276212617156, guid: db98f8f06bc038c44829d924e78cec9d, type: 3}
       propertyPath: m_Name
@@ -10571,7 +10883,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 3633919690521902739}
+    m_TransformParent: {fileID: 8361364982187891885}
     m_Modifications:
     - target: {fileID: 3603640096412904551, guid: 85292898922356445bb9748cd9b9e416, type: 3}
       propertyPath: m_LocalPosition.x
@@ -10648,6 +10960,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FireParticlePrefab: {fileID: 5023430038305224826, guid: b69c18c3cd016a740ac92bd40357a695, type: 3}
   currentlyBurning: 0
+  fireSlider: {fileID: 0}
+  gameWorldCanvas: {fileID: 0}
 --- !u!4 &7506719897752927609 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3603640096412904551, guid: 85292898922356445bb9748cd9b9e416, type: 3}
@@ -10659,7 +10973,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 3633919690521902739}
+    m_TransformParent: {fileID: 1011959291119756121}
     m_Modifications:
     - target: {fileID: 3711618276212617156, guid: db98f8f06bc038c44829d924e78cec9d, type: 3}
       propertyPath: m_Name
@@ -10733,7 +11047,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 3633919690521902739}
+    m_TransformParent: {fileID: 8361364982187891885}
     m_Modifications:
     - target: {fileID: 3603640096412904551, guid: 85292898922356445bb9748cd9b9e416, type: 3}
       propertyPath: m_LocalPosition.x
@@ -10810,6 +11124,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FireParticlePrefab: {fileID: 5023430038305224826, guid: b69c18c3cd016a740ac92bd40357a695, type: 3}
   currentlyBurning: 0
+  fireSlider: {fileID: 0}
+  gameWorldCanvas: {fileID: 0}
 --- !u!4 &7580047914333276775 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3603640096412904551, guid: 85292898922356445bb9748cd9b9e416, type: 3}
@@ -10821,7 +11137,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 3633919690521902739}
+    m_TransformParent: {fileID: 1011959291119756121}
     m_Modifications:
     - target: {fileID: 7030891011163993441, guid: 8ecd1aab74590a24f98711d6f9c34949, type: 3}
       propertyPath: m_LocalScale.x
@@ -10895,7 +11211,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 3633919690521902739}
+    m_TransformParent: {fileID: 8361364982187891885}
     m_Modifications:
     - target: {fileID: 2858411044530043308, guid: 87a58077fb875314ab1f2a306ba41984, type: 3}
       propertyPath: m_Name
@@ -10977,13 +11293,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FireParticlePrefab: {fileID: 5023430038305224826, guid: b69c18c3cd016a740ac92bd40357a695, type: 3}
   currentlyBurning: 0
+  fireSlider: {fileID: 0}
+  gameWorldCanvas: {fileID: 0}
 --- !u!1001 &6688099880447626971
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 3633919690521902739}
+    m_TransformParent: {fileID: 8361364982187891885}
     m_Modifications:
     - target: {fileID: 2858411044530043308, guid: 87a58077fb875314ab1f2a306ba41984, type: 3}
       propertyPath: m_Name
@@ -11065,13 +11383,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FireParticlePrefab: {fileID: 5023430038305224826, guid: b69c18c3cd016a740ac92bd40357a695, type: 3}
   currentlyBurning: 0
+  fireSlider: {fileID: 0}
+  gameWorldCanvas: {fileID: 0}
 --- !u!1001 &6782117339135557022
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 7529480086816493695}
+    m_TransformParent: {fileID: 3034400520275753028}
     m_Modifications:
     - target: {fileID: 725810822311896032, guid: 7576cd8e3041b8b4caaee7f6f08cf230, type: 3}
       propertyPath: m_AnchorMax.x
@@ -11141,7 +11461,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 3633919690521902739}
+    m_TransformParent: {fileID: 8361364982187891885}
     m_Modifications:
     - target: {fileID: 496414244250911419, guid: ace71641151416049aa3e3c14d2b6c54, type: 3}
       propertyPath: m_LocalPosition.x
@@ -11218,6 +11538,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FireParticlePrefab: {fileID: 5023430038305224826, guid: b69c18c3cd016a740ac92bd40357a695, type: 3}
   currentlyBurning: 0
+  fireSlider: {fileID: 0}
+  gameWorldCanvas: {fileID: 0}
 --- !u!4 &6379542759941122866 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 496414244250911419, guid: ace71641151416049aa3e3c14d2b6c54, type: 3}
@@ -11229,7 +11551,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 3633919690521902739}
+    m_TransformParent: {fileID: 8361364982187891885}
     m_Modifications:
     - target: {fileID: 496414244250911419, guid: ace71641151416049aa3e3c14d2b6c54, type: 3}
       propertyPath: m_LocalPosition.x
@@ -11306,6 +11628,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FireParticlePrefab: {fileID: 5023430038305224826, guid: b69c18c3cd016a740ac92bd40357a695, type: 3}
   currentlyBurning: 0
+  fireSlider: {fileID: 0}
+  gameWorldCanvas: {fileID: 0}
 --- !u!4 &6362698092991410044 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 496414244250911419, guid: ace71641151416049aa3e3c14d2b6c54, type: 3}
@@ -11317,7 +11641,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 3633919690521902739}
+    m_TransformParent: {fileID: 8361364982187891885}
     m_Modifications:
     - target: {fileID: 3794896871722181480, guid: 6ea2642d8879762469232c853cac580a, type: 3}
       propertyPath: m_LocalPosition.x
@@ -11394,6 +11718,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FireParticlePrefab: {fileID: 5023430038305224826, guid: b69c18c3cd016a740ac92bd40357a695, type: 3}
   currentlyBurning: 0
+  fireSlider: {fileID: 0}
+  gameWorldCanvas: {fileID: 0}
 --- !u!4 &7767602961970325853 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3794896871722181480, guid: 6ea2642d8879762469232c853cac580a, type: 3}
@@ -11405,7 +11731,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 3633919690521902739}
+    m_TransformParent: {fileID: 8361364982187891885}
     m_Modifications:
     - target: {fileID: 2858411044530043308, guid: 87a58077fb875314ab1f2a306ba41984, type: 3}
       propertyPath: m_Name
@@ -11482,6 +11808,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FireParticlePrefab: {fileID: 5023430038305224826, guid: b69c18c3cd016a740ac92bd40357a695, type: 3}
   currentlyBurning: 0
+  fireSlider: {fileID: 0}
+  gameWorldCanvas: {fileID: 0}
 --- !u!4 &5539757731242801248 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3233810068867932950, guid: 87a58077fb875314ab1f2a306ba41984, type: 3}
@@ -11493,7 +11821,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 3633919690521902739}
+    m_TransformParent: {fileID: 8361364982187891885}
     m_Modifications:
     - target: {fileID: 3603640096412904551, guid: 85292898922356445bb9748cd9b9e416, type: 3}
       propertyPath: m_LocalPosition.x
@@ -11575,13 +11903,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FireParticlePrefab: {fileID: 5023430038305224826, guid: b69c18c3cd016a740ac92bd40357a695, type: 3}
   currentlyBurning: 0
+  fireSlider: {fileID: 0}
+  gameWorldCanvas: {fileID: 0}
 --- !u!1001 &6998259910231755663
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 3633919690521902739}
+    m_TransformParent: {fileID: 8361364982187891885}
     m_Modifications:
     - target: {fileID: 496414244250911419, guid: ace71641151416049aa3e3c14d2b6c54, type: 3}
       propertyPath: m_LocalPosition.x
@@ -11663,13 +11993,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FireParticlePrefab: {fileID: 5023430038305224826, guid: b69c18c3cd016a740ac92bd40357a695, type: 3}
   currentlyBurning: 0
+  fireSlider: {fileID: 0}
+  gameWorldCanvas: {fileID: 0}
 --- !u!1001 &7100282617490625911
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 3633919690521902739}
+    m_TransformParent: {fileID: 8361364982187891885}
     m_Modifications:
     - target: {fileID: 496414244250911419, guid: ace71641151416049aa3e3c14d2b6c54, type: 3}
       propertyPath: m_LocalPosition.x
@@ -11751,13 +12083,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FireParticlePrefab: {fileID: 5023430038305224826, guid: b69c18c3cd016a740ac92bd40357a695, type: 3}
   currentlyBurning: 0
+  fireSlider: {fileID: 0}
+  gameWorldCanvas: {fileID: 0}
 --- !u!1001 &7208333126304595344
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 3633919690521902739}
+    m_TransformParent: {fileID: 8361364982187891885}
     m_Modifications:
     - target: {fileID: 496414244250911419, guid: ace71641151416049aa3e3c14d2b6c54, type: 3}
       propertyPath: m_LocalPosition.x
@@ -11839,13 +12173,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FireParticlePrefab: {fileID: 5023430038305224826, guid: b69c18c3cd016a740ac92bd40357a695, type: 3}
   currentlyBurning: 0
+  fireSlider: {fileID: 0}
+  gameWorldCanvas: {fileID: 0}
 --- !u!1001 &7463929728855285502
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 3633919690521902739}
+    m_TransformParent: {fileID: 8361364982187891885}
     m_Modifications:
     - target: {fileID: 496414244250911419, guid: ace71641151416049aa3e3c14d2b6c54, type: 3}
       propertyPath: m_LocalPosition.x
@@ -11927,13 +12263,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FireParticlePrefab: {fileID: 5023430038305224826, guid: b69c18c3cd016a740ac92bd40357a695, type: 3}
   currentlyBurning: 0
+  fireSlider: {fileID: 0}
+  gameWorldCanvas: {fileID: 0}
 --- !u!1001 &7488824312444919703
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 3633919690521902739}
+    m_TransformParent: {fileID: 8361364982187891885}
     m_Modifications:
     - target: {fileID: 2858411044530043308, guid: 87a58077fb875314ab1f2a306ba41984, type: 3}
       propertyPath: m_Name
@@ -12010,6 +12348,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FireParticlePrefab: {fileID: 5023430038305224826, guid: b69c18c3cd016a740ac92bd40357a695, type: 3}
   currentlyBurning: 0
+  fireSlider: {fileID: 0}
+  gameWorldCanvas: {fileID: 0}
 --- !u!4 &5408096474764606593 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3233810068867932950, guid: 87a58077fb875314ab1f2a306ba41984, type: 3}
@@ -12021,7 +12361,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 3633919690521902739}
+    m_TransformParent: {fileID: 8361364982187891885}
     m_Modifications:
     - target: {fileID: 496414244250911419, guid: ace71641151416049aa3e3c14d2b6c54, type: 3}
       propertyPath: m_LocalPosition.x
@@ -12098,6 +12438,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FireParticlePrefab: {fileID: 5023430038305224826, guid: b69c18c3cd016a740ac92bd40357a695, type: 3}
   currentlyBurning: 0
+  fireSlider: {fileID: 0}
+  gameWorldCanvas: {fileID: 0}
 --- !u!4 &8064652566436998722 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 496414244250911419, guid: ace71641151416049aa3e3c14d2b6c54, type: 3}
@@ -12109,7 +12451,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 3633919690521902739}
+    m_TransformParent: {fileID: 8361364982187891885}
     m_Modifications:
     - target: {fileID: 2858411044530043308, guid: 87a58077fb875314ab1f2a306ba41984, type: 3}
       propertyPath: m_Name
@@ -12191,13 +12533,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FireParticlePrefab: {fileID: 5023430038305224826, guid: b69c18c3cd016a740ac92bd40357a695, type: 3}
   currentlyBurning: 0
+  fireSlider: {fileID: 0}
+  gameWorldCanvas: {fileID: 0}
 --- !u!1001 &7582575881105114418
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 3633919690521902739}
+    m_TransformParent: {fileID: 8361364982187891885}
     m_Modifications:
     - target: {fileID: 3794896871722181480, guid: 6ea2642d8879762469232c853cac580a, type: 3}
       propertyPath: m_LocalPosition.x
@@ -12274,6 +12618,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FireParticlePrefab: {fileID: 5023430038305224826, guid: b69c18c3cd016a740ac92bd40357a695, type: 3}
   currentlyBurning: 0
+  fireSlider: {fileID: 0}
+  gameWorldCanvas: {fileID: 0}
 --- !u!4 &6742053636790740570 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3794896871722181480, guid: 6ea2642d8879762469232c853cac580a, type: 3}
@@ -12285,7 +12631,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 3633919690521902739}
+    m_TransformParent: {fileID: 8361364982187891885}
     m_Modifications:
     - target: {fileID: 2858411044530043308, guid: 87a58077fb875314ab1f2a306ba41984, type: 3}
       propertyPath: m_Name
@@ -12367,13 +12713,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FireParticlePrefab: {fileID: 5023430038305224826, guid: b69c18c3cd016a740ac92bd40357a695, type: 3}
   currentlyBurning: 0
+  fireSlider: {fileID: 0}
+  gameWorldCanvas: {fileID: 0}
 --- !u!1001 &7668146078019119550
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 3633919690521902739}
+    m_TransformParent: {fileID: 8361364982187891885}
     m_Modifications:
     - target: {fileID: 2858411044530043308, guid: 87a58077fb875314ab1f2a306ba41984, type: 3}
       propertyPath: m_Name
@@ -12455,13 +12803,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FireParticlePrefab: {fileID: 5023430038305224826, guid: b69c18c3cd016a740ac92bd40357a695, type: 3}
   currentlyBurning: 0
+  fireSlider: {fileID: 0}
+  gameWorldCanvas: {fileID: 0}
 --- !u!1001 &7708483832516908835
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 3633919690521902739}
+    m_TransformParent: {fileID: 8361364982187891885}
     m_Modifications:
     - target: {fileID: 2858411044530043308, guid: 87a58077fb875314ab1f2a306ba41984, type: 3}
       propertyPath: m_Name
@@ -12543,13 +12893,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FireParticlePrefab: {fileID: 5023430038305224826, guid: b69c18c3cd016a740ac92bd40357a695, type: 3}
   currentlyBurning: 0
+  fireSlider: {fileID: 0}
+  gameWorldCanvas: {fileID: 0}
 --- !u!1001 &7743501926811593147
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 3633919690521902739}
+    m_TransformParent: {fileID: 8361364982187891885}
     m_Modifications:
     - target: {fileID: 496414244250911419, guid: ace71641151416049aa3e3c14d2b6c54, type: 3}
       propertyPath: m_LocalPosition.x
@@ -12626,6 +12978,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FireParticlePrefab: {fileID: 5023430038305224826, guid: b69c18c3cd016a740ac92bd40357a695, type: 3}
   currentlyBurning: 0
+  fireSlider: {fileID: 0}
+  gameWorldCanvas: {fileID: 0}
 --- !u!4 &7896481240225508096 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 496414244250911419, guid: ace71641151416049aa3e3c14d2b6c54, type: 3}
@@ -12637,7 +12991,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 3633919690521902739}
+    m_TransformParent: {fileID: 8361364982187891885}
     m_Modifications:
     - target: {fileID: 4665215540439113268, guid: 33d6f5f3586d2b942b0ab5319450d67a, type: 3}
       propertyPath: m_Name
@@ -12719,13 +13073,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FireParticlePrefab: {fileID: 5023430038305224826, guid: b69c18c3cd016a740ac92bd40357a695, type: 3}
   currentlyBurning: 0
+  fireSlider: {fileID: 0}
+  gameWorldCanvas: {fileID: 0}
 --- !u!1001 &7959468367947290152
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 3633919690521902739}
+    m_TransformParent: {fileID: 8361364982187891885}
     m_Modifications:
     - target: {fileID: 2858411044530043308, guid: 87a58077fb875314ab1f2a306ba41984, type: 3}
       propertyPath: m_Name
@@ -12807,13 +13163,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FireParticlePrefab: {fileID: 5023430038305224826, guid: b69c18c3cd016a740ac92bd40357a695, type: 3}
   currentlyBurning: 0
+  fireSlider: {fileID: 0}
+  gameWorldCanvas: {fileID: 0}
 --- !u!1001 &8006191320435920256
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 3633919690521902739}
+    m_TransformParent: {fileID: 8361364982187891885}
     m_Modifications:
     - target: {fileID: 2858411044530043308, guid: 87a58077fb875314ab1f2a306ba41984, type: 3}
       propertyPath: m_Name
@@ -12895,13 +13253,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FireParticlePrefab: {fileID: 5023430038305224826, guid: b69c18c3cd016a740ac92bd40357a695, type: 3}
   currentlyBurning: 0
+  fireSlider: {fileID: 0}
+  gameWorldCanvas: {fileID: 0}
 --- !u!1001 &8215208614484312733
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 3633919690521902739}
+    m_TransformParent: {fileID: 1011959291119756121}
     m_Modifications:
     - target: {fileID: 7030891011163993441, guid: 8ecd1aab74590a24f98711d6f9c34949, type: 3}
       propertyPath: m_LocalScale.x
@@ -12975,7 +13335,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 3633919690521902739}
+    m_TransformParent: {fileID: 8361364982187891885}
     m_Modifications:
     - target: {fileID: 496414244250911419, guid: ace71641151416049aa3e3c14d2b6c54, type: 3}
       propertyPath: m_LocalPosition.x
@@ -13057,13 +13417,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FireParticlePrefab: {fileID: 5023430038305224826, guid: b69c18c3cd016a740ac92bd40357a695, type: 3}
   currentlyBurning: 0
+  fireSlider: {fileID: 0}
+  gameWorldCanvas: {fileID: 0}
 --- !u!1001 &8235295478985144895
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 3633919690521902739}
+    m_TransformParent: {fileID: 8361364982187891885}
     m_Modifications:
     - target: {fileID: 496414244250911419, guid: ace71641151416049aa3e3c14d2b6c54, type: 3}
       propertyPath: m_LocalPosition.x
@@ -13145,13 +13507,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FireParticlePrefab: {fileID: 5023430038305224826, guid: b69c18c3cd016a740ac92bd40357a695, type: 3}
   currentlyBurning: 0
+  fireSlider: {fileID: 0}
+  gameWorldCanvas: {fileID: 0}
 --- !u!1001 &8289207722944247122
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 3633919690521902739}
+    m_TransformParent: {fileID: 8361364982187891885}
     m_Modifications:
     - target: {fileID: 2858411044530043308, guid: 87a58077fb875314ab1f2a306ba41984, type: 3}
       propertyPath: m_Name
@@ -13228,6 +13592,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FireParticlePrefab: {fileID: 5023430038305224826, guid: b69c18c3cd016a740ac92bd40357a695, type: 3}
   currentlyBurning: 0
+  fireSlider: {fileID: 0}
+  gameWorldCanvas: {fileID: 0}
 --- !u!4 &6911305372169950788 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3233810068867932950, guid: 87a58077fb875314ab1f2a306ba41984, type: 3}
@@ -13239,7 +13605,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 3633919690521902739}
+    m_TransformParent: {fileID: 8361364982187891885}
     m_Modifications:
     - target: {fileID: 2858411044530043308, guid: 87a58077fb875314ab1f2a306ba41984, type: 3}
       propertyPath: m_Name
@@ -13316,6 +13682,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FireParticlePrefab: {fileID: 5023430038305224826, guid: b69c18c3cd016a740ac92bd40357a695, type: 3}
   currentlyBurning: 0
+  fireSlider: {fileID: 0}
+  gameWorldCanvas: {fileID: 0}
 --- !u!4 &6846563261042012339 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3233810068867932950, guid: 87a58077fb875314ab1f2a306ba41984, type: 3}
@@ -13327,7 +13695,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 3633919690521902739}
+    m_TransformParent: {fileID: 8361364982187891885}
     m_Modifications:
     - target: {fileID: 3794896871722181480, guid: 6ea2642d8879762469232c853cac580a, type: 3}
       propertyPath: m_LocalPosition.x
@@ -13409,13 +13777,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FireParticlePrefab: {fileID: 5023430038305224826, guid: b69c18c3cd016a740ac92bd40357a695, type: 3}
   currentlyBurning: 0
+  fireSlider: {fileID: 0}
+  gameWorldCanvas: {fileID: 0}
 --- !u!1001 &8504707106087115043
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 3633919690521902739}
+    m_TransformParent: {fileID: 8361364982187891885}
     m_Modifications:
     - target: {fileID: 8197673384583163336, guid: 8706aca6a800085418f9968de1dc9383, type: 3}
       propertyPath: m_Name
@@ -13492,6 +13862,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FireParticlePrefab: {fileID: 5023430038305224826, guid: b69c18c3cd016a740ac92bd40357a695, type: 3}
   currentlyBurning: 0
+  fireSlider: {fileID: 0}
+  gameWorldCanvas: {fileID: 0}
 --- !u!4 &904913615753096785 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8829355645580916594, guid: 8706aca6a800085418f9968de1dc9383, type: 3}
@@ -13503,7 +13875,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 3633919690521902739}
+    m_TransformParent: {fileID: 8361364982187891885}
     m_Modifications:
     - target: {fileID: 496414244250911419, guid: ace71641151416049aa3e3c14d2b6c54, type: 3}
       propertyPath: m_LocalPosition.x
@@ -13585,13 +13957,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FireParticlePrefab: {fileID: 5023430038305224826, guid: b69c18c3cd016a740ac92bd40357a695, type: 3}
   currentlyBurning: 0
+  fireSlider: {fileID: 0}
+  gameWorldCanvas: {fileID: 0}
 --- !u!1001 &8580240832288346593
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 3633919690521902739}
+    m_TransformParent: {fileID: 8361364982187891885}
     m_Modifications:
     - target: {fileID: 3603640096412904551, guid: 85292898922356445bb9748cd9b9e416, type: 3}
       propertyPath: m_LocalPosition.x
@@ -13673,13 +14047,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FireParticlePrefab: {fileID: 5023430038305224826, guid: b69c18c3cd016a740ac92bd40357a695, type: 3}
   currentlyBurning: 0
+  fireSlider: {fileID: 0}
+  gameWorldCanvas: {fileID: 0}
 --- !u!1001 &8604410438347483600
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 3633919690521902739}
+    m_TransformParent: {fileID: 8361364982187891885}
     m_Modifications:
     - target: {fileID: 3918528055899108970, guid: 7da6d36dd1fae8647a3044f9911e510d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -13761,13 +14137,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FireParticlePrefab: {fileID: 5023430038305224826, guid: b69c18c3cd016a740ac92bd40357a695, type: 3}
   currentlyBurning: 0
+  fireSlider: {fileID: 0}
+  gameWorldCanvas: {fileID: 0}
 --- !u!1001 &8673291251283868054
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 3633919690521902739}
+    m_TransformParent: {fileID: 8361364982187891885}
     m_Modifications:
     - target: {fileID: 2858411044530043308, guid: 87a58077fb875314ab1f2a306ba41984, type: 3}
       propertyPath: m_Name
@@ -13849,13 +14227,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FireParticlePrefab: {fileID: 5023430038305224826, guid: b69c18c3cd016a740ac92bd40357a695, type: 3}
   currentlyBurning: 0
+  fireSlider: {fileID: 0}
+  gameWorldCanvas: {fileID: 0}
 --- !u!1001 &8748391759426439845
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 3633919690521902739}
+    m_TransformParent: {fileID: 8361364982187891885}
     m_Modifications:
     - target: {fileID: 2858411044530043308, guid: 87a58077fb875314ab1f2a306ba41984, type: 3}
       propertyPath: m_Name
@@ -13937,13 +14317,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FireParticlePrefab: {fileID: 5023430038305224826, guid: b69c18c3cd016a740ac92bd40357a695, type: 3}
   currentlyBurning: 0
+  fireSlider: {fileID: 0}
+  gameWorldCanvas: {fileID: 0}
 --- !u!1001 &8757428466983826087
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 3633919690521902739}
+    m_TransformParent: {fileID: 8361364982187891885}
     m_Modifications:
     - target: {fileID: 496414244250911419, guid: ace71641151416049aa3e3c14d2b6c54, type: 3}
       propertyPath: m_LocalPosition.x
@@ -14020,6 +14402,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FireParticlePrefab: {fileID: 5023430038305224826, guid: b69c18c3cd016a740ac92bd40357a695, type: 3}
   currentlyBurning: 0
+  fireSlider: {fileID: 0}
+  gameWorldCanvas: {fileID: 0}
 --- !u!4 &9181499244173062172 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 496414244250911419, guid: ace71641151416049aa3e3c14d2b6c54, type: 3}
@@ -14031,7 +14415,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 3633919690521902739}
+    m_TransformParent: {fileID: 1011959291119756121}
     m_Modifications:
     - target: {fileID: 7030891011163993441, guid: 8ecd1aab74590a24f98711d6f9c34949, type: 3}
       propertyPath: m_LocalScale.x
@@ -14105,7 +14489,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 3633919690521902739}
+    m_TransformParent: {fileID: 8361364982187891885}
     m_Modifications:
     - target: {fileID: 2858411044530043308, guid: 87a58077fb875314ab1f2a306ba41984, type: 3}
       propertyPath: m_Name
@@ -14187,13 +14571,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FireParticlePrefab: {fileID: 5023430038305224826, guid: b69c18c3cd016a740ac92bd40357a695, type: 3}
   currentlyBurning: 0
+  fireSlider: {fileID: 0}
+  gameWorldCanvas: {fileID: 0}
 --- !u!1001 &9026977554589828738
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 3633919690521902739}
+    m_TransformParent: {fileID: 8361364982187891885}
     m_Modifications:
     - target: {fileID: 496414244250911419, guid: ace71641151416049aa3e3c14d2b6c54, type: 3}
       propertyPath: m_LocalPosition.x
@@ -14270,6 +14656,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FireParticlePrefab: {fileID: 5023430038305224826, guid: b69c18c3cd016a740ac92bd40357a695, type: 3}
   currentlyBurning: 0
+  fireSlider: {fileID: 0}
+  gameWorldCanvas: {fileID: 0}
 --- !u!4 &8909767553518486585 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 496414244250911419, guid: ace71641151416049aa3e3c14d2b6c54, type: 3}
@@ -14281,7 +14669,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 3633919690521902739}
+    m_TransformParent: {fileID: 8361364982187891885}
     m_Modifications:
     - target: {fileID: 496414244250911419, guid: ace71641151416049aa3e3c14d2b6c54, type: 3}
       propertyPath: m_LocalPosition.x
@@ -14358,6 +14746,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FireParticlePrefab: {fileID: 5023430038305224826, guid: b69c18c3cd016a740ac92bd40357a695, type: 3}
   currentlyBurning: 0
+  fireSlider: {fileID: 0}
+  gameWorldCanvas: {fileID: 0}
 --- !u!4 &8701301039271115543 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 496414244250911419, guid: ace71641151416049aa3e3c14d2b6c54, type: 3}
@@ -14369,7 +14759,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 3633919690521902739}
+    m_TransformParent: {fileID: 8361364982187891885}
     m_Modifications:
     - target: {fileID: 2858411044530043308, guid: 87a58077fb875314ab1f2a306ba41984, type: 3}
       propertyPath: m_Name
@@ -14451,13 +14841,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FireParticlePrefab: {fileID: 5023430038305224826, guid: b69c18c3cd016a740ac92bd40357a695, type: 3}
   currentlyBurning: 0
+  fireSlider: {fileID: 0}
+  gameWorldCanvas: {fileID: 0}
 --- !u!1001 &9145670212312086746
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 3633919690521902739}
+    m_TransformParent: {fileID: 8361364982187891885}
     m_Modifications:
     - target: {fileID: 2858411044530043308, guid: 87a58077fb875314ab1f2a306ba41984, type: 3}
       propertyPath: m_Name
@@ -14539,13 +14931,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FireParticlePrefab: {fileID: 5023430038305224826, guid: b69c18c3cd016a740ac92bd40357a695, type: 3}
   currentlyBurning: 0
+  fireSlider: {fileID: 0}
+  gameWorldCanvas: {fileID: 0}
 --- !u!1001 &9156740062431224371
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 3633919690521902739}
+    m_TransformParent: {fileID: 8361364982187891885}
     m_Modifications:
     - target: {fileID: 3918528055899108970, guid: 7da6d36dd1fae8647a3044f9911e510d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -14622,6 +15016,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FireParticlePrefab: {fileID: 5023430038305224826, guid: b69c18c3cd016a740ac92bd40357a695, type: 3}
   currentlyBurning: 0
+  fireSlider: {fileID: 0}
+  gameWorldCanvas: {fileID: 0}
 --- !u!4 &5292343175271781465 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3918528055899108970, guid: 7da6d36dd1fae8647a3044f9911e510d, type: 3}
@@ -14633,7 +15029,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 3633919690521902739}
+    m_TransformParent: {fileID: 8361364982187891885}
     m_Modifications:
     - target: {fileID: 2858411044530043308, guid: 87a58077fb875314ab1f2a306ba41984, type: 3}
       propertyPath: m_Name
@@ -14715,3 +15111,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FireParticlePrefab: {fileID: 5023430038305224826, guid: b69c18c3cd016a740ac92bd40357a695, type: 3}
   currentlyBurning: 0
+  fireSlider: {fileID: 0}
+  gameWorldCanvas: {fileID: 0}

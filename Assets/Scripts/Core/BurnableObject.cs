@@ -14,7 +14,7 @@ public class BurnableObject : MonoBehaviour
 
     //Cortoutine variables
     private Coroutine BurnableCoroutine;
-    public bool currentlyBurning = false;
+    [HideInInspector] public bool currentlyBurning = false;
     private float currentFireIntensity;
     private float fireMaxIntensity = 100f;
     private float currentFireTimer;
@@ -30,13 +30,59 @@ public class BurnableObject : MonoBehaviour
 
     //Slider
     [Header("Ui Slider")]
-    [SerializeField] private Slider fireSlider;
     [SerializeField] private Canvas gameWorldCanvas;
+    [SerializeField] private Slider fireSlider;
+
+    private void Awake()
+    {
+        if (gameWorldCanvas != null)
+        {
+            gameWorldCanvas.gameObject.SetActive(false);
+        }
+    }
 
     void Update()
     {
         // Dev key, burns everything, kinda funny.
         if (Input.GetKeyDown(KeyCode.F1) && Global.devMode) BurnableIgnition(100.0f);
+
+        if (currentlyBurning && fireSlider != null)
+        {
+            if (fireSlider.value != currentFireIntensity)
+            {
+                fireSlider.value = currentFireIntensity;
+            }
+        }
+    }
+    public void SetFireSliderVisible(bool fireSliderVisibility)
+    {
+        //If prefab has canvas then set it to active 
+        if (gameWorldCanvas != null)
+        {
+            gameWorldCanvas.gameObject.SetActive(fireSliderVisibility);
+        }
+    }
+    public void OnSliderValueChanged(float sliderfireIntensityValue)
+    {
+        if (sliderfireIntensityValue < currentFireIntensity)
+        {
+            currentFireIntensity = sliderfireIntensityValue;
+            if (firePS != null)
+            {
+                var firePSShape = firePS.shape;
+                Vector3 minUpdatedPsScale = new Vector3(1f, 1f, 1f);
+                Vector3 maxUpdatedPsScale = new Vector3(9.17f, 9.823f, 3f);
+
+
+                Vector3 ChangeFireIntestintyScaleManuel = Vector3.Lerp(minUpdatedPsScale, maxUpdatedPsScale,
+                    currentFireIntensity / fireMaxIntensity);
+                firePSShape.scale = ChangeFireIntestintyScaleManuel;
+            }
+        }
+        else
+        {
+            fireSlider.value = currentFireIntensity;
+        }
     }
 
     //New Method for starting cool Burn, Will allow for slider and managment
@@ -133,6 +179,31 @@ public class BurnableObject : MonoBehaviour
                 Destroy(firePS.gameObject); //Change too stop particle emission later
                 currentlyBurning = false;
             }
+
+
+            // Once Max Fire Intensity is reached then hold it for 60 seconds (editable) before destorying
+
+            //Only Really needed for wildfire burnables or if above the max intensity
+            if (currentFireIntensity >= fireMaxIntensity)
+            {
+                currentMaxIntensityFireTimer += 1f;
+                Debug.Log("Time: " + currentMaxIntensityFireTimer);
+
+                if (currentMaxIntensityFireTimer >= 60f)
+                {
+                    //destory object if timer is over ~60 seconds
+                    Debug.Log("Destoryed");
+                    currentlyBurning = false;
+                    Destroy(this.GameObject());
+                }
+            }
+            else
+            {
+                //Reset maxintensity firetimer
+                currentMaxIntensityFireTimer = 0f;
+            }
+
+
 
             yield return new WaitForSeconds(1f);
         }

@@ -43,9 +43,8 @@ public class CoolburnGroundItem : MonoBehaviour
        
     //Slider
     [Header("Ui Slider")]
-    [SerializeField] private Slider fireSlider;
     [SerializeField] private Canvas gameWorldCanvas;
-  
+    [SerializeField] private Slider fireSlider;
 
     private void Awake()
     {

@@ -120,5 +120,12 @@ public class FireManager : MonoBehaviour
         {
             coolburn.SetFireSliderVisible(fireSlidersVisible);
         }
+
+        var burnableObjects = FindObjectsByType<BurnableObject>(FindObjectsSortMode.None);
+        foreach (var burnables in burnableObjects)
+        {
+            burnables.SetFireSliderVisible(fireSlidersVisible);
+        }
+
     }
 }
