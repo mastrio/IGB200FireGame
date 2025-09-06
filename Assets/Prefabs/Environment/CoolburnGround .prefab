@@ -500,6 +500,73 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mapObjectPrefab: {fileID: 2997753746736485047, guid: f2411fd23d612c5419ace2b49936570a, type: 3}
+--- !u!1 &229445297657691783
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2198622327830430187}
+  - component: {fileID: 2007421066559898895}
+  - component: {fileID: 5224123760159297075}
+  m_Layer: 10
+  m_Name: UiTrigger Collider
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2198622327830430187
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 229445297657691783}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7061815914656108431}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &2007421066559898895
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 229445297657691783}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 52.314964, y: 1, z: 51.869507}
+  m_Center: {x: -0.17691803, y: 0, z: 3.0828695}
+--- !u!114 &5224123760159297075
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 229445297657691783}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 50d3422fa32897b458828ca5c4f32a3f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  parentScriptCoolObject: {fileID: 2052257946072260087}
 --- !u!1 &352343158217390443
 GameObject:
   m_ObjectHideFlags: 0
@@ -13128,6 +13195,7 @@ Transform:
   m_Children:
   - {fileID: 4207839637184134379}
   - {fileID: 911819683614077239}
+  - {fileID: 2198622327830430187}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &1154234108284554040
@@ -13239,6 +13307,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   FireParticlePrefab: {fileID: 5023430038305224826, guid: b69c18c3cd016a740ac92bd40357a695, type: 3}
+  currentlyBurning: 0
   gameWorldCanvas: {fileID: 3184203348096217019}
   fireSlider: {fileID: 6726470555389985316}
 --- !u!1 &7376406864173052059

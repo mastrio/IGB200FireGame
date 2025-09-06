@@ -118,13 +118,20 @@ public class FireManager : MonoBehaviour
         var coolburnObjects = FindObjectsByType<CoolburnGroundItem>(FindObjectsSortMode.None);
         foreach (var coolburn in coolburnObjects)
         {
-            coolburn.SetFireSliderVisible(fireSlidersVisible);
+            if (coolburn.currentlyBurning)
+            {
+                coolburn.SetFireSliderVisible(fireSlidersVisible);
+            }
         }
 
         var burnableObjects = FindObjectsByType<BurnableObject>(FindObjectsSortMode.None);
         foreach (var burnables in burnableObjects)
         {
-            burnables.SetFireSliderVisible(fireSlidersVisible);
+            if (burnables.currentlyBurning)
+            {
+                burnables.SetFireSliderVisible(fireSlidersVisible);
+            }
+           
         }
 
     }

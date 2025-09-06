@@ -5,12 +5,14 @@ using System.Linq;
 using Unity.VisualScripting;
 using UnityEngine.UI;
 
+//Probarably will merge with CoolBurnGround item
 public class BurnableObject : MonoBehaviour
 {
     private float fireLifeSpan;
     [SerializeField] private GameObject FireParticlePrefab;
     private ParticleSystem firePS;
     private int BurnableLayer;
+    private int PlayerLayer;
 
     //Cortoutine variables
     private Coroutine BurnableCoroutine;
@@ -32,6 +34,8 @@ public class BurnableObject : MonoBehaviour
     [Header("Ui Slider")]
     [SerializeField] private Canvas gameWorldCanvas;
     [SerializeField] private Slider fireSlider;
+    private string playerTag = "Player";
+    private bool playerWithinOnTrigger = false;
 
     private void Awake()
     {
@@ -54,12 +58,32 @@ public class BurnableObject : MonoBehaviour
             }
         }
     }
+
+    public void OnTriggerEnterRelayFromChild(Collider other)
+    {
+        if (other.CompareTag(playerTag))
+        {
+            playerWithinOnTrigger = true;
+        }
+    }
+
+    public void OnTriggerExitRelayFromChild(Collider other)
+    {
+        if (other.CompareTag(playerTag))
+        {
+            playerWithinOnTrigger = false;
+            gameWorldCanvas.gameObject.SetActive(false);
+        }
+    }
+
     public void SetFireSliderVisible(bool fireSliderVisibility)
     {
+
         //If prefab has canvas then set it to active 
-        if (gameWorldCanvas != null)
+        if (playerWithinOnTrigger && gameWorldCanvas != null)
         {
             gameWorldCanvas.gameObject.SetActive(fireSliderVisibility);
+
         }
     }
     public void OnSliderValueChanged(float sliderfireIntensityValue)
@@ -215,7 +239,7 @@ public class BurnableObject : MonoBehaviour
         bool targetIgnitable = false;
 
         BurnableLayer = 1 << LayerMask.NameToLayer("Burnable");
-        Collider[] hitColliders = Physics.OverlapSphere(this.transform.position, 20f, BurnableLayer);
+        Collider[] hitColliders = Physics.OverlapSphere(this.transform.position, 10f, BurnableLayer, QueryTriggerInteraction.Ignore);
 
         if (hitColliders == null || hitColliders.Length == 0)
         {

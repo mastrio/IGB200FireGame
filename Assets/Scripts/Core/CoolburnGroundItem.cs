@@ -19,13 +19,14 @@ public class CoolburnGroundItem : MonoBehaviour
     //Layers
     private int BurnableLayer;
     private int CoolburnLayer;
+    private int PlayerLayer;
 
     //Cortoutine
     private Coroutine CoolBurnGroundCoroutine;
     private Coroutine MoveCoolBurnCoroutine;
 
     //Bools Variables
-    private bool currentlyBurning = false;
+    [HideInInspector] public bool currentlyBurning = false;
     private bool nearbyCoolburn = true;
     private bool nearbyBurnable = true;
    
@@ -45,6 +46,8 @@ public class CoolburnGroundItem : MonoBehaviour
     [Header("Ui Slider")]
     [SerializeField] private Canvas gameWorldCanvas;
     [SerializeField] private Slider fireSlider;
+    private bool playerWithinOnTrigger = false;
+    private string playerTag = "Player";
 
     private void Awake()
     {
@@ -100,15 +103,42 @@ public class CoolburnGroundItem : MonoBehaviour
         }
     }
 
-    public void SetFireSliderVisible(bool fireSliderVisibility)
+    public void OnTriggerEnterRelayFromChild(Collider other)
     {
-        //If prefab has canvas then set it to active 
-        if (gameWorldCanvas != null)
+        if (other.CompareTag(playerTag))
         {
-            gameWorldCanvas.gameObject.SetActive(fireSliderVisibility);
+            playerWithinOnTrigger = true;
         }
     }
 
+    public void OnTriggerExitRelayFromChild(Collider other)
+    {
+        if (other.CompareTag(playerTag))
+        {
+            playerWithinOnTrigger = false;
+            gameWorldCanvas.gameObject.SetActive(false);
+        }
+    }
+
+
+    public void SetFireSliderVisible(bool fireSliderVisibility)
+    {
+
+        //If prefab has canvas then set it to active 
+        if (playerWithinOnTrigger && gameWorldCanvas != null)
+        {
+            gameWorldCanvas.gameObject.SetActive(fireSliderVisibility);
+
+        }
+        else if (!playerWithinOnTrigger)
+        {
+            Debug.Log($" ignored because player not inside trigger.");
+        }
+        else if (gameWorldCanvas == null)
+        {
+            Debug.LogError($" has no gameWorldCanvas assigned!");
+        }
+    }
 
     //New Method for starting cool Burn, Will allow for slider and managment
     public void CoolBurnIgnition(float startBurnIntensity)
@@ -256,54 +286,6 @@ public class CoolburnGroundItem : MonoBehaviour
             yield return new WaitForSeconds(1f);
 
         }
-        
-
-        /*
-        //Spread to nearby object
-        if (currentFireIntensity >= 150f)
-        {
-            if (nearbyBurnablesExist == true)
-            {
-                //TEMP RAIDUS SETTING
-                BurnableLayer = 1 << LayerMask.NameToLayer("Burnable");
-                Collider[] hitColliders = Physics.OverlapSphere(this.transform.position, 9f, BurnableLayer);
-                Debug.Log("Collider list" + hitColliders.Length);
-                if (hitColliders.Length > 0)
-                {
-                    nearbyBurnablesExist = true;
-
-                    foreach (var collidershit in hitColliders)
-                    {
-                        Debug.Log("" + collidershit.GameObject().name);
-                    }
-
-                    //Sorts Array to be the closest collider that was hit
-                    var orderedBurnables = hitColliders
-                        .OrderBy(c => (c.transform.position - this.transform.position).sqrMagnitude).ToArray();
-                    //Breaks if radius is lowered fix this
-                    GameObject closestsBurnableObject = orderedBurnables[1].gameObject;
-                    closestsBurnableObject.TryGetComponent<BurnableObject>(
-                        out BurnableObject closestBurnable);
-                    if (closestBurnable.currentlyBurning == false)
-                    {
-                        Debug.Log("Expensive Please Fix");
-                        closestBurnable.CoolBurnIgnition(20f);
-                    }
-                }
-                else if (hitColliders.Length == 0)
-                {
-                    nearbyBurnablesExist = false;
-                }
-            }
-        }
-
-        yield return new WaitForSeconds(5f);
-         */
-
-
-
-
-
     }
 
     /* private IEnumerator moveCoolBurn(Transform coolburnTarget, CoolburnGroundItem closeCoolburnGround)
@@ -397,7 +379,7 @@ public class CoolburnGroundItem : MonoBehaviour
         bool targetIgnitable = false;
 
         CoolburnLayer = 1 << LayerMask.NameToLayer("Coolburn");
-        Collider[] hitColliders = Physics.OverlapSphere(this.transform.position, 20f, CoolburnLayer);
+        Collider[] hitColliders = Physics.OverlapSphere(this.transform.position, 10f, CoolburnLayer,QueryTriggerInteraction.Ignore);
 
         if (hitColliders == null || hitColliders.Length == 0)
         {
@@ -444,7 +426,7 @@ public class CoolburnGroundItem : MonoBehaviour
         bool targetIgnitable = false;
 
         BurnableLayer = 1 << LayerMask.NameToLayer("Burnable");
-        Collider[] hitColliders = Physics.OverlapSphere(this.transform.position, 20f, BurnableLayer);
+        Collider[] hitColliders = Physics.OverlapSphere(this.transform.position, 10f, BurnableLayer, QueryTriggerInteraction.Ignore);
 
         if (hitColliders == null || hitColliders.Length == 0)
         {
