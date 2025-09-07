@@ -125,7 +125,7 @@ More examples such as the intended look and feel are oresented within the game d
   - [ ] Phone Notfication System - Feature 4
 
 
--[ ] Known Issues
+- [ ] Known Issues
   - [ ] Fire Danger Rating Arrow Movement 
   - [ ] Coolburn Intensity Threshold Adjustments
   - [ ] Remake or Adjust Terrain and Enviroment
