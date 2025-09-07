@@ -148,7 +148,7 @@ public class BurnableObject : MonoBehaviour
         {
             if (currentFireIntensity < fireMaxIntensity)
             {
-                int randomFloat = UnityEngine.Random.Range(2, 12);
+                int randomFloat = UnityEngine.Random.Range(2, 15);
                 currentFireIntensity += randomFloat;
             }
 
@@ -172,16 +172,21 @@ public class BurnableObject : MonoBehaviour
             //FireLifetime 
             currentFireTimer += 1f;
 
-            if (currentFireIntensity >= 120f)
+            if (currentFireIntensity >= 125f)
             {
                 burnableSpreadTimer += 1f;
             }
+            else if (currentFireIntensity < 125f)
+            {
+                burnableSpreadDelayTime = 0f;
+            }
+
 
 
             //Spread to new coolburn area nearby if there is any
             if (nearbyBurnable || burnableSpreadDelayTime > BurnableSpreadCheckRate)
             {
-                if (currentFireIntensity >= 140f && burnableSpreadTimer >= burnableSpreadDelayTime)
+                if (currentFireIntensity >= 125f && burnableSpreadTimer >= burnableSpreadDelayTime)
                 {
                     nearbyBurnable = SpreadToBurnables();
                     burnableSpreadTimer = 0;
@@ -203,6 +208,7 @@ public class BurnableObject : MonoBehaviour
                 FireManager.UpdateFireDangerLevel(false);
                 Destroy(firePS.gameObject); //Change too stop particle emission later
                 currentlyBurning = false;
+                ScoreManager.instance.UpdateScore(2);
             }
 
 
@@ -220,6 +226,7 @@ public class BurnableObject : MonoBehaviour
                     Debug.Log("Destoryed");
                     FireManager.UpdateFireDangerLevel(false);
                     currentlyBurning = false;
+                    ScoreManager.instance.UpdateScore(4);
                     Destroy(this.GameObject());
                 }
             }
@@ -263,8 +270,9 @@ public class BurnableObject : MonoBehaviour
                 if (!closestBurnable.currentlyBurning)
                 {
                     Debug.Log("Tried to set other");
-                    FireManager.UpdateFireDangerLevel(true);
                     closestBurnable.BurnableIgnition(20f);
+                    FireManager.UpdateFireDangerLevel(true);
+                    ScoreManager.instance.UpdateScore(3);
                     targetIgnitable = true;
                     break;
                 }

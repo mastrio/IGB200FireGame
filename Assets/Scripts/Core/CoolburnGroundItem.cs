@@ -6,7 +6,7 @@ using UnityEngine.UI;
 using System.Linq;
 using System.Numerics;
 using Unity.VisualScripting;
-using UnityEditor.Rendering.Universal;
+using UnityEngine.SocialPlatforms.Impl;
 using Quaternion = UnityEngine.Quaternion;
 using Vector3 = UnityEngine.Vector3;
 
@@ -48,6 +48,8 @@ public class CoolburnGroundItem : MonoBehaviour
     [SerializeField] private Slider fireSlider;
     private bool playerWithinOnTrigger = false;
     private string playerTag = "Player";
+
+    private ScoreManager scoreManager;
 
     private void Awake()
     {
@@ -130,14 +132,6 @@ public class CoolburnGroundItem : MonoBehaviour
             gameWorldCanvas.gameObject.SetActive(fireSliderVisibility);
 
         }
-        else if (!playerWithinOnTrigger)
-        {
-            Debug.Log($" ignored because player not inside trigger.");
-        }
-        else if (gameWorldCanvas == null)
-        {
-            Debug.LogError($" has no gameWorldCanvas assigned!");
-        }
     }
 
     //New Method for starting cool Burn, Will allow for slider and managment
@@ -172,12 +166,12 @@ public class CoolburnGroundItem : MonoBehaviour
         weakFireTime = 0f;
         fireMaxIntensity = 150f;
 
-        float coolBurnSpreadDelay = 5f;
-        float coolBurnSpreadTimer = 5f;
+        float coolBurnSpreadDelay = 10f;
+        float coolBurnSpreadTimer = 0f;
         float burnableSpreadTimer = 0f;
-        float burnableSpreadDelayTime = 10f;
+        float burnableSpreadDelayTime = 15f;
         float CoolSpreadCheckRate = 5f;
-        float BurnableSpreadCheckRate = 15f;
+        float BurnableSpreadCheckRate = 5f;
 
         //9.17 X and 9.823 Z
         Vector3 MinFirePsScale = new Vector3(1f, 1f, 1f);
@@ -189,7 +183,7 @@ public class CoolburnGroundItem : MonoBehaviour
             //This Only Grows if its below the max value
             if (currentFireIntensity < fireMaxIntensity)
             {
-                int randomFloat = UnityEngine.Random.Range(2, 30);
+                int randomFloat = UnityEngine.Random.Range(2, 15);
                 currentFireIntensity += randomFloat;
             }
 
@@ -215,19 +209,32 @@ public class CoolburnGroundItem : MonoBehaviour
 
             if (currentFireIntensity >= 100f)
             {
+
+                Debug.Log("Called");
                 coolBurnSpreadTimer += 1f;
             }
+            else if (currentFireIntensity < 100f)
+            {
+                Debug.Log(""+coolBurnSpreadTimer);
+                coolBurnSpreadTimer = 0; //Could Change to -1 instead
+            }
 
-            if (currentFireIntensity >= 140f)
+
+            if (currentFireIntensity >= 125f)
             {
                 burnableSpreadTimer += 1f;
             }
+            else if (currentFireIntensity < 125f)
+            {
+                burnableSpreadTimer = 0f;
+            }
+
 
 
             //Spread to new coolburn area nearby if there is any
             if (nearbyCoolburn || coolBurnSpreadTimer > CoolSpreadCheckRate)
             {
-                if (currentFireIntensity >= 120f && coolBurnSpreadTimer >= coolBurnSpreadDelay)
+                if (currentFireIntensity >= 100f && coolBurnSpreadTimer >= coolBurnSpreadDelay)
                 {
                     nearbyCoolburn = SpreadToCoolBurn();
                     coolBurnSpreadTimer = 0;
@@ -236,8 +243,9 @@ public class CoolburnGroundItem : MonoBehaviour
 
             if (nearbyBurnable || burnableSpreadDelayTime > BurnableSpreadCheckRate)
             {
-                if (currentFireIntensity >= 140f && burnableSpreadTimer >= burnableSpreadDelayTime)
+                if (currentFireIntensity >= 125f && burnableSpreadTimer >= burnableSpreadDelayTime)
                 {
+                    
                     nearbyBurnable = SpreadToBurnables();
                     burnableSpreadTimer = 0;
                 }
@@ -245,20 +253,21 @@ public class CoolburnGroundItem : MonoBehaviour
             
 
             //Incriments the timer when below the weak intensity threshold
-            if (currentFireIntensity <= 45f)
+            if (currentFireIntensity <= 50f)
             {
                 weakFireTime += 1f;
             }
-            else if (currentFireIntensity >= 45f)
+            else if (currentFireIntensity >= 50f)
             {
                 weakFireTime = 0f;
             }
 
-            if (currentFireIntensity <= 45f && weakFireTime >= 20f)
+            if (currentFireIntensity <= 50f && weakFireTime >= 10f)
             {
                 FireManager.UpdateFireDangerLevel(false);
                 Destroy(firePS.gameObject); //Change too stop particle emission later
                 currentlyBurning = false;
+                ScoreManager.instance.UpdateScore(1);
             }
 
 
@@ -276,6 +285,7 @@ public class CoolburnGroundItem : MonoBehaviour
                     //destory object if timer is over ~60 seconds
                     Debug.Log("Destoryed");
                     FireManager.UpdateFireDangerLevel(false);
+                    ScoreManager.instance.UpdateScore(4);
                     currentlyBurning = false;
                     Destroy(this.GameObject());
                 }
@@ -404,8 +414,9 @@ public class CoolburnGroundItem : MonoBehaviour
                 if (!closestCoolburn.currentlyBurning)
                 {
                     Debug.Log("Tried to set other");
-                    FireManager.UpdateFireDangerLevel(true);
                     closestCoolburn.CoolBurnIgnition(20f);
+                    FireManager.UpdateFireDangerLevel(true);
+
                     targetIgnitable = true;
                     break;
                 }
@@ -452,8 +463,9 @@ public class CoolburnGroundItem : MonoBehaviour
                 if (!closestBurnable.currentlyBurning)
                 {
                     Debug.Log("Tried to set other");
-                    FireManager.UpdateFireDangerLevel(true);
                     closestBurnable.BurnableIgnition(20f);
+                    FireManager.UpdateFireDangerLevel(true);
+                    ScoreManager.instance.UpdateScore(3);
                     targetIgnitable = true;
                     break;
                 }

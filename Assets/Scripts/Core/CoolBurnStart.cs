@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Runtime.CompilerServices;
+using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
@@ -10,6 +11,7 @@ public class FireManager : MonoBehaviour
     [SerializeField] private InputAction MouseClick;
     [SerializeField] private GameObject player;
     [SerializeField] private GameObject FireParticlePrefab;
+    [SerializeField] private Canvas gameUICanvas;
 
     private bool fireSlidersVisible = false;
 
@@ -23,7 +25,7 @@ public class FireManager : MonoBehaviour
 
     private bool CoolbuttonPressed = false;
 
-    public static int FireDangerLevel = 0;
+    public static int FireDangerLevel = 3;
 
     private void Awake()
     {
@@ -140,7 +142,7 @@ public class FireManager : MonoBehaviour
 
     public static void UpdateFireDangerLevel(bool CoolBurnSuccess)
     {
-        if (FireDangerLevel <= 5)
+        if (FireDangerLevel <= 5 && FireDangerLevel >= 0)
         {
             if (CoolBurnSuccess)
             {
@@ -152,5 +154,10 @@ public class FireManager : MonoBehaviour
             }
         }
         
+    }
+    
+    public static int GetFireDangerLevel()
+    {
+        return FireDangerLevel;
     }
 }
