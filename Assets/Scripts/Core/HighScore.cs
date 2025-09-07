@@ -30,7 +30,7 @@ public class ScoreManager : MonoBehaviour
 
         ScoreText.text = "Score " + score.ToString();
     }
-    public void UpdateScore(int SucessfulBurn)
+    public void UpdateScore(int SucessfulBurn) //Change to switch
     {
         if (SucessfulBurn == 1) //Coolburn Managed
         {
@@ -39,6 +39,18 @@ public class ScoreManager : MonoBehaviour
         else if (SucessfulBurn == 2) //Burnable Managed
         {
             AddScore(75);
+        }
+        else if (SucessfulBurn == 3)
+        {
+            AddScore(-10);
+        }
+        else if (SucessfulBurn == 4)
+        {
+            AddScore(90);
+        }
+        else if (SucessfulBurn == 5)
+        {
+            AddScore(50);
         }
     }
 

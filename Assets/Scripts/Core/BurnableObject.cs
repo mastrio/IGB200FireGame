@@ -226,7 +226,7 @@ public class BurnableObject : MonoBehaviour
                     Debug.Log("Destoryed");
                     FireManager.UpdateFireDangerLevel(false);
                     currentlyBurning = false;
-                    ScoreManager.instance.UpdateScore(4);
+                    ScoreManager.instance.UpdateScore(5);
                     Destroy(this.GameObject());
                 }
             }
