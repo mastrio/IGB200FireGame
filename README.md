@@ -30,23 +30,11 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-  <a href="https://github.com/github_username/repo_name">
-    <img src="images/logo.png" alt="Logo" width="80" height="80">
-  </a>
-
-<h3 align="center">project_title</h3>
+<h3 align="center">Counter Fire</h3>
 
   <p align="center">
-    project_description
-    <br />
-    <a href="https://github.com/github_username/repo_name"><strong>Explore the docs »</strong></a>
-    <br />
-    <br />
-    <a href="https://github.com/github_username/repo_name">View Demo</a>
-    &middot;
-    <a href="https://github.com/github_username/repo_name/issues/new?labels=bug&template=bug-report---.md">Report Bug</a>
-    &middot;
-    <a href="https://github.com/github_username/repo_name/issues/new?labels=enhancement&template=feature-request---.md">Request Feature</a>
+    Counter Fire prototype 1 readme file
+    <br/>
   </p>
 </div>
 
@@ -59,7 +47,7 @@
     <li>
       <a href="#about-the-project">About The Project</a>
       <ul>
-        <li><a href="#built-with">Built With</a></li>
+        <li><a href="#built-with">Built With Unity</a></li>
       </ul>
     </li>
     <li>
@@ -83,9 +71,16 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
+Counter Fire is a student developed project for the IGB200 assesment submission for the DES project brief. This is the first prototype which is still lacking animations and a second scenario but features majority of the key fire mechanics. 
 
-Here's a blank template to get started. To avoid retyping too much info, do a search and replace with your text editor for the following: `github_username`, `repo_name`, `twitter_handle`, `linkedin_username`, `email_client`, `email`, `project_title`, `project_description`, `project_license`
+
+The project is being developed by 
+Andrew Seton - Project Managment, Assest Moddeler, Game Design, Level Development*
+Hayden Clark - Ui Development, Game Design, Programming Support, Level Development*
+Connor Samra-Dardis - Core Mechanics Programming, Game Design, Level Development*, Audio* 
+Charlie Bui - UX Design, Level Terrain*
+
+* = temporary role for prototype
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -93,14 +88,7 @@ Here's a blank template to get started. To avoid retyping too much info, do a se
 
 ### Built With
 
-* [![Next][Next.js]][Next-url]
-* [![React][React.js]][React-url]
-* [![Vue][Vue.js]][Vue-url]
-* [![Angular][Angular.io]][Angular-url]
-* [![Svelte][Svelte.dev]][Svelte-url]
-* [![Laravel][Laravel.com]][Laravel-url]
-* [![Bootstrap][Bootstrap.com]][Bootstrap-url]
-* [![JQuery][JQuery.com]][JQuery-url]
+The Project was developed with Unity 6 (6000.0.040f1LTS) and a Github repositery version control. Google Docs was used for the Game Design Doccumentation and GoogleSheets for Project Managment
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
