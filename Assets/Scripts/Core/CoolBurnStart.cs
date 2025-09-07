@@ -23,6 +23,8 @@ public class FireManager : MonoBehaviour
 
     private bool CoolbuttonPressed = false;
 
+    public static int FireDangerLevel = 0;
+
     private void Awake()
     {
         mainCamera = Camera.main;
@@ -134,5 +136,21 @@ public class FireManager : MonoBehaviour
            
         }
 
+    }
+
+    public static void UpdateFireDangerLevel(bool CoolBurnSuccess)
+    {
+        if (FireDangerLevel <= 5)
+        {
+            if (CoolBurnSuccess)
+            {
+                FireDangerLevel += 1;
+            }
+            else if (!CoolBurnSuccess)
+            {
+                FireDangerLevel -= 1;
+            }
+        }
+        
     }
 }

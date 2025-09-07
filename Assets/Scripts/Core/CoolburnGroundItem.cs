@@ -151,6 +151,7 @@ public class CoolburnGroundItem : MonoBehaviour
                 Quaternion.Euler(new Vector3(-90.0f, 0.0f, 0.0f)), transform);
             firePS = fireinstance.GetComponent<ParticleSystem>();
             currentlyBurning = true;
+            
 
             if (CoolBurnGroundCoroutine != null) StopCoroutine(CoolBurnGroundCoroutine);
             CoolBurnGroundCoroutine = StartCoroutine(CoolBurnGroundIntensifys(startBurnIntensity));
@@ -255,6 +256,7 @@ public class CoolburnGroundItem : MonoBehaviour
 
             if (currentFireIntensity <= 45f && weakFireTime >= 20f)
             {
+                FireManager.UpdateFireDangerLevel(false);
                 Destroy(firePS.gameObject); //Change too stop particle emission later
                 currentlyBurning = false;
             }
@@ -273,6 +275,7 @@ public class CoolburnGroundItem : MonoBehaviour
                 {
                     //destory object if timer is over ~60 seconds
                     Debug.Log("Destoryed");
+                    FireManager.UpdateFireDangerLevel(false);
                     currentlyBurning = false;
                     Destroy(this.GameObject());
                 }
@@ -401,6 +404,7 @@ public class CoolburnGroundItem : MonoBehaviour
                 if (!closestCoolburn.currentlyBurning)
                 {
                     Debug.Log("Tried to set other");
+                    FireManager.UpdateFireDangerLevel(true);
                     closestCoolburn.CoolBurnIgnition(20f);
                     targetIgnitable = true;
                     break;
@@ -448,6 +452,7 @@ public class CoolburnGroundItem : MonoBehaviour
                 if (!closestBurnable.currentlyBurning)
                 {
                     Debug.Log("Tried to set other");
+                    FireManager.UpdateFireDangerLevel(true);
                     closestBurnable.BurnableIgnition(20f);
                     targetIgnitable = true;
                     break;

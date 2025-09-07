@@ -200,6 +200,7 @@ public class BurnableObject : MonoBehaviour
 
             if (currentFireIntensity <= 30f && weakFireTime >= 15f)
             {
+                FireManager.UpdateFireDangerLevel(false);
                 Destroy(firePS.gameObject); //Change too stop particle emission later
                 currentlyBurning = false;
             }
@@ -217,6 +218,7 @@ public class BurnableObject : MonoBehaviour
                 {
                     //destory object if timer is over ~60 seconds
                     Debug.Log("Destoryed");
+                    FireManager.UpdateFireDangerLevel(false);
                     currentlyBurning = false;
                     Destroy(this.GameObject());
                 }
@@ -261,6 +263,7 @@ public class BurnableObject : MonoBehaviour
                 if (!closestBurnable.currentlyBurning)
                 {
                     Debug.Log("Tried to set other");
+                    FireManager.UpdateFireDangerLevel(true);
                     closestBurnable.BurnableIgnition(20f);
                     targetIgnitable = true;
                     break;

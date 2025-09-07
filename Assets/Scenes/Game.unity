@@ -403,6 +403,11 @@ MonoBehaviour:
   m_LightCookieSize: {x: 1, y: 1}
   m_LightCookieOffset: {x: 0, y: 0}
   m_SoftShadowQuality: 1
+--- !u!224 &829164335 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 5667831631831096574, guid: 36beed9e1aedb654f9945e17d27ca32d, type: 3}
+  m_PrefabInstance: {fileID: 1862486083}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &832575517
 GameObject:
   m_ObjectHideFlags: 0
@@ -1155,6 +1160,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7193667993648779726, guid: 36beed9e1aedb654f9945e17d27ca32d, type: 3}
+      propertyPath: needle
+      value: 
+      objectReference: {fileID: 829164335}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
