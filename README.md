@@ -63,8 +63,14 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-Counter Fire is a student developed project for the IGB200 assesment submission for the DES project brief. This is the first prototype which is still lacking animations and a second scenario but features majority of the key fire mechanics. 
+Counter Fire is a student developed project for the IGB200 assesment submission for the DES project brief. 
+This is the first prototype which is still lacking animations and a second scenario but features majority of the key fire mechanics. 
 
+It is developed with a future port to iPad systems, so the movement and interaction systems were designed with this basis. 
+As such click to move and interact was decided as this can mimic touch inputs. This was also the key principle behidn the fire managment 
+systems design with interactabke sliders allowing the player to drag to manage the current burn. The hardware limitations also influenced 
+the current visual assests and mechanics used, with attempts to prevent future performance issuses.
+ 
 
 The project is being developed by 
 
@@ -79,17 +85,32 @@ temp = temporary role for prototype
 
 ### Built With
 
-The Project was developed with Unity 6 (6000.0.040f1LTS) and a Github repositery version control. Google Docs was used for the Game Design Doccumentation and GoogleSheets for Project/Sprint Managment.
+The Project was developed with Unity 6 (6000.0.040f1LTS) and a Github repositery version control. 
+Google Docs was used for the Game Design Doccumentation and GoogleSheets for Project/Sprint Managment.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- How To Play -->
+## Controls
+
+
+
+To trigger coolburns the player clicks the fire button then clicks the ground item which is a diffrent shade of green allowing the coolburn 
+to be initiated. The player then needs to manage the fire using the fire intensity sliders which appear when the player is within range of 
+the burning item and the water button is pressed. The slider can then be dragged downwards to lower the intensity of the fire, with when the 
+intensity remains low the fire is put out. If unmanaged the fire will spread to nearby vegetation increasing the fire danger rating.
+
+The goal of the scenario 1 is to lower the fire danger rating which can be checked by clicking the phone Ui button.
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
 
 
 <!-- USAGE EXAMPLES -->
 ## Usage
 
-Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
-
-_For more examples, please refer to the [Documentation](https://example.com)_
+The gameplay demo video highlights an example showcase of the key mechanics presented within Prototype 1. 
+More examples such as the intended look and feel are oresented within the game design documentation.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -104,17 +125,18 @@ _For more examples, please refer to the [Documentation](https://example.com)_
   - [ ] Phone Notfication System - Feature 4
 
 
-Known Issues
+-[ ] Known Issues
   - [ ] Fire Danger Rating Arrow Movement 
   - [ ] Coolburn Intensity Threshold Adjustments
   - [ ] Remake or Adjust Terrain and Enviroment
+  - [ ] Change Water Ui Button Icon
 
 
 - [ ] Wildfire Scenario (Scenario 2)
   - [ ] Wildfire Entity - Feature 1
   - [ ] Firebreaks Stopping Spread - Feature 2
 
-known Issues NA (Not implmented into Prototype 1)
+- [ ] Known Issues Not Applicable (Not implmented within Prototype 1)
 
 
 These are some of the key features that were unable to be implmented prior to prototype submission. Further planned features are outlined within the 
@@ -126,22 +148,15 @@ This build is still an early prototype so the fire intensity growthrate variable
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-<!-- LICENSE -->
-## License
-
-Distributed under the project_license. See `LICENSE.txt` for more information.
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
 <!-- ACKNOWLEDGMENTS -->
 ## Acknowledgments
+- [ ] Art Assests
+  - [ ] 
 
-
+- [ ] Code Tutorials Used
+  - [ ]
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
 
-<!-- MARKDOWN LINKS & IMAGES -->
-<!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
