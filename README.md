@@ -42,18 +42,8 @@
         <li><a href="#built-with">Built With Unity</a></li>
       </ul>
     </li>
-    <li>
-      <a href="#getting-started">Getting Started</a>
-      <ul>
-        <li><a href="#prerequisites">Prerequisites</a></li>
-        <li><a href="#installation">Installation</a></li>
-      </ul>
-    </li>
-    <li><a href="#usage">Usage</a></li>
+    <li><a href="#How-To-Play">How To Play</a></li>
     <li><a href="#roadmap">Roadmap</a></li>
-    <li><a href="#contributing">Contributing</a></li>
-    <li><a href="#license">License</a></li>
-    <li><a href="#contact">Contact</a></li>
     <li><a href="#acknowledgments">Acknowledgments</a></li>
   </ol>
 </details>
@@ -101,16 +91,6 @@ the burning item and the water button is pressed. The slider can then be dragged
 intensity remains low the fire is put out. If unmanaged the fire will spread to nearby vegetation increasing the fire danger rating.
 
 The goal of the scenario 1 is to lower the fire danger rating which can be checked by clicking the phone Ui button.
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
-
-<!-- USAGE EXAMPLES -->
-## Usage
-
-The gameplay demo video highlights an example showcase of the key mechanics presented within Prototype 1. 
-More examples such as the intended look and feel are oresented within the game design documentation.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
