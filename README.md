@@ -18,13 +18,6 @@
 *** for contributors-url, forks-url, etc. This is an optional, concise syntax you may use.
 *** https://www.markdownguide.org/basic-syntax/#reference-style-links
 -->
-[![Contributors][contributors-shield]][contributors-url]
-[![Forks][forks-shield]][forks-url]
-[![Stargazers][stars-shield]][stars-url]
-[![Issues][issues-shield]][issues-url]
-[![project_license][license-shield]][license-url]
-
-
 
 <!-- PROJECT LOGO -->
 <br />
@@ -74,10 +67,10 @@ Counter Fire is a student developed project for the IGB200 assesment submission 
 
 
 The project is being developed by 
-Andrew Seton - Project Managment, Assest Moddeler, Game Design, Level Development*
-Hayden Clark - Ui Development, Game Design, Programming Support, Level Development*
-Connor Samra-Dardis - Core Mechanics Programming, Game Design, Level Development*, Audio* 
-Charlie Bui - UX Design, Level Terrain*
+Andrew Seton - Project Managment, Assest Moddeler, Assest Managemnt, Level Development*
+Hayden Clark - Ui Development, Game Design, Ui Programming, Level Development*
+Connor Samra-Dardis - Core Mechanics Programming, Game Design, Ui Mechanics Support* ,Level Development*
+Charlie Bui - UX Research, Level Terrain*
 
 * = temporary role for prototype
 
@@ -87,7 +80,7 @@ Charlie Bui - UX Design, Level Terrain*
 
 ### Built With
 
-The Project was developed with Unity 6 (6000.0.040f1LTS) and a Github repositery version control. Google Docs was used for the Game Design Doccumentation and GoogleSheets for Project Managment
+The Project was developed with Unity 6 (6000.0.040f1LTS) and a Github repositery version control. Google Docs was used for the Game Design Doccumentation and GoogleSheets for Project/Sprint Managment.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -146,12 +139,15 @@ _For more examples, please refer to the [Documentation](https://example.com)_
 <!-- ROADMAP -->
 ## Roadmap
 
-- [ ] Feature 1
-- [ ] Feature 2
-- [ ] Feature 3
+- [Pathfinding] Feature 1
+- [Score] Feature 2
+- [Weather] Feature 3
+- [Wildfire Scenario] Feature 4
     - [ ] Nested Feature
 
-See the [open issues](https://github.com/mastrio/IGB200FireGame/issues) for a full list of proposed features (and known issues).
+These are some of the key features that were unable to be implmented prior to prototype submission. Further planned features are outlined within the Game Design Documentation as well as a full write up of the intended features implmentation and functionality.
+
+There are also known issues with the Fire Danger rating and drawing users attention to the phone promot when the fire danger rating updates. This build is still an early prototype so the fire intensity growthrate variables and mechanics still need to be finetuned based off playertesting feedback. 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -214,13 +210,3 @@ Project Link: [https://github.com/mastrio/IGB200FireGame](https://github.com/mas
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-[contributors-shield]: https://img.shields.io/github/contributors/mastrio/IGB200FireGame.svg?style=for-the-badge
-[contributors-url]: https://github.com/mastrio/IGB200FireGame/contributors
-[forks-shield]: https://img.shields.io/github/forks/mastrio/IGB200FireGame.svg?style=for-the-badge
-[forks-url]: https://github.com/mastrio/IGB200FireGame/network/members
-[stars-shield]: https://img.shields.io/github/stars/mastrio/IGB200FireGame.svg?style=for-the-badge
-[stars-url]: https://github.com/mastrio/IGB200FireGame/stargazers
-[issues-shield]: https://img.shields.io/github/issues/mastrio/IGB200FireGame.svg?style=for-the-badge
-[issues-url]: https://github.com/mastrio/IGB200FireGame/issues
-[license-shield]: https://img.shields.io/github/license/mastrio/IGB200FireGame.svg?style=for-the-badge
-[license-url]: https://github.com/mastrio/IGB200FireGame/blob/master/LICENSE.txt
