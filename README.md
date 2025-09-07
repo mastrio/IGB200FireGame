@@ -67,10 +67,10 @@ Counter Fire is a student developed project for the IGB200 assesment submission 
 
 
 The project is being developed by 
-Andrew Seton - Project Managment, Assest Moddeler, Assest Managemnt, Level Development*
-Hayden Clark - Ui Development, Game Design, Ui Programming, Level Development*
-Connor Samra-Dardis - Core Mechanics Programming, Game Design, Ui Mechanics Support* ,Level Development*
-Charlie Bui - UX Research, Level Terrain*
+*Andrew Seton - Project Managment, Assest Moddeler, Assest Managemnt, Level Development*
+*Connor Samra-Dardis - Core Mechanics Programming, Game Design, Ui Mechanics Support* ,Level Development*
+*Hayden Clark - Ui Development, Game Design, Ui Programming, Level Development*
+*Charlie Bui - UX Research, Level Terrain*
 
 * = temporary role for prototype
 
@@ -139,10 +139,10 @@ _For more examples, please refer to the [Documentation](https://example.com)_
 <!-- ROADMAP -->
 ## Roadmap
 
-- [Pathfinding] Feature 1
-- [Score] Feature 2
-- [Weather] Feature 3
-- [Wildfire Scenario] Feature 4
+- [] Player Pathfinding Movement - Feature 1
+- [] Score System - Feature 2
+- [] Weather System - Feature 3
+- [] Wildfire Scenario - Feature 4
     - [ ] Nested Feature
 
 These are some of the key features that were unable to be implmented prior to prototype submission. Further planned features are outlined within the Game Design Documentation as well as a full write up of the intended features implmentation and functionality.
