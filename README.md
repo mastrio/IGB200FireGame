@@ -67,12 +67,13 @@ Counter Fire is a student developed project for the IGB200 assesment submission 
 
 
 The project is being developed by 
-*Andrew Seton - Project Managment, Assest Moddeler, Assest Managemnt, Level Development*
-*Connor Samra-Dardis - Core Mechanics Programming, Game Design, Ui Mechanics Support* ,Level Development*
-*Hayden Clark - Ui Development, Game Design, Ui Programming, Level Development*
-*Charlie Bui - UX Research, Level Terrain*
 
-* = temporary role for prototype
+- Andrew Seton: Project Managment, Assest Moddeler, Assest Managemnt, Level Development<sub>temp</sub>
+- Connor Samra-Dardis: Core Mechanics Programming, Game Design, Ui Mechanics Support* ,Level Development<sub>temp</sub>
+- Hayden Clark: Ui Development, Game Design, Ui Programming, Level Development<sub>temp</sub>
+- Charlie Bui: UX Research, Level Terrain
+
+temp = temporary role for prototype
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
