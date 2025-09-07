@@ -131,10 +131,10 @@ This build is still an early prototype so the fire intensity growthrate variable
 <!-- ACKNOWLEDGMENTS -->
 ## Acknowledgments
 - [ ] Art Assests
-  - [ ] 
+  - [ ] ithappy (2025). *Creative Characters FREE - Animated Low Poly 3D Models*[Digital Assest] Unity Assest Store, https://assetstore.unity.com/packages/3d/characters/humanoids/creative-characters-free-animated-low-poly-3d-models-304841#publisher
 
 - [ ] Code Tutorials Used
-  - [ ]
+  - [ ] SamYam. (10/5/2022). *Click to Move in 3d 2/ Input System - Unity Tutorial* [Video]. Youtube. https://youtu.be/zZDiC0aOXDY?si=sXD42VLixXrISA7x
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
