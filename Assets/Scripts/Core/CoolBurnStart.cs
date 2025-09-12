@@ -22,6 +22,7 @@ public class FireManager : MonoBehaviour
     public Coroutine buttonCoroutine;
     private int burnableLayer;
     private int coolburnLayer;
+    private int groundLayer;
 
     private bool CoolbuttonPressed = false;
 
@@ -99,12 +100,21 @@ public class FireManager : MonoBehaviour
         else if (Physics.Raycast(ray: ray, hitInfo: out RaycastHit firehit) && firehit.collider &&
                  firehit.collider.gameObject.layer.CompareTo(coolburnLayer) == 0)
         {
-            if (firehit.collider.TryGetComponent<CoolburnGroundItem>(out CoolburnGroundItem coolburnGround))
+            if (firehit.collider.TryGetComponent<CoolburnGroundItem>(out CoolburnGroundItem coolburnBrush))
             {
                 ClicktoMove.movedisabled = true;
-                coolburnGround.CoolBurnIgnition(30f);
+                coolburnBrush.CoolBurnIgnition(30f);
             }
 
+        }
+        else if (Physics.Raycast(ray: ray, hitInfo: out RaycastHit groundhit) && groundhit.collider &&
+                 groundhit.collider.gameObject.layer.CompareTo(groundLayer) == 0)
+        {
+            if (groundhit.collider.TryGetComponent<CoolBurnManager>(out CoolBurnManager coolburnGround))
+            {
+                ClicktoMove.movedisabled = true;
+                coolburnGround.FireIgnition(30f, groundhit.point);
+            }
         }
 
         ClicktoMove.movedisabled = false;
