@@ -50,6 +50,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   motionRootObject: {fileID: 7151342504363531340}
   bgCloseButtonObject: {fileID: 4226041311454581153}
+  open: 0
 --- !u!1 &1414965590382245542
 GameObject:
   m_ObjectHideFlags: 0
@@ -435,7 +436,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 1, g: 0.6745098, b: 0.36862746, a: 1}
+  m_BackGroundColor: {r: 0.5882353, g: 0.6784314, b: 0.27058825, a: 1}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
