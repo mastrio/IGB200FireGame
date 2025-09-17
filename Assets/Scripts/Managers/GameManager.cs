@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
@@ -5,6 +6,9 @@ public class GameManager : MonoBehaviour
     public static GameManager instance;
 
     public GameObject playerObject;
+    [DoNotSerialize] public GameObject fireObject;
+
+    [DoNotSerialize] public FireObject fireObjectScript;
 
     [SerializeField] private GameObject mapObjectContainer;
     [SerializeField] private GameObject[] levelList;

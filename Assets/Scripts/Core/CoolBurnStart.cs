@@ -38,13 +38,13 @@ public class FireManager : MonoBehaviour
     private void OnEnable()
     {
         MouseClick.Enable();
-        MouseClick.performed += mouseActionCheck;
+        //MouseClick.performed += mouseActionCheck;
     }
 
     private void OnDisable()
     {
         MouseClick.Disable();
-        MouseClick.performed -= mouseActionCheck;
+        //MouseClick.performed -= mouseActionCheck;
     }
 
     public void CoolButtonTrigger()
@@ -62,30 +62,32 @@ public class FireManager : MonoBehaviour
         // Debug.Log("ITWORKED");
     }
 
-    private void mouseActionCheck(InputAction.CallbackContext context)
+    public bool mouseActionCheck() //InputAction.CallbackContext context
     {
+        bool success = false;
+
         //only triggers if the bool is true
-        if (!CoolbuttonPressed)
-        {
-            return;
-        }
+        //if (!CoolbuttonPressed)
+        //{
+        //    return;
+        //}
 
         player.TryGetComponent<ClicktoMove>(out ClicktoMove clicktoMove);
         Debug.Log("itworked");
         Ray ray = mainCamera.ScreenPointToRay(Mouse.current.position.ReadValue());
-        if (clicktoMove.MouseOverUi())
-        {
-            CoolbuttonPressed = false;
-            ClicktoMove.movedisabled = false;
-            return;
-        }
+        //if (clicktoMove.MouseOverUi())
+        //{
+        //    CoolbuttonPressed = false;
+        //    ClicktoMove.movedisabled = false;
+        //    return;
+        //}
 
         if (Physics.Raycast(ray: ray, hitInfo: out RaycastHit burnablehit) && burnablehit.collider &&
             burnablehit.collider.gameObject.layer.CompareTo(burnableLayer) == 0)
         {
             CoolbuttonPressed = false;
             ClicktoMove.movedisabled = false;
-            return;
+            return success;
             // float distanceFromPlayer = Vector3.Distance(player.transform.position, firehit.point);
             //if (distanceFromPlayer < 1f)
             //{
@@ -104,6 +106,7 @@ public class FireManager : MonoBehaviour
             {
                 ClicktoMove.movedisabled = true;
                 coolburnBrush.CoolBurnIgnition(30f);
+                success = true;
             }
 
         }
@@ -121,6 +124,7 @@ public class FireManager : MonoBehaviour
         CoolbuttonPressed = false;
 
         Debug.Log("Cool disable Move enable");
+        return success;
     }
 
 

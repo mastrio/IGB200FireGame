@@ -7,10 +7,10 @@ using UnityEngine.SocialPlatforms.Impl;
 
 public class GameUI : MonoBehaviour
 {
+    public FireManager coolburnStart;
     [SerializeField] private GameObject phoneUIObject;
     [SerializeField] private GameObject mapUIObject;
     [SerializeField] private GameObject pauseUIObject;
-    [SerializeField] private FireManager coolburnStart;
     [SerializeField] private TextMeshProUGUI FireDangerLevelText;
     //[SerializeField] private ClicktoMove clicktoMove;
 
@@ -39,14 +39,10 @@ public class GameUI : MonoBehaviour
         }
     }
 
-
     public void UpdateTextForDangerLevel(TextMeshProUGUI FireDangerText)
     {
-        FireDangerText.text = "Current Fire Danger Level: " + FireManager.GetFireDangerLevel();
+        FireDangerText.text = "Danger Level: " + FireManager.GetFireDangerLevel();
     }
-
-    
-
 
     public void PauseButtonPressed()
     {

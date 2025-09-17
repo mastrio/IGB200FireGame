@@ -2,6 +2,9 @@ using UnityEngine;
 
 public class CoolburnButton : MonoBehaviour
 {
+    [SerializeField] private GameUI gameUI;
+    [SerializeField] private GameObject fireObjectPrefab;
+
     Vector3 startPos;
     bool dragging = false;
 
@@ -30,11 +33,25 @@ public class CoolburnButton : MonoBehaviour
     {
         dragging = true;
         resetAnimation = null;
+
+        Cursor.visible = false;
     }
 
     public void PointerUp()
     {
         dragging = false;
-        resetAnimation = new SpringDamperVector3(30.0f, 30.0f, startPos);
+        bool worked = gameUI.coolburnStart.mouseActionCheck();
+        if (worked)
+        {
+            gameObject.SetActive(false);
+            gameObject.SetActive(true);
+            transform.localPosition = startPos;
+        }
+        else
+        {
+            resetAnimation = new SpringDamperVector3(30.0f, 30.0f, startPos);
+        }
+
+        Cursor.visible = true;
     }
 }

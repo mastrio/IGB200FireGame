@@ -44,6 +44,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a5fed7edebc74942af2717086601be1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerObject: {fileID: 0}
   mapObjectContainer: {fileID: 0}
   levelList:
   - {fileID: 7584857021624622145, guid: b998effc5b2a48b42a49176107e756ad, type: 3}
