@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -6,9 +7,11 @@ public class GameManager : MonoBehaviour
     public static GameManager instance;
 
     public GameObject playerObject;
-    [DoNotSerialize] public GameObject fireObject;
 
-    [DoNotSerialize] public FireObject fireObjectScript;
+    [DoNotSerialize] public List<GameObject> fireObjects;
+    [DoNotSerialize] public List<FireObject> fireObjectScripts;
+
+    [DoNotSerialize] public bool playerDraggingFireButton = false;
 
     [SerializeField] private GameObject mapObjectContainer;
     [SerializeField] private GameObject[] levelList;

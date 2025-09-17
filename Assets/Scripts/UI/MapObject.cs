@@ -22,7 +22,5 @@ public class MapObject : MonoBehaviour
             linkedObject.transform.position.z * OBJECT_SCALE.y,
             linkedObject.transform.position.z * 0.002f + layerOffset
         );
-
-        //transform.localScale = linkedObject.transform.localScale / 50.0f;
     }
 }

@@ -458,13 +458,13 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 598846913930511300}
   - {fileID: 789448250224146251}
   - {fileID: 4835214597637247301}
   - {fileID: 6091411211605452266}
   - {fileID: 4494317088615135582}
   - {fileID: 3590461244329380536}
   - {fileID: 7581544259383612955}
-  - {fileID: 598846913930511300}
   - {fileID: 11656297874758844}
   m_Father: {fileID: 2468911677517679584}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -737,7 +737,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameUI: {fileID: 1414899561382175979}
-  fireObjectPrefab: {fileID: 0}
+  fireObjectPrefab: {fileID: 1966788621693682171, guid: 526f527ce02a37345bdf0536c61688e8, type: 3}
 --- !u!114 &941988154063272659
 MonoBehaviour:
   m_ObjectHideFlags: 0

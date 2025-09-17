@@ -1,3 +1,4 @@
+using System.Linq;
 using UnityEngine;
 
 public class FireObject : MonoBehaviour
@@ -6,7 +7,13 @@ public class FireObject : MonoBehaviour
 
     void Awake()
     {
-        GameManager.instance.fireObject = gameObject;
-        GameManager.instance.fireObjectScript = this;
+        GameManager.instance.fireObjects.Add(gameObject);
+        GameManager.instance.fireObjectScripts.Add(this);
+    }
+
+    void OnDestroy()
+    {
+        GameManager.instance.fireObjects.Remove(gameObject);
+        GameManager.instance.fireObjectScripts.Remove(this);
     }
 }

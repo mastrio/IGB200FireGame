@@ -31,16 +31,15 @@ public class CoolburnButton : MonoBehaviour
 
     public void PointerDown()
     {
+        GameManager.instance.playerDraggingFireButton = true;
         dragging = true;
         resetAnimation = null;
-
         Cursor.visible = false;
     }
 
     public void PointerUp()
     {
-        dragging = false;
-        bool worked = gameUI.coolburnStart.mouseActionCheck();
+        bool worked = gameUI.coolburnStart.mouseActionCheck(fireObjectPrefab);
         if (worked)
         {
             gameObject.SetActive(false);
@@ -52,6 +51,8 @@ public class CoolburnButton : MonoBehaviour
             resetAnimation = new SpringDamperVector3(30.0f, 30.0f, startPos);
         }
 
+        GameManager.instance.playerDraggingFireButton = false;
+        dragging = false;
         Cursor.visible = true;
     }
 }

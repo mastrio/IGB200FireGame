@@ -21,7 +21,6 @@ public class UIRevealAnimation : MonoBehaviour
     void OnEnable()
     {
         transform.localScale = new Vector3(0.0f, 0.0f, 1.0f);
-
         scaleAnimation = new SpringDamperVector3(spring, damp, Vector3.one, startDelay);
     }
 }

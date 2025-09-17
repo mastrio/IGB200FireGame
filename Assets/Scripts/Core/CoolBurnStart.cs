@@ -33,6 +33,7 @@ public class FireManager : MonoBehaviour
         mainCamera = Camera.main;
         burnableLayer = LayerMask.NameToLayer("Burnable");
         coolburnLayer = LayerMask.NameToLayer("Coolburn");
+        groundLayer = LayerMask.NameToLayer("Ground");
     }
 
     private void OnEnable()
@@ -51,7 +52,6 @@ public class FireManager : MonoBehaviour
     {
         CoolbuttonPressed = true;
         ClicktoMove.movedisabled = true;
-        Debug.Log("Coolburn true move disabled");
         // buttonCoroutine = StartCoroutine(delayCoolbuttonTrigger());
     }
 
@@ -62,7 +62,7 @@ public class FireManager : MonoBehaviour
         // Debug.Log("ITWORKED");
     }
 
-    public bool mouseActionCheck() //InputAction.CallbackContext context
+    public bool mouseActionCheck(GameObject fireObjectPrefab) //InputAction.CallbackContext context
     {
         bool success = false;
 
@@ -73,7 +73,6 @@ public class FireManager : MonoBehaviour
         //}
 
         player.TryGetComponent<ClicktoMove>(out ClicktoMove clicktoMove);
-        Debug.Log("itworked");
         Ray ray = mainCamera.ScreenPointToRay(Mouse.current.position.ReadValue());
         //if (clicktoMove.MouseOverUi())
         //{
@@ -82,6 +81,18 @@ public class FireManager : MonoBehaviour
         //    return;
         //}
 
+        // Spawn fire object
+        Physics.Raycast(ray: ray, hitInfo: out RaycastHit rayHit);
+        int hitLayer = rayHit.collider.gameObject.layer;
+
+        if (hitLayer == groundLayer || hitLayer == coolburnLayer)
+        {
+            Instantiate(fireObjectPrefab, rayHit.point, Quaternion.Euler(Vector3.zero));
+            success = true;
+        }
+
+        // Old system
+        /*
         if (Physics.Raycast(ray: ray, hitInfo: out RaycastHit burnablehit) && burnablehit.collider &&
             burnablehit.collider.gameObject.layer.CompareTo(burnableLayer) == 0)
         {
@@ -91,12 +102,10 @@ public class FireManager : MonoBehaviour
             // float distanceFromPlayer = Vector3.Distance(player.transform.position, firehit.point);
             //if (distanceFromPlayer < 1f)
             //{
-            /*
-            if (burnablehit.collider.TryGetComponent<BurnableObject>(out BurnableObject coolBurnable))
-            {
-                coolBurnable.BurnableIgnition(30f);
-            }
-            */
+            //if (burnablehit.collider.TryGetComponent<BurnableObject>(out BurnableObject coolBurnable))
+            //{
+            //    coolBurnable.BurnableIgnition(30f);
+            //}
             //}
         }
         else if (Physics.Raycast(ray: ray, hitInfo: out RaycastHit firehit) && firehit.collider &&
@@ -108,7 +117,6 @@ public class FireManager : MonoBehaviour
                 coolburnBrush.CoolBurnIgnition(30f);
                 success = true;
             }
-
         }
         else if (Physics.Raycast(ray: ray, hitInfo: out RaycastHit groundhit) && groundhit.collider &&
                  groundhit.collider.gameObject.layer.CompareTo(groundLayer) == 0)
@@ -119,15 +127,12 @@ public class FireManager : MonoBehaviour
                 coolburnGround.FireIgnition(30f, groundhit.point);
             }
         }
+        */
 
         ClicktoMove.movedisabled = false;
         CoolbuttonPressed = false;
-
-        Debug.Log("Cool disable Move enable");
         return success;
     }
-
-
 
     public void ShowFireSlider()
     {
@@ -153,7 +158,6 @@ public class FireManager : MonoBehaviour
         }
 
     }
-
     public static void UpdateFireDangerLevel(bool CoolBurnSuccess)
     {
         if (FireDangerLevel <= 5 && FireDangerLevel >= 0)
@@ -169,7 +173,6 @@ public class FireManager : MonoBehaviour
         }
         
     }
-    
     public static int GetFireDangerLevel()
     {
         return FireDangerLevel;
