@@ -16,10 +16,12 @@ public class FireObject : MonoBehaviour
     {
         GameManager.instance.fireObjects.Add(gameObject);
         GameManager.instance.fireObjectScripts.Add(this);
+        currentlyBurning = true;
     }
 
     void OnDestroy()
     {
+        currentlyBurning = false;
         GameManager.instance.fireObjects.Remove(gameObject);
         GameManager.instance.fireObjectScripts.Remove(this);
     }

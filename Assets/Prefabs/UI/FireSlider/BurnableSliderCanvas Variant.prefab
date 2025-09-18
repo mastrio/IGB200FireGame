@@ -110,7 +110,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6662985972456846998, guid: 9bacb3fe7af4b6d47871412892c7412f, type: 3}
       propertyPath: m_PresetInfoIsWorld
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8188806645994814254, guid: 9bacb3fe7af4b6d47871412892c7412f, type: 3}
       propertyPath: m_AnchorMax.x
