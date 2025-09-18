@@ -6,11 +6,13 @@ public class FireObject : MonoBehaviour
     public float playerDetectionDistance = 10.0f;
     private bool hasCoolburnTag = false;
     private string coolburnTag = "Coolburn";
+    private bool currentlyBurning = false;
 
     [SerializeField] private float MoveSpeed = 10f;
     [SerializeField] private float DirectionTime = 10f;
     private Vector3 FiresDirection;
     private float FireDirectionTimer;
+    private float fireIntensity = 0f;
 
     void Awake()
     {
@@ -45,7 +47,24 @@ public class FireObject : MonoBehaviour
             CoolburnGroundItem CollidedEnviroment = other.GetComponent<CoolburnGroundItem>();
             CollidedEnviroment.FireDestory();
         }
+    } 
+    void UpdateFireIntensity(float currentIntensity)
+    {
+        if (fireIntensity >= 200f) ;
+        {
+            fireIntensity += currentIntensity;
+            ParticleSystem FireObjectsPS = GetComponentInChildren<ParticleSystem>();
+            Vector3 MinFirePsScale = new Vector3(1f, 1f, 1f);
+            Vector3 MaxFirePsScale = new Vector3(15.17f, 15.823f, 4f);
+
+            var FireObjectPSShape = FireObjectsPS.shape;
+            //Make Null Exception
+            Vector3 UpdatingIntensityScale =
+                Vector3.Lerp(MinFirePsScale, MaxFirePsScale, fireIntensity / 200f);
+            transform.localScale = UpdatingIntensityScale;
+        }
     }
+
 
     void ChangeDirection()
     {
