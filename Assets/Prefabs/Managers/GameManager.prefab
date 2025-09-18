@@ -45,6 +45,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerObject: {fileID: 0}
+  fireObjects: []
+  fireObjectScripts: []
+  playerDraggingFireButton: 0
   mapObjectContainer: {fileID: 0}
   levelList:
-  - {fileID: 7584857021624622145, guid: b998effc5b2a48b42a49176107e756ad, type: 3}
+  - {fileID: 2040091949953048811, guid: d254c3bc95fc07f44afe34bccd0942c1, type: 3}

@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 04da9fb4a3dbad44a926f5036babc911
+guid: 85ed44697cbd9184db6d8e8cda3e043a
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -136,23 +136,45 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: FireDangerBoard_0
+      name: QuestionButton_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 724
-        height: 684
+        width: 600
+        height: 600
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c42db30b3a387ec4f82f98b7a634de31
-      internalID: 1009080614
+      spriteID: 743fd497cbc65ba42bdeb797b357122a
+      internalID: 703387150
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: QuestionButton_1
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 0
+        width: 600
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dbc2bfd66ed188541a0480fccd9d96d2
+      internalID: 1624615286
       vertices: []
       indices: 
       edges: []
@@ -161,7 +183,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 4c6949b1dfc0ac842ace49ac2311c267
+    spriteID: f646569201e9ce74eb9a78210c10f804
     internalID: 0
     vertices: []
     indices: 
@@ -171,7 +193,8 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      FireDangerBoard_0: 1009080614
+      QuestionButton_0: 703387150
+      QuestionButton_1: 1624615286
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

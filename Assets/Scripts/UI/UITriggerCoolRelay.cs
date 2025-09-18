@@ -3,7 +3,7 @@ using UnityEngine;
 public class UITriggerCoolRelay : MonoBehaviour
 {
     [SerializeField] private CoolburnGroundItem parentScriptCoolObject;
-  
+
     private void OnTriggerEnter(Collider other)
     {
         parentScriptCoolObject?.OnTriggerEnterRelayFromChild(other);

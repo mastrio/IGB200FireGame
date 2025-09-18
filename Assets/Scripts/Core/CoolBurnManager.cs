@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Linq;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
@@ -111,8 +110,8 @@ public class CoolBurnManager : MonoBehaviour
             {
                 if (currentFireIntensity >= 125f && burnableSpreadTimer >= burnableSpreadDelayTime)
                 {
-                  //  nearbyBurnable = SpreadToBurnables();
-                  Debug.Log("Bzzt Not Done");
+                    //  nearbyBurnable = SpreadToBurnables();
+                    Debug.Log("Bzzt Not Done");
                     burnableSpreadTimer = 0;
                 }
             }

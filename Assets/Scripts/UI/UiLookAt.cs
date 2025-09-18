@@ -19,5 +19,5 @@ public class UiLookAt : MonoBehaviour
         transform.LookAt(lookAtCamera);
     }
 
-   
+
 }

@@ -1,9 +1,5 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class ScoreManager : MonoBehaviour
 {
@@ -28,7 +24,7 @@ public class ScoreManager : MonoBehaviour
     {
         score += points;
 
-        ScoreText.text = "Score " + score.ToString();
+        ScoreText.text = score.ToString();
     }
     public void UpdateScore(int SucessfulBurn) //Change to switch
     {

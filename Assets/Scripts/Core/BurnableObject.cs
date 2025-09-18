@@ -1,8 +1,7 @@
-using System;
 using System.Collections;
-using UnityEngine;
 using System.Linq;
 using Unity.VisualScripting;
+using UnityEngine;
 using UnityEngine.UI;
 
 //Probarably will merge with CoolBurnGround item
@@ -20,10 +19,10 @@ public class BurnableObject : MonoBehaviour
     private float currentFireIntensity;
     private float fireMaxIntensity = 100f;
     private float currentFireTimer;
-    
+
 
     //Time Variables
-    
+
     private float weakFireTime;
     private float currentMaxIntensityFireTimer;
 
@@ -134,7 +133,7 @@ public class BurnableObject : MonoBehaviour
         weakFireTime = 0f;
         fireMaxIntensity = 150f;
 
-       
+
 
         float burnableSpreadTimer = 0f;
         float burnableSpreadDelayTime = 10f;
@@ -240,7 +239,7 @@ public class BurnableObject : MonoBehaviour
 
             yield return new WaitForSeconds(1f);
         }
-        
+
     }
 
     private bool SpreadToBurnables()

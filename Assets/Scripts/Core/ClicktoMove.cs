@@ -28,7 +28,7 @@ public class ClicktoMove : MonoBehaviour
     private int groundLayer;
     private int uiLayer;
     public static bool movedisabled = false;
-    
+
     private void Awake()
     {
         mainCamera = Camera.main;
@@ -49,7 +49,7 @@ public class ClicktoMove : MonoBehaviour
         MouseClick.Disable();
         MouseClick.performed -= mouseActionCheck;
     }
-   
+
 
     //Checks if the mouse click is over ui 
     public bool MouseOverUi()
@@ -92,20 +92,20 @@ public class ClicktoMove : MonoBehaviour
             //Stops if player is already midway through click
             if (coroutine != null) StopCoroutine(coroutine);
             coroutine = StartCoroutine(PlayerMoveTowards(hit.point));
-       
+
         }
     }
 
-   
+
 
     private IEnumerator PlayerMoveTowards(Vector3 target)
     {
-        
+
         float playerDistanceToFloor = transform.position.y - target.y;
         target.y += playerDistanceToFloor;
         while (Vector3.Distance(transform.position, target) > 1f)
         {
-           
+
             Vector3 destination = Vector3.MoveTowards(transform.position, target, playerSpeed * Time.deltaTime);
             //transform.position = destination;
 

@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 04da9fb4a3dbad44a926f5036babc911
+guid: fd30cf0172276f5488aee77ec10e38ee
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -136,23 +136,23 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: FireDangerBoard_0
+      name: Tryphy_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 724
-        height: 684
+        width: 418
+        height: 520
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c42db30b3a387ec4f82f98b7a634de31
-      internalID: 1009080614
+      spriteID: dff171dc7b3edd24bb12caf2ef7c8170
+      internalID: -897494089
       vertices: []
       indices: 
       edges: []
@@ -161,7 +161,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 4c6949b1dfc0ac842ace49ac2311c267
+    spriteID: 0120786a83352b14a82053c29b08a47e
     internalID: 0
     vertices: []
     indices: 
@@ -171,7 +171,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      FireDangerBoard_0: 1009080614
+      Tryphy_0: -897494089
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

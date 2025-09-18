@@ -1,9 +1,5 @@
-using System;
-using System.Net.Mime;
 using TMPro;
-using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.SocialPlatforms.Impl;
 
 public class GameUI : MonoBehaviour
 {
@@ -12,13 +8,14 @@ public class GameUI : MonoBehaviour
     [SerializeField] private GameObject mapUIObject;
     [SerializeField] private GameObject pauseUIObject;
     [SerializeField] private TextMeshProUGUI FireDangerLevelText;
+    [SerializeField] private GameObject coolburnButtonTutorial;
     //[SerializeField] private ClicktoMove clicktoMove;
 
     private PopupUIAnimation phoneUIAnim;
     private PopupUIAnimation mapUIAnim;
     private PauseUI pauseUI;
     private FireManager coolBurnStarter;
-   
+
     private int UiFireDangerLevel;
 
 
@@ -51,11 +48,16 @@ public class GameUI : MonoBehaviour
 
     public void StartCoolburnButtonPressed()
     {
-     
+
         //sets bool to true to spawn fire on next click
         coolburnStart.CoolButtonTrigger();
         //  clicktoMove.disablemoveButtonPress();
         Debug.Log("pressed");
+    }
+
+    public void HelpButtonPressed()
+    {
+        coolburnButtonTutorial.SetActive(true);
     }
 
     public void SprayWaterButtonPressed()

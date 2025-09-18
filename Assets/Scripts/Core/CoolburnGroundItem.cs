@@ -1,12 +1,8 @@
-using System;
 using System.Collections;
-using System.Collections.Specialized;
+using System.Linq;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
-using System.Linq;
-using System.Numerics;
-using Unity.VisualScripting;
-using UnityEngine.SocialPlatforms.Impl;
 using Quaternion = UnityEngine.Quaternion;
 using Vector3 = UnityEngine.Vector3;
 
@@ -29,7 +25,7 @@ public class CoolburnGroundItem : MonoBehaviour
     [HideInInspector] public bool currentlyBurning = false;
     private bool nearbyCoolburn = true;
     private bool nearbyBurnable = true;
-   
+
 
     //Intensity Variables
     private float currentFireIntensity;
@@ -40,8 +36,8 @@ public class CoolburnGroundItem : MonoBehaviour
     private float weakFireTime;
     private float currentMaxIntensityFireTimer;
 
-   
-       
+
+
     //Slider
     [Header("Ui Slider")]
     [SerializeField] private Canvas gameWorldCanvas;
@@ -66,7 +62,7 @@ public class CoolburnGroundItem : MonoBehaviour
         {
             fireSlider.onValueChanged.AddListener(OnSliderValueChanged);
         }
-      
+
     }
 
     public void FireStart()
@@ -74,7 +70,7 @@ public class CoolburnGroundItem : MonoBehaviour
         if (spawnFire == null)
         {
             GameObject spawnFire =
-                Instantiate(FireParticlePrefab, transform.position, Quaternion.Euler(new Vector3(-90.0f, 0.0f, 0.0f)),transform);
+                Instantiate(FireParticlePrefab, transform.position, Quaternion.Euler(new Vector3(-90.0f, 0.0f, 0.0f)), transform);
         }
     }
     public void FireDestory()
@@ -163,7 +159,7 @@ public class CoolburnGroundItem : MonoBehaviour
                 Quaternion.Euler(new Vector3(-90.0f, 0.0f, 0.0f)), transform);
             firePS = fireinstance.GetComponent<ParticleSystem>();
             currentlyBurning = true;
-            
+
 
             if (CoolBurnGroundCoroutine != null) StopCoroutine(CoolBurnGroundCoroutine);
             CoolBurnGroundCoroutine = StartCoroutine(CoolBurnGroundIntensifys(startBurnIntensity));
@@ -195,7 +191,7 @@ public class CoolburnGroundItem : MonoBehaviour
         Vector3 MinFirePsScale = new Vector3(1f, 1f, 1f);
         Vector3 MaxFirePsScale = new Vector3(9.17f, 9.823f, 3f);
 
-   
+
         while (currentlyBurning)
         {
             //This Only Grows if its below the max value
@@ -233,7 +229,7 @@ public class CoolburnGroundItem : MonoBehaviour
             }
             else if (currentFireIntensity < 100f)
             {
-                Debug.Log(""+coolBurnSpreadTimer);
+                Debug.Log("" + coolBurnSpreadTimer);
                 coolBurnSpreadTimer = 0; //Could Change to -1 instead
             }
 
@@ -263,12 +259,12 @@ public class CoolburnGroundItem : MonoBehaviour
             {
                 if (currentFireIntensity >= 125f && burnableSpreadTimer >= burnableSpreadDelayTime)
                 {
-                    
+
                     nearbyBurnable = SpreadToBurnables();
                     burnableSpreadTimer = 0;
                 }
             }
-            
+
 
             //Incriments the timer when below the weak intensity threshold
             if (currentFireIntensity <= 50f)
@@ -296,7 +292,7 @@ public class CoolburnGroundItem : MonoBehaviour
             if (currentFireIntensity >= fireMaxIntensity)
             {
                 currentMaxIntensityFireTimer += 1f;
-                Debug.Log("Time: "+ currentMaxIntensityFireTimer);
+                Debug.Log("Time: " + currentMaxIntensityFireTimer);
 
                 if (currentMaxIntensityFireTimer >= 60f)
                 {
@@ -410,7 +406,7 @@ public class CoolburnGroundItem : MonoBehaviour
         bool targetIgnitable = false;
 
         CoolburnLayer = 1 << LayerMask.NameToLayer("Coolburn");
-        Collider[] hitColliders = Physics.OverlapSphere(this.transform.position, 10f, CoolburnLayer,QueryTriggerInteraction.Ignore);
+        Collider[] hitColliders = Physics.OverlapSphere(this.transform.position, 10f, CoolburnLayer, QueryTriggerInteraction.Ignore);
 
         if (hitColliders == null || hitColliders.Length == 0)
         {

@@ -1166,6 +1166,7 @@ GameObject:
   - component: {fileID: 1066786044}
   - component: {fileID: 1066786046}
   - component: {fileID: 1066786045}
+  - component: {fileID: 1066786047}
   m_Layer: 5
   m_Name: PlaytestBuild
   m_TagString: Untagged
@@ -1189,7 +1190,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 160, y: 35}
+  m_AnchoredPosition: {x: 165, y: 35}
   m_SizeDelta: {x: 300, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1066786045
@@ -1291,6 +1292,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1066786043}
   m_CullTransparentMesh: 1
+--- !u!114 &1066786047
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1066786043}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 26e2f071176ebc4438e7d5d0d748d8b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1343000720
 GameObject:
   m_ObjectHideFlags: 0
@@ -2024,7 +2037,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.3962264, g: 0.27204612, b: 0.25231397, a: 1}
+  m_Color: {r: 0.28612494, g: 0.49056602, b: 0.27536488, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -2605,9 +2618,9 @@ MonoBehaviour:
   m_HandleRect: {fileID: 1990700812}
   m_Direction: 0
   m_MinValue: 0
-  m_MaxValue: 1
+  m_MaxValue: 2
   m_WholeNumbers: 0
-  m_Value: 0
+  m_Value: 1
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []

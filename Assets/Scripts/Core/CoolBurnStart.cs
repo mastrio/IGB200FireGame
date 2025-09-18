@@ -1,10 +1,6 @@
-using System;
 using System.Collections;
-using System.Runtime.CompilerServices;
-using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
-using UnityEngine.UI;
 
 public class FireManager : MonoBehaviour
 {
@@ -154,7 +150,7 @@ public class FireManager : MonoBehaviour
             {
                 burnables.SetFireSliderVisible(fireSlidersVisible);
             }
-           
+
         }
 
     }
@@ -171,7 +167,7 @@ public class FireManager : MonoBehaviour
                 FireDangerLevel -= 1;
             }
         }
-        
+
     }
     public static int GetFireDangerLevel()
     {
