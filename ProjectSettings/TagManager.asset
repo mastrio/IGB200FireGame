@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 3
   tags:
   - Burnable
+  - Coolburn
   layers:
   - Default
   - TransparentFX

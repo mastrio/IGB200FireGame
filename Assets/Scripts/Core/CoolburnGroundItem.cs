@@ -50,6 +50,7 @@ public class CoolburnGroundItem : MonoBehaviour
     private string playerTag = "Player";
 
     private ScoreManager scoreManager;
+    private GameObject spawnFire;
 
     private void Awake()
     {
@@ -66,6 +67,23 @@ public class CoolburnGroundItem : MonoBehaviour
             fireSlider.onValueChanged.AddListener(OnSliderValueChanged);
         }
       
+    }
+
+    public void FireStart()
+    {
+        if (spawnFire == null)
+        {
+            GameObject spawnFire =
+                Instantiate(FireParticlePrefab, transform.position, Quaternion.Euler(new Vector3(-90.0f, 0.0f, 0.0f)),transform);
+        }
+    }
+    public void FireDestory()
+    {
+        if (spawnFire != null)
+        {
+            int destroyRandomNum = UnityEngine.Random.Range(2, 10);
+            Destroy(spawnFire.gameObject, destroyRandomNum);
+        }
     }
 
     public void OnSliderValueChanged(float sliderfireIntensityValue)
