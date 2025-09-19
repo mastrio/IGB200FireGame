@@ -131,6 +131,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: FireManagementUI
       objectReference: {fileID: 0}
+    - target: {fileID: 4120603097710862135, guid: 50e132f83e8acdd42b1d7d38e012af94, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4648319962899869394, guid: 50e132f83e8acdd42b1d7d38e012af94, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8219295811265325868, guid: 50e132f83e8acdd42b1d7d38e012af94, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -978,7 +986,11 @@ PrefabInstance:
     - target: {fileID: 3119336986589926058, guid: 5aee8c14684e3ce40b212eb39670a576, type: 3}
       propertyPath: 'levelList.Array.data[0]'
       value: 
-      objectReference: {fileID: 7584857021624622145, guid: b998effc5b2a48b42a49176107e756ad, type: 3}
+      objectReference: {fileID: 2040091949953048811, guid: d254c3bc95fc07f44afe34bccd0942c1, type: 3}
+    - target: {fileID: 3119336986589926058, guid: 5aee8c14684e3ce40b212eb39670a576, type: 3}
+      propertyPath: playerDraggingFireButton
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1010,7 +1022,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1368536367339124943, guid: 0b533dde5772b2242908ee30e9c7f76c, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -7
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1368536367339124943, guid: 0b533dde5772b2242908ee30e9c7f76c, type: 3}
       propertyPath: m_LocalPosition.z
