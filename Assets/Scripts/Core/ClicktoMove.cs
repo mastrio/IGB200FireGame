@@ -64,12 +64,10 @@ public class ClicktoMove : MonoBehaviour
         EventSystem.current.RaycastAll(mousepointInfo, listofrays);
         if (listofrays.Count > 0)
         {
-            Debug.Log("true");
             return true;
         }
         else
         {
-            Debug.Log("false");
             return false;
         }
 
