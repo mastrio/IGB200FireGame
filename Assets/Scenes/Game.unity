@@ -802,6 +802,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1651824360}
     m_Modifications:
+    - target: {fileID: 189683290957074846, guid: 5e86fa643722f5a4f83c830b0334a957, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 189683290957074846, guid: 5e86fa643722f5a4f83c830b0334a957, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 819565083450566685, guid: 5e86fa643722f5a4f83c830b0334a957, type: 3}
       propertyPath: m_Name
       value: MapUI
@@ -809,6 +817,18 @@ PrefabInstance:
     - target: {fileID: 819565083450566685, guid: 5e86fa643722f5a4f83c830b0334a957, type: 3}
       propertyPath: m_Layer
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3283498939542740462, guid: 5e86fa643722f5a4f83c830b0334a957, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3283498939542740462, guid: 5e86fa643722f5a4f83c830b0334a957, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3283498939542740462, guid: 5e86fa643722f5a4f83c830b0334a957, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4762841526974871367, guid: 5e86fa643722f5a4f83c830b0334a957, type: 3}
       propertyPath: m_LocalPosition.x

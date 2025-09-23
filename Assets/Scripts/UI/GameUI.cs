@@ -8,8 +8,6 @@ public class GameUI : MonoBehaviour
     [SerializeField] private GameObject mapUIObject;
     [SerializeField] private GameObject pauseUIObject;
     [SerializeField] private TextMeshProUGUI FireDangerLevelText;
-    [SerializeField] private GameObject coolburnHelpButton;
-    [SerializeField] private TutorialDragThingy coolburnButtonTutorial;
     //[SerializeField] private ClicktoMove clicktoMove;
 
     private PopupUIAnimation phoneUIAnim;
@@ -54,11 +52,6 @@ public class GameUI : MonoBehaviour
         coolburnStart.CoolButtonTrigger();
         //  clicktoMove.disablemoveButtonPress();
         Debug.Log("pressed");
-    }
-
-    public void HelpButtonPressed()
-    {
-        coolburnButtonTutorial.StartTutorial(coolburnHelpButton);
     }
 
     public void SprayWaterButtonPressed()

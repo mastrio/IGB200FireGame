@@ -42,6 +42,7 @@ public class CoolburnButton : MonoBehaviour
         bool worked = gameUI.coolburnStart.mouseActionCheck(fireObjectPrefab);
         if (worked)
         {
+            GameManager.instance.hasPlacedFire = true;
             gameObject.SetActive(false);
             gameObject.SetActive(true);
             transform.localPosition = startPos;

@@ -11,11 +11,21 @@ public class MapCamera : MonoBehaviour
         basePos = transform.position;
     }
 
+    void OnEnable()
+    {
+        if (GameManager.instance == null) return; // Stops an error message from showing up when the game starts
+
+        GameManager.instance.mapCameraOffset = new Vector3(
+            GameManager.instance.playerObject.transform.position.x,
+            GameManager.instance.playerObject.transform.position.z
+        );
+    }
+
     void Update()
     {
         transform.position = new Vector3(
-            GameManager.instance.playerObject.transform.position.x * OBJECT_SCALE.x,
-            GameManager.instance.playerObject.transform.position.z * OBJECT_SCALE.y
+            GameManager.instance.mapCameraOffset.x * OBJECT_SCALE.x * GameManager.instance.mapZoomLevel,
+            GameManager.instance.mapCameraOffset.y * OBJECT_SCALE.y * GameManager.instance.mapZoomLevel
         ) + basePos;
     }
 }

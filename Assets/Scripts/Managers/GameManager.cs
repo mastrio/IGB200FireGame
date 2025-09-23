@@ -13,6 +13,13 @@ public class GameManager : MonoBehaviour
 
     [DoNotSerialize] public bool playerDraggingFireButton = false;
 
+    [DoNotSerialize] public float mapZoomLevel = 1.0f;
+    [DoNotSerialize] public Vector3 mapCameraOffset = Vector3.zero;
+
+    // Tutorial checks
+    [DoNotSerialize] public bool hasPlacedFire = false;
+    [DoNotSerialize] public bool hasPannedMap = false;
+
     [SerializeField] private GameObject mapObjectContainer;
     [SerializeField] private GameObject[] levelList;
 

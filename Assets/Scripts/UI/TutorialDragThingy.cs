@@ -84,7 +84,7 @@ public class TutorialDragThingy : MonoBehaviour
         image.transform.localPosition = startPos;
         timer = Time.time + 1.0f;
 
-        image.transform.localScale = new Vector3(10.0f, 10.0f, 1.0f);
+        image.transform.localScale = new Vector3(8.0f, 8.0f, 1.0f);
         scaleAnimation = new SpringDamperVector3(15.0f, 25.0f, Vector3.one);
         imageComponent.color = new Color(1.0f, 1.0f, 1.0f, 0.0f);
         colourAnimation = new LerpAnimationColour(Color.white, 10.0f);
