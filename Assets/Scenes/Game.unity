@@ -804,11 +804,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 189683290957074846, guid: 5e86fa643722f5a4f83c830b0334a957, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 189683290957074846, guid: 5e86fa643722f5a4f83c830b0334a957, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 819565083450566685, guid: 5e86fa643722f5a4f83c830b0334a957, type: 3}
       propertyPath: m_Name

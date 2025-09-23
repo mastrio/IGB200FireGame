@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 using Vector3 = UnityEngine.Vector3;
 
@@ -14,11 +15,21 @@ public class FireObject : MonoBehaviour
     private float FireDirectionTimer;
     private float fireIntensity = 0f;
 
+    private LerpAnimationVector3 FireDirectionLerp;
     void Awake()
     {
         GameManager.instance.fireObjects.Add(gameObject);
         GameManager.instance.fireObjectScripts.Add(this);
         currentlyBurning = true;
+
+        float Firex = UnityEngine.Random.Range(-20f, 20f);
+        Debug.Log(Firex);
+        float Firez = UnityEngine.Random.Range(-20f, 30f);
+        Debug.Log(Firez);
+        FiresDirection = new Vector3(Firex, 0, Firez).normalized;
+        Vector3 StartingFiresDirection = transform.position + FiresDirection * MoveSpeed;
+        Debug.Log(FiresDirection);
+        FireDirectionLerp = new LerpAnimationVector3(StartingFiresDirection, MoveSpeed);
     }
 
     void OnDestroy()
@@ -68,24 +79,29 @@ public class FireObject : MonoBehaviour
 
     void ChangeDirection()
     {
-        float Firex = UnityEngine.Random.Range(-20f, 30f);
+        float Firex = UnityEngine.Random.Range(-20f, 20f);
         float Firez = UnityEngine.Random.Range(-20f, 30f);
         FiresDirection = new Vector3(Firex, 0, Firez).normalized;
+        
+        //Changes it to work with the direction vector since otherwise goes to 0,0,0
+        FireDirectionLerp.targetVal = transform.position + FiresDirection * MoveSpeed;
     }
 
     private void Start()
     {
-        ChangeDirection();
         FireDirectionTimer = DirectionTime;
 
     }
 
     private void Update()
     {
-        transform.position += FiresDirection * MoveSpeed * Time.deltaTime;
+        //Update with current position and then start moving
+        transform.position = FireDirectionLerp.Update(transform.position);
+       
 
         FireDirectionTimer -= Time.deltaTime;
 
+        //Pick new direction if the timer is met
         if (FireDirectionTimer <= DirectionTime)
         {
             ChangeDirection();
