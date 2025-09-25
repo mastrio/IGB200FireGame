@@ -53,3 +53,21 @@ public class LerpAnimationFloat
         return Mathf.Lerp(value, targetVal, blend);
     }
 }
+
+public class LerpAnimationQuaternion
+{
+    public Quaternion targetVal;
+    public float lerpSpeed;
+
+    public LerpAnimationQuaternion(Quaternion targetVal, float lerpSpeed)
+    {
+        this.targetVal = targetVal;
+        this.lerpSpeed = lerpSpeed;
+    }
+
+    public Quaternion Update(Quaternion value)
+    {
+        float blend = 1 - Mathf.Pow(0.5f, Time.deltaTime * lerpSpeed);
+        return Quaternion.Lerp(value, targetVal, blend);
+    }
+}

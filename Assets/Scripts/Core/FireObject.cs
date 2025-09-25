@@ -13,7 +13,7 @@ public class FireObject : MonoBehaviour
     [SerializeField] private float DirectionTime = 10f;
     private Vector3 FiresDirection;
     private float FireDirectionTimer;
-    private float fireIntensity = 0f;
+    [HideInInspector] public float fireIntensity = 0f;
 
     private LerpAnimationVector3 FireDirectionLerp;
     void Awake()
@@ -21,6 +21,9 @@ public class FireObject : MonoBehaviour
         GameManager.instance.fireObjects.Add(gameObject);
         GameManager.instance.fireObjectScripts.Add(this);
         currentlyBurning = true;
+
+        // Added for testing the management UI
+        fireIntensity = 200.0f;
 
         float Firex = UnityEngine.Random.Range(-20f, 20f);
         Debug.Log(Firex);
