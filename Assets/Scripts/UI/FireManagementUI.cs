@@ -3,6 +3,7 @@ using UnityEngine;
 public class FireManagementUI : MonoBehaviour
 {
     [SerializeField] private PopupUIAnimation popupAnimation;
+    [SerializeField] private FireManagementBar fireManagementBar;
 
     void Update()
     {
@@ -10,7 +11,7 @@ public class FireManagementUI : MonoBehaviour
 
         float detectionRange = GameManager.instance.fireObjectScripts[0].playerDetectionDistance;
 
-        GameObject closestFireObject;
+        GameObject closestFireObject = gameObject;
         float closestDistance = 999999999.0f;
 
         foreach (GameObject fireObject in GameManager.instance.fireObjects)
@@ -25,7 +26,20 @@ public class FireManagementUI : MonoBehaviour
             }
         }
 
-        if (closestDistance <= detectionRange && !popupAnimation.open) popupAnimation.OpenUI();
-        else if (closestDistance > detectionRange && popupAnimation.open) popupAnimation.CloseUI();
+        if (closestDistance <= detectionRange && !popupAnimation.open)
+        {
+            fireManagementBar.fireObject = closestFireObject.GetComponent<FireObject>();
+            popupAnimation.OpenUI();
+        }
+        else if (closestDistance > detectionRange && popupAnimation.open)
+        {
+            fireManagementBar.State = FireBarState.Info;
+            popupAnimation.CloseUI();
+        }
+    }
+
+    public void BackgroundButtonPressed()
+    {
+        fireManagementBar.State = FireBarState.Info;
     }
 }

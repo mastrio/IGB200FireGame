@@ -47,10 +47,7 @@ public class CoolburnButton : MonoBehaviour
             gameObject.SetActive(true);
             transform.localPosition = startPos;
         }
-        else
-        {
-            resetAnimation = new SpringDamperVector3(30.0f, 30.0f, startPos);
-        }
+        else resetAnimation = new SpringDamperVector3(30.0f, 30.0f, startPos);
 
         GameManager.instance.playerDraggingFireButton = false;
         dragging = false;

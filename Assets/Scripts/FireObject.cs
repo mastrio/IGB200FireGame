@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 using Vector3 = UnityEngine.Vector3;
 
@@ -12,13 +13,14 @@ public class FireObject : MonoBehaviour
     [SerializeField] private float DirectionTime = 10f;
     private Vector3 FiresDirection;
     private float FireDirectionTimer;
-    private float fireIntensity = 0f;
+    [HideInInspector] public float fireIntensity = 0.0f;
 
     void Awake()
     {
         GameManager.instance.fireObjects.Add(gameObject);
         GameManager.instance.fireObjectScripts.Add(this);
         currentlyBurning = true;
+        fireIntensity = 200.0f;
     }
 
     void OnDestroy()
