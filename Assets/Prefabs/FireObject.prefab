@@ -48,7 +48,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerDetectionDistance: 7
-  MoveSpeed: 5
+  MoveSpeed: 4
   DirectionTime: 5
 --- !u!65 &863221096326092482
 BoxCollider:
