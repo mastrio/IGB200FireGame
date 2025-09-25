@@ -78,7 +78,6 @@ public class FireManagementBar : MonoBehaviour
             case FireBarState.Minigame: StateMinigame(); break;
         }
 
-        Debug.Log(fireObject.fireIntensity);
         fireLevelObject.transform.localPosition = new Vector3(
             0.0f,
             (fireObject.fireIntensity - 100.0f) * 2.3f
