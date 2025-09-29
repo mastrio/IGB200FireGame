@@ -1,5 +1,3 @@
-using System;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class FireManagementBar : MonoBehaviour
@@ -8,6 +6,7 @@ public class FireManagementBar : MonoBehaviour
     [SerializeField] private GameObject minigamePosObj;
     [SerializeField] private GameObject bgButton;
     [SerializeField] private GameObject fireLevelObject;
+    [SerializeField] private ObjectShaker objectShaker;
 
     [HideInInspector] public FireObject fireObject;
 
@@ -40,7 +39,8 @@ public class FireManagementBar : MonoBehaviour
                     scaleAnimation = null;
                     pulseAnimation = new PulseAnimationVector3(
                         new Vector3(1.5f, 1.5f, 1.0f),
-                        new Vector3(2.0f, 2.0f, 1.0f),
+                        new Vector3(0.2f, 0.2f, 0.0f),
+                        new Vector3(2.2f, 2.2f, 1.0f),
                         25.0f
                     );
                     break;
@@ -88,9 +88,13 @@ public class FireManagementBar : MonoBehaviour
     {
         switch (state)
         {
-            case FireBarState.Info: State = FireBarState.Minigame; break;
+            case FireBarState.Info:
+                State = FireBarState.Minigame;
+                GameManager.instance.hasManagedFire = true;
+                break;
             case FireBarState.Minigame:
                 pulseAnimation.Pulse();
+                objectShaker.ApplySharpShake(4.0f);
                 if (fireObject.fireIntensity > 0.0f) fireObject.fireIntensity -= 5.0f;
                 break;
         }
@@ -98,6 +102,11 @@ public class FireManagementBar : MonoBehaviour
 
     private void StateInfo()
     {
+        if (fireObject.fireIntensity > 100.0f)
+        {
+            objectShaker.SetSharpShake(Mathf.Clamp(fireObject.fireIntensity - 100.0f, 0.0f, 100.0f) * 0.15f);
+        }
+
         transform.localScale = new Vector3(
             Mathf.Sin(Time.time * 2.0f) * 0.02f,
             Mathf.Sin(Time.time * 2.0f) * 0.02f
@@ -106,7 +115,10 @@ public class FireManagementBar : MonoBehaviour
 
     private void StateMinigame()
     {
-        // Hi! I'm a comment! WOW!!!
+        //if (fireObject.fireIntensity > 100.0f)
+        //{
+        //    objectShaker.SetSharpShake(Mathf.Clamp(fireObject.fireIntensity - 100.0f, 0.0f, 100.0f) * 0.01f);
+        //}
     }
 }
 

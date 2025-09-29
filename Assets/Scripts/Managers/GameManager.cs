@@ -19,6 +19,7 @@ public class GameManager : MonoBehaviour
     // Tutorial checks
     [DoNotSerialize] public bool hasPlacedFire = false;
     [DoNotSerialize] public bool hasPannedMap = false;
+    [DoNotSerialize] public bool hasManagedFire = false;
 
     [SerializeField] private GameObject mapObjectContainer;
     [SerializeField] private GameObject[] levelList;

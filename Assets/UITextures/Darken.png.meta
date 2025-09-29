@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 76b600903c648cd499cfb342d9681040
+guid: 6b41be78e8477194ea4a0bc8918e95ad
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -136,13 +136,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: peak logo design_0
+      name: darken_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 200
-        height: 200
+        width: 1000
+        height: 1000
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -151,8 +151,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1e802d6c6fcc5a94bb8c737035300521
-      internalID: -1618500793
+      spriteID: 7736a59f74fc0ac408745fe9a0a8e29e
+      internalID: 225873446
       vertices: []
       indices: 
       edges: []
@@ -161,7 +161,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 8420af08fca8c8d43bca5b6a6f552280
+    spriteID: 504346742dfbc3746ab7d222d14d6dbf
     internalID: 0
     vertices: []
     indices: 
@@ -171,7 +171,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      peak logo design_0: -1618500793
+      darken_0: 225873446
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

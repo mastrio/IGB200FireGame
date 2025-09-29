@@ -462,6 +462,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1655779563487763442}
+  - component: {fileID: 6400696431476655823}
   m_Layer: 0
   m_Name: WindDirectionController
   m_TagString: Untagged
@@ -485,6 +486,20 @@ Transform:
   - {fileID: 2090646683948691427}
   m_Father: {fileID: 7652131072618965262}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6400696431476655823
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2856690884555964125}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d49bd13fa8aa4f64a8e9f1c8f7eb1879, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  windParticles: {fileID: 2577512826434447273}
+  directionDegrees: 0
 --- !u!1 &3594980799794979569
 GameObject:
   m_ObjectHideFlags: 0
@@ -25499,6 +25514,11 @@ PrefabInstance:
 --- !u!224 &2090646683948691427 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 8553633520981223952, guid: 2ee957a51a9041d4ba04be36e66fac54, type: 3}
+  m_PrefabInstance: {fileID: 7761923495036552691}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &2577512826434447273 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5220461456944456282, guid: 2ee957a51a9041d4ba04be36e66fac54, type: 3}
   m_PrefabInstance: {fileID: 7761923495036552691}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &7794738776751188043

@@ -48,8 +48,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerDetectionDistance: 7
-  MoveSpeed: 4
-  DirectionTime: 5
+  MoveSpeed: 5
+  DirectionTime: 10
+  fireIntensity: 0
 --- !u!65 &863221096326092482
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -69,8 +70,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 5.8732347, y: 4.723424, z: 5.7593565}
-  m_Center: {x: -0.1375184, y: 0.047338128, z: 0.059308052}
+  m_Size: {x: 5.8, y: 4.7, z: 5.7}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!54 &-9105073179673796107
 Rigidbody:
   m_ObjectHideFlags: 0

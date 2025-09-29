@@ -15,7 +15,6 @@ public class FireObject : MonoBehaviour
     private float FireDirectionTimer;
     [HideInInspector] public float fireIntensity = 0f;
 
-    private LerpAnimationVector3 FireDirectionLerp;
     void Awake()
     {
         GameManager.instance.fireObjects.Add(gameObject);
@@ -32,7 +31,6 @@ public class FireObject : MonoBehaviour
         FiresDirection = new Vector3(Firex, 0, Firez).normalized;
         Vector3 StartingFiresDirection = transform.position + FiresDirection * MoveSpeed;
         Debug.Log(FiresDirection);
-        FireDirectionLerp = new LerpAnimationVector3(StartingFiresDirection, MoveSpeed);
     }
 
     void OnDestroy()
@@ -83,11 +81,8 @@ public class FireObject : MonoBehaviour
     void ChangeDirection()
     {
         float Firex = UnityEngine.Random.Range(-20f, 20f);
-        float Firez = UnityEngine.Random.Range(-20f, 30f);
-        FiresDirection = new Vector3(Firex, 0, Firez).normalized;
-        
-        //Changes it to work with the direction vector since otherwise goes to 0,0,0
-        FireDirectionLerp.targetVal = transform.position + FiresDirection * MoveSpeed;
+        float Firez = UnityEngine.Random.Range(-20f, 20f);
+        FiresDirection = new Vector3(Firex, 0, Firez).normalized + WindManager.instance.Direction * 0.2f;
     }
 
     private void Start()
@@ -98,10 +93,6 @@ public class FireObject : MonoBehaviour
 
     private void Update()
     {
-        //Update with current position and then start moving
-        transform.position = FireDirectionLerp.Update(transform.position);
-       
-
         FireDirectionTimer -= Time.deltaTime;
 
         //Pick new direction if the timer is met
@@ -110,5 +101,11 @@ public class FireObject : MonoBehaviour
             ChangeDirection();
             FireDirectionTimer = DirectionTime;
         }
+    }
+
+    private void FixedUpdate()
+    {
+        // Update with current position and then start moving
+        transform.Translate(FiresDirection * Time.deltaTime, Space.World);
     }
 }
