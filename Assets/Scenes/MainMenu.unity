@@ -2205,12 +2205,16 @@ PrefabInstance:
       value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 1921108503885696828, guid: 2ee957a51a9041d4ba04be36e66fac54, type: 3}
+      propertyPath: TrailModule.lifetime.scalar
+      value: 0.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 1921108503885696828, guid: 2ee957a51a9041d4ba04be36e66fac54, type: 3}
       propertyPath: InitialModule.startSpeed.scalar
       value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 1921108503885696828, guid: 2ee957a51a9041d4ba04be36e66fac54, type: 3}
       propertyPath: InitialModule.startLifetime.scalar
-      value: 5
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 5220461456944456282, guid: 2ee957a51a9041d4ba04be36e66fac54, type: 3}
       propertyPath: m_Name
@@ -2258,7 +2262,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8553633520981223952, guid: 2ee957a51a9041d4ba04be36e66fac54, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 10
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 8553633520981223952, guid: 2ee957a51a9041d4ba04be36e66fac54, type: 3}
       propertyPath: m_LocalRotation.w
