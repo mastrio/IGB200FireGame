@@ -1,3 +1,5 @@
+using System.Collections;
+using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 using Vector3 = UnityEngine.Vector3;
@@ -11,9 +13,25 @@ public class FireObject : MonoBehaviour
 
     [SerializeField] private float MoveSpeed = 10f;
     [SerializeField] private float DirectionTime = 10f;
+    //FireDirection Variables
+    [SerializeField] private float MoveSpeed = 4f;
+    private float changeDirectionTime = 10f;
     private Vector3 FiresDirection;
     private float FireDirectionTimer;
+
+    //Fire Intensity
     [HideInInspector] public float fireIntensity = 0f;
+    [HideInInspector] public float MaxFireIntensity = 200f;
+    private float fireIntensityTimer = 5f;
+    private float fireIntensityTimerRest = 5f;
+
+    //PS system
+    private ParticleSystem fireObjectPS;
+    private Vector3 minFirePsScale;
+    private Vector3 maxFirePsScale;
+
+    private Coroutine FireIntensityCoroutine;
+
 
     void Awake()
     {
@@ -22,15 +40,20 @@ public class FireObject : MonoBehaviour
         currentlyBurning = true;
 
         // Added for testing the management UI
-        fireIntensity = 200.0f;
+        fireIntensity = 50.0f;
 
         float Firex = UnityEngine.Random.Range(-20f, 20f);
         Debug.Log(Firex);
         float Firez = UnityEngine.Random.Range(-20f, 30f);
         Debug.Log(Firez);
-        FiresDirection = new Vector3(Firex, 0, Firez).normalized;
         Vector3 StartingFiresDirection = transform.position + FiresDirection * MoveSpeed;
         Debug.Log(FiresDirection);
+<<<<<<< Updated upstream
+=======
+        fireObjectPS = GetComponentInChildren<ParticleSystem>();
+        FireDirectionLerp = new LerpAnimationVector3(StartingFiresDirection, MoveSpeed);
+
+>>>>>>> Stashed changes
     }
 
     void OnDestroy()
@@ -44,6 +67,7 @@ public class FireObject : MonoBehaviour
     {
         Debug.Log("FUCCCCCCCCCCCCCCCCCCCK");
         if (other.CompareTag(coolburnTag))
+        if (other.CompareTag(coolburnTag)&&fireIntensity > 100f)
         {
             Debug.Log("Called");
             CoolburnGroundItem CollidedEnviroment = other.GetComponent<CoolburnGroundItem>();
@@ -61,6 +85,10 @@ public class FireObject : MonoBehaviour
         }
     } 
     void UpdateFireIntensity(float currentIntensity)
+
+
+
+    private IEnumerator IntensifyFire(float initalFireIntensity)
     {
         if (fireIntensity >= 200f) ;
         {
@@ -68,26 +96,87 @@ public class FireObject : MonoBehaviour
             ParticleSystem FireObjectsPS = GetComponentInChildren<ParticleSystem>();
             Vector3 MinFirePsScale = new Vector3(1f, 1f, 1f);
             Vector3 MaxFirePsScale = new Vector3(15.17f, 15.823f, 4f);
+        currentlyBurning = true;
+        fireIntensity += initalFireIntensity;
+        fireIntensityTimer = 0f;
 
             var FireObjectPSShape = FireObjectsPS.shape;
             //Make Null Exception
+        var FireObjectPSShape = fireObjectPS.shape;
+        minFirePsScale = new Vector3(1f, 1f, 1f);
+        maxFirePsScale = new Vector3(9.17f, 9.823f, 3f);
+     
+        
+
+        while (currentlyBurning)
+        {
+            Debug.Log(fireIntensityTimer);
+            Debug.Log(fireIntensity);
+            fireIntensityTimer -= 1f;
             Vector3 UpdatingIntensityScale =
                 Vector3.Lerp(MinFirePsScale, MaxFirePsScale, fireIntensity / 200f);
             transform.localScale = UpdatingIntensityScale;
+                Vector3.Lerp(minFirePsScale, maxFirePsScale, fireIntensity / MaxFireIntensity);
+            if (fireIntensityTimer <= 0f)
+            {
+                if (fireIntensity > 0f && fireIntensity < 50f)
+                {
+                    float smallFireIncriment = Random.Range(2f, 6f);
+                    fireIntensity += smallFireIncriment;
+                    FireObjectPSShape.scale = UpdatingIntensityScale;
+                    fireIntensityTimer = fireIntensityTimerRest;
+                }
+                else if (fireIntensity > 50f && fireIntensity < 150f)
+                {
+                    float middleFireIncriment = Random.Range(10, 20);
+                    fireIntensity += middleFireIncriment;
+                    FireObjectPSShape.scale = UpdatingIntensityScale;
+                    fireIntensityTimer = fireIntensityTimerRest;
+                }
+                else if (fireIntensity > 150f && fireIntensity < MaxFireIntensity)
+                {
+                    float largeFireIncriment = Random.Range(15, 25);
+                    fireIntensity += largeFireIncriment;
+                    FireObjectPSShape.scale = UpdatingIntensityScale;
+                    fireIntensityTimer = fireIntensityTimerRest;
+                }
+            }
+
+            yield return new WaitForSeconds(1f);
         }
+
+        
     }
 
 
     void ChangeDirection()
     {
+<<<<<<< Updated upstream
         float Firex = UnityEngine.Random.Range(-20f, 20f);
         float Firez = UnityEngine.Random.Range(-20f, 20f);
         FiresDirection = new Vector3(Firex, 0, Firez).normalized + WindManager.instance.Direction * 0.2f;
+=======
+        float Firex = UnityEngine.Random.Range(-50f, 50f);
+        float Firez = UnityEngine.Random.Range(-50f, 50f);
+        FiresDirection = new Vector3(Firex, 0, Firez).normalized;
+
+        float DistanceFireMoved = Random.Range(1.2f, 9f);
+
+        Vector3 TargetPosition = transform.position + FiresDirection * DistanceFireMoved;
+
+        FireDirectionLerp = new LerpAnimationVector3(TargetPosition, MoveSpeed);
+
+        //Changes it to work with the direction vector since otherwise goes to 0,0,0
+
+>>>>>>> Stashed changes
     }
 
     private void Start()
     {
         FireDirectionTimer = DirectionTime;
+        FireDirectionTimer = changeDirectionTime;
+        if (FireIntensityCoroutine != null) StopCoroutine(FireIntensityCoroutine); 
+        FireIntensityCoroutine = StartCoroutine(IntensifyFire(20));
 
     }
 
@@ -97,10 +186,17 @@ public class FireObject : MonoBehaviour
 
         //Pick new direction if the timer is met
         if (FireDirectionTimer <= DirectionTime)
+        if (FireDirectionTimer <= 0f)
         {
             ChangeDirection();
             FireDirectionTimer = DirectionTime;
+            FireDirectionTimer = changeDirectionTime;
         }
+
+    
+
+       
+        
     }
 
     private void FixedUpdate()
