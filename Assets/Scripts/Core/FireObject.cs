@@ -47,12 +47,9 @@ public class FireObject : MonoBehaviour
         FiresDirection = new Vector3(Firex, 0f, Firez).normalized;
         Vector3 StartingFiresDirection = transform.position + FiresDirection * MoveSpeed;
         Debug.Log(FiresDirection);
-<<<<<<< Updated upstream
-=======
         fireObjectPS = GetComponentInChildren<ParticleSystem>();
-        FireDirectionLerp = new LerpAnimationVector3(StartingFiresDirection, MoveSpeed);
+        new LerpAnimationVector3(StartingFiresDirection, MoveSpeed);
 
->>>>>>> Stashed changes
     }
 
     void OnDestroy()
@@ -81,8 +78,6 @@ public class FireObject : MonoBehaviour
             CollidedEnviroment.FireDestory();
         }
     } 
-    void UpdateFireIntensity(float currentIntensity)
-
 
 
     private IEnumerator IntensifyFire(float initalFireIntensity)
@@ -138,24 +133,18 @@ public class FireObject : MonoBehaviour
 
     void ChangeDirection()
     {
-<<<<<<< Updated upstream
-        float Firex = UnityEngine.Random.Range(-20f, 20f);
-        float Firez = UnityEngine.Random.Range(-20f, 20f);
-        FiresDirection = new Vector3(Firex, 0, Firez).normalized + WindManager.instance.Direction * 0.2f;
-=======
+
+    
         float Firex = UnityEngine.Random.Range(-50f, 50f);
         float Firez = UnityEngine.Random.Range(-50f, 50f);
-        FiresDirection = new Vector3(Firex, 0, Firez).normalized;
+        FiresDirection = new Vector3(Firex, 0, Firez).normalized + WindManager.instance.Direction * 0.2f;
 
         float DistanceFireMoved = Random.Range(1.2f, 9f);
 
         Vector3 TargetPosition = transform.position + FiresDirection * DistanceFireMoved;
 
-        FireDirectionLerp = new LerpAnimationVector3(TargetPosition, MoveSpeed);
+        new LerpAnimationVector3(TargetPosition, MoveSpeed);
 
-        //Changes it to work with the direction vector since otherwise goes to 0,0,0
-
->>>>>>> Stashed changes
     }
 
     private void Start()
@@ -176,11 +165,6 @@ public class FireObject : MonoBehaviour
             ChangeDirection();
             FireDirectionTimer = changeDirectionTime;
         }
-
-    
-
-       
-        
     }
 
     private void FixedUpdate()
@@ -189,4 +173,3 @@ public class FireObject : MonoBehaviour
         transform.Translate(FiresDirection * Time.deltaTime, Space.World);
     }
 }
-// 
