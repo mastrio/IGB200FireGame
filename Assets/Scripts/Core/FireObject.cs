@@ -64,8 +64,10 @@ public class FireObject : MonoBehaviour
         if (other.CompareTag(coolburnTag)&&fireIntensity > 100f)
         {
             Debug.Log("Called");
-            CoolburnGroundItem CollidedEnviroment = other.GetComponent<CoolburnGroundItem>();
-            CollidedEnviroment.FireStart();
+            var CollidedCoolburnable = other.GetComponent<CoolBurnFuelTarget>();
+            CollidedCoolburnable.BeginFireIgnition(this);
+            //CoolburnGroundItem CollidedEnviroment = other.GetComponent<CoolburnGroundItem>();
+            //CollidedEnviroment.FireStart();
 
         }
     }
@@ -74,8 +76,10 @@ public class FireObject : MonoBehaviour
     {
         if (other.CompareTag(coolburnTag))
         {
-            CoolburnGroundItem CollidedEnviroment = other.GetComponent<CoolburnGroundItem>();
-            CollidedEnviroment.FireDestory();
+            var CollidedCoolburnable = other.GetComponent<CoolBurnFuelTarget>();
+            CollidedCoolburnable.StoppingBurn();
+           // CoolburnGroundItem CollidedEnviroment = other.GetComponent<CoolburnGroundItem>();
+           // CollidedEnviroment.FireDestory();
         }
     } 
 

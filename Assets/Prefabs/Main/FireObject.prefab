@@ -49,8 +49,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerDetectionDistance: 7
   MoveSpeed: 5
-  DirectionTime: 10
   fireIntensity: 0
+  MaxFireIntensity: 200
 --- !u!65 &863221096326092482
 BoxCollider:
   m_ObjectHideFlags: 0
