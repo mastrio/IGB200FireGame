@@ -11,8 +11,6 @@ public class FireObject : MonoBehaviour
     private string coolburnTag = "Coolburn";
     private bool currentlyBurning = false;
 
-    [SerializeField] private float MoveSpeed = 10f;
-    [SerializeField] private float DirectionTime = 10f;
     //FireDirection Variables
     [SerializeField] private float MoveSpeed = 4f;
     private float changeDirectionTime = 10f;
@@ -46,6 +44,7 @@ public class FireObject : MonoBehaviour
         Debug.Log(Firex);
         float Firez = UnityEngine.Random.Range(-20f, 30f);
         Debug.Log(Firez);
+        FiresDirection = new Vector3(Firex, 0f, Firez).normalized;
         Vector3 StartingFiresDirection = transform.position + FiresDirection * MoveSpeed;
         Debug.Log(FiresDirection);
 <<<<<<< Updated upstream
@@ -65,8 +64,6 @@ public class FireObject : MonoBehaviour
 
     public void OnTriggerEnter(Collider other)
     {
-        Debug.Log("FUCCCCCCCCCCCCCCCCCCCK");
-        if (other.CompareTag(coolburnTag))
         if (other.CompareTag(coolburnTag)&&fireIntensity > 100f)
         {
             Debug.Log("Called");
@@ -90,18 +87,10 @@ public class FireObject : MonoBehaviour
 
     private IEnumerator IntensifyFire(float initalFireIntensity)
     {
-        if (fireIntensity >= 200f) ;
-        {
-            fireIntensity += currentIntensity;
-            ParticleSystem FireObjectsPS = GetComponentInChildren<ParticleSystem>();
-            Vector3 MinFirePsScale = new Vector3(1f, 1f, 1f);
-            Vector3 MaxFirePsScale = new Vector3(15.17f, 15.823f, 4f);
         currentlyBurning = true;
         fireIntensity += initalFireIntensity;
         fireIntensityTimer = 0f;
 
-            var FireObjectPSShape = FireObjectsPS.shape;
-            //Make Null Exception
         var FireObjectPSShape = fireObjectPS.shape;
         minFirePsScale = new Vector3(1f, 1f, 1f);
         maxFirePsScale = new Vector3(9.17f, 9.823f, 3f);
@@ -114,8 +103,6 @@ public class FireObject : MonoBehaviour
             Debug.Log(fireIntensity);
             fireIntensityTimer -= 1f;
             Vector3 UpdatingIntensityScale =
-                Vector3.Lerp(MinFirePsScale, MaxFirePsScale, fireIntensity / 200f);
-            transform.localScale = UpdatingIntensityScale;
                 Vector3.Lerp(minFirePsScale, maxFirePsScale, fireIntensity / MaxFireIntensity);
             if (fireIntensityTimer <= 0f)
             {
@@ -173,7 +160,6 @@ public class FireObject : MonoBehaviour
 
     private void Start()
     {
-        FireDirectionTimer = DirectionTime;
         FireDirectionTimer = changeDirectionTime;
         if (FireIntensityCoroutine != null) StopCoroutine(FireIntensityCoroutine); 
         FireIntensityCoroutine = StartCoroutine(IntensifyFire(20));
@@ -185,11 +171,9 @@ public class FireObject : MonoBehaviour
         FireDirectionTimer -= Time.deltaTime;
 
         //Pick new direction if the timer is met
-        if (FireDirectionTimer <= DirectionTime)
         if (FireDirectionTimer <= 0f)
         {
             ChangeDirection();
-            FireDirectionTimer = DirectionTime;
             FireDirectionTimer = changeDirectionTime;
         }
 
@@ -205,3 +189,4 @@ public class FireObject : MonoBehaviour
         transform.Translate(FiresDirection * Time.deltaTime, Space.World);
     }
 }
+// 
