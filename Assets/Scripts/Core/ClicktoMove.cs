@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
 
@@ -20,6 +21,7 @@ public class ClicktoMove : MonoBehaviour
 
     private Camera mainCamera;
     private Coroutine coroutine;
+    private NavMeshAgent navAgent;
 
     //Will be used if swap is made after prototype
     //private CharacterController cc;
@@ -36,6 +38,7 @@ public class ClicktoMove : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         groundLayer = LayerMask.NameToLayer("Ground");
         uiLayer = LayerMask.NameToLayer("UI");
+        navAgent = gameObject.GetComponent<NavMeshAgent>();
     }
 
     private void OnEnable()
@@ -87,37 +90,38 @@ public class ClicktoMove : MonoBehaviour
         else if (Physics.Raycast(ray: ray, hitInfo: out RaycastHit hit) && hit.collider &&
                  hit.collider.gameObject.layer.CompareTo(groundLayer) == 0)
         {
+            navAgent.destination = hit.point;
             //Stops if player is already midway through click
-            if (coroutine != null) StopCoroutine(coroutine);
-            coroutine = StartCoroutine(PlayerMoveTowards(hit.point));
+            //if (coroutine != null) StopCoroutine(coroutine);
+            //coroutine = StartCoroutine(PlayerMoveTowards(hit.point));
 
         }
     }
 
 
 
-    private IEnumerator PlayerMoveTowards(Vector3 target)
-    {
+    //private IEnumerator PlayerMoveTowards(Vector3 target)
+    //{
 
-        float playerDistanceToFloor = transform.position.y - target.y;
-        target.y += playerDistanceToFloor;
-        while (Vector3.Distance(transform.position, target) > 1f)
-        {
+    //    float playerDistanceToFloor = transform.position.y - target.y;
+    //    target.y += playerDistanceToFloor;
+    //    while (Vector3.Distance(transform.position, target) > 1f)
+    //    {
 
-            Vector3 destination = Vector3.MoveTowards(transform.position, target, playerSpeed * Time.deltaTime);
-            //transform.position = destination;
+    //        Vector3 destination = Vector3.MoveTowards(transform.position, target, playerSpeed * Time.deltaTime);
+    //        //transform.position = destination;
 
-            Vector3 direction = target - transform.position;
-            Vector3 movement = direction.normalized * (playerSpeed * Time.deltaTime);
+    //        Vector3 direction = target - transform.position;
+    //        Vector3 movement = direction.normalized * (playerSpeed * Time.deltaTime);
 
-            //Want to look at changing to character controller and navmesh for pathfinding after prototype
-            //CharacterController.Move(movement);
+    //        //Want to look at changing to character controller and navmesh for pathfinding after prototype
+    //        //CharacterController.Move(movement);
 
-            rb.linearVelocity = direction.normalized * playerSpeed;
+    //        rb.linearVelocity = direction.normalized * playerSpeed;
 
-            transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(direction.normalized),
-                rotationSpeed * Time.deltaTime);
-            yield return null;
-        }
-    }
+    //        transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(direction.normalized),
+    //            rotationSpeed * Time.deltaTime);
+    //        yield return null;
+    //    }
+    //}
 }
