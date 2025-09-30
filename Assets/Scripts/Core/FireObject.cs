@@ -163,11 +163,14 @@ public class FireObject : MonoBehaviour
 
                     //Temporary just for now will change later but is the extreme case 
 
-                    if (MaxFireIntensity >= 35f)
+                    if (MaxFireIntensityTimer >= 35f)
                     {
-                        maxFirePsScale += new Vector3(1f, 1f, 1f);
-                        FireObjectPSShape.scale = UpdatingIntensityScale; 
-                        transform.localScale += new Vector3(1f, 1f, 1f);
+                        Vector3 CrazyScale = maxFirePsScale * 1.3f;
+                        //maxFirePsScale += new Vector3(1f, 1f, 1f);
+                        Vector3 CrazyParentScale = transform.localScale * 1.3f;
+                        FireObjectPSShape.scale = CrazyScale;
+                        transform.localScale = CrazyParentScale;
+                        //transform.localScale += new Vector3(1f, 1f, 1f);
                     }
                 }
             }
