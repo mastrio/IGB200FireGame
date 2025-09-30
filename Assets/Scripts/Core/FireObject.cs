@@ -7,8 +7,8 @@ using Vector3 = UnityEngine.Vector3;
 public class FireObject : MonoBehaviour
 {
     public float playerDetectionDistance = 10.0f;
-    private bool hasCoolburnTag = false;
     private string coolburnTag = "Coolburn";
+    private string burnableTag = "Burnable";
     private bool currentlyBurning = false;
 
     //FireDirection Variables
@@ -22,6 +22,7 @@ public class FireObject : MonoBehaviour
     [HideInInspector] public float MaxFireIntensity = 200f;
     private float fireIntensityTimer = 5f;
     private float fireIntensityTimerRest = 5f;
+    private float MaxFireIntensityTimer = 0f;
 
     //PS system
     private ParticleSystem fireObjectPS;
@@ -58,17 +59,31 @@ public class FireObject : MonoBehaviour
         GameManager.instance.fireObjects.Remove(gameObject);
         GameManager.instance.fireObjectScripts.Remove(this);
     }
-
+    
+    //Will need to make work with either Child Hitbox or scale mains hitbox
     public void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag(coolburnTag)&&fireIntensity > 100f)
+        if (other.CompareTag(coolburnTag)&& fireIntensity > 150f)
         {
             Debug.Log("Called");
-            var CollidedCoolburnable = other.GetComponent<CoolBurnFuelTarget>();
-            CollidedCoolburnable.BeginFireIgnition(this);
-            //CoolburnGroundItem CollidedEnviroment = other.GetComponent<CoolburnGroundItem>();
-            //CollidedEnviroment.FireStart();
+            other.TryGetComponent<CoolBurnFuelTarget>(out var CollidedCoolburnable);
+            if (!CollidedCoolburnable.burning)
+            {
+                CollidedCoolburnable.BeginFireIgnition(this);
+                //CoolburnGroundItem CollidedEnviroment = other.GetComponent<CoolburnGroundItem>();
+                //CollidedEnviroment.FireStart();
+            }
 
+        }
+        else if (other.CompareTag(burnableTag) && fireIntensity <= 150f)
+        {
+            Debug.Log("Called");
+            other.TryGetComponent<EnviromentalBurnableNonTarget>(out var CollidedEnviromentNonTarget);
+            if (!CollidedEnviromentNonTarget.burning)
+            {
+                CollidedEnviromentNonTarget.BeginSpreadFire(this);
+            }
+           
         }
     }
 
@@ -77,9 +92,24 @@ public class FireObject : MonoBehaviour
         if (other.CompareTag(coolburnTag))
         {
             var CollidedCoolburnable = other.GetComponent<CoolBurnFuelTarget>();
-            CollidedCoolburnable.StoppingBurn();
-           // CoolburnGroundItem CollidedEnviroment = other.GetComponent<CoolburnGroundItem>();
-           // CollidedEnviroment.FireDestory();
+            if (CollidedCoolburnable.burning)
+            {
+                CollidedCoolburnable.StoppingBurn();
+                // CoolburnGroundItem CollidedEnviroment = other.GetComponent<CoolburnGroundItem>();
+                // CollidedEnviroment.FireDestory();
+            }
+
+
+        }
+        else if (other.CompareTag(burnableTag))
+        {
+            Debug.Log("Called");
+            other.TryGetComponent<EnviromentalBurnableNonTarget>(out var CollidedEnviromentNonTarget);
+            if (CollidedEnviromentNonTarget.burning)
+            {
+                CollidedEnviromentNonTarget.StoppingBurn();
+            }
+      
         }
     } 
 
@@ -118,6 +148,7 @@ public class FireObject : MonoBehaviour
                     fireIntensity += middleFireIncriment;
                     FireObjectPSShape.scale = UpdatingIntensityScale;
                     fireIntensityTimer = fireIntensityTimerRest;
+                    MaxFireIntensityTimer = 0f;
                 }
                 else if (fireIntensity > 150f && fireIntensity < MaxFireIntensity)
                 {
@@ -125,6 +156,19 @@ public class FireObject : MonoBehaviour
                     fireIntensity += largeFireIncriment;
                     FireObjectPSShape.scale = UpdatingIntensityScale;
                     fireIntensityTimer = fireIntensityTimerRest;
+                }
+                else if (fireIntensity >= MaxFireIntensity)
+                {
+                    MaxFireIntensityTimer += 1f;
+
+                    //Temporary just for now will change later but is the extreme case 
+
+                    if (MaxFireIntensity >= 35f)
+                    {
+                        maxFirePsScale += new Vector3(1f, 1f, 1f);
+                        FireObjectPSShape.scale = UpdatingIntensityScale; 
+                        transform.localScale += new Vector3(1f, 1f, 1f);
+                    }
                 }
             }
 

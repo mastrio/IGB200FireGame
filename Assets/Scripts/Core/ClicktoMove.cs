@@ -16,8 +16,8 @@ using UnityEngine.InputSystem;
 public class ClicktoMove : MonoBehaviour
 {
     [SerializeField] private InputAction MouseClick;
-    [SerializeField] private float playerSpeed = 10f;
-    [SerializeField] private float rotationSpeed = 3f;
+    //[SerializeField] private float playerSpeed = 10f;
+    //[SerializeField] private float rotationSpeed = 3f;
 
     private Camera mainCamera;
     private Coroutine coroutine;

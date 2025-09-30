@@ -94,6 +94,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 4140c948e160a2e4da722b4fad9dce3a, type: 3}
       insertIndex: -1
       addedObject: {fileID: 6535593717780027584}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 4140c948e160a2e4da722b4fad9dce3a, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8274171807271083207}
   m_SourcePrefab: {fileID: 100100000, guid: 4140c948e160a2e4da722b4fad9dce3a, type: 3}
 --- !u!1 &2858411044530043308 stripped
 GameObject:
@@ -134,3 +137,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mapObjectPrefab: {fileID: 2997753746736485047, guid: 806e6f7d020a7fd4a8dbb9315f39cda6, type: 3}
+--- !u!114 &8274171807271083207
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2858411044530043308}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de04895779719d848977e62672c36193, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  burning: 0
+  FireParticlePrefab: {fileID: 5023430038305224826, guid: b69c18c3cd016a740ac92bd40357a695, type: 3}

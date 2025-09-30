@@ -1,20 +1,18 @@
-using System;
 using System.Collections;
 using UnityEngine;
 
-
-public class CoolBurnFuelTarget : MonoBehaviour
+public class EnviromentalBurnableNonTarget : MonoBehaviour
 {
-    private FireObject FireObjectRef;
+    private FireObject BaseFireObjectRef;
     [HideInInspector] public bool burning = false;
     private Coroutine fireExtinguisherCoroutine;
-    private float BurnTimer; 
+    private float BurnTimer;
     [SerializeField] private GameObject FireParticlePrefab;
     private ParticleSystem firePS;
 
-    public void BeginFireIgnition(FireObject baseFireObject)
+    public void BeginSpreadFire(FireObject baseFireObject)
     {
-        FireObjectRef = baseFireObject;
+        BaseFireObjectRef = baseFireObject;
         burning = true;
         BurnTimer = 0f;
         GameObject fireParticle = Instantiate(FireParticlePrefab, transform.position,
@@ -27,12 +25,12 @@ public class CoolBurnFuelTarget : MonoBehaviour
         burning = false;
 
         if (fireExtinguisherCoroutine != null) StopCoroutine(fireExtinguisherCoroutine);
-        fireExtinguisherCoroutine = StartCoroutine(FireExtinguisher());
+        fireExtinguisherCoroutine = StartCoroutine(SpreadFireExtinguisher());
     }
 
-    private IEnumerator FireExtinguisher()
+    private IEnumerator SpreadFireExtinguisher()
     {
-        float delay = UnityEngine.Random.Range(8f, 18f);
+        float delay = UnityEngine.Random.Range(15f, 20f);
         yield return new WaitForSeconds(delay);
 
         if (firePS != null)
@@ -51,12 +49,12 @@ public class CoolBurnFuelTarget : MonoBehaviour
         {
             return;
         }
-        float currentIntensity = FireObjectRef.fireIntensity;
+        float currentIntensity = BaseFireObjectRef.fireIntensity;
 
         var FirePSShape = firePS.shape;
         if (currentIntensity < 100f)
         {
-
+            
             Vector3 SmallFireMin = new Vector3(0.8f, 1.3f, 0.5f); // Untested but want to show small fire
             Vector3 SmallFireMax = new Vector3(2f, 2.5f, 0.8f); // Untested but want to show small fire
             FirePSShape.scale = Vector3.Lerp(SmallFireMin, SmallFireMax, currentIntensity / 200f);
@@ -69,7 +67,7 @@ public class CoolBurnFuelTarget : MonoBehaviour
             FirePSShape.scale = Vector3.Lerp(MedFireMin, MedFireMax, currentIntensity / 200f);
             Debug.Log("Do This Other Thing");
         }
-        else if (currentIntensity >= 200f && BurnTimer >= 30f)
+        else if (currentIntensity >= 200f)// && BurnTimer >= 30f)
         {
             Vector3 BigFireMin = new Vector3(5.3f, 5.8f, 4.5f); // Untested but want to show small fire
             Vector3 BigFireMax = new Vector3(9.17f, 9.823f, 3f); // Untested but want to show small fire

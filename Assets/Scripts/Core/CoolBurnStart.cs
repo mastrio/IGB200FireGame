@@ -9,8 +9,7 @@ public class FireManager : MonoBehaviour
     [SerializeField] private GameObject FireParticlePrefab;
     [SerializeField] private Canvas gameUICanvas;
 
-    private bool fireSlidersVisible = false;
-
+   
 
     private Camera mainCamera;
 

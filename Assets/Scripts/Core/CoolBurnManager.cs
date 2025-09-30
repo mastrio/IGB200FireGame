@@ -30,7 +30,6 @@ public class CoolBurnManager : MonoBehaviour
     [SerializeField] private Canvas gameWorldCanvas;
     [SerializeField] private Slider fireSlider;
     private string playerTag = "Player";
-    private bool playerWithinOnTrigger = false;
 
     public void FireIgnition(float startBurnIntensity, Vector3 ClickPoint)
     {
