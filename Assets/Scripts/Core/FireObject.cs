@@ -12,7 +12,7 @@ public class FireObject : MonoBehaviour
     private bool currentlyBurning = false;
 
     //FireDirection Variables
-    [SerializeField] private float MoveSpeed = 4f;
+    [SerializeField] private float MoveSpeed = 0.1f;
     private float changeDirectionTime = 10f;
     private Vector3 FiresDirection;
     private float FireDirectionTimer;
@@ -40,9 +40,9 @@ public class FireObject : MonoBehaviour
         // Added for testing the management UI
         fireIntensity = 50.0f;
 
-        float Firex = UnityEngine.Random.Range(-20f, 20f);
+        float Firex = UnityEngine.Random.Range(-30f, 20f);
         Debug.Log(Firex);
-        float Firez = UnityEngine.Random.Range(-20f, 30f);
+        float Firez = UnityEngine.Random.Range(-30f, 30f);
         Debug.Log(Firez);
         FiresDirection = new Vector3(Firex, 0f, Firez).normalized;
         Vector3 StartingFiresDirection = transform.position + FiresDirection * MoveSpeed;

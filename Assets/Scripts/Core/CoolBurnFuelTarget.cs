@@ -32,7 +32,7 @@ public class CoolBurnFuelTarget : MonoBehaviour
 
     private IEnumerator FireExtinguisher()
     {
-        float delay = UnityEngine.Random.Range(2f, 6f);
+        float delay = UnityEngine.Random.Range(8f, 18f);
         yield return new WaitForSeconds(delay);
 
         if (firePS != null)
