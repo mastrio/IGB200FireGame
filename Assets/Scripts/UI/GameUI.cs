@@ -54,11 +54,6 @@ public class GameUI : MonoBehaviour
         Debug.Log("pressed");
     }
 
-    public void SprayWaterButtonPressed()
-    {
-        coolburnStart.ShowFireSlider();
-    }
-
     public void OpenMapButtonPressed()
     {
         mapUIAnim.OpenUI();

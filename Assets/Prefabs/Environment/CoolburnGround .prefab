@@ -13105,7 +13105,6 @@ GameObject:
   - component: {fileID: 4959787352951337063}
   - component: {fileID: 792477778161795439}
   - component: {fileID: 3714774346313824604}
-  - component: {fileID: 2052257946072260087}
   m_Layer: 10
   m_Name: 'CoolburnGround '
   m_TagString: Coolburn
@@ -13226,22 +13225,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 10, y: 0.1, z: 10}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &2052257946072260087
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7352452752921479539}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 801b8859aace2da4b91deef98f82fa2b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  FireParticlePrefab: {fileID: 5023430038305224826, guid: b69c18c3cd016a740ac92bd40357a695, type: 3}
-  currentlyBurning: 0
-  gameWorldCanvas: {fileID: 3184203348096217019}
-  fireSlider: {fileID: 6726470555389985316}
 --- !u!1 &7376406864173052059
 GameObject:
   m_ObjectHideFlags: 0
@@ -16453,7 +16436,7 @@ PrefabInstance:
     - target: {fileID: 80593095485924557, guid: 9bacb3fe7af4b6d47871412892c7412f, type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 2052257946072260087}
+      objectReference: {fileID: 0}
     - target: {fileID: 1451951398765751320, guid: 9bacb3fe7af4b6d47871412892c7412f, type: 3}
       propertyPath: m_Name
       value: CBSliderCanvas
@@ -16556,19 +16539,3 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 5827662871809103838, guid: 9bacb3fe7af4b6d47871412892c7412f, type: 3}
   m_PrefabInstance: {fileID: 6649401755508188905}
   m_PrefabAsset: {fileID: 0}
---- !u!223 &3184203348096217019 stripped
-Canvas:
-  m_CorrespondingSourceObject: {fileID: 8104222829317114194, guid: 9bacb3fe7af4b6d47871412892c7412f, type: 3}
-  m_PrefabInstance: {fileID: 6649401755508188905}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &6726470555389985316 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 80593095485924557, guid: 9bacb3fe7af4b6d47871412892c7412f, type: 3}
-  m_PrefabInstance: {fileID: 6649401755508188905}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 

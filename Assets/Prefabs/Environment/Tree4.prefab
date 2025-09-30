@@ -70,7 +70,7 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 16aad9e95c15d174db92b67c46200306, type: 2}
     - target: {fileID: 919132149155446097, guid: df256b13575e2e745bdfae1d2815f48b, type: 3}
       propertyPath: m_Name
-      value: Tree_4
+      value: Tree4
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: df256b13575e2e745bdfae1d2815f48b, type: 3}
       propertyPath: m_Layer
@@ -90,9 +90,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: df256b13575e2e745bdfae1d2815f48b, type: 3}
       insertIndex: -1
       addedObject: {fileID: 6944873216810622920}
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: df256b13575e2e745bdfae1d2815f48b, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: -7126367667637949324}
   m_SourcePrefab: {fileID: 100100000, guid: df256b13575e2e745bdfae1d2815f48b, type: 3}
 --- !u!1 &8197673384583163336 stripped
 GameObject:
@@ -133,19 +130,3 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mapObjectPrefab: {fileID: 2997753746736485047, guid: bf670e43f7590674fbd13add5700d477, type: 3}
---- !u!114 &-7126367667637949324
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8197673384583163336}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4f25f376dace69c47947a5f490f1049d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  FireParticlePrefab: {fileID: 5023430038305224826, guid: b69c18c3cd016a740ac92bd40357a695, type: 3}
-  currentlyBurning: 0
-  gameWorldCanvas: {fileID: 0}
-  fireSlider: {fileID: 0}

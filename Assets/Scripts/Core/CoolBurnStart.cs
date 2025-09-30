@@ -11,7 +11,6 @@ public class FireManager : MonoBehaviour
 
     private bool fireSlidersVisible = false;
 
-    private CoolburnGroundItem sliderTarget;
 
     private Camera mainCamera;
 
@@ -130,7 +129,7 @@ public class FireManager : MonoBehaviour
         return success;
     }
 
-    public void ShowFireSlider()
+    /*public void ShowFireSlider()
     {
         //flips is the button is pressed
         fireSlidersVisible = !fireSlidersVisible;
@@ -153,7 +152,7 @@ public class FireManager : MonoBehaviour
 
         }
 
-    }
+    }*/
     public static void UpdateFireDangerLevel(bool CoolBurnSuccess)
     {
         if (FireDangerLevel <= 5 && FireDangerLevel >= 0)

@@ -74,7 +74,7 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: ac8224520c85fbb4a8ce0b0727ea1d4a, type: 2}
     - target: {fileID: 919132149155446097, guid: 3a5ce0fd19862ea41bc2dbb1d946b81d, type: 3}
       propertyPath: m_Name
-      value: Stump_1
+      value: Stump1
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 3a5ce0fd19862ea41bc2dbb1d946b81d, type: 3}
       propertyPath: m_Layer
@@ -94,12 +94,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 3a5ce0fd19862ea41bc2dbb1d946b81d, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1265739342552494177}
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 3a5ce0fd19862ea41bc2dbb1d946b81d, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 8680193764674984982}
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 3a5ce0fd19862ea41bc2dbb1d946b81d, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 8145811136360458018}
   m_SourcePrefab: {fileID: 100100000, guid: 3a5ce0fd19862ea41bc2dbb1d946b81d, type: 3}
 --- !u!1 &4407537692858182864 stripped
 GameObject:
@@ -140,32 +134,3 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mapObjectPrefab: {fileID: 2997753746736485047, guid: 306c30d5fe65c5c4b964a7dd269425f3, type: 3}
---- !u!114 &8680193764674984982
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4407537692858182864}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4f25f376dace69c47947a5f490f1049d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  FireParticlePrefab: {fileID: 5023430038305224826, guid: b69c18c3cd016a740ac92bd40357a695, type: 3}
-  currentlyBurning: 0
-  gameWorldCanvas: {fileID: 0}
-  fireSlider: {fileID: 0}
---- !u!114 &8145811136360458018
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4407537692858182864}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0d928410cdccb8d44baec9b984af9e37, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  parentScriptBurnableObject: {fileID: 0}
