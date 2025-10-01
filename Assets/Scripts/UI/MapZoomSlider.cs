@@ -9,6 +9,8 @@ public class MapZoomSlider : MonoBehaviour
     void Start()
     {
         slider = gameObject.GetComponent<Slider>();
+
+        zoomAnimation = new LerpAnimationFloat(slider.value, 8.0f);
     }
 
     void Update()

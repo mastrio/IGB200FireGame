@@ -16,7 +16,7 @@ public class MapZoomText : MonoBehaviour
     void Update()
     {
         float roundedZoomLevel = Mathf.Round(GameManager.instance.mapZoomLevel * 1000.0f) / 1000.0f;
-        float evenMoreRoundedZoomLevel = Mathf.Round(GameManager.instance.mapZoomLevel * 10.0f) / 10.0f;
+        float evenMoreRoundedZoomLevel = Mathf.Round((GameManager.instance.mapZoomLevel - 0.4f) * 10.0f) / 10.0f;
         text.text = "x" + evenMoreRoundedZoomLevel;
 
         if (alphaAnim != null) text.alpha = alphaAnim.Update(text.alpha);

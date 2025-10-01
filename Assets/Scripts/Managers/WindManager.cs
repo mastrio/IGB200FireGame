@@ -22,6 +22,8 @@ public class WindManager : MonoBehaviour
     void Awake()
     {
         instance = this;
+
+        directionDegrees = UnityEngine.Random.Range(0.0f, 360.0f);
     }
 
     void Update()
