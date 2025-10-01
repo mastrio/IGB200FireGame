@@ -45,7 +45,7 @@ public class FireManager : MonoBehaviour
     public void CoolButtonTrigger()
     {
         CoolbuttonPressed = true;
-        ClicktoMove.movedisabled = true;
+        ClickToMove.movedisabled = true;
         // buttonCoroutine = StartCoroutine(delayCoolbuttonTrigger());
     }
 
@@ -66,7 +66,7 @@ public class FireManager : MonoBehaviour
         //    return;
         //}
 
-        player.TryGetComponent<ClicktoMove>(out ClicktoMove clicktoMove);
+        player.TryGetComponent<ClickToMove>(out ClickToMove clickToMove);
         Ray ray = mainCamera.ScreenPointToRay(Mouse.current.position.ReadValue());
         //if (clicktoMove.MouseOverUi())
         //{
@@ -123,7 +123,7 @@ public class FireManager : MonoBehaviour
         }
         */
 
-        ClicktoMove.movedisabled = false;
+        ClickToMove.movedisabled = false;
         CoolbuttonPressed = false;
         return success;
     }

@@ -1,44 +1,33 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
 
-// Adapts Tutorial "Click to Move in 3d 2/ Input System - Unity Tutorial" by SamYam
-// https://youtu.be/zZDiC0aOXDY?si=nLyKQO07EBWIuBTb
-//Full refrence present in refrence list within ReadMe file
-
-//[RequireComponent(typeof(CharacterController))]
-
-//Might Change from rb to character controller
-[RequireComponent(typeof(Rigidbody))]
-public class ClicktoMove : MonoBehaviour
+public class ClickToMove : MonoBehaviour
 {
+    [SerializeField] private float movementSpeed;
     [SerializeField] private InputAction MouseClick;
-    //[SerializeField] private float playerSpeed = 10f;
-    //[SerializeField] private float rotationSpeed = 3f;
 
     private Camera mainCamera;
-    private Coroutine coroutine;
-    private NavMeshAgent navAgent;
 
-    //Will be used if swap is made after prototype
-    //private CharacterController cc;
-    private Rigidbody rb;
+    private NavMeshAgent navAgent;
+    private NavMeshPath navPath;
+    private int pathCounter;
+    private LerpAnimationQuaternion rotAnim;
 
     private int groundLayer;
-    private int uiLayer;
     public static bool movedisabled = false;
 
     private void Awake()
     {
         mainCamera = Camera.main;
-        //cc = GetComponent<CharacterController>();
-        rb = GetComponent<Rigidbody>();
         groundLayer = LayerMask.NameToLayer("Ground");
-        uiLayer = LayerMask.NameToLayer("UI");
+        
         navAgent = gameObject.GetComponent<NavMeshAgent>();
+        navPath = new NavMeshPath();
+
+        rotAnim = new LerpAnimationQuaternion(Quaternion.Euler(Vector3.zero), 10.0f);
     }
 
     private void OnEnable()
@@ -53,75 +42,61 @@ public class ClicktoMove : MonoBehaviour
         MouseClick.performed -= mouseActionCheck;
     }
 
+    void FixedUpdate()
+    {
+        if (navPath.corners.Length == 0 || pathCounter == navPath.corners.Length) return;
 
-    //Checks if the mouse click is over ui 
+        Vector3 vector = -(transform.position - navPath.corners[pathCounter]);
+        Vector3 direction = vector.normalized;
+
+        // Move
+        transform.Translate(direction * movementSpeed * Time.deltaTime, Space.World);
+
+        // Rotate
+        float rotDirection = Vector3.Angle(direction, Vector3.forward);
+        if (direction.x < 0.0f)
+        {
+            rotDirection = Vector3.Angle(
+                new Vector3(direction.x, -direction.y, direction.z),
+                Vector3.back
+            ) + 180.0f;
+        }
+        rotAnim.targetVal = Quaternion.Euler(new Vector3(0.0f, rotDirection, 0.0f));
+        transform.rotation = rotAnim.Update(transform.rotation);
+        
+        // Go to next path point if you at the current path point
+        if (vector.magnitude < 0.4f) pathCounter++;
+    }
+
+    // Checks if the mouse click is over ui 
     public bool MouseOverUi()
     {
 
         PointerEventData mousepointInfo = new PointerEventData(EventSystem.current);
-        //Checks the mouses current position as a value
+        // Checks the mouses current position as a value
         mousepointInfo.position = Mouse.current.position.ReadValue();
 
-        //list the graphics raycasts results and if it hit a ui element then it will be >0
+        // list the graphics raycasts results and if it hit a ui element then it will be >0
         List<RaycastResult> listofrays = new List<RaycastResult>();
         EventSystem.current.RaycastAll(mousepointInfo, listofrays);
-        if (listofrays.Count > 0)
-        {
-            return true;
-        }
-        else
-        {
-            return false;
-        }
+        
+        if (listofrays.Count > 0) return true;
+        else return false;
 
     }
     private void mouseActionCheck(InputAction.CallbackContext context)
     {
-        //Checks if movement is disabled if so stop loop
-        if (movedisabled)
-        {
-            return;
-        }
+        // Checks if movement is disabled if so stop loop
+        if (movedisabled) return;
+        
         Ray ray = mainCamera.ScreenPointToRay(Mouse.current.position.ReadValue());
-        if (MouseOverUi())
-        {
-            return;
-        }
-        else if (Physics.Raycast(ray: ray, hitInfo: out RaycastHit hit) && hit.collider &&
-                 hit.collider.gameObject.layer.CompareTo(groundLayer) == 0)
-        {
-            navAgent.destination = hit.point;
-            //Stops if player is already midway through click
-            //if (coroutine != null) StopCoroutine(coroutine);
-            //coroutine = StartCoroutine(PlayerMoveTowards(hit.point));
 
+        if (MouseOverUi()) return;
+        else if (Physics.Raycast(ray: ray, hitInfo: out RaycastHit hit) && hit.collider && hit.collider.gameObject.layer.CompareTo(groundLayer) == 0)
+        {
+            // Set target destination
+            pathCounter = 1;
+            navAgent.CalculatePath(hit.point, navPath);
         }
     }
-
-
-
-    //private IEnumerator PlayerMoveTowards(Vector3 target)
-    //{
-
-    //    float playerDistanceToFloor = transform.position.y - target.y;
-    //    target.y += playerDistanceToFloor;
-    //    while (Vector3.Distance(transform.position, target) > 1f)
-    //    {
-
-    //        Vector3 destination = Vector3.MoveTowards(transform.position, target, playerSpeed * Time.deltaTime);
-    //        //transform.position = destination;
-
-    //        Vector3 direction = target - transform.position;
-    //        Vector3 movement = direction.normalized * (playerSpeed * Time.deltaTime);
-
-    //        //Want to look at changing to character controller and navmesh for pathfinding after prototype
-    //        //CharacterController.Move(movement);
-
-    //        rb.linearVelocity = direction.normalized * playerSpeed;
-
-    //        transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(direction.normalized),
-    //            rotationSpeed * Time.deltaTime);
-    //        yield return null;
-    //    }
-    //}
 }

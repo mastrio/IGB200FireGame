@@ -2,7 +2,6 @@ using UnityEngine;
 
 public class CamController : MonoBehaviour
 {
-    public Transform player;
     public float moveSpeed = 5f;
     public float followDistance;
 
@@ -63,11 +62,11 @@ public class CamController : MonoBehaviour
     private void FixedUpdate()
     {
         Vector3 targetPosition = Vector3.MoveTowards(
-            transform.position, player.position, moveSpeed * Time.deltaTime
+            transform.position, GameManager.instance.playerObject.transform.position, moveSpeed * Time.deltaTime
         );
 
         transform.position = targetPosition;
-        Vector3 targetPos = Vector3.Lerp(transform.position, player.position, moveSpeed * Time.deltaTime);
+        Vector3 targetPos = Vector3.Lerp(transform.position, GameManager.instance.playerObject.transform.position, moveSpeed * Time.deltaTime);
         transform.position = targetPos;
     }
 }
