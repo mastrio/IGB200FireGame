@@ -8,6 +8,7 @@ public class ClickToMove : MonoBehaviour
 {
     [SerializeField] private float movementSpeed;
     [SerializeField] private InputAction MouseClick;
+    [SerializeField] private GameObject clickParticlePrefab;
 
     private Camera mainCamera;
 
@@ -97,6 +98,8 @@ public class ClickToMove : MonoBehaviour
             // Set target destination
             pathCounter = 1;
             navAgent.CalculatePath(hit.point, navPath);
+
+            Instantiate(clickParticlePrefab, hit.point, transform.rotation);
         }
     }
 }

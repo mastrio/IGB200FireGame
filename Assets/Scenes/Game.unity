@@ -1018,6 +1018,30 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1651824360}
     m_Modifications:
+    - target: {fileID: 256584474273860340, guid: ca7136900f6d1e84a8649cd21d0d04e9, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 899521524533026283, guid: ca7136900f6d1e84a8649cd21d0d04e9, type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 1307454382}
+    - target: {fileID: 899521524533026283, guid: ca7136900f6d1e84a8649cd21d0d04e9, type: 3}
+      propertyPath: m_RenderMode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 899521524533026283, guid: ca7136900f6d1e84a8649cd21d0d04e9, type: 3}
+      propertyPath: m_SortingOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 899521524533026283, guid: ca7136900f6d1e84a8649cd21d0d04e9, type: 3}
+      propertyPath: m_PlaneDistance
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 899521524533026283, guid: ca7136900f6d1e84a8649cd21d0d04e9, type: 3}
+      propertyPath: m_VertexColorAlwaysGammaSpace
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 941988154063272659, guid: ca7136900f6d1e84a8649cd21d0d04e9, type: 3}
       propertyPath: m_Delegates.Array.size
       value: 3
@@ -1437,6 +1461,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!20 &1307454382 stripped
+Camera:
+  m_CorrespondingSourceObject: {fileID: 4394054807441064139, guid: daa94781f909c934c8a972dc82727f65, type: 3}
+  m_PrefabInstance: {fileID: 1001967206}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1344083602 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4226041311454581153, guid: 5e86fa643722f5a4f83c830b0334a957, type: 3}
@@ -1772,6 +1801,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Character
       objectReference: {fileID: 0}
+    - target: {fileID: 6950185572781314976, guid: 0b533dde5772b2242908ee30e9c7f76c, type: 3}
+      propertyPath: clickParticlePrefab
+      value: 
+      objectReference: {fileID: 8780033925737860825, guid: 52d422282e7eb124d8a564984eabdd71, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
