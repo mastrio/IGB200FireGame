@@ -223,7 +223,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bab61c8dd68d7ae44b8e95bc61e8c0f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  doHoverAnimation: 0
   startDelay: 0.2
   spring: 50
   damp: 10
@@ -518,7 +517,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bab61c8dd68d7ae44b8e95bc61e8c0f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  doHoverAnimation: 0
   startDelay: 0.1
   spring: 50
   damp: 10
@@ -791,7 +789,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bab61c8dd68d7ae44b8e95bc61e8c0f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  doHoverAnimation: 0
   startDelay: 0.3
   spring: 50
   damp: 10
@@ -844,7 +841,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bab61c8dd68d7ae44b8e95bc61e8c0f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  doHoverAnimation: 0
   startDelay: 0.2
   spring: 50
   damp: 25
@@ -907,7 +903,7 @@ Canvas:
   m_GameObject: {fileID: 3705844446833309692}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 0
+  m_RenderMode: 1
   m_Camera: {fileID: 0}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
@@ -1349,7 +1345,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bab61c8dd68d7ae44b8e95bc61e8c0f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  doHoverAnimation: 0
   startDelay: 0.3
   spring: 50
   damp: 10
@@ -1593,7 +1588,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bab61c8dd68d7ae44b8e95bc61e8c0f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  doHoverAnimation: 0
   startDelay: 0.4
   spring: 50
   damp: 10
@@ -1914,7 +1908,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bab61c8dd68d7ae44b8e95bc61e8c0f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  doHoverAnimation: 0
   startDelay: 0.5
   spring: 50
   damp: 10
@@ -2108,7 +2101,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bab61c8dd68d7ae44b8e95bc61e8c0f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  doHoverAnimation: 0
   startDelay: 0.3
   spring: 50
   damp: 10
@@ -2161,7 +2153,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bab61c8dd68d7ae44b8e95bc61e8c0f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  doHoverAnimation: 0
   startDelay: 0.3
   spring: 50
   damp: 25
