@@ -7,7 +7,15 @@ public class ScoreManager : MonoBehaviour
 
     private void Awake()
     {
-        instance = this;
+        if (instance != null && instance != this)
+        {
+            Destroy(this);
+        }
+        else
+        {
+            instance = this;
+        }
+            
     }
 
     [SerializeField] private TextMeshProUGUI ScoreText;
