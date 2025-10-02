@@ -90,6 +90,7 @@ GameObject:
   - component: {fileID: 1108705305196218679}
   - component: {fileID: 1536314312590829465}
   - component: {fileID: 6754028448130579963}
+  - component: {fileID: 5701364403054451}
   m_Layer: 5
   m_Name: HelpButton
   m_TagString: Untagged
@@ -222,6 +223,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bab61c8dd68d7ae44b8e95bc61e8c0f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  doHoverAnimation: 0
   startDelay: 0.2
   spring: 50
   damp: 10
@@ -250,6 +252,51 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e06ed19922df90a46b2eb1a1ab3a286e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &5701364403054451
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 744568278220304484}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1108705305196218679}
+          m_TargetAssemblyTypeName: UIRevealAnimation, Assembly-CSharp
+          m_MethodName: OnHover
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 1
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1108705305196218679}
+          m_TargetAssemblyTypeName: UIRevealAnimation, Assembly-CSharp
+          m_MethodName: OnReverseHover
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &1028271648515520243
 GameObject:
   m_ObjectHideFlags: 0
@@ -338,6 +385,7 @@ GameObject:
   - component: {fileID: 6635003571336344574}
   - component: {fileID: 8211887081186912724}
   - component: {fileID: 5119830750150176108}
+  - component: {fileID: 3621433960160444546}
   m_Layer: 5
   m_Name: PauseButton
   m_TagString: Untagged
@@ -470,9 +518,55 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bab61c8dd68d7ae44b8e95bc61e8c0f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  doHoverAnimation: 0
   startDelay: 0.1
   spring: 50
   damp: 10
+--- !u!114 &3621433960160444546
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2967583862087244370}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 5119830750150176108}
+          m_TargetAssemblyTypeName: UIRevealAnimation, Assembly-CSharp
+          m_MethodName: OnHover
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 1
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 5119830750150176108}
+          m_TargetAssemblyTypeName: UIRevealAnimation, Assembly-CSharp
+          m_MethodName: OnReverseHover
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &3042033481986102729
 GameObject:
   m_ObjectHideFlags: 0
@@ -697,6 +791,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bab61c8dd68d7ae44b8e95bc61e8c0f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  doHoverAnimation: 0
   startDelay: 0.3
   spring: 50
   damp: 10
@@ -749,6 +844,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bab61c8dd68d7ae44b8e95bc61e8c0f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  doHoverAnimation: 0
   startDelay: 0.2
   spring: 50
   damp: 25
@@ -1253,6 +1349,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bab61c8dd68d7ae44b8e95bc61e8c0f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  doHoverAnimation: 0
   startDelay: 0.3
   spring: 50
   damp: 10
@@ -1311,6 +1408,18 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+        - m_Target: {fileID: 5729659134543587068}
+          m_TargetAssemblyTypeName: UIRevealAnimation, Assembly-CSharp
+          m_MethodName: OnHover
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
   - eventID: 3
     callback:
       m_PersistentCalls:
@@ -1318,6 +1427,18 @@ MonoBehaviour:
         - m_Target: {fileID: 5696332807269589225}
           m_TargetAssemblyTypeName: CoolburnButton, Assembly-CSharp
           m_MethodName: PointerUp
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 5729659134543587068}
+          m_TargetAssemblyTypeName: UIRevealAnimation, Assembly-CSharp
+          m_MethodName: OnReverseHover
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -1472,6 +1593,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bab61c8dd68d7ae44b8e95bc61e8c0f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  doHoverAnimation: 0
   startDelay: 0.4
   spring: 50
   damp: 10
@@ -1659,6 +1781,7 @@ GameObject:
   - component: {fileID: 9160835046593791115}
   - component: {fileID: 3892158503112443218}
   - component: {fileID: 6753900510041723996}
+  - component: {fileID: 494261792286010885}
   m_Layer: 5
   m_Name: OpenMapButton
   m_TagString: Untagged
@@ -1791,9 +1914,55 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bab61c8dd68d7ae44b8e95bc61e8c0f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  doHoverAnimation: 0
   startDelay: 0.5
   spring: 50
   damp: 10
+--- !u!114 &494261792286010885
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7357923997943960686}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 6753900510041723996}
+          m_TargetAssemblyTypeName: UIRevealAnimation, Assembly-CSharp
+          m_MethodName: OnHover
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 1
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 6753900510041723996}
+          m_TargetAssemblyTypeName: UIRevealAnimation, Assembly-CSharp
+          m_MethodName: OnReverseHover
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &8047182935117655913
 GameObject:
   m_ObjectHideFlags: 0
@@ -1939,6 +2108,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bab61c8dd68d7ae44b8e95bc61e8c0f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  doHoverAnimation: 0
   startDelay: 0.3
   spring: 50
   damp: 10
@@ -1991,6 +2161,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bab61c8dd68d7ae44b8e95bc61e8c0f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  doHoverAnimation: 0
   startDelay: 0.3
   spring: 50
   damp: 25

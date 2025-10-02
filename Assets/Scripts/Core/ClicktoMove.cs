@@ -27,7 +27,7 @@ public class ClickToMove : MonoBehaviour
         navAgent = gameObject.GetComponent<NavMeshAgent>();
         navPath = new NavMeshPath();
 
-        rotAnim = new LerpAnimationQuaternion(Quaternion.Euler(Vector3.zero), 10.0f);
+        rotAnim = new LerpAnimationQuaternion(Quaternion.Euler(Vector3.zero), 20.0f);
     }
 
     private void OnEnable()
