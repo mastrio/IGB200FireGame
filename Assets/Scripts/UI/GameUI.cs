@@ -4,7 +4,6 @@ using UnityEngine;
 public class GameUI : MonoBehaviour
 {
     public FireManager coolburnStart;
-    [SerializeField] private GameObject phoneUIObject;
     [SerializeField] private GameObject mapUIObject;
     [SerializeField] private GameObject pauseUIObject;
     [SerializeField] private TextMeshProUGUI FireDangerLevelText;
@@ -20,7 +19,6 @@ public class GameUI : MonoBehaviour
 
     void Start()
     {
-        phoneUIAnim = phoneUIObject.GetComponent<PopupUIAnimation>();
         mapUIAnim = mapUIObject.GetComponent<PopupUIAnimation>();
         pauseUI = pauseUIObject.GetComponent<PauseUI>();
         UiFireDangerLevel = FireManager.GetFireDangerLevel();

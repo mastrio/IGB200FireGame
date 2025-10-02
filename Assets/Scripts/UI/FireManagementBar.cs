@@ -16,10 +16,12 @@ public class FireManagementBar : MonoBehaviour
     private PulseAnimationVector3 pulseAnimation;
 
     private FireBarState state = FireBarState.Info;
-    [HideInInspector] public FireBarState State
+    [HideInInspector]
+    public FireBarState State
     {
         get { return state; }
-        set {
+        set
+        {
             state = value;
 
             switch (state)

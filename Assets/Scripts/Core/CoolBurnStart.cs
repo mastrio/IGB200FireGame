@@ -9,7 +9,7 @@ public class FireManager : MonoBehaviour
     [SerializeField] private GameObject FireParticlePrefab;
     [SerializeField] private Canvas gameUICanvas;
 
-   
+
 
     private Camera mainCamera;
 

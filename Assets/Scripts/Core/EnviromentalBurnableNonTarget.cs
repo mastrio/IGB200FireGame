@@ -50,7 +50,7 @@ public class EnviromentalBurnableNonTarget : MonoBehaviour
         {
             BurningEnviroment(BaseFireObjectRef.fireIntensity);
         }
-        
+
     }
 
     private void BurningEnviroment(float currentIntensity)

@@ -9,7 +9,7 @@ public class TutorialDragThingy : MonoBehaviour
     [SerializeField] private Vector3 endPos;
     [SerializeField] private GameObject image;
     [SerializeField] private Image imageComponent;
-        
+
     private TutorialDragThingyState state = TutorialDragThingyState.Disabled;
     private float timer = 0.0f;
 

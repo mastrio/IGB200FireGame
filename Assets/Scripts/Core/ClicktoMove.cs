@@ -24,7 +24,7 @@ public class ClickToMove : MonoBehaviour
     {
         mainCamera = Camera.main;
         groundLayer = LayerMask.NameToLayer("Ground");
-        
+
         navAgent = gameObject.GetComponent<NavMeshAgent>();
         navPath = new NavMeshPath();
 
@@ -64,7 +64,7 @@ public class ClickToMove : MonoBehaviour
         }
         rotAnim.targetVal = Quaternion.Euler(new Vector3(0.0f, rotDirection, 0.0f));
         transform.rotation = rotAnim.Update(transform.rotation);
-        
+
         // Go to next path point if you at the current path point
         if (vector.magnitude < 0.4f) pathCounter++;
     }
@@ -80,7 +80,7 @@ public class ClickToMove : MonoBehaviour
         // list the graphics raycasts results and if it hit a ui element then it will be >0
         List<RaycastResult> listofrays = new List<RaycastResult>();
         EventSystem.current.RaycastAll(mousepointInfo, listofrays);
-        
+
         if (listofrays.Count > 0) return true;
         else return false;
 
@@ -89,7 +89,7 @@ public class ClickToMove : MonoBehaviour
     {
         // Checks if movement is disabled if so stop loop
         if (movedisabled) return;
-        
+
         Ray ray = mainCamera.ScreenPointToRay(Mouse.current.position.ReadValue());
 
         if (MouseOverUi()) return;

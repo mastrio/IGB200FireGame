@@ -1,6 +1,4 @@
 using System.Collections;
-using TMPro;
-using Unity.VisualScripting;
 using UnityEngine;
 using Vector3 = UnityEngine.Vector3;
 
@@ -59,11 +57,11 @@ public class FireObject : MonoBehaviour
         GameManager.instance.fireObjects.Remove(gameObject);
         GameManager.instance.fireObjectScripts.Remove(this);
     }
-    
+
     //Will need to make work with either Child Hitbox or scale mains hitbox
     public void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag(coolburnTag)&& fireIntensity > 150f)
+        if (other.CompareTag(coolburnTag) && fireIntensity > 150f)
         {
             Debug.Log("Called");
             other.TryGetComponent<CoolBurnFuelTarget>(out var CollidedCoolburnable);
@@ -83,7 +81,7 @@ public class FireObject : MonoBehaviour
             {
                 CollidedEnviromentNonTarget.BeginSpreadFire(this);
             }
-           
+
         }
     }
 
@@ -109,9 +107,9 @@ public class FireObject : MonoBehaviour
             {
                 CollidedEnviromentNonTarget.StoppingBurn();
             }
-      
+
         }
-    } 
+    }
 
 
     private IEnumerator IntensifyFire(float initalFireIntensity)
@@ -123,8 +121,8 @@ public class FireObject : MonoBehaviour
         var FireObjectPSShape = fireObjectPS.shape;
         minFirePsScale = new Vector3(1f, 1f, 1f);
         maxFirePsScale = new Vector3(9.17f, 9.823f, 3f);
-     
-        
+
+
 
         while (currentlyBurning)
         {
@@ -178,14 +176,14 @@ public class FireObject : MonoBehaviour
             yield return new WaitForSeconds(1f);
         }
 
-        
+
     }
 
 
     void ChangeDirection()
     {
 
-    
+
         float Firex = UnityEngine.Random.Range(-50f, 50f);
         float Firez = UnityEngine.Random.Range(-50f, 50f);
         FiresDirection = new Vector3(Firex, 0, Firez).normalized + WindManager.instance.Direction * 0.2f;
@@ -201,7 +199,7 @@ public class FireObject : MonoBehaviour
     private void Start()
     {
         FireDirectionTimer = changeDirectionTime;
-        if (FireIntensityCoroutine != null) StopCoroutine(FireIntensityCoroutine); 
+        if (FireIntensityCoroutine != null) StopCoroutine(FireIntensityCoroutine);
         FireIntensityCoroutine = StartCoroutine(IntensifyFire(20));
 
     }

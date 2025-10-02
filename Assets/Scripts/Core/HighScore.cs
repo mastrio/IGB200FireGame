@@ -15,7 +15,7 @@ public class ScoreManager : MonoBehaviour
         {
             instance = this;
         }
-            
+
     }
 
     [SerializeField] private TextMeshProUGUI ScoreText;

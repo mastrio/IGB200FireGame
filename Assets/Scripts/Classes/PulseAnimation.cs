@@ -40,7 +40,7 @@ public class PulseAnimationVector3
         if (targetPulsedValue.x > maxPulseValue.x) targetPulsedValue.x = maxPulseValue.x;
         if (targetPulsedValue.y > maxPulseValue.y) targetPulsedValue.y = maxPulseValue.y;
         if (targetPulsedValue.z > maxPulseValue.z) targetPulsedValue.z = maxPulseValue.z;
-        
+
         scaleAnim = new LerpAnimationVector3(targetPulsedValue, pulseSpeed);
     }
 }
