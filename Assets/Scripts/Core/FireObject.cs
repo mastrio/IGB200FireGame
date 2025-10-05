@@ -61,7 +61,7 @@ public class FireObject : MonoBehaviour
     //Will need to make work with either Child Hitbox or scale mains hitbox
     public void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag(coolburnTag) && fireIntensity > 150f)
+        if (other.CompareTag(coolburnTag) && fireIntensity < 150f)
         {
             Debug.Log("Called");
             other.TryGetComponent<CoolBurnFuelTarget>(out var CollidedCoolburnable);
@@ -73,7 +73,7 @@ public class FireObject : MonoBehaviour
             }
 
         }
-        else if (other.CompareTag(burnableTag) && fireIntensity <= 150f)
+        else if (other.CompareTag(burnableTag) && fireIntensity >= 120f)
         {
             Debug.Log("Called");
             other.TryGetComponent<EnviromentalBurnableNonTarget>(out var CollidedEnviromentNonTarget);
@@ -173,7 +173,7 @@ public class FireObject : MonoBehaviour
                 }
             }
 
-            yield return new WaitForSeconds(1f);
+            yield return new WaitForSeconds(3f);
         }
 
 
