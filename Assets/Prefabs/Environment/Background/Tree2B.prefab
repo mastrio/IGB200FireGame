@@ -84,6 +84,10 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Burnable
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 4140c948e160a2e4da722b4fad9dce3a, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
