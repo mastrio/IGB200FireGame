@@ -1825,6 +1825,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Character
       objectReference: {fileID: 0}
+    - target: {fileID: 4793397081565598219, guid: 0b533dde5772b2242908ee30e9c7f76c, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: ee8fbe6aa5ac26047ab83cf20e87aae6, type: 2}
+    - target: {fileID: 6950185572781314976, guid: 0b533dde5772b2242908ee30e9c7f76c, type: 3}
+      propertyPath: animator
+      value: 
+      objectReference: {fileID: 1696358927}
+    - target: {fileID: 6950185572781314976, guid: 0b533dde5772b2242908ee30e9c7f76c, type: 3}
+      propertyPath: movementSpeed
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 6950185572781314976, guid: 0b533dde5772b2242908ee30e9c7f76c, type: 3}
       propertyPath: clickParticlePrefab
       value: 
@@ -1853,6 +1865,11 @@ MonoBehaviour:
 --- !u!4 &1696358926 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1368536367339124943, guid: 0b533dde5772b2242908ee30e9c7f76c, type: 3}
+  m_PrefabInstance: {fileID: 1696358916}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &1696358927 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 4793397081565598219, guid: 0b533dde5772b2242908ee30e9c7f76c, type: 3}
   m_PrefabInstance: {fileID: 1696358916}
   m_PrefabAsset: {fileID: 0}
 --- !u!4 &1711552944 stripped

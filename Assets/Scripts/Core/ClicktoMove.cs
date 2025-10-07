@@ -9,6 +9,7 @@ public class ClickToMove : MonoBehaviour
     [SerializeField] private float movementSpeed;
     [SerializeField] private InputAction MouseClick;
     [SerializeField] private GameObject clickParticlePrefab;
+    [SerializeField] private Animator animator;
 
     private Camera mainCamera;
 
@@ -16,6 +17,7 @@ public class ClickToMove : MonoBehaviour
     private NavMeshPath navPath;
     private int pathCounter;
     private LerpAnimationQuaternion rotAnim;
+    private Vector3 previousPosition;
 
     private int groundLayer;
     public static bool movedisabled = false;
@@ -29,6 +31,7 @@ public class ClickToMove : MonoBehaviour
         navPath = new NavMeshPath();
 
         rotAnim = new LerpAnimationQuaternion(Quaternion.Euler(Vector3.zero), 20.0f);
+        previousPosition = transform.position;
     }
 
     private void OnEnable()
@@ -45,6 +48,28 @@ public class ClickToMove : MonoBehaviour
 
     void FixedUpdate()
     {
+        // Calculate move speed
+        float distanceMoved = Vector3.Distance(transform.position, previousPosition);
+        float speed = distanceMoved / Time.deltaTime;
+
+        // Clamp small or negative values
+        if (speed < 0.05f)
+            speed = 0f;
+        else
+            speed = Mathf.Max(speed, 0f);
+
+        // Snap to 0 when stopped
+        if (animator != null)
+        {
+            if (speed == 0f)
+                animator.SetFloat("Speed", 0f);
+            else
+                animator.SetFloat("Speed", speed);
+        }
+
+        previousPosition = transform.position;
+
+        // Path movement
         if (navPath.corners.Length == 0 || pathCounter == navPath.corners.Length) return;
 
         Vector3 vector = -(transform.position - navPath.corners[pathCounter]);
