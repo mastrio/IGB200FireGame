@@ -43,9 +43,10 @@ public class EnviromentalBurnableNonTarget : MonoBehaviour
         float delay = UnityEngine.Random.Range(15f, 20f);
         yield return new WaitForSeconds(delay);
 
-        if (firePS != null)
+        if (firePS != null && negativePS != null)
         {
             Destroy(firePS.gameObject);
+            Destroy(negativePS.gameObject);
         }
 
     }

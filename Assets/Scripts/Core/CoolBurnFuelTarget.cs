@@ -10,9 +10,9 @@ public class CoolBurnFuelTarget : MonoBehaviour
     private float BurnTimer;
     private float MaxBurnTime;
     [SerializeField] private GameObject FireParticlePrefab;
-    [SerializeField] private GameObject FireNegativePrefab;
+    [SerializeField] private GameObject FirePostivePrefab;
     private ParticleSystem firePS;
-    private ParticleSystem negativePS;
+    private ParticleSystem postivePS;
 
     public void BeginFireIgnition(FireObject baseFireObject)
     {
@@ -21,10 +21,10 @@ public class CoolBurnFuelTarget : MonoBehaviour
         BurnTimer = 0f;
         GameObject fireParticle = Instantiate(FireParticlePrefab, transform.position,
             Quaternion.Euler(new Vector3(-90.0f, 0.0f, 0.0f)), transform);
-        GameObject negativeParticle = Instantiate(FireNegativePrefab, transform.position,
+        GameObject negativeParticle = Instantiate(FirePostivePrefab, transform.position,
             Quaternion.Euler(new Vector3(-90.0f, 0.0f, 0.0f)), transform);
         firePS = fireParticle.GetComponent<ParticleSystem>();
-        negativePS = fireParticle.GetComponent<ParticleSystem>();
+        postivePS = fireParticle.GetComponent<ParticleSystem>();
     }
 
     public void StoppingBurn()
@@ -40,9 +40,10 @@ public class CoolBurnFuelTarget : MonoBehaviour
         float delay = UnityEngine.Random.Range(8f, 18f);
         yield return new WaitForSeconds(delay);
 
-        if (firePS != null)
+        if (firePS != null && postivePS != null)
         {
             Destroy(firePS.gameObject);
+            Destroy(postivePS.gameObject);
         }
 
     }
@@ -63,8 +64,8 @@ public class CoolBurnFuelTarget : MonoBehaviour
         float currentIntensity = FireObjectRef.fireIntensity;
         var FirePSShape = firePS.shape;
         var FirePSEmission = firePS.emission;
-        var NegPSShape = negativePS.shape;
-        var NegPSEmission = negativePS.emission;
+        var PositvePSShape = postivePS.shape;
+        var PositivePSEmission = postivePS.emission;
 
         if (currentIntensity < 100f)
         {
@@ -72,10 +73,9 @@ public class CoolBurnFuelTarget : MonoBehaviour
                 (currentIntensity - 100) / 100f);
 
             FirePSShape.scale = SmallFireScale;
-            NegPSShape.scale = SmallFireScale;
+            PositvePSShape.scale = SmallFireScale;
             FirePSEmission.rateOverTime = Mathf.Lerp(300f, 400f, currentIntensity / 100f);
-            NegPSEmission.rateOverTime = Mathf.Lerp(10f, 20f, currentIntensity / 100f);
-            ScoreManager.instance.AddScore(3);
+            PositivePSEmission.rateOverTime = Mathf.Lerp(10f, 20f, currentIntensity / 100f);
             BurnTimer = 0f;
             MaxBurnTime = 0f;
         }
@@ -86,9 +86,9 @@ public class CoolBurnFuelTarget : MonoBehaviour
                 (currentIntensity - 100) / 100f);
 
             FirePSShape.scale = MedFireScale;
-            NegPSShape.scale = MedFireScale;
+            PositvePSShape.scale = MedFireScale;
             FirePSEmission.rateOverTime = Mathf.Lerp(400f, 500f, (currentIntensity - 100f) / 100f);
-            NegPSEmission.rateOverTime = Mathf.Lerp(20f, 40f, (currentIntensity - 100f) / 100f);
+            PositivePSEmission.rateOverTime = Mathf.Lerp(20f, 40f, (currentIntensity - 100f) / 100f);
             Debug.Log("Do This Other Thing");
             ScoreManager.instance.AddScore(2);
             MaxBurnTime = 0f;
@@ -100,9 +100,9 @@ public class CoolBurnFuelTarget : MonoBehaviour
                 BurnTimer / 100f);
 
             FirePSShape.scale = BigFireScale;
-            NegPSShape.scale = BigFireScale;
+            PositvePSShape.scale = BigFireScale;
             FirePSEmission.rateOverTime = Mathf.Lerp(500f, 550f, BurnTimer / 30f);
-            NegPSEmission.rateOverTime = Mathf.Lerp(40f, 50f, BurnTimer / 30f);
+            PositivePSEmission.rateOverTime = Mathf.Lerp(40f, 50f, BurnTimer / 30f);
             ScoreManager.instance.AddScore(-3);
             MaxBurnTime += Time.deltaTime;
             Debug.Log("Burnt");

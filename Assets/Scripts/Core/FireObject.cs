@@ -73,7 +73,7 @@ public class FireObject : MonoBehaviour
             }
 
         }
-        else if (other.CompareTag(burnableTag) && fireIntensity >= 120f)
+        else if (other.CompareTag(burnableTag)) //&& fireIntensity >= 120f)
         {
             Debug.Log("Called");
             other.TryGetComponent<EnviromentalBurnableNonTarget>(out var CollidedEnviromentNonTarget);

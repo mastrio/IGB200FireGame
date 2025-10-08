@@ -139,4 +139,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   burning: 0
   FireParticlePrefab: {fileID: 5023430038305224826, guid: b69c18c3cd016a740ac92bd40357a695, type: 3}
-  FireNegativePrefab: {fileID: 5189019935320836193, guid: 044f7268972471247b86fa431e2d615a, type: 3}
+  FirePostivePrefab: {fileID: 5189019935320836193, guid: cb528318fbe1cb94885e7ae7bcfc7f10, type: 3}
