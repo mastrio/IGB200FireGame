@@ -22,6 +22,8 @@ public class FireManager : MonoBehaviour
 
     public static int FireDangerLevel = 3;
 
+    public static int CurrentNumberOfFires = 0;
+
     private void Awake()
     {
         mainCamera = Camera.main;
@@ -44,7 +46,7 @@ public class FireManager : MonoBehaviour
 
     public void CoolButtonTrigger()
     {
-        CoolbuttonPressed = true;
+        
         ClickToMove.movedisabled = true;
         // buttonCoroutine = StartCoroutine(delayCoolbuttonTrigger());
     }
@@ -59,6 +61,15 @@ public class FireManager : MonoBehaviour
     public bool mouseActionCheck(GameObject fireObjectPrefab) //InputAction.CallbackContext context
     {
         bool success = false;
+        if (CurrentNumberOfFires >= 2)
+        {
+            ClickToMove.movedisabled = false;
+            CoolbuttonPressed = false;
+            return success;
+        }
+
+       
+       
 
         //only triggers if the bool is true
         //if (!CoolbuttonPressed)
@@ -125,6 +136,7 @@ public class FireManager : MonoBehaviour
 
         ClickToMove.movedisabled = false;
         CoolbuttonPressed = false;
+        IncreaseNumberOfFires();
         return success;
     }
 
@@ -170,5 +182,20 @@ public class FireManager : MonoBehaviour
     public static int GetFireDangerLevel()
     {
         return FireDangerLevel;
+    }
+
+    public void IncreaseNumberOfFires()
+    {
+        CurrentNumberOfFires += 1;
+    }
+
+    public void ReduceNumberOfFires()
+    {
+        CurrentNumberOfFires -= 1;
+    }
+    
+    public int GetNumberOfFires()
+    {
+        return CurrentNumberOfFires;
     }
 }
