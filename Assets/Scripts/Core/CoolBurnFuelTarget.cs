@@ -111,6 +111,7 @@ public class CoolBurnFuelTarget : MonoBehaviour
         else if (currentIntensity >= 200f && MaxBurnTime > 20f)
         {
             ScoreManager.instance.AddScore(-5);
+            FireManager.UpdateFireDangerLevel(false);
             Destroy(gameObject);
         }
     }

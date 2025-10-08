@@ -28,6 +28,7 @@ public class EnviromentalBurnableNonTarget : MonoBehaviour
             Quaternion.Euler(new Vector3(-90.0f, 0.0f, 0.0f)), transform);
         firePS = fireParticle.GetComponent<ParticleSystem>();
         negativePS = fireParticle.GetComponent<ParticleSystem>();
+        FireManager.UpdateFireDangerLevel(true); //Increase by one as the fire spread to something unintended
     }
 
     public void StoppingBurn()
@@ -47,6 +48,8 @@ public class EnviromentalBurnableNonTarget : MonoBehaviour
         {
             Destroy(firePS.gameObject);
             Destroy(negativePS.gameObject);
+            //Reduce By one
+            FireManager.UpdateFireDangerLevel(false);
         }
 
     }
@@ -115,6 +118,8 @@ public class EnviromentalBurnableNonTarget : MonoBehaviour
         else if (currentIntensity >= 200f && MaxBurnTime > 20f)
         {
             ScoreManager.instance.AddScore(-15);
+            //Should reduce the fire danger level by one since its being burnt (back to how it was before unintended got set on fire)
+            FireManager.UpdateFireDangerLevel(false); 
             Destroy(gameObject);
         }
     }

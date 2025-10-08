@@ -152,15 +152,15 @@ public class FireManager : MonoBehaviour
         }
 
     }*/
-    public static void UpdateFireDangerLevel(bool CoolBurnSuccess)
+    public static void UpdateFireDangerLevel(bool CoolBurnFail)
     {
         if (FireDangerLevel <= 5 && FireDangerLevel >= 0)
         {
-            if (CoolBurnSuccess)
+            if (CoolBurnFail)
             {
                 FireDangerLevel += 1;
             }
-            else if (!CoolBurnSuccess)
+            else if (!CoolBurnFail)
             {
                 FireDangerLevel -= 1;
             }
