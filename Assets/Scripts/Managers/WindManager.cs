@@ -7,6 +7,7 @@ public class WindManager : MonoBehaviour
     [SerializeField] private GameObject windParticles;
 
     public float directionDegrees;
+
     [HideInInspector]
     public Vector3 Direction
     {

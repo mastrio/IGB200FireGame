@@ -8,18 +8,18 @@ public class GameManager : MonoBehaviour
 
     public GameObject playerObject;
 
-    [DoNotSerialize] public List<GameObject> fireObjects;
-    [DoNotSerialize] public List<FireObject> fireObjectScripts;
+    [HideInInspector] public List<GameObject> fireObjects;
+    [HideInInspector] public List<FireObject> fireObjectScripts;
 
-    [DoNotSerialize] public bool playerDraggingFireButton = false;
+    [HideInInspector] public bool playerDraggingFireButton = false;
 
-    [DoNotSerialize] public float mapZoomLevel = 1.0f;
-    [DoNotSerialize] public Vector3 mapCameraOffset = Vector3.zero;
+    [HideInInspector] public float mapZoomLevel = 1.0f;
+    [HideInInspector] public Vector3 mapCameraOffset = Vector3.zero;
 
     // Tutorial checks
-    [DoNotSerialize] public bool hasPlacedFire = false;
-    [DoNotSerialize] public bool hasPannedMap = false;
-    [DoNotSerialize] public bool hasManagedFire = false;
+    [HideInInspector] public bool hasPlacedFire = false;
+    [HideInInspector] public bool hasPannedMap = false;
+    [HideInInspector] public bool hasManagedFire = false;
 
     [SerializeField] private GameObject mapObjectContainer;
     [SerializeField] private GameObject[] levelList;

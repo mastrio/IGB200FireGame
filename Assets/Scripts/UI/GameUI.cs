@@ -7,7 +7,6 @@ public class GameUI : MonoBehaviour
     [SerializeField] private GameObject mapUIObject;
     [SerializeField] private GameObject pauseUIObject;
     [SerializeField] private TextMeshProUGUI FireDangerLevelText;
-    //[SerializeField] private ClicktoMove clicktoMove;
 
     private PopupUIAnimation phoneUIAnim;
     private PopupUIAnimation mapUIAnim;

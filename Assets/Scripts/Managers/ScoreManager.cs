@@ -5,6 +5,13 @@ public class ScoreManager : MonoBehaviour
 {
     public static ScoreManager instance;
 
+    [SerializeField] private TextMeshProUGUI ScoreText;
+    [SerializeField] private ParticleSystem scorePositiveParticles;
+    [SerializeField] private ParticleSystem scoreNegativeParticles;
+
+    private int score;
+    private float particleTimer = 0.0f;
+
     private void Awake()
     {
         if (instance != null && instance != this)
@@ -18,22 +25,31 @@ public class ScoreManager : MonoBehaviour
 
     }
 
-    [SerializeField] private TextMeshProUGUI ScoreText;
-    private int score;
-
-    //public TextMeshProUGUI highScore;
-
     private void Start()
     {
         AddScore(0);
     }
 
+    private void Update()
+    {
+        if (Time.time >= particleTimer)
+        {
+            scorePositiveParticles.Stop();
+            scoreNegativeParticles.Stop();
+        }
+    }
+
     public void AddScore(int points)
     {
         score += points;
-
         ScoreText.text = score.ToString();
+
+        particleTimer = Time.time + 1.0f;
+
+        if (points > 0) scorePositiveParticles.gameObject.SetActive(true);
+        else if (points < 0) scoreNegativeParticles.gameObject.SetActive(true);
     }
+
     public void UpdateScore(int SucessfulBurn) //Change to switch
     {
         if (SucessfulBurn == 1) //Coolburn Managed

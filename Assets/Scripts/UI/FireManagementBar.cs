@@ -55,15 +55,8 @@ public class FireManagementBar : MonoBehaviour
         bgButton.SetActive(false);
         State = FireBarState.Info;
 
-        posAnimation = null;
-        rotAnimation = null;
-        scaleAnimation = null;
-
-        transform.localPosition = new Vector3(
-            infoPosObj.transform.position.x,
-            0.0f
-        );
-        transform.localRotation = infoPosObj.transform.localRotation;
+        transform.position = infoPosObj.transform.position;
+        transform.rotation = infoPosObj.transform.rotation;
         transform.localScale = infoPosObj.transform.localScale;
     }
 
