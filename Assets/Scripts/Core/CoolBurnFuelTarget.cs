@@ -19,7 +19,7 @@ public class CoolBurnFuelTarget : MonoBehaviour
         FireObjectRef = baseFireObject;
         burning = true;
         BurnTimer = 0f;
-        if (firePS == null)
+        if (firePS == null) //Temp Fix
         {
             GameObject fireParticle = Instantiate(FireParticlePrefab, transform.position,
                 Quaternion.Euler(new Vector3(-90.0f, 0.0f, 0.0f)), transform);
@@ -28,7 +28,7 @@ public class CoolBurnFuelTarget : MonoBehaviour
             firePS = fireParticle.GetComponent<ParticleSystem>();
             postivePS = positiveParticle.GetComponent<ParticleSystem>();
         }
-        else
+        else //Temp fix
         {
             var firePSEmission = firePS.emission;
             firePSEmission.rateOverTime = 400f;
@@ -51,7 +51,7 @@ public class CoolBurnFuelTarget : MonoBehaviour
         //float delay = UnityEngine.Random.Range(8f, 18f);
         yield return new WaitForSeconds(1f);
 
-        if (firePS != null && postivePS != null)
+        if (firePS != null && postivePS != null) //Temp fix so no errors when destorying it
         {
             var firePSEmission = firePS.emission;
             firePSEmission.rateOverTime = 0f;

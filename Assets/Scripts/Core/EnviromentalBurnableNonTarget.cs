@@ -22,7 +22,7 @@ public class EnviromentalBurnableNonTarget : MonoBehaviour
         BaseFireObjectRef = baseFireObject;
         burning = true;
         BurnTimer = 0f;
-        if (firePS == null)
+        if (firePS == null) //Temp Fix 
         {
             GameObject fireParticle = Instantiate(FireParticlePrefab, transform.position,
                 Quaternion.Euler(new Vector3(-90.0f, 0.0f, 0.0f)), transform);
@@ -31,7 +31,7 @@ public class EnviromentalBurnableNonTarget : MonoBehaviour
             firePS = fireParticle.GetComponent<ParticleSystem>();
             negativePS = negativeParticle.GetComponent<ParticleSystem>();
         }
-        else
+        else // Temp fix
         {
             var firePSEmission = firePS.emission;
             firePSEmission.rateOverTime = 400f;
@@ -55,7 +55,7 @@ public class EnviromentalBurnableNonTarget : MonoBehaviour
         //float delay = UnityEngine.Random.Range(15f, 20f);
         yield return new WaitForSeconds(1f);
 
-        if (firePS != null && negativePS != null)
+        if (firePS != null && negativePS != null) //Temp fix to stop errors
         {
             var firePSEmission = firePS.emission;
             firePSEmission.rateOverTime = 0f;
