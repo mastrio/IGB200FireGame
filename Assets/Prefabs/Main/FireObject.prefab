@@ -48,6 +48,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerDetectionDistance: 7
+  gameUI: {fileID: 1414899561382175979, guid: ca7136900f6d1e84a8649cd21d0d04e9, type: 3}
   MoveSpeed: 5
   fireIntensity: 0
   MaxFireIntensity: 200

@@ -9,7 +9,7 @@ public class FireManager : MonoBehaviour
     [SerializeField] private GameObject FireParticlePrefab;
     [SerializeField] private Canvas gameUICanvas;
 
-
+    public static FireManager instance;
 
     private Camera mainCamera;
 
@@ -30,6 +30,10 @@ public class FireManager : MonoBehaviour
         burnableLayer = LayerMask.NameToLayer("Burnable");
         coolburnLayer = LayerMask.NameToLayer("Coolburn");
         groundLayer = LayerMask.NameToLayer("Ground");
+
+
+        if (instance == null) instance = this;
+        else Destroy(gameObject);
     }
 
     private void OnEnable()

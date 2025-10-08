@@ -8,6 +8,7 @@ public class FireObject : MonoBehaviour
     private string coolburnTag = "Coolburn";
     private string burnableTag = "Burnable";
     private bool currentlyBurning = false;
+    
 
     //FireDirection Variables
     [SerializeField] private float MoveSpeed = 0.1f;
@@ -18,9 +19,10 @@ public class FireObject : MonoBehaviour
     //Fire Intensity
     [HideInInspector] public float fireIntensity = 0f;
     [HideInInspector] public float MaxFireIntensity = 200f;
-    private float fireIntensityTimer = 5f;
-    private float fireIntensityTimerRest = 5f;
+    private float fireIntensityTimer = 3f;
+    private float fireIntensityTimerRest = 3f;
     private float MaxFireIntensityTimer = 0f;
+    private float FireWeakTimer = 0f;
 
     //PS system
     private ParticleSystem fireObjectPS;
@@ -45,7 +47,7 @@ public class FireObject : MonoBehaviour
         Debug.Log(Firez);
         FiresDirection = new Vector3(Firex, 0f, Firez).normalized;
         Vector3 StartingFiresDirection = transform.position + FiresDirection * MoveSpeed;
-        Debug.Log(FiresDirection);
+       
         fireObjectPS = GetComponentInChildren<ParticleSystem>();
         new LerpAnimationVector3(StartingFiresDirection, MoveSpeed);
 
@@ -63,7 +65,7 @@ public class FireObject : MonoBehaviour
     {
         if (other.CompareTag(coolburnTag) && fireIntensity < 150f)
         {
-            Debug.Log("Called");
+        
             other.TryGetComponent<CoolBurnFuelTarget>(out var CollidedCoolburnable);
             if (!CollidedCoolburnable.burning)
             {
@@ -75,7 +77,7 @@ public class FireObject : MonoBehaviour
         }
         else if (other.CompareTag(burnableTag)) //&& fireIntensity >= 120f)
         {
-            Debug.Log("Called");
+          
             other.TryGetComponent<EnviromentalBurnableNonTarget>(out var CollidedEnviromentNonTarget);
             if (!CollidedEnviromentNonTarget.burning)
             {
@@ -101,7 +103,7 @@ public class FireObject : MonoBehaviour
         }
         else if (other.CompareTag(burnableTag))
         {
-            Debug.Log("Called");
+    
             other.TryGetComponent<EnviromentalBurnableNonTarget>(out var CollidedEnviromentNonTarget);
             if (CollidedEnviromentNonTarget.burning)
             {
@@ -119,6 +121,7 @@ public class FireObject : MonoBehaviour
         fireIntensityTimer = 0f;
 
         var FireObjectPSShape = fireObjectPS.shape;
+        var FireObjectPSEmission = fireObjectPS.emission;
         minFirePsScale = new Vector3(1f, 1f, 1f);
         maxFirePsScale = new Vector3(9.17f, 9.823f, 3f);
 
@@ -126,38 +129,52 @@ public class FireObject : MonoBehaviour
 
         while (currentlyBurning)
         {
-            Debug.Log(fireIntensityTimer);
             Debug.Log(fireIntensity);
-            fireIntensityTimer -= 1f;
+            fireIntensityTimer -= 3f;
             Vector3 UpdatingIntensityScale =
                 Vector3.Lerp(minFirePsScale, maxFirePsScale, fireIntensity / MaxFireIntensity);
             if (fireIntensityTimer <= 0f)
             {
-                if (fireIntensity > 0f && fireIntensity < 50f)
+                if (fireIntensity < 50f)
                 {
                     float smallFireIncriment = Random.Range(2f, 6f);
                     fireIntensity += smallFireIncriment;
                     FireObjectPSShape.scale = UpdatingIntensityScale;
+                    FireObjectPSEmission.rateOverTime = Mathf.Lerp(300f, 400f, fireIntensity / 100f);
                     fireIntensityTimer = fireIntensityTimerRest;
+                    if (FireWeakTimer > 20f)
+                    {
+                        FireManager.instance.ReduceNumberOfFires();
+                        Destroy(gameObject);
+                    }
+                    else
+                    {
+                        FireWeakTimer += 3f;
+                    }
                 }
                 else if (fireIntensity > 50f && fireIntensity < 150f)
                 {
                     float middleFireIncriment = Random.Range(10, 20);
                     fireIntensity += middleFireIncriment;
                     FireObjectPSShape.scale = UpdatingIntensityScale;
+                    FireObjectPSEmission.rateOverTime = Mathf.Lerp(400f, 500f, (fireIntensity - 100f) / 100f);
+                    fireIntensityTimer = fireIntensityTimerRest;
                     fireIntensityTimer = fireIntensityTimerRest;
                     MaxFireIntensityTimer = 0f;
+                    FireWeakTimer = 0f;
                 }
                 else if (fireIntensity > 150f && fireIntensity < MaxFireIntensity)
                 {
                     float largeFireIncriment = Random.Range(15, 25);
                     fireIntensity += largeFireIncriment;
                     FireObjectPSShape.scale = UpdatingIntensityScale;
-                    fireIntensityTimer = fireIntensityTimerRest;
+                    FireObjectPSEmission.rateOverTime = Mathf.Lerp(500f, 550f, (fireIntensity-100) / 100f);
+                    FireWeakTimer = 0f;
                 }
                 else if (fireIntensity >= MaxFireIntensity)
                 {
                     MaxFireIntensityTimer += 1f;
+                    FireWeakTimer = 0f;
 
                     //Temporary just for now will change later but is the extreme case 
 

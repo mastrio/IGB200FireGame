@@ -47,9 +47,9 @@ public class GameUI : MonoBehaviour
     {
 
         //sets bool to true to spawn fire on next click
-        coolburnStart.CoolButtonTrigger();
+        FireManager.instance.CoolButtonTrigger();
         //  clicktoMove.disablemoveButtonPress();
-        Debug.Log("pressed");
+    
     }
 
     public void OpenMapButtonPressed()
