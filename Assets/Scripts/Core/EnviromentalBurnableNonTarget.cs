@@ -22,13 +22,24 @@ public class EnviromentalBurnableNonTarget : MonoBehaviour
         BaseFireObjectRef = baseFireObject;
         burning = true;
         BurnTimer = 0f;
-        GameObject fireParticle = Instantiate(FireParticlePrefab, transform.position,
-            Quaternion.Euler(new Vector3(-90.0f, 0.0f, 0.0f)), transform);
-        GameObject negativeParticle = Instantiate(FireNegativePrefab, transform.position,
-            Quaternion.Euler(new Vector3(-90.0f, 0.0f, 0.0f)), transform);
-        firePS = fireParticle.GetComponent<ParticleSystem>();
-        negativePS = fireParticle.GetComponent<ParticleSystem>();
-        FireManager.UpdateFireDangerLevel(true); //Increase by one as the fire spread to something unintended
+        if (firePS == null)
+        {
+            GameObject fireParticle = Instantiate(FireParticlePrefab, transform.position,
+                Quaternion.Euler(new Vector3(-90.0f, 0.0f, 0.0f)), transform);
+            GameObject negativeParticle = Instantiate(FireNegativePrefab, transform.position,
+                Quaternion.Euler(new Vector3(-90.0f, 0.0f, 0.0f)), transform);
+            firePS = fireParticle.GetComponent<ParticleSystem>();
+            negativePS = negativeParticle.GetComponent<ParticleSystem>();
+        }
+        else
+        {
+            var firePSEmission = firePS.emission;
+            firePSEmission.rateOverTime = 400f;
+            var negPSEmission = negativePS.emission;
+            negPSEmission.rateOverTime = 10f;
+        }
+
+            FireManager.UpdateFireDangerLevel(true); //Increase by one as the fire spread to something unintended
     }
 
     public void StoppingBurn()
@@ -41,13 +52,15 @@ public class EnviromentalBurnableNonTarget : MonoBehaviour
 
     private IEnumerator SpreadFireExtinguisher()
     {
-        float delay = UnityEngine.Random.Range(15f, 20f);
-        yield return new WaitForSeconds(delay);
+        //float delay = UnityEngine.Random.Range(15f, 20f);
+        yield return new WaitForSeconds(1f);
 
         if (firePS != null && negativePS != null)
         {
-            Destroy(firePS.gameObject);
-            Destroy(negativePS.gameObject);
+            var firePSEmission = firePS.emission;
+            firePSEmission.rateOverTime = 0f;
+            var negPSEmission = negativePS.emission;
+            negPSEmission.rateOverTime = 0f;
             //Reduce By one
             FireManager.UpdateFireDangerLevel(false);
         }

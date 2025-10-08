@@ -19,12 +19,23 @@ public class CoolBurnFuelTarget : MonoBehaviour
         FireObjectRef = baseFireObject;
         burning = true;
         BurnTimer = 0f;
-        GameObject fireParticle = Instantiate(FireParticlePrefab, transform.position,
-            Quaternion.Euler(new Vector3(-90.0f, 0.0f, 0.0f)), transform);
-        GameObject negativeParticle = Instantiate(FirePostivePrefab, transform.position,
-            Quaternion.Euler(new Vector3(-90.0f, 0.0f, 0.0f)), transform);
-        firePS = fireParticle.GetComponent<ParticleSystem>();
-        postivePS = fireParticle.GetComponent<ParticleSystem>();
+        if (firePS == null)
+        {
+            GameObject fireParticle = Instantiate(FireParticlePrefab, transform.position,
+                Quaternion.Euler(new Vector3(-90.0f, 0.0f, 0.0f)), transform);
+            GameObject positiveParticle = Instantiate(FirePostivePrefab, transform.position,
+                Quaternion.Euler(new Vector3(-90.0f, 0.0f, 0.0f)), transform);
+            firePS = fireParticle.GetComponent<ParticleSystem>();
+            postivePS = positiveParticle.GetComponent<ParticleSystem>();
+        }
+        else
+        {
+            var firePSEmission = firePS.emission;
+            firePSEmission.rateOverTime = 400f;
+            var positivePSEmission = postivePS.emission;
+            positivePSEmission.rateOverTime = 10f;
+        }
+        
     }
 
     public void StoppingBurn()
@@ -37,13 +48,16 @@ public class CoolBurnFuelTarget : MonoBehaviour
 
     private IEnumerator FireExtinguisher()
     {
-        float delay = UnityEngine.Random.Range(8f, 18f);
-        yield return new WaitForSeconds(delay);
+        //float delay = UnityEngine.Random.Range(8f, 18f);
+        yield return new WaitForSeconds(1f);
 
         if (firePS != null && postivePS != null)
         {
-            Destroy(firePS.gameObject);
-            Destroy(postivePS.gameObject);
+            var firePSEmission = firePS.emission;
+            firePSEmission.rateOverTime = 0f;
+            var positivePSEmission = postivePS.emission;
+            positivePSEmission.rateOverTime = 0f;
+            FireManager.UpdateFireDangerLevel(false);
         }
 
     }
