@@ -56,8 +56,20 @@ public class FireObject : MonoBehaviour
     void OnDestroy()
     {
         currentlyBurning = false;
-        GameManager.instance.fireObjects.Remove(gameObject);
-        GameManager.instance.fireObjectScripts.Remove(this);
+        if (GameManager.instance != null) //Quick Fix for error
+        {
+            if (GameManager.instance.fireObjects != null)
+            {
+                GameManager.instance.fireObjects.Remove(gameObject);
+            }
+
+            if (GameManager.instance.fireObjects != null)
+            {
+                GameManager.instance.fireObjectScripts.Remove(this);
+            }
+
+        }
+        
     }
 
     //Will need to make work with either Child Hitbox or scale mains hitbox
