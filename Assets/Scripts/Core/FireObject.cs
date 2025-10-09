@@ -1,5 +1,8 @@
+using System;
 using System.Collections;
 using UnityEngine;
+using UnityEngine.SocialPlatforms.Impl;
+using Random = UnityEngine.Random;
 using Vector3 = UnityEngine.Vector3;
 
 public class FireObject : MonoBehaviour
@@ -8,6 +11,7 @@ public class FireObject : MonoBehaviour
     private string coolburnTag = "Coolburn";
     private string burnableTag = "Burnable";
     private bool currentlyBurning = false;
+    private float updateIntensity;
     
 
     //FireDirection Variables
@@ -30,6 +34,9 @@ public class FireObject : MonoBehaviour
     private Vector3 maxFirePsScale;
 
     private Coroutine FireIntensityCoroutine;
+
+    private float minFirePSEmission = 200f;
+    private float maxFirePSEmission = 500f;
 
 
     void Awake()
@@ -129,30 +136,60 @@ public class FireObject : MonoBehaviour
     private IEnumerator IntensifyFire(float initalFireIntensity)
     {
         currentlyBurning = true;
-        fireIntensity += initalFireIntensity;
+        updateIntensity = fireIntensity;
+        updateIntensity += initalFireIntensity;
+        if (updateIntensity <= 0)
+        {
+            updateIntensity = 1;
+        }
+        else if (updateIntensity >= 200)
+        {
+            updateIntensity = 200;
+        }
+
+        fireIntensity = updateIntensity;
         fireIntensityTimer = 0f;
 
         var FireObjectPSShape = fireObjectPS.shape;
         var FireObjectPSEmission = fireObjectPS.emission;
-        minFirePsScale = new Vector3(1f, 1f, 1f);
-        maxFirePsScale = new Vector3(9.17f, 9.823f, 3f);
+        minFirePsScale = new Vector3(0.5f, 0.8f, 0.5f);
+        maxFirePsScale = new Vector3(7.17f, 7.823f, 2f);
+        minFirePSEmission = 100f;
+        maxFirePSEmission = 500f;
 
 
 
         while (currentlyBurning)
         {
             Debug.Log(fireIntensity);
+
+            if (fireIntensity <= 0)
+            {
+                fireIntensity = 1;
+            }
+            else if (fireIntensity > 200)
+            {
+                fireIntensity = 200;
+            }
             fireIntensityTimer -= 3f;
             Vector3 UpdatingIntensityScale =
                 Vector3.Lerp(minFirePsScale, maxFirePsScale, fireIntensity / MaxFireIntensity);
+            float UpdatingEmission = Mathf.Lerp(minFirePSEmission, maxFirePSEmission, fireIntensity / MaxFireIntensity);
             if (fireIntensityTimer <= 0f)
             {
                 if (fireIntensity < 50f)
                 {
                     float smallFireIncriment = Random.Range(2f, 6f);
-                    fireIntensity += smallFireIncriment;
+                    updateIntensity = fireIntensity + smallFireIncriment;
+                    if (updateIntensity <= 0f)
+                    {
+                        updateIntensity = 1f;
+                    }
+                    
+                    fireIntensity = updateIntensity;
                     FireObjectPSShape.scale = UpdatingIntensityScale;
-                    FireObjectPSEmission.rateOverTime = Mathf.Lerp(300f, 400f, fireIntensity / 100f);
+                   // FireObjectPSEmission.rateOverTime = Mathf.Lerp(300f, 400f, fireIntensity / 100f);
+                   FireObjectPSEmission.rateOverTime = UpdatingEmission;
                     fireIntensityTimer = fireIntensityTimerRest;
                     if (FireWeakTimer > 20f)
                     {
@@ -169,22 +206,32 @@ public class FireObject : MonoBehaviour
                     float middleFireIncriment = Random.Range(10, 20);
                     fireIntensity += middleFireIncriment;
                     FireObjectPSShape.scale = UpdatingIntensityScale;
-                    FireObjectPSEmission.rateOverTime = Mathf.Lerp(400f, 500f, (fireIntensity - 100f) / 100f);
+                    FireObjectPSEmission.rateOverTime = UpdatingEmission;
                     fireIntensityTimer = fireIntensityTimerRest;
                     fireIntensityTimer = fireIntensityTimerRest;
                     MaxFireIntensityTimer = 0f;
                     FireWeakTimer = 0f;
                 }
-                else if (fireIntensity > 150f && fireIntensity < MaxFireIntensity)
+                else if (fireIntensity > 150f)
                 {
                     float largeFireIncriment = Random.Range(15, 25);
-                    fireIntensity += largeFireIncriment;
+                    float smallFireIncriment = Random.Range(2f, 6f);
+                    updateIntensity = fireIntensity + largeFireIncriment;
+                    if (updateIntensity > 200f)
+                    {
+                        updateIntensity = 200f;
+                    }
+
+                    fireIntensity = updateIntensity;
                     FireObjectPSShape.scale = UpdatingIntensityScale;
-                    FireObjectPSEmission.rateOverTime = Mathf.Lerp(500f, 550f, (fireIntensity-100) / 100f);
+                    FireObjectPSEmission.rateOverTime = UpdatingEmission;
                     FireWeakTimer = 0f;
                 }
                 else if (fireIntensity >= MaxFireIntensity)
                 {
+                    FireObjectPSShape.scale = new Vector3(9.5f, 10f, 3.1f);
+                    FireObjectPSEmission.rateOverTime = 550f;
+                    ScoreManager.instance.AddScore(-2);
                     MaxFireIntensityTimer += 1f;
                     FireWeakTimer = 0f;
 
@@ -192,12 +239,9 @@ public class FireObject : MonoBehaviour
 
                     if (MaxFireIntensityTimer >= 35f)
                     {
-                        Vector3 CrazyScale = maxFirePsScale * 1.3f;
-                        //maxFirePsScale += new Vector3(1f, 1f, 1f);
-                        Vector3 CrazyParentScale = transform.localScale * 1.3f;
-                        FireObjectPSShape.scale = CrazyScale;
-                        transform.localScale = CrazyParentScale;
-                        //transform.localScale += new Vector3(1f, 1f, 1f);
+                        FireObjectPSShape.scale = new Vector3(15f, 16f, 4f);
+                        FireObjectPSEmission.rateOverTime = 600f;
+                        ScoreManager.instance.AddScore(-10);
                     }
                 }
             }

@@ -94,7 +94,7 @@ public class EnviromentalBurnableNonTarget : MonoBehaviour
 
             FirePSShape.scale = SmallFireScale;
             NegPSShape.scale = SmallFireScale;
-            FirePSEmission.rateOverTime = Mathf.Lerp(300f, 400f, currentIntensity / 100f);
+            FirePSEmission.rateOverTime = Mathf.Lerp(100f, 400f, currentIntensity / 100f);
             NegPSEmission.rateOverTime = Mathf.Lerp(10f, 20f, currentIntensity / 100f);
             BurnTimer = 0f;
             MaxBurnTime = 0f;

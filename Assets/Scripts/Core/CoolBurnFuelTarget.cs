@@ -29,15 +29,26 @@ public class CoolBurnFuelTarget : MonoBehaviour
                 Quaternion.Euler(new Vector3(-90.0f, 0.0f, 0.0f)), transform);
             firePS = fireParticle.GetComponent<ParticleSystem>();
             postivePS = positiveParticle.GetComponent<ParticleSystem>();
+            Vector3 FireScale = Vector3.Lerp(new Vector3(0.8f, 1.3f, 0.5f), new Vector3(9.17f, 9.823f, 3f),
+                FireObjectRef.fireIntensity/200);
+            var firePSEmission = firePS.emission;
+            firePSEmission.rateOverTime = 1f;
+            var positivePSEmission = postivePS.emission;
+            positivePSEmission.rateOverTime = 1f;
         }
         else
         {
-
+            var firePSEmission = firePS.emission;
+            firePSEmission.rateOverTime = 1f;
+            var positivePSEmission = postivePS.emission;
+            positivePSEmission.rateOverTime = 1f;
         }
         if (coolburnIntensifycoroutine != null)
         {
             coolburnIntensifycoroutine = StartCoroutine(CoolburnFireIntensifys(FireObjectRef.fireIntensity));
         }
+        if(burning == false) StopCoroutine(coolburnIntensifycoroutine);
+        
 
     }
 
@@ -56,18 +67,11 @@ public class CoolBurnFuelTarget : MonoBehaviour
 
         if (firePS != null && postivePS != null) //Temp fix so no errors when destorying it
         {
-            var firePSEmission = firePS.emission;
-            firePSEmission.rateOverTime = 0f;
-            var positivePSEmission = postivePS.emission;
-            positivePSEmission.rateOverTime = 0f;
             FireManager.UpdateFireDangerLevel(false);
+            Destroy(firePS.gameObject);
+            Destroy(postivePS.gameObject);
         }
 
-    }
-
-    void FireIntensifys(float CurrentIntensity)
-    {
-       
     }
 
     private void OnDestroy()
