@@ -95,7 +95,7 @@ public class FireObject : MonoBehaviour
     //Will need to make work with either Child Hitbox or scale mains hitbox
     public void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag(coolburnTag) && fireIntensity < 150f)
+        if (other.CompareTag(coolburnTag))
         {
         
             other.TryGetComponent<CoolBurnFuelTarget>(out var CollidedCoolburnable);

@@ -96,6 +96,7 @@ public class FireManager : MonoBehaviour
 
         if (hitLayer == groundLayer || hitLayer == coolburnLayer)
         {
+            IncreaseNumberOfFires();
             Instantiate(fireObjectPrefab, rayHit.point, Quaternion.Euler(Vector3.zero));
             success = true;
         }
@@ -140,7 +141,6 @@ public class FireManager : MonoBehaviour
 
         ClickToMove.movedisabled = false;
         CoolbuttonPressed = false;
-        IncreaseNumberOfFires();
         return success;
     }
 

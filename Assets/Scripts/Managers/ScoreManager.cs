@@ -32,11 +32,11 @@ public class ScoreManager : MonoBehaviour
 
     private void Update()
     {
-        if (Time.time >= particleTimer)
-        {
-            scorePositiveParticles.Stop();
-            scoreNegativeParticles.Stop();
-        }
+        //if (Time.time >= particleTimer)
+        //{
+          //  scorePositiveParticles.Stop();
+          //  scoreNegativeParticles.Stop();
+        //}
     }
 
     public void AddScore(int points)
@@ -44,10 +44,10 @@ public class ScoreManager : MonoBehaviour
         score += points;
         ScoreText.text = score.ToString();
 
-        particleTimer = Time.time + 1.0f;
+        //particleTimer = Time.time + 1.0f;
 
-        if (points > 0) scorePositiveParticles.gameObject.SetActive(true);
-        else if (points < 0) scoreNegativeParticles.gameObject.SetActive(true);
+        //if (points > 0) scorePositiveParticles.gameObject.SetActive(true);
+       // else if (points < 0) scoreNegativeParticles.gameObject.SetActive(true);
     }
 
     public void UpdateScore(int SucessfulBurn) //Change to switch

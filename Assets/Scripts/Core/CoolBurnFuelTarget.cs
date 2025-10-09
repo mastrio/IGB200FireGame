@@ -23,14 +23,15 @@ public class CoolBurnFuelTarget : MonoBehaviour
 
     private Coroutine coolburnIntensifycoroutine;
 
-    private float FireTimer;
+    private float tempFireTimer = 1f;
+    private float FireCounterTime = 1f;
+
 
     public void BeginFireIgnition(FireObject baseFireObject)
     {
         FireObjectRef = baseFireObject;
         burning = true;
-        BurnTimer = 0f;
-        FireTimer = Time.time + 3f;
+        BurnTimer = 0f; 
         if (firePS == null) //Temp Fix If fire hasnt happend before
         {
             GameObject fireParticle = Instantiate(FireParticlePrefab, transform.position,
@@ -46,6 +47,15 @@ public class CoolBurnFuelTarget : MonoBehaviour
             var positivePSEmission = postivePS.emission;
             positivePSEmission.rateOverTime = 15f;
             MaxBurnTime = Time.time;
+        }
+        else if (firePS != null)
+        {
+            Vector3 FireScale = Vector3.Lerp(new Vector3(0.8f, 1.3f, 0.5f), new Vector3(9.17f, 9.823f, 3f),
+                FireObjectRef.fireIntensity / 200);
+            var firePSEmission = firePS.emission;
+            firePSEmission.rateOverTime = 200f;
+            var positivePSEmission = postivePS.emission;
+            positivePSEmission.rateOverTime = 15f;
         }
     }
 
@@ -67,6 +77,8 @@ public class CoolBurnFuelTarget : MonoBehaviour
             FireManager.UpdateFireDangerLevel(false);
             Destroy(firePS.gameObject);
             Destroy(postivePS.gameObject);
+            firePS = null;
+            postivePS = null;
         }
 
     }
@@ -81,15 +93,20 @@ public class CoolBurnFuelTarget : MonoBehaviour
 
     private void Update()
     {
-        FireTimer -= 1;
-        if (FireTimer <= 0f)
-        {
-            if (burning)
-            {
-                CoolburnIntensifying(FireObjectRef.fireIntensity);
-                AddScoreForFire(FireObjectRef.fireIntensity);
-            }
+        //if (burning & tempFireTimer <= 0f)
+       // {
+       if (burning)
+       {
+           CoolburnIntensifying(FireObjectRef.fireIntensity);
+           AddScoreForFire(FireObjectRef.fireIntensity);
+           tempFireTimer = 1f;
         }
+      
+       // }
+        //else if (burning)
+ //       {
+   //         tempFireTimer -= Time.deltaTime;
+     //   }
         
     }
 
@@ -114,42 +131,41 @@ public class CoolBurnFuelTarget : MonoBehaviour
         float maxPositvePSEmission = 100f;
         float UpdatingPositveEmission =
             Mathf.Lerp(minPositvePSEmission, maxPositvePSEmission, currentIntensity / 200);
-        if (BurnTimer < 0f)
+       
+        if (currentIntensity < 100f)
         {
-            if (currentIntensity < 100f)
-            {
 
-                Debug.Log("called");
+            Debug.Log("called");
 
-                FirePSShape.scale = UpdatingIntensityScale;
-                PositvePSShape.scale = UpdatingIntensityScale;
-                FirePSEmission.rateOverTime = UpdatingFireEmission;
-                PositivePSEmission.rateOverTime = UpdatingPositveEmission;
-                //ScoreManager.instance.AddScore(1);
-                MaxBurnTime = Time.time + 15f;
-            }
-            else if (currentIntensity < 200f)
-            {
+            FirePSShape.scale = UpdatingIntensityScale;
+            PositvePSShape.scale = UpdatingIntensityScale;
+            FirePSEmission.rateOverTime = UpdatingFireEmission;
+            PositivePSEmission.rateOverTime = UpdatingPositveEmission;
+            //ScoreManager.instance.AddScore(1);
+            //MaxBurnTime = Time.time + 15f;
+        }
+        else if (currentIntensity < 200f)
+        {
 
 
-                FirePSShape.scale = UpdatingIntensityScale;
-                PositvePSShape.scale = UpdatingIntensityScale;
-                FirePSEmission.rateOverTime = UpdatingFireEmission;
-                PositivePSEmission.rateOverTime = UpdatingPositveEmission;
+            FirePSShape.scale = UpdatingIntensityScale;
+            PositvePSShape.scale = UpdatingIntensityScale;
+            FirePSEmission.rateOverTime = UpdatingFireEmission;
+            PositivePSEmission.rateOverTime = UpdatingPositveEmission;
 
-               // ScoreManager.instance.AddScore(2);
-                MaxBurnTime = Time.time + 15f;
-            }
-            else if (currentIntensity >= 200f)
-            {
-                MaxBurnTime -= 3f;
-                if (MaxBurnTime <= 0f)
-                {
-                    ScoreManager.instance.AddScore(10);
-                    FireManager.UpdateFireDangerLevel(false);
-                    Destroy(gameObject);
-                }
-            }
+           // ScoreManager.instance.AddScore(2);
+            //MaxBurnTime = Time.time + 15f;
+        }
+        else if (currentIntensity >= 200f)
+        {
+            //MaxBurnTime = Time.time;
+            //if (MaxBurnTime <= 0f)
+            //{
+            ScoreManager.instance.AddScore(10);
+            FireManager.UpdateFireDangerLevel(false);
+            Destroy(gameObject);
+       //     }
+        
         }
         
     }
@@ -160,7 +176,7 @@ public class CoolBurnFuelTarget : MonoBehaviour
         {
             ScoreManager.instance.AddScore(2);
         }
-        else if (FireObjectRef.fireIntensity >= 200f)
+        else if (FireObjectRef.fireIntensity <= 200f)
         {
             ScoreManager.instance.AddScore(4);
         }
