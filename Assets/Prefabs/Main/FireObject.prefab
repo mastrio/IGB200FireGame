@@ -48,7 +48,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerDetectionDistance: 7
-  gameUI: {fileID: 1414899561382175979, guid: ca7136900f6d1e84a8649cd21d0d04e9, type: 3}
   MoveSpeed: 5
   fireIntensity: 0
   MaxFireIntensity: 200
@@ -71,8 +70,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 5.8, y: 4.7, z: 5.7}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 5.8, y: 3.2, z: 5.7}
+  m_Center: {x: 0, y: 0.73004353, z: 0}
 --- !u!54 &-9105073179673796107
 Rigidbody:
   m_ObjectHideFlags: 0

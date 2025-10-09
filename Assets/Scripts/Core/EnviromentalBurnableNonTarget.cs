@@ -1,7 +1,9 @@
 using System.Collections;
+using System.Data.Common;
 using System.Numerics;
 using Unity.VisualScripting;
 using UnityEngine;
+using static UnityEngine.Rendering.DebugUI;
 using Quaternion = UnityEngine.Quaternion;
 using Vector3 = UnityEngine.Vector3;
 
@@ -17,6 +19,7 @@ public class EnviromentalBurnableNonTarget : MonoBehaviour
     private ParticleSystem firePS;
     private ParticleSystem negativePS;
 
+    private Coroutine enviroIntensiftyCoroutine;
     public void BeginSpreadFire(FireObject baseFireObject)
     {
         BaseFireObjectRef = baseFireObject;
@@ -31,15 +34,14 @@ public class EnviromentalBurnableNonTarget : MonoBehaviour
             firePS = fireParticle.GetComponent<ParticleSystem>();
             negativePS = negativeParticle.GetComponent<ParticleSystem>();
         }
-        else // Temp fix
+  
+        if (enviroIntensiftyCoroutine != null)
         {
-            var firePSEmission = firePS.emission;
-            firePSEmission.rateOverTime = 400f;
-            var negPSEmission = negativePS.emission;
-            negPSEmission.rateOverTime = 10f;
+            enviroIntensiftyCoroutine = StartCoroutine(EnviroFireIntensifys(BaseFireObjectRef.fireIntensity));
         }
+        if (burning == false) StopCoroutine(enviroIntensiftyCoroutine);
 
-            FireManager.UpdateFireDangerLevel(true); //Increase by one as the fire spread to something unintended
+        FireManager.UpdateFireDangerLevel(true); //Increase by one as the fire spread to something unintended
     }
 
     public void StoppingBurn()
@@ -57,29 +59,14 @@ public class EnviromentalBurnableNonTarget : MonoBehaviour
 
         if (firePS != null && negativePS != null) //Temp fix to stop errors
         {
-            var firePSEmission = firePS.emission;
-            firePSEmission.rateOverTime = 0f;
-            var negPSEmission = negativePS.emission;
-            negPSEmission.rateOverTime = 0f;
-            //Reduce By one
             FireManager.UpdateFireDangerLevel(false);
+            Destroy(firePS.gameObject);
+            Destroy(negativePS.gameObject);
         }
 
     }
 
-
-    // Update is called once per frame
-    void Update()
-    {
-        //End if not currently Burning
-        if (burning)
-        {
-            BurningEnviroment(BaseFireObjectRef.fireIntensity);
-        }
-
-    }
-
-    private void BurningEnviroment(float currentIntensity)
+    private IEnumerator EnviroFireIntensifys(float currentIntensity)
     {
         currentIntensity = BaseFireObjectRef.fireIntensity;
 
@@ -87,53 +74,50 @@ public class EnviromentalBurnableNonTarget : MonoBehaviour
         var FirePSEmission = firePS.emission;
         var NegPSShape = negativePS.shape;
         var NegPSEmission = negativePS.emission;
+        Vector3 minFirePsScale = new Vector3(0.8f, 1.3f, 0.5f);
+        Vector3 maxFirePsScale = new Vector3(7.17f, 7.823f, 2f);
+        float minFirePSEmission = 100f;
+        float maxFirePSEmission = 500f;
+        Vector3 UpdatingIntensityScale =
+            Vector3.Lerp(minFirePsScale, maxFirePsScale, currentIntensity / 200);
+        float UpdatingFireEmission =
+            Mathf.Lerp(minFirePSEmission, maxFirePSEmission, currentIntensity / 200);
+
+
+        float minNegPSEmission = 20f;
+        float maxNegPSEmission = 100f;
+        float UpdatingNegEmission =
+            Mathf.Lerp(minNegPSEmission, maxNegPSEmission, currentIntensity / 200);
+
+        FirePSShape.scale = UpdatingIntensityScale;
+        NegPSShape.scale = UpdatingIntensityScale;
+        FirePSEmission.rateOverTime = UpdatingFireEmission;
+        NegPSEmission.rateOverTime = UpdatingNegEmission;
         if (currentIntensity < 100f)
         {
-            Vector3 SmallFireScale = Vector3.Lerp(new Vector3(0.8f, 1.3f, 0.5f), new Vector3(2f, 2.5f, 0.8f),
-                (currentIntensity-100) / 100f);
-
-            FirePSShape.scale = SmallFireScale;
-            NegPSShape.scale = SmallFireScale;
-            FirePSEmission.rateOverTime = Mathf.Lerp(100f, 400f, currentIntensity / 100f);
-            NegPSEmission.rateOverTime = Mathf.Lerp(10f, 20f, currentIntensity / 100f);
             BurnTimer = 0f;
             MaxBurnTime = 0f;
-
         }
         else if (currentIntensity > 100f && currentIntensity <= 200f)
         {
-            BurnTimer += Time.deltaTime;
-            Vector3 MedFireScale = Vector3.Lerp(new Vector3(3.1f, 3.5f, 2.7f), new Vector3(4.7f, 5f, 4.5f),
-                (currentIntensity-100) / 100f);
-           
-           FirePSShape.scale = MedFireScale;
-               NegPSShape.scale = MedFireScale;
-               FirePSEmission.rateOverTime = Mathf.Lerp(400f, 500f, (currentIntensity -100f) / 100f);
-               NegPSEmission.rateOverTime = Mathf.Lerp(20f, 40f, (currentIntensity - 100f) / 100f);
-          
+            BurnTimer += 3f;
             MaxBurnTime = 0f;
-            
-
         }
         else if (currentIntensity >= 200f && BurnTimer >= 30f)
         {
-            Vector3 BigFireScale = Vector3.Lerp(new Vector3(5.3f, 5.8f, 4.5f), new Vector3(9.17f, 9.823f, 3f),
-                BurnTimer / 100f);
-     
-            FirePSShape.scale = BigFireScale;
-            NegPSShape.scale = BigFireScale;
-            FirePSEmission.rateOverTime = Mathf.Lerp(500f, 550f, BurnTimer / 30f);
-            NegPSEmission.rateOverTime = Mathf.Lerp(40f, 50f, BurnTimer / 30f);
             Debug.Log("Burnt");
             ScoreManager.instance.AddScore(-10);
-            MaxBurnTime += Time.deltaTime;
+            MaxBurnTime += 3;
         }
         else if (currentIntensity >= 200f && MaxBurnTime > 20f)
         {
             ScoreManager.instance.AddScore(-15);
             //Should reduce the fire danger level by one since its being burnt (back to how it was before unintended got set on fire)
-            FireManager.UpdateFireDangerLevel(false); 
+            FireManager.UpdateFireDangerLevel(false);
             Destroy(gameObject);
         }
+        
+        yield return new WaitForSeconds(3f);
     }
+    
 }

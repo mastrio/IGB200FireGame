@@ -12,6 +12,11 @@ public class FireObject : MonoBehaviour
     private string burnableTag = "Burnable";
     private bool currentlyBurning = false;
     private float updateIntensity;
+
+    private BoxCollider thisBoxCollider;
+    private Vector3 initalColliderSize = new Vector3(5.6f,3.2f,5.6f);
+    private Vector3 initalPSScale = new Vector3(5f,5f,1f);
+    private Vector3 currentPSScale;
     
 
     //FireDirection Variables
@@ -45,6 +50,9 @@ public class FireObject : MonoBehaviour
         GameManager.instance.fireObjectScripts.Add(this);
         currentlyBurning = true;
 
+        thisBoxCollider = GetComponent<BoxCollider>();
+
+        
         // Added for testing the management UI
         fireIntensity = 50.0f;
 
@@ -56,7 +64,8 @@ public class FireObject : MonoBehaviour
         Vector3 StartingFiresDirection = transform.position + FiresDirection * MoveSpeed;
        
         fireObjectPS = GetComponentInChildren<ParticleSystem>();
-        new LerpAnimationVector3(StartingFiresDirection, MoveSpeed);
+        new LerpAnimationVector3(StartingFiresDirection, MoveSpeed); 
+
 
     }
 
@@ -157,6 +166,8 @@ public class FireObject : MonoBehaviour
         minFirePSEmission = 100f;
         maxFirePSEmission = 500f;
 
+        
+
 
 
         while (currentlyBurning)
@@ -243,6 +254,15 @@ public class FireObject : MonoBehaviour
                         FireObjectPSEmission.rateOverTime = 600f;
                         ScoreManager.instance.AddScore(-10);
                     }
+                }
+
+                currentPSScale = FireObjectPSShape.scale;
+                if (currentPSScale != initalPSScale)
+                { 
+                    Vector3 ScaleRatio = new Vector3(currentPSScale.x / initalPSScale.x, currentPSScale.y / initalPSScale.y,
+                        currentPSScale.z / initalPSScale.z);
+
+                    thisBoxCollider.size = Vector3.Scale(initalColliderSize,ScaleRatio);
                 }
             }
 

@@ -36,13 +36,7 @@ public class CoolBurnFuelTarget : MonoBehaviour
             var positivePSEmission = postivePS.emission;
             positivePSEmission.rateOverTime = 1f;
         }
-        else
-        {
-            var firePSEmission = firePS.emission;
-            firePSEmission.rateOverTime = 1f;
-            var positivePSEmission = postivePS.emission;
-            positivePSEmission.rateOverTime = 1f;
-        }
+     
         if (coolburnIntensifycoroutine != null)
         {
             coolburnIntensifycoroutine = StartCoroutine(CoolburnFireIntensifys(FireObjectRef.fireIntensity));
