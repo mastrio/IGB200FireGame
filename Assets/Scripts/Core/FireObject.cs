@@ -22,8 +22,12 @@ public class FireObject : MonoBehaviour
     //FireDirection Variables
     [SerializeField] private float MoveSpeed = 0.1f;
     private float changeDirectionTime = 10f;
+    private float highDirectionTimer = 5f;
+    private float lowIntensityDirectionTimer = 12f;
+    private float medIntensityDirectrionTimer = 20f;
     private Vector3 FiresDirection;
-    private float FireDirectionTimer;
+    private float FireDirectionTime;
+    
 
     //Fire Intensity
     [HideInInspector] public float fireIntensity = 0f;
@@ -278,13 +282,13 @@ public class FireObject : MonoBehaviour
     }
 
 
-    void ChangeDirection()
+    void ChangeDirection(float movespeed)
     {
 
 
         float Firex = UnityEngine.Random.Range(-50f, 50f);
         float Firez = UnityEngine.Random.Range(-50f, 50f);
-        FiresDirection = new Vector3(Firex, 0, Firez).normalized + WindManager.instance.Direction * 0.2f;
+        FiresDirection = new Vector3(Firex, 0, Firez).normalized + WindManager.instance.Direction * movespeed;
 
         float DistanceFireMoved = Random.Range(1.2f, 9f);
 
@@ -296,7 +300,7 @@ public class FireObject : MonoBehaviour
 
     private void Start()
     {
-        FireDirectionTimer = changeDirectionTime;
+        FireDirectionTime = changeDirectionTime;
         if (FireIntensityCoroutine != null) StopCoroutine(FireIntensityCoroutine);
         FireIntensityCoroutine = StartCoroutine(IntensifyFire(20));
 
@@ -304,13 +308,31 @@ public class FireObject : MonoBehaviour
 
     private void Update()
     {
-        FireDirectionTimer -= Time.deltaTime;
+        FireDirectionTime -= Time.deltaTime;
 
-        //Pick new direction if the timer is met
-        if (FireDirectionTimer <= 0f)
+        if (fireIntensity < 75f)
         {
-            ChangeDirection();
-            FireDirectionTimer = changeDirectionTime;
+            if (FireDirectionTime <= 0f)
+            {
+                ChangeDirection(0.1f);
+                FireDirectionTime = lowIntensityDirectionTimer;
+            }
+        }
+        else if (fireIntensity < 150f)
+        {
+            if (FireDirectionTime <= 0f)
+            {
+                ChangeDirection(0.25f);
+                FireDirectionTime = medIntensityDirectrionTimer;
+            }
+        }
+        else if (fireIntensity > 150f)
+        {
+            if (FireDirectionTime <= 0f)
+            {
+                ChangeDirection(0.4f);
+                FireDirectionTime = highDirectionTimer;
+            }
         }
     }
 

@@ -42,7 +42,7 @@ public class GameManager : MonoBehaviour
             Debug.Log("Failed to load level \"" + Global.scenarioNum + "\"");
             return;
         }
-
+       // FireManager.instance.ResetNumOfFires();
         Instantiate(levelList[Global.scenarioNum - 1]);
     }
 

@@ -202,4 +202,9 @@ public class FireManager : MonoBehaviour
     {
         return CurrentNumberOfFires;
     }
+
+    public void ResetNumOfFires()
+    {
+        CurrentNumberOfFires = 0;
+    }
 }
