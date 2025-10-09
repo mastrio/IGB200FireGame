@@ -15,12 +15,22 @@ public class CoolBurnFuelTarget : MonoBehaviour
     private ParticleSystem firePS;
     private ParticleSystem postivePS;
 
+    private Vector3 minFirePSScale;
+    private Vector3 maxFirePSScale;
+
+    private float minFireEmissionRate;
+    private float maxFireEmissionRate;
+
     private Coroutine coolburnIntensifycoroutine;
+
+    private float FireTimer;
+
     public void BeginFireIgnition(FireObject baseFireObject)
     {
         FireObjectRef = baseFireObject;
         burning = true;
         BurnTimer = 0f;
+        FireTimer = Time.time + 3f;
         if (firePS == null) //Temp Fix If fire hasnt happend before
         {
             GameObject fireParticle = Instantiate(FireParticlePrefab, transform.position,
@@ -30,20 +40,13 @@ public class CoolBurnFuelTarget : MonoBehaviour
             firePS = fireParticle.GetComponent<ParticleSystem>();
             postivePS = positiveParticle.GetComponent<ParticleSystem>();
             Vector3 FireScale = Vector3.Lerp(new Vector3(0.8f, 1.3f, 0.5f), new Vector3(9.17f, 9.823f, 3f),
-                FireObjectRef.fireIntensity/200);
+                FireObjectRef.fireIntensity / 200);
             var firePSEmission = firePS.emission;
-            firePSEmission.rateOverTime = 1f;
+            firePSEmission.rateOverTime = 200f;
             var positivePSEmission = postivePS.emission;
-            positivePSEmission.rateOverTime = 1f;
+            positivePSEmission.rateOverTime = 15f;
+            MaxBurnTime = Time.time;
         }
-     
-        if (coolburnIntensifycoroutine != null)
-        {
-            coolburnIntensifycoroutine = StartCoroutine(CoolburnFireIntensifys(FireObjectRef.fireIntensity));
-        }
-        if(burning == false) StopCoroutine(coolburnIntensifycoroutine);
-        
-
     }
 
     public void StoppingBurn()
@@ -76,72 +79,90 @@ public class CoolBurnFuelTarget : MonoBehaviour
         }
     }
 
-    private IEnumerator CoolburnFireIntensifys(float currentFireIntensity)
+    private void Update()
+    {
+        FireTimer -= 1;
+        if (FireTimer <= 0f)
+        {
+            if (burning)
+            {
+                CoolburnIntensifying(FireObjectRef.fireIntensity);
+                AddScoreForFire(FireObjectRef.fireIntensity);
+            }
+        }
+        
+    }
+
+    private void CoolburnIntensifying(float currentFireIntensity)
     {
         float currentIntensity = FireObjectRef.fireIntensity;
         var FirePSShape = firePS.shape;
         var FirePSEmission = firePS.emission;
         var PositvePSShape = postivePS.shape;
         var PositivePSEmission = postivePS.emission;
+        minFirePSScale = new Vector3(0.5f, 0.8f, 0.5f);
+        maxFirePSScale = new Vector3(7.17f, 7.823f, 2f);
+        minFireEmissionRate = 100f;
+        maxFireEmissionRate = 500f;
+        Vector3 UpdatingIntensityScale =
+           Vector3.Lerp(minFirePSScale, maxFirePSScale, currentIntensity / 200);
 
-        if (currentIntensity < 100f)
+        float UpdatingFireEmission =
+            Mathf.Lerp(minFireEmissionRate, maxFireEmissionRate, currentIntensity / 200);
+
+        float minPositvePSEmission = 20f;
+        float maxPositvePSEmission = 100f;
+        float UpdatingPositveEmission =
+            Mathf.Lerp(minPositvePSEmission, maxPositvePSEmission, currentIntensity / 200);
+        if (BurnTimer < 0f)
         {
-            float smallT = currentIntensity / 100;
-
-            Vector3 SmallFireScale = Vector3.Lerp(new Vector3(0.8f, 1.3f, 0.5f), new Vector3(2f, 2.5f, 0.8f),
-                smallT);
-
-            FirePSShape.scale = SmallFireScale;
-            PositvePSShape.scale = SmallFireScale;
-            FirePSEmission.rateOverTime = Mathf.Lerp(0f, 60f, smallT);
-            PositivePSEmission.rateOverTime = Mathf.Lerp(10f, 20f, smallT);
-            BurnTimer = 0f;
-            MaxBurnTime = 0f;
-        }
-        else if (currentIntensity < 200f)
-        {
-            float medT = (currentIntensity - 100) / 100;
-            Vector3 MedFireScale = Vector3.Lerp(new Vector3(3.1f, 3.5f, 2.7f), new Vector3(4.7f, 5f, 4.5f),
-                medT);
-
-            FirePSShape.scale = MedFireScale;
-            PositvePSShape.scale = MedFireScale;
-            FirePSEmission.rateOverTime = Mathf.Lerp(60f, 160f, medT);
-            PositivePSEmission.rateOverTime = Mathf.Lerp(20f, 50f, medT);
-
-            ScoreManager.instance.AddScore(2);
-            MaxBurnTime = 0f;
-
-        }
-        else if (currentIntensity >= 200f)
-        {
-            MaxBurnTime += 3;
-            if (BurnTimer >= 30f)
+            if (currentIntensity < 100f)
             {
-                float bigT = BurnTimer / 30f;
 
-                Vector3 BigFireScale = Vector3.Lerp(new Vector3(5.3f, 5.8f, 4.5f), new Vector3(9.17f, 9.823f, 3f),
-                    bigT);
+                Debug.Log("called");
 
-                FirePSShape.scale = BigFireScale;
-                PositvePSShape.scale = BigFireScale;
-                FirePSEmission.rateOverTime = Mathf.Lerp(160f, 200f, bigT);
-                PositivePSEmission.rateOverTime = Mathf.Lerp(40f, 50f, bigT);
-                ScoreManager.instance.AddScore(1);
-                MaxBurnTime += 3;
-                Debug.Log("Burnt");
+                FirePSShape.scale = UpdatingIntensityScale;
+                PositvePSShape.scale = UpdatingIntensityScale;
+                FirePSEmission.rateOverTime = UpdatingFireEmission;
+                PositivePSEmission.rateOverTime = UpdatingPositveEmission;
+                //ScoreManager.instance.AddScore(1);
+                MaxBurnTime = Time.time + 15f;
             }
-            else if (MaxBurnTime >= 40f)
+            else if (currentIntensity < 200f)
             {
-                ScoreManager.instance.AddScore(10);
-                FireManager.UpdateFireDangerLevel(false);
-                Destroy(gameObject);
+
+
+                FirePSShape.scale = UpdatingIntensityScale;
+                PositvePSShape.scale = UpdatingIntensityScale;
+                FirePSEmission.rateOverTime = UpdatingFireEmission;
+                PositivePSEmission.rateOverTime = UpdatingPositveEmission;
+
+               // ScoreManager.instance.AddScore(2);
+                MaxBurnTime = Time.time + 15f;
             }
-
-
+            else if (currentIntensity >= 200f)
+            {
+                MaxBurnTime -= 3f;
+                if (MaxBurnTime <= 0f)
+                {
+                    ScoreManager.instance.AddScore(10);
+                    FireManager.UpdateFireDangerLevel(false);
+                    Destroy(gameObject);
+                }
+            }
         }
-        yield return new WaitForSeconds(3f);
+        
     }
 
-   
+    private void AddScoreForFire(float currentIntensity)
+    {
+        if (FireObjectRef.fireIntensity <= 100f)
+        {
+            ScoreManager.instance.AddScore(2);
+        }
+        else if (FireObjectRef.fireIntensity >= 200f)
+        {
+            ScoreManager.instance.AddScore(4);
+        }
+    }
 }

@@ -146,6 +146,7 @@ public class FireObject : MonoBehaviour
     }
 
 
+
     private IEnumerator IntensifyFire(float initalFireIntensity)
     {
         currentlyBurning = true;

@@ -3,6 +3,7 @@ using System.Data.Common;
 using System.Numerics;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SocialPlatforms.Impl;
 using static UnityEngine.Rendering.DebugUI;
 using Quaternion = UnityEngine.Quaternion;
 using Vector3 = UnityEngine.Vector3;
@@ -59,7 +60,6 @@ public class EnviromentalBurnableNonTarget : MonoBehaviour
 
         if (firePS != null && negativePS != null) //Temp fix to stop errors
         {
-            FireManager.UpdateFireDangerLevel(false);
             Destroy(firePS.gameObject);
             Destroy(negativePS.gameObject);
         }
@@ -97,23 +97,24 @@ public class EnviromentalBurnableNonTarget : MonoBehaviour
         {
             BurnTimer = 0f;
             MaxBurnTime = 0f;
+           // ScoreManager.instance.AddScore(-1);
         }
         else if (currentIntensity > 100f && currentIntensity <= 200f)
         {
             BurnTimer += 3f;
             MaxBurnTime = 0f;
+           // ScoreManager.instance.AddScore(-2);
         }
         else if (currentIntensity >= 200f && BurnTimer >= 30f)
         {
             Debug.Log("Burnt");
-            ScoreManager.instance.AddScore(-10);
+           // ScoreManager.instance.AddScore(-10);
             MaxBurnTime += 3;
         }
         else if (currentIntensity >= 200f && MaxBurnTime > 20f)
         {
-            ScoreManager.instance.AddScore(-15);
+           // ScoreManager.instance.AddScore(-15);
             //Should reduce the fire danger level by one since its being burnt (back to how it was before unintended got set on fire)
-            FireManager.UpdateFireDangerLevel(false);
             Destroy(gameObject);
         }
         
