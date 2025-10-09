@@ -193,7 +193,13 @@ public class FireObject : MonoBehaviour
             float UpdatingEmission = Mathf.Lerp(minFirePSEmission, maxFirePSEmission, fireIntensity / MaxFireIntensity);
             if (fireIntensityTimer <= 0f)
             {
-                if (fireIntensity < 50f)
+                if (fireIntensity <= 1f)
+                {
+                    FireManager.instance.ReduceNumberOfFires(); 
+                    Destroy(gameObject);
+                    
+                }
+                else if (fireIntensity < 50f)
                 {
                     float smallFireIncriment = Random.Range(2f, 6f);
                     updateIntensity = fireIntensity + smallFireIncriment;
@@ -207,15 +213,6 @@ public class FireObject : MonoBehaviour
                    // FireObjectPSEmission.rateOverTime = Mathf.Lerp(300f, 400f, fireIntensity / 100f);
                    FireObjectPSEmission.rateOverTime = UpdatingEmission;
                     fireIntensityTimer = fireIntensityTimerRest;
-                    if (FireWeakTimer > 20f)
-                    {
-                        FireManager.instance.ReduceNumberOfFires();
-                        Destroy(gameObject);
-                    }
-                    else
-                    {
-                        FireWeakTimer += 3f;
-                    }
                 }
                 else if (fireIntensity > 50f && fireIntensity < 150f)
                 {
@@ -283,13 +280,13 @@ public class FireObject : MonoBehaviour
     }
 
 
-    void ChangeDirection(float movespeed)
+    void ChangeDirection()
     {
 
 
         float Firex = UnityEngine.Random.Range(-50f, 50f);
         float Firez = UnityEngine.Random.Range(-50f, 50f);
-        FiresDirection = new Vector3(Firex, 0, Firez).normalized + WindManager.instance.Direction * movespeed;
+        FiresDirection = new Vector3(Firex, 0, Firez).normalized + WindManager.instance.Direction * 0.2f;
 
         float DistanceFireMoved = Random.Range(1.2f, 9f);
 
@@ -315,7 +312,7 @@ public class FireObject : MonoBehaviour
         {
             if (FireDirectionTime <= 0f)
             {
-                ChangeDirection(0.1f);
+                ChangeDirection();
                 FireDirectionTime = lowIntensityDirectionTimer;
             }
         }
@@ -323,7 +320,7 @@ public class FireObject : MonoBehaviour
         {
             if (FireDirectionTime <= 0f)
             {
-                ChangeDirection(0.25f);
+                ChangeDirection();
                 FireDirectionTime = medIntensityDirectrionTimer;
             }
         }
@@ -331,7 +328,7 @@ public class FireObject : MonoBehaviour
         {
             if (FireDirectionTime <= 0f)
             {
-                ChangeDirection(0.4f);
+                ChangeDirection();
                 FireDirectionTime = highDirectionTimer;
             }
         }
@@ -339,7 +336,8 @@ public class FireObject : MonoBehaviour
 
     private void FixedUpdate()
     {
+        float fireMoveSpeed = Mathf.Lerp(0.1f,1f,fireIntensity/200f);
         // Update with current position and then start moving
-        transform.Translate(FiresDirection * Time.deltaTime, Space.World);
+        transform.Translate(FiresDirection * fireMoveSpeed * Time.deltaTime, Space.World);
     }
 }
