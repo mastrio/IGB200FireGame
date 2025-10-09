@@ -256,11 +256,16 @@ public class FireObject : MonoBehaviour
                     }
                 }
 
+                //Goes long on z cause of rotation
                 currentPSScale = FireObjectPSShape.scale;
                 if (currentPSScale != initalPSScale)
                 { 
-                    Vector3 ScaleRatio = new Vector3(currentPSScale.x / initalPSScale.x, currentPSScale.y / initalPSScale.y,
-                        currentPSScale.z / initalPSScale.z);
+                    Vector3 ScaleRatio = 
+                        new Vector3(
+                            currentPSScale.x / initalPSScale.x, 
+                            currentPSScale.y / initalPSScale.y,
+                            currentPSScale.z / initalPSScale.z
+                            );
 
                     thisBoxCollider.size = Vector3.Scale(initalColliderSize,ScaleRatio);
                 }
