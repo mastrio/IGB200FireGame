@@ -1261,6 +1261,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7652131072618965262}
+  - component: {fileID: 7163404927460765486}
   m_Layer: 0
   m_Name: Scenario1
   m_TagString: Untagged
@@ -1287,6 +1288,19 @@ Transform:
   - {fileID: 5082531508633096843}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7163404927460765486
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2040091949953048811}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01459eee1e80d84498b16e29bde81c15, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectiveText: Burn undergrowth using coolburns to reduce fire danger
 --- !u!1 &2060148200113526515
 GameObject:
   m_ObjectHideFlags: 0
