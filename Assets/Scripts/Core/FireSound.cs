@@ -3,30 +3,34 @@ using UnityEngine;
 public class FireSound : MonoBehaviour
 {
     private ParticleSystem firePsSystem;
-    private AudioSource fireSound;
+    private bool wasAlive = false;
 
     private void Awake()
     {
         firePsSystem = GetComponent<ParticleSystem>();
-        fireSound = GetComponent<AudioSource>();
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        if (firePsSystem.IsAlive(true))
+        bool isAlive = firePsSystem.IsAlive(true);
+
+        if (isAlive && !wasAlive)
         {
-            if (!fireSound.isPlaying)
-            {
-                fireSound.Play();
-            }
+            FireSoundManager.Instance?.RegisterFireStart();
+            wasAlive = true;
         }
-        else
+        else if (!isAlive && wasAlive)
         {
-            if (fireSound.isPlaying)
-            {
-                fireSound.Stop();
-            }
+            FireSoundManager.Instance?.RegisterFireStop();
+            wasAlive = false;
+        }
+    }
+
+    private void OnDestroy()
+    {
+        if (wasAlive)
+        {
+            FireSoundManager.Instance?.RegisterFireStop();
         }
     }
 }
