@@ -2410,6 +2410,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d41b7c66eee56084b8375a9d11809102, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxHearDistance: 20
+  minHearDistance: 5
+  minVolumeMultiplier: 0.2
+  intensityPerFire: 0.1
 --- !u!4 &2062542149
 Transform:
   m_ObjectHideFlags: 0
@@ -2435,8 +2439,8 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: b5ff8152d028f6e478719a741d3dc420, type: 3}
-  m_Resource: {fileID: 8300000, guid: b5ff8152d028f6e478719a741d3dc420, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 4e24a4fb18caf6243bdfa448762e62e0, type: 3}
+  m_Resource: {fileID: 8300000, guid: 4e24a4fb18caf6243bdfa448762e62e0, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
