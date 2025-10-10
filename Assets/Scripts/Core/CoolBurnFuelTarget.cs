@@ -42,22 +42,36 @@ public class CoolBurnFuelTarget : MonoBehaviour
                 Quaternion.Euler(new Vector3(-90.0f, 0.0f, 0.0f)), transform);
             firePS = fireParticle.GetComponent<ParticleSystem>();
             postivePS = positiveParticle.GetComponent<ParticleSystem>();
-            Vector3 FireScale = Vector3.Lerp(new Vector3(0.8f, 1.3f, 0.5f), new Vector3(9.17f, 9.823f, 3f),
-                FireObjectRef.fireIntensity / 200);
+            Vector3 FireScale = Vector3.Lerp(new Vector3(0.5f, 0.8f, 0.5f), new Vector3(4.17f, 4.823f, 1.4f),
+                FireObjectRef.fireIntensity / 200f);
+            Vector3 PositveScale = Vector3.Lerp(new Vector3(0.5f, 0.8f, 0.5f), new Vector3(7f, 7f, 4f),
+                FireObjectRef.fireIntensity / 200f);
+            var firePSScale = firePS.shape;
+            var postivePSScale = postivePS.shape;
+            firePSScale.scale = FireScale;
+            postivePSScale.scale = PositveScale;
+
             var firePSEmission = firePS.emission;
-            firePSEmission.rateOverTime = 200f;
+            firePSEmission.rateOverTime = Mathf.Lerp(100f,250f,FireObjectRef.fireIntensity/200f);
             var positivePSEmission = postivePS.emission;
-            positivePSEmission.rateOverTime = 15f;
+            positivePSEmission.rateOverTime = Mathf.Lerp(10f, 20f, FireObjectRef.fireIntensity / 200f);
             MaxBurnTime = Time.time;
         }
         else if (firePS != null)
         {
-            Vector3 FireScale = Vector3.Lerp(new Vector3(0.8f, 1.3f, 0.5f), new Vector3(9.17f, 9.823f, 3f),
-                FireObjectRef.fireIntensity / 200);
+            Vector3 FireScale = Vector3.Lerp(new Vector3(0.5f, 0.8f, 0.5f), new Vector3(4.17f, 4.823f, 1.4f),
+                FireObjectRef.fireIntensity / 200f);
+            Vector3 PositveScale = Vector3.Lerp(new Vector3(0.5f, 0.8f, 0.5f), new Vector3(12f, 12f, 5f),
+                FireObjectRef.fireIntensity / 200f);
+            var firePSScale = firePS.shape;
+            var postivePSScale = postivePS.shape;
+            firePSScale.scale = FireScale;
+            postivePSScale.scale = PositveScale;
+
             var firePSEmission = firePS.emission;
-            firePSEmission.rateOverTime = 200f;
+            firePSEmission.rateOverTime = Mathf.Lerp(100f, 300f, FireObjectRef.fireIntensity / 200f);
             var positivePSEmission = postivePS.emission;
-            positivePSEmission.rateOverTime = 15f;
+            positivePSEmission.rateOverTime = Mathf.Lerp(10f, 20f, FireObjectRef.fireIntensity / 200f);
         }
     }
 
@@ -100,12 +114,6 @@ public class CoolBurnFuelTarget : MonoBehaviour
 
         if (FireObjectRef != null)
         {
-            float tempIntensity = FireObjectRef.fireIntensity;
-            if (Mathf.Approximately(currentIntensity, tempIntensity))
-            {
-                return;
-            }
-
             if (burning)
             {
                 CoolburnIntensifying(FireObjectRef.fireIntensity);
@@ -132,23 +140,30 @@ public class CoolBurnFuelTarget : MonoBehaviour
         {
             return;
         }
-        currentIntensity = FireIntensity;
+        else if (FireIntensity == currentIntensity)
+        {
+            return;
+        }
+            currentIntensity = FireIntensity;
         var FirePSShape = firePS.shape;
         var FirePSEmission = firePS.emission;
         var PositvePSShape = postivePS.shape;
         var PositivePSEmission = postivePS.emission;
         minFirePSScale = new Vector3(0.5f, 0.8f, 0.5f);
-        maxFirePSScale = new Vector3(7.17f, 7.823f, 2f);
+        maxFirePSScale = new Vector3(4.17f, 4.823f, 1.4f);
         minFireEmissionRate = 100f;
-        maxFireEmissionRate = 500f;
+        maxFireEmissionRate = 250f;
         Vector3 UpdatingIntensityScale =
            Vector3.Lerp(minFirePSScale, maxFirePSScale, currentIntensity / 200);
+
+        Vector3 PositveScale = Vector3.Lerp(new Vector3(0.5f, 0.8f, 0.5f), new Vector3(7f, 7f, 4f),
+            FireObjectRef.fireIntensity / 200f);
 
         float UpdatingFireEmission =
             Mathf.Lerp(minFireEmissionRate, maxFireEmissionRate, currentIntensity / 200);
 
-        float minPositvePSEmission = 20f;
-        float maxPositvePSEmission = 60f;
+        float minPositvePSEmission = 10f;
+        float maxPositvePSEmission = 20f;
         float UpdatingPositveEmission =
             Mathf.Lerp(minPositvePSEmission, maxPositvePSEmission, currentIntensity / 200);
 
@@ -166,7 +181,7 @@ public class CoolBurnFuelTarget : MonoBehaviour
             Debug.Log("called");
 
             FirePSShape.scale = UpdatingIntensityScale;
-            PositvePSShape.scale = UpdatingIntensityScale;
+            PositvePSShape.scale = PositveScale;
             FirePSEmission.rateOverTime = UpdatingFireEmission;
             PositivePSEmission.rateOverTime = UpdatingPositveEmission;
             //ScoreManager.instance.AddScore(1);
@@ -177,7 +192,7 @@ public class CoolBurnFuelTarget : MonoBehaviour
 
 
             FirePSShape.scale = UpdatingIntensityScale;
-            PositvePSShape.scale = UpdatingIntensityScale;
+            PositvePSShape.scale = PositveScale;
             FirePSEmission.rateOverTime = UpdatingFireEmission;
             PositivePSEmission.rateOverTime = UpdatingPositveEmission;
 
