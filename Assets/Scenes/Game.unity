@@ -2116,14 +2116,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1389839448}
     - target: {fileID: 3119336986589926058, guid: 5aee8c14684e3ce40b212eb39670a576, type: 3}
-      propertyPath: levelList.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3119336986589926058, guid: 5aee8c14684e3ce40b212eb39670a576, type: 3}
-      propertyPath: 'levelList.Array.data[0]'
-      value: 
-      objectReference: {fileID: 2040091949953048811, guid: d254c3bc95fc07f44afe34bccd0942c1, type: 3}
-    - target: {fileID: 3119336986589926058, guid: 5aee8c14684e3ce40b212eb39670a576, type: 3}
       propertyPath: playerDraggingFireButton
       value: 0
       objectReference: {fileID: 0}
