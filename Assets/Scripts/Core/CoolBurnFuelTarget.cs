@@ -26,6 +26,8 @@ public class CoolBurnFuelTarget : MonoBehaviour
     private float tempFireTimer = 1f;
     private float FireCounterTime = 1f;
 
+    private float currentIntensity;
+
 
     public void BeginFireIgnition(FireObject baseFireObject)
     {
@@ -62,8 +64,13 @@ public class CoolBurnFuelTarget : MonoBehaviour
     public void StoppingBurn()
     {
         burning = false;
-
+        
         if (fireExtinguisherCoroutine != null) StopCoroutine(fireExtinguisherCoroutine);
+
+        if (!gameObject.activeInHierarchy)
+        {
+            return;
+        }
         fireExtinguisherCoroutine = StartCoroutine(FireExtinguisher());
     }
 
@@ -85,24 +92,33 @@ public class CoolBurnFuelTarget : MonoBehaviour
 
     private void OnDestroy()
     {
-        if (coolburnIntensifycoroutine != null)
-        {
-            StopCoroutine(coolburnIntensifycoroutine);
-        }
+        StoppingBurn();
     }
 
     private void Update()
     {
-        //if (burning & tempFireTimer <= 0f)
-       // {
-       if (burning)
-       {
-           CoolburnIntensifying(FireObjectRef.fireIntensity);
-           AddScoreForFire(FireObjectRef.fireIntensity);
-           tempFireTimer = 1f;
+
+        if (FireObjectRef != null)
+        {
+            float tempIntensity = FireObjectRef.fireIntensity;
+            if (Mathf.Approximately(currentIntensity, tempIntensity))
+            {
+                return;
+            }
+
+            if (burning)
+            {
+                CoolburnIntensifying(FireObjectRef.fireIntensity);
+                AddScoreForFire(FireObjectRef.fireIntensity);
+            }
+            
         }
-      
-       // }
+        
+        //if (burning & tempFireTimer <= 0f)
+        // {
+          
+          // tempFireTimer = 1f;
+        
         //else if (burning)
  //       {
    //         tempFireTimer -= Time.deltaTime;
@@ -110,9 +126,13 @@ public class CoolBurnFuelTarget : MonoBehaviour
         
     }
 
-    private void CoolburnIntensifying(float currentFireIntensity)
+    private void CoolburnIntensifying(float FireIntensity)
     {
-        float currentIntensity = FireObjectRef.fireIntensity;
+        if (firePS == null || postivePS == null)
+        {
+            return;
+        }
+        currentIntensity = FireIntensity;
         var FirePSShape = firePS.shape;
         var FirePSEmission = firePS.emission;
         var PositvePSShape = postivePS.shape;
@@ -128,11 +148,19 @@ public class CoolBurnFuelTarget : MonoBehaviour
             Mathf.Lerp(minFireEmissionRate, maxFireEmissionRate, currentIntensity / 200);
 
         float minPositvePSEmission = 20f;
-        float maxPositvePSEmission = 100f;
+        float maxPositvePSEmission = 60f;
         float UpdatingPositveEmission =
             Mathf.Lerp(minPositvePSEmission, maxPositvePSEmission, currentIntensity / 200);
-       
-        if (currentIntensity < 100f)
+
+        if (currentIntensity <= 0)
+        {
+            burning = false;
+            Destroy(firePS.gameObject);
+            Destroy(postivePS.gameObject);
+            firePS = null;
+            postivePS = null;
+        }
+        else if (currentIntensity < 100f)
         {
 
             Debug.Log("called");
@@ -163,7 +191,7 @@ public class CoolBurnFuelTarget : MonoBehaviour
             //{
             burning = false;
             ScoreManager.instance.AddScore(10);
-            FireManager.UpdateFireDangerLevel(false);
+            //FireManager.UpdateFireDangerLevel(false);
             Destroy(gameObject);
        //     }
         
@@ -173,7 +201,12 @@ public class CoolBurnFuelTarget : MonoBehaviour
 
     private void AddScoreForFire(float currentIntensity)
     {
-        if (FireObjectRef.fireIntensity <= 100f)
+       
+        if (currentIntensity <= 0f)
+        {
+            return;
+        }
+        else if (FireObjectRef.fireIntensity <= 100f)
         {
             ScoreManager.instance.AddScore(1);
         }
@@ -181,5 +214,7 @@ public class CoolBurnFuelTarget : MonoBehaviour
         {
             ScoreManager.instance.AddScore(2);
         }
+        
+        
     }
 }
