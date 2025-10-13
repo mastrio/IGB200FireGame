@@ -145,5 +145,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc1b35b0a7191384cb7f79f4a3079a5c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sprite: {fileID: 115713992615965995}
   layerOffset: -0.8
   scaleWithZoom: 0
+  linkedObject: {fileID: 0}

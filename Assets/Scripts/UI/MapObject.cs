@@ -6,14 +6,28 @@ public class MapObject : MonoBehaviour
     static readonly Vector2 OBJECT_SCALE = new Vector2(0.1f, 0.1f);
     static readonly float maxTimerVal = 15;
 
+    [SerializeField] private SpriteRenderer sprite;
     [SerializeField] private float layerOffset;
     [SerializeField] private bool scaleWithZoom = false;
+    [SerializeField] private bool matchRotation = false;
 
-    [SerializeField] private float updateTimer = maxTimerVal;
+    [HideInInspector] public GameObject linkedObject;
 
-    [NonSerialized] public GameObject linkedObject;
-
+    private float updateTimer = maxTimerVal;
     private Vector3 linkedObjPos;
+
+    private bool objectReady = false;
+
+    void Start()
+    {
+        sprite.color = new Color(1.0f, 1.0f, 1.0f, 0.0f);
+
+        if (matchRotation) transform.localRotation = Quaternion.Euler(
+            0.0f,
+            0.0f,
+            linkedObject.transform.rotation.eulerAngles.y
+        );
+    }
 
     void Update()
     {
@@ -43,6 +57,12 @@ public class MapObject : MonoBehaviour
             updateTimer = maxTimerVal;
         }
         else return;
+
+        if (!objectReady)
+        {
+            objectReady = true;
+            sprite.color = Color.white;
+        }
 
         if (linkedObject == null)
         {
