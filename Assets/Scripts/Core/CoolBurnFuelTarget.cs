@@ -95,7 +95,7 @@ public class CoolBurnFuelTarget : MonoBehaviour
 
         if (firePS != null && postivePS != null) //Temp fix so no errors when destorying it
         {
-            FireManager.UpdateFireDangerLevel(false);
+            FireManager.instance.UpdateFireDangerLevel(false);
             Destroy(firePS.gameObject);
             Destroy(postivePS.gameObject);
             firePS = null;
@@ -206,10 +206,8 @@ public class CoolBurnFuelTarget : MonoBehaviour
             //{
             burning = false;
             ScoreManager.instance.AddScore(10);
-            FireManager.UpdateFireDangerLevel(false);
+            FireManager.instance.UpdateFireDangerLevel(false);
             Destroy(gameObject);
-       //     }
-        
         }
         
     }

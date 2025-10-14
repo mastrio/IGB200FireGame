@@ -45,7 +45,7 @@ public class EnviromentalBurnableNonTarget : MonoBehaviour
         }
         if (burning == false) StopCoroutine(enviroIntensiftyCoroutine);*/
 
-        FireManager.UpdateFireDangerLevel(true); //Increase by one as the fire spread to something unintended
+        FireManager.instance.UpdateFireDangerLevel(true); //Increase by one as the fire spread to something unintended
     }
 
     public void StoppingBurn()

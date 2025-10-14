@@ -24,9 +24,9 @@ public class FireManager : MonoBehaviour
 
     private bool CoolbuttonPressed = false;
 
-    public static int FireDangerLevel = 3;
+    public int FireDangerLevel = 3;
 
-    public static int CurrentNumberOfFires = 0;
+    public int CurrentNumberOfFires = 0;
 
     private void Awake()
     {
@@ -95,7 +95,7 @@ public class FireManager : MonoBehaviour
         CoolbuttonPressed = false;
         return success;
     }
-    public static void UpdateFireDangerLevel(bool CoolBurnFail)
+    public void UpdateFireDangerLevel(bool CoolBurnFail)
     {
         if (FireDangerLevel <= 5 && FireDangerLevel >= 0)
         {
@@ -110,9 +110,14 @@ public class FireManager : MonoBehaviour
         }
 
     }
-    public static int GetFireDangerLevel()
+    public int GetFireDangerLevel()
     {
         return FireDangerLevel;
+    }
+
+    public void SetFireDangerLevel()
+    {
+        FireDangerLevel = 6;
     }
 
     public void IncreaseNumberOfFires()

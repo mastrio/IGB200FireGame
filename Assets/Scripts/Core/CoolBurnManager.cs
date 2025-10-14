@@ -127,7 +127,7 @@ public class CoolBurnManager : MonoBehaviour
 
             if (currentFireIntensity <= 30f && weakFireTime >= 15f)
             {
-                FireManager.UpdateFireDangerLevel(false);
+                FireManager.instance.UpdateFireDangerLevel(false);
                 Destroy(firePS.gameObject); //Change too stop particle emission later
                 currentlyBurning = false;
                 ScoreManager.instance.UpdateScore(2);
@@ -146,7 +146,7 @@ public class CoolBurnManager : MonoBehaviour
                 {
                     //destory object if timer is over ~60 seconds
                     Debug.Log("Destoryed");
-                    FireManager.UpdateFireDangerLevel(false);
+                    FireManager.instance.UpdateFireDangerLevel(false);
                     currentlyBurning = false;
                     ScoreManager.instance.UpdateScore(5);
                     Destroy(this.GameObject());

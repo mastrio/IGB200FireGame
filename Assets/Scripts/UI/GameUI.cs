@@ -20,13 +20,13 @@ public class GameUI : MonoBehaviour
     {
         mapUIAnim = mapUIObject.GetComponent<PopupUIAnimation>();
         pauseUI = pauseUIObject.GetComponent<PauseUI>();
-        UiFireDangerLevel = FireManager.GetFireDangerLevel();
+        UiFireDangerLevel = FireManager.instance.GetFireDangerLevel();
         UpdateTextForDangerLevel(FireDangerLevelText);
     }
 
     private void Update()
     {
-        if (UiFireDangerLevel != FireManager.GetFireDangerLevel())
+        if (UiFireDangerLevel != FireManager.instance.GetFireDangerLevel())
         {
             UpdateTextForDangerLevel(FireDangerLevelText);
         }
@@ -34,7 +34,7 @@ public class GameUI : MonoBehaviour
 
     public void UpdateTextForDangerLevel(TextMeshProUGUI FireDangerText)
     {
-        FireDangerText.text = "Danger Level: " + FireManager.GetFireDangerLevel();
+        FireDangerText.text = "Danger Level: " + FireManager.instance.GetFireDangerLevel();
     }
 
     public void PauseButtonPressed()

@@ -42,8 +42,13 @@ public class GameManager : MonoBehaviour
             Debug.Log("Failed to load level \"" + Global.scenarioNum + "\"");
             return;
         }
-       // FireManager.instance.ResetNumOfFires();
+
         Instantiate(levelList[Global.scenarioNum - 1]);
+
+        //Error with Game manager null ref when trying
+
+        //FireManager.instance.ResetNumOfFires();
+        //FireManager.instance.SetFireDangerLevel();
     }
 
     public void AddMapObjectToMap(GameObject mapObjectPrefab, GameObject sourceObject)
