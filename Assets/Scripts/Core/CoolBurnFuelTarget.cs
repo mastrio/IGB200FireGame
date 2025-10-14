@@ -206,7 +206,7 @@ public class CoolBurnFuelTarget : MonoBehaviour
             //{
             burning = false;
             ScoreManager.instance.AddScore(10);
-            //FireManager.UpdateFireDangerLevel(false);
+            FireManager.UpdateFireDangerLevel(false);
             Destroy(gameObject);
        //     }
         
