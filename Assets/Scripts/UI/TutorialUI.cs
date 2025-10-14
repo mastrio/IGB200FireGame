@@ -38,15 +38,17 @@ public class TutorialUI : MonoBehaviour
         }
     }
 
-    public void ShowTutorial(string tutorialName, bool force = false)
+    public bool ShowTutorial(string tutorialName, bool force = false)
     {
+        if (Global.scenarioNum != 3) return false;
+
         for (int i = 0; i < TutorialManager.instance.tutorialClips.Length; i++)
         {
             TutorialClip clip = TutorialManager.instance.tutorialClips[i];
 
             if (clip.name == tutorialName)
             {
-                if (!force && TutorialManager.seenClips.Contains(clip)) return;
+                if (!force && TutorialManager.seenClips.Contains(clip)) return true;
 
                 if (!TutorialManager.seenClips.Contains(clip)) TutorialManager.seenClips.Add(clip);
                 if (!force) currentTutIndex = TutorialManager.seenClips.Count - 1;
@@ -65,11 +67,12 @@ public class TutorialUI : MonoBehaviour
                 popupAnimation.OpenUI();
 
                 Debug.Log("Showing tutorial \"" + tutorialName + "\"");
-                return;
+                return true;
             }
         }
 
         Debug.Log("Tutorial \"" + tutorialName + "\" does not exist :(");
+        return true;
     }
 
     public void HideTutorial()

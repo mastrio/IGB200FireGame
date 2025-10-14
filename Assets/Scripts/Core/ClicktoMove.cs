@@ -122,9 +122,12 @@ public class ClickToMove : MonoBehaviour
         {
             if (!GameManager.instance.hasMoved)
             {
-                TutorialManager.instance.tutorialUI.ShowTutorial("HowToPlaceFireTutorial");
-                GameManager.instance.hasMoved = true;
-                return;
+                bool result = TutorialManager.instance.tutorialUI.ShowTutorial("HowToPlaceFireTutorial");
+                if (result)
+                {
+                    GameManager.instance.hasMoved = true;
+                    return;
+                }
             }
 
             // Set target destination
