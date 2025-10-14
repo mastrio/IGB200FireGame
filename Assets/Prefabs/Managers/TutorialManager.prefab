@@ -1,0 +1,69 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &3000993229457732159
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7172408384811414213}
+  - component: {fileID: 2917053436241825391}
+  m_Layer: 0
+  m_Name: TutorialManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7172408384811414213
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3000993229457732159}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2917053436241825391
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3000993229457732159}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a5e46f7a1540a204c8e28a2ad0156552, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tutorialUI: {fileID: 0}
+  tutorialClips:
+  - name: HowToPlaceFireTutorial
+    description: fuck you im a placeholder text
+    videoClip: {fileID: 32900000, guid: c9b4dab26c7091c4ca50ce2fbd7ca7c9, type: 3}
+  - name: AfterFirePlacedTutorial
+    description: Hello everybody, my name is Markiplier and welcome to Five Nights
+      at Freddy's, an indie horror game that you guys suggested, in mass
+    videoClip: {fileID: 32900000, guid: c9b4dab26c7091c4ca50ce2fbd7ca7c9, type: 3}
+  - name: MapOpenedTutorial
+    description: Alright, I've been thinking. When life gives you lemons, don't make
+      lemonade - make life take the lemons back! Get mad! I don't want your damn
+      lemons, what am I supposed to do with these? Demand to see life's manager.
+      Make life rue the day it thought it could give Cave Johnson lemons. Do you
+      know who I am? I'm the man who's gonna burn your house down! With the lemons.
+      I'm going to to get my engineers to invent a combustible lemon that burns your
+      house down!
+    videoClip: {fileID: 32900000, guid: c9b4dab26c7091c4ca50ce2fbd7ca7c9, type: 3}
+  - name: HowToManageFireTutorial
+    description: would you rather be alone in a forest with a man or a bear? i would
+      pick bear because what if the bear is freddy fazbear and we ate pizza and wore
+      tophats and went huor huor huor together
+    videoClip: {fileID: 32900000, guid: c9b4dab26c7091c4ca50ce2fbd7ca7c9, type: 3}

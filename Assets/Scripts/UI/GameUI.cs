@@ -45,15 +45,16 @@ public class GameUI : MonoBehaviour
     //Unsure if this actually does anything
     public void StartCoolburnButtonPressed()
     {
-
-        //sets bool to true to spawn fire on next click
         FireManager.instance.CoolButtonTrigger();
-        //  clicktoMove.disablemoveButtonPress();
-    
     }
 
     public void OpenMapButtonPressed()
     {
+        if (!GameManager.instance.hasPannedMap)
+        {
+            TutorialManager.instance.tutorialUI.ShowTutorial("MapOpenedTutorial");
+        }
+
         mapUIAnim.OpenUI();
     }
 

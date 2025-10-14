@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< Updated upstream:Assets/Prefabs/Environment/AshPile.prefab.meta
 guid: 4fd03affe7fdf2a4aa87fa6582a9ac5c
+========
+guid: 8af2667baa294c54ca5e26b99e4968b9
+>>>>>>>> Stashed changes:Assets/Prefabs/Managers/TutorialManager.prefab.meta
 PrefabImporter:
   externalObjects: {}
   userData: 

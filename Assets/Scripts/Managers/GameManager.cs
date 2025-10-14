@@ -17,6 +17,7 @@ public class GameManager : MonoBehaviour
     [HideInInspector] public Vector3 mapCameraOffset = Vector3.zero;
 
     // Tutorial checks
+    [HideInInspector] public bool hasMoved = false;
     [HideInInspector] public bool hasPlacedFire = false;
     [HideInInspector] public bool hasPannedMap = false;
     [HideInInspector] public bool hasManagedFire = false;

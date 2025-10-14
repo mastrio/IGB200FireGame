@@ -52,6 +52,14 @@ public class FireManagementBar : MonoBehaviour
 
     void OnEnable()
     {
+        if (GameManager.instance != null)
+        {
+            if (!GameManager.instance.hasManagedFire)
+            {
+                TutorialManager.instance.tutorialUI.ShowTutorial("HowToManageFireTutorial");
+            }
+        }
+
         bgButton.SetActive(false);
         State = FireBarState.Info;
 

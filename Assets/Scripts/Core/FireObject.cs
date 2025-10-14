@@ -60,17 +60,9 @@ public class FireObject : MonoBehaviour
         // Added for testing the management UI
         fireIntensity = 50.0f;
 
-        float Firex = UnityEngine.Random.Range(-30f, 20f);
-        Debug.Log(Firex);
-        float Firez = UnityEngine.Random.Range(-30f, 30f);
-        Debug.Log(Firez);
-        FiresDirection = new Vector3(Firex, 0f, Firez).normalized;
-        Vector3 StartingFiresDirection = transform.position + FiresDirection * MoveSpeed;
-       
+        ChangeDirection();
+
         fireObjectPS = GetComponentInChildren<ParticleSystem>();
-        new LerpAnimationVector3(StartingFiresDirection, MoveSpeed); 
-
-
     }
 
     void OnDestroy()
@@ -130,8 +122,6 @@ public class FireObject : MonoBehaviour
                 // CoolburnGroundItem CollidedEnviroment = other.GetComponent<CoolburnGroundItem>();
                 // CollidedEnviroment.FireDestory();
             }
-
-
         }
         else if (other.CompareTag(burnableTag))
         {
@@ -144,8 +134,6 @@ public class FireObject : MonoBehaviour
 
         }
     }
-
-
 
     private IEnumerator IntensifyFire(float initalFireIntensity)
     {
@@ -170,10 +158,6 @@ public class FireObject : MonoBehaviour
         maxFirePsScale = new Vector3(7.17f, 7.823f, 2f);
         minFirePSEmission = 100f;
         maxFirePSEmission = 500f;
-
-        
-
-
 
         while (currentlyBurning)
         {
@@ -275,25 +259,13 @@ public class FireObject : MonoBehaviour
 
             yield return new WaitForSeconds(3f);
         }
-
-
     }
-
 
     void ChangeDirection()
     {
-
-
-        float Firex = UnityEngine.Random.Range(-50f, 50f);
-        float Firez = UnityEngine.Random.Range(-50f, 50f);
-        FiresDirection = new Vector3(Firex, 0, Firez).normalized + WindManager.instance.Direction * 0.2f;
-
-        float DistanceFireMoved = Random.Range(1.2f, 9f);
-
-        Vector3 TargetPosition = transform.position + FiresDirection * DistanceFireMoved;
-
-        new LerpAnimationVector3(TargetPosition, MoveSpeed);
-
+        float Firex = UnityEngine.Random.Range(-1f, 1f);
+        float Firez = UnityEngine.Random.Range(-1f, 1f);
+        FiresDirection = new Vector3(Firex, 0, Firez).normalized + (WindManager.instance.Direction * 2.0f);
     }
 
     private void Start()

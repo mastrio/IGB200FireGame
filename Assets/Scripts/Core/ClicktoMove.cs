@@ -120,6 +120,13 @@ public class ClickToMove : MonoBehaviour
         if (MouseOverUi()) return;
         else if (Physics.Raycast(ray: ray, hitInfo: out RaycastHit hit) && hit.collider && hit.collider.gameObject.layer.CompareTo(groundLayer) == 0)
         {
+            if (!GameManager.instance.hasMoved)
+            {
+                TutorialManager.instance.tutorialUI.ShowTutorial("HowToPlaceFireTutorial");
+                GameManager.instance.hasMoved = true;
+                return;
+            }
+
             // Set target destination
             pathCounter = 1;
             navAgent.CalculatePath(hit.point, navPath);

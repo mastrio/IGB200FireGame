@@ -30,6 +30,16 @@ public class MapFireIcon : MonoBehaviour
                 Random.Range(-0.1f, 0.1f),
                 0.0f
             );
+
+            if (UnityEngine.Random.Range(0, 1) == 0)
+            {
+                transform.localScale = new Vector3(
+                    -transform.localScale.x,
+                    1.0f,
+                    1.0f
+                );
+            }
+
         }
     }
 }

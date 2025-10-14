@@ -6,12 +6,12 @@ public class PopupUIAnimation : MonoBehaviour
     [SerializeField] private GameObject motionRootObject;
     [SerializeField] private GameObject bgCloseButtonObject;
 
-    [DoNotSerialize] public bool open = false;
+    [HideInInspector] public bool open = false;
 
     private SpringDamperVector3 movementAnimation;
     private Vector3 startPos;
 
-    void Start()
+    void Awake()
     {
         startPos = motionRootObject.transform.localPosition;
 
