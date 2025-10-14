@@ -56,7 +56,7 @@ public class FireManagementBar : MonoBehaviour
         {
             if (!GameManager.instance.hasManagedFire)
             {
-                TutorialManager.instance.tutorialUI.ShowTutorial("HowToManageFireTutorial");
+                //TutorialManager.instance.tutorialUI.ShowTutorial("HowToManageFireTutorial");
             }
         }
 

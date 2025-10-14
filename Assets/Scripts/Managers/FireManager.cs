@@ -11,7 +11,7 @@ public class FireManager : MonoBehaviour
     [SerializeField] private InputAction MouseClick;
     [SerializeField] private GameObject player;
     [SerializeField] private GameObject FireParticlePrefab;
-    [SerializeField] private Canvas gameUICanvas;
+    //[SerializeField] private Canvas gameUICanvas;
 
     public static FireManager instance;
 
@@ -24,20 +24,53 @@ public class FireManager : MonoBehaviour
 
     private bool CoolbuttonPressed = false;
 
-    public int FireDangerLevel = 3;
+    [HideInInspector] public int FireDangerLevel = 6;
 
-    public int CurrentNumberOfFires = 0;
+    [HideInInspector] public int CurrentNumberOfFires = 0;
 
     private void Awake()
     {
         mainCamera = Camera.main;
+        GetPlayer();
         burnableLayer = LayerMask.NameToLayer("Burnable");
         coolburnLayer = LayerMask.NameToLayer("Coolburn");
         groundLayer = LayerMask.NameToLayer("Ground");
 
 
-        if (instance == null) instance = this;
+        if (instance == null)
+        {
+            instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
         else Destroy(gameObject);
+    }
+
+    public void GetPlayer()
+    {
+        GameObject FindPlayer = GameObject.FindWithTag("Player");
+
+        if (FindPlayer != null)
+        {
+            player = FindPlayer;
+        }
+        else
+        {
+            Debug.Log("No Player in scene");
+        }
+    }
+
+    public void NewSceneCamera()
+    {
+        
+
+        if (!mainCamera == Camera.main)
+        {
+            mainCamera = Camera.main; ;
+        }
+        else
+        {
+            Debug.Log("No New Camera in scene");
+        }
     }
 
     private void OnEnable()
