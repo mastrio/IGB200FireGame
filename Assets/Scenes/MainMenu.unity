@@ -6428,14 +6428,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 9100000, guid: 2f914b55c69d7ae46803213f3c78c41c, type: 2}
     - target: {fileID: 4793397081565598219, guid: 0b533dde5772b2242908ee30e9c7f76c, type: 3}
-      propertyPath: m_UpdateMode
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4793397081565598219, guid: 0b533dde5772b2242908ee30e9c7f76c, type: 3}
-      propertyPath: m_AnimatePhysics
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4793397081565598219, guid: 0b533dde5772b2242908ee30e9c7f76c, type: 3}
       propertyPath: m_ApplyRootMotion
       value: 1
       objectReference: {fileID: 0}
@@ -6459,7 +6451,12 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5796868433173091194, guid: 0b533dde5772b2242908ee30e9c7f76c, type: 3}
+    - {fileID: 6026583766726754327, guid: 0b533dde5772b2242908ee30e9c7f76c, type: 3}
+    - {fileID: 6950185572781314976, guid: 0b533dde5772b2242908ee30e9c7f76c, type: 3}
+    - {fileID: 7457832653185757888, guid: 0b533dde5772b2242908ee30e9c7f76c, type: 3}
+    - {fileID: 2837788378317598689, guid: 0b533dde5772b2242908ee30e9c7f76c, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
