@@ -1508,7 +1508,7 @@ Animator:
   m_GameObject: {fileID: 3095556853304846974}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: ad472b939cd48144e9521d873c2e3018, type: 3}
-  m_Controller: {fileID: 9100000, guid: fac54571ff27f2b46b28cd6d82cd3c4c, type: 2}
+  m_Controller: {fileID: 9100000, guid: ee8fbe6aa5ac26047ab83cf20e87aae6, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -1607,6 +1607,8 @@ MonoBehaviour:
       m_Action: Mouse Click
       m_Flags: 0
     m_Flags: 0
+  clickParticlePrefab: {fileID: 2450634302302140517, guid: 7940c1fb6a65c224e930f187509d9d0c, type: 3}
+  animator: {fileID: 0}
 --- !u!136 &7457832653185757888
 CapsuleCollider:
   m_ObjectHideFlags: 0

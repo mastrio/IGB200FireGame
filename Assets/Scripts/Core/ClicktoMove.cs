@@ -124,7 +124,7 @@ public class ClickToMove : MonoBehaviour
             pathCounter = 1;
             navAgent.CalculatePath(hit.point, navPath);
 
-            Instantiate(clickParticlePrefab, hit.point, transform.rotation);
+            Instantiate(clickParticlePrefab, hit.point + Vector3.up * 0.05f, transform.rotation);
         }
     }
 }

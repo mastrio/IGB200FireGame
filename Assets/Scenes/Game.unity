@@ -3223,22 +3223,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Character
       objectReference: {fileID: 0}
-    - target: {fileID: 4793397081565598219, guid: 0b533dde5772b2242908ee30e9c7f76c, type: 3}
-      propertyPath: m_Controller
-      value: 
-      objectReference: {fileID: 9100000, guid: ee8fbe6aa5ac26047ab83cf20e87aae6, type: 2}
     - target: {fileID: 6950185572781314976, guid: 0b533dde5772b2242908ee30e9c7f76c, type: 3}
       propertyPath: animator
       value: 
       objectReference: {fileID: 1696358927}
-    - target: {fileID: 6950185572781314976, guid: 0b533dde5772b2242908ee30e9c7f76c, type: 3}
-      propertyPath: movementSpeed
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 6950185572781314976, guid: 0b533dde5772b2242908ee30e9c7f76c, type: 3}
-      propertyPath: clickParticlePrefab
-      value: 
-      objectReference: {fileID: 8780033925737860825, guid: 52d422282e7eb124d8a564984eabdd71, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
