@@ -24,7 +24,7 @@ public class FireManager : MonoBehaviour
 
     private bool CoolbuttonPressed = false;
 
-    [HideInInspector] public int FireDangerLevel = 6;
+    [HideInInspector] public int FireDangerLevel;
 
     [HideInInspector] public int CurrentNumberOfFires = 0;
 
@@ -32,17 +32,18 @@ public class FireManager : MonoBehaviour
     {
         mainCamera = Camera.main;
         GetPlayer();
+        SetFireDangerLevel();
         burnableLayer = LayerMask.NameToLayer("Burnable");
         coolburnLayer = LayerMask.NameToLayer("Coolburn");
         groundLayer = LayerMask.NameToLayer("Ground");
 
-
-        if (instance == null)
-        {
-            instance = this;
+        if (instance == null) 
+        { 
+            instance = this; 
             DontDestroyOnLoad(gameObject);
         }
         else Destroy(gameObject);
+        
     }
 
     public void GetPlayer()
@@ -130,7 +131,7 @@ public class FireManager : MonoBehaviour
     }
     public void UpdateFireDangerLevel(bool CoolBurnFail)
     {
-        if (FireDangerLevel <= 5 && FireDangerLevel >= 0)
+        if (FireDangerLevel < 6 && FireDangerLevel > 0)
         {
             if (CoolBurnFail)
             {

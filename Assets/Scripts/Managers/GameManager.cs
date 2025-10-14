@@ -48,10 +48,13 @@ public class GameManager : MonoBehaviour
 
         //Error with Game manager null ref when trying
 
-        FireManager.instance.NewSceneCamera();
-        FireManager.instance.GetPlayer();
-        FireManager.instance.ResetNumOfFires();
-        FireManager.instance.SetFireDangerLevel();
+        if (FireManager.instance != null)
+        {
+            FireManager.instance.NewSceneCamera();
+            FireManager.instance.GetPlayer();
+            FireManager.instance.ResetNumOfFires();
+            FireManager.instance.SetFireDangerLevel();
+        }
     }
 
     public void AddMapObjectToMap(GameObject mapObjectPrefab, GameObject sourceObject)
