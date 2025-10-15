@@ -223,7 +223,7 @@ public class CoolBurnFuelTarget : MonoBehaviour
         {
             ScoreManager.instance.AddScore(1);
         }
-        else if (FireObjectRef.fireIntensity <= 200f)
+        else if (FireObjectRef.fireIntensity <= 130f)
         {
             ScoreManager.instance.AddScore(2);
         }
