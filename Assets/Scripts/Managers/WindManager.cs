@@ -2,11 +2,16 @@ using UnityEngine;
 
 public class WindManager : MonoBehaviour
 {
+    private static int MAX_COUNTER = 60 * 30;
+
     [HideInInspector] public static WindManager instance;
 
     [SerializeField] private GameObject windParticles;
 
     public float directionDegrees;
+
+    private float targetDirection;
+    private int counter = MAX_COUNTER;
 
     [HideInInspector]
     public Vector3 Direction
@@ -25,7 +30,7 @@ public class WindManager : MonoBehaviour
     {
         instance = this;
 
-        directionDegrees = UnityEngine.Random.Range(0.0f, 360.0f);
+        ChangeTargetDirection();
     }
 
     void Update()
@@ -34,5 +39,23 @@ public class WindManager : MonoBehaviour
             0.0f,
             directionDegrees
         ));
+    }
+
+    void FixedUpdate()
+    {
+        counter--;
+        if (counter <= 0)
+        {
+            counter = MAX_COUNTER;
+
+            ChangeTargetDirection();
+        }
+
+        directionDegrees = Mathf.MoveTowards(directionDegrees, targetDirection, 0.2f);
+    }
+
+    private void ChangeTargetDirection()
+    {
+        targetDirection = UnityEngine.Random.Range(0.0f, 360.0f);
     }
 }

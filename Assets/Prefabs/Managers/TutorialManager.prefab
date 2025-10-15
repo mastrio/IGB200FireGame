@@ -47,23 +47,14 @@ MonoBehaviour:
   tutorialUI: {fileID: 0}
   tutorialClips:
   - name: HowToPlaceFireTutorial
-    description: fuck you im a placeholder text
+    description: place holder text
     videoClip: {fileID: 32900000, guid: c9b4dab26c7091c4ca50ce2fbd7ca7c9, type: 3}
   - name: AfterFirePlacedTutorial
-    description: Hello everybody, my name is Markiplier and welcome to Five Nights
-      at Freddy's, an indie horror game that you guys suggested, in mass
+    description: more placeholder text
     videoClip: {fileID: 32900000, guid: c9b4dab26c7091c4ca50ce2fbd7ca7c9, type: 3}
   - name: MapOpenedTutorial
-    description: Alright, I've been thinking. When life gives you lemons, don't make
-      lemonade - make life take the lemons back! Get mad! I don't want your damn
-      lemons, what am I supposed to do with these? Demand to see life's manager.
-      Make life rue the day it thought it could give Cave Johnson lemons. Do you
-      know who I am? I'm the man who's gonna burn your house down! With the lemons.
-      I'm going to to get my engineers to invent a combustible lemon that burns your
-      house down!
+    description: even more placeholder text
     videoClip: {fileID: 32900000, guid: c9b4dab26c7091c4ca50ce2fbd7ca7c9, type: 3}
   - name: HowToManageFireTutorial
-    description: would you rather be alone in a forest with a man or a bear? i would
-      pick bear because what if the bear is freddy fazbear and we ate pizza and wore
-      tophats and went huor huor huor together
+    description: so much placeholder text!
     videoClip: {fileID: 32900000, guid: c9b4dab26c7091c4ca50ce2fbd7ca7c9, type: 3}

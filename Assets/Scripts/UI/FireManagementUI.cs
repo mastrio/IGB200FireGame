@@ -7,7 +7,11 @@ public class FireManagementUI : MonoBehaviour
 
     void Update()
     {
-        if (GameManager.instance.fireObjects.Count == 0) return;
+        if (GameManager.instance.fireObjects.Count == 0)
+        {
+            if (popupAnimation.open) popupAnimation.CloseUI();
+            return;
+        }
 
         float detectionRange = GameManager.instance.fireObjectScripts[0].playerDetectionDistance;
 
