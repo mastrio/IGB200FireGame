@@ -129,18 +129,11 @@ public class FireManager : MonoBehaviour
         CoolbuttonPressed = false;
         return success;
     }
-    public void UpdateFireDangerLevel(bool CoolBurnFail)
+    public void UpdateFireDangerLevel ()
     {
-        if (FireDangerLevel < 6 && FireDangerLevel > 0)
+        if (FireDangerLevel > 0)
         {
-            if (CoolBurnFail)
-            {
-                FireDangerLevel += 1;
-            }
-            else if (!CoolBurnFail)
-            {
-                FireDangerLevel -= 1;
-            }
+            FireDangerLevel--;
         }
 
     }
@@ -151,7 +144,7 @@ public class FireManager : MonoBehaviour
 
     public void SetFireDangerLevel()
     {
-        FireDangerLevel = 6;
+        FireDangerLevel = 180;
     }
 
     public void IncreaseNumberOfFires()
