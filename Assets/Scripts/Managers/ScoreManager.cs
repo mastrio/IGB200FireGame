@@ -9,7 +9,7 @@ public class ScoreManager : MonoBehaviour
     [SerializeField] private ParticleSystem scorePositiveParticles;
     [SerializeField] private ParticleSystem scoreNegativeParticles;
 
-    private int score;
+    [HideInInspector] public int score;
     private float particleTimer = 0.0f;
 
     private void Awake()

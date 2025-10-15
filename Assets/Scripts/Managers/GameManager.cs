@@ -22,6 +22,7 @@ public class GameManager : MonoBehaviour
     [HideInInspector] public bool hasPannedMap = false;
     [HideInInspector] public bool hasManagedFire = false;
 
+    [SerializeField] private GameObject winScreenObject;
     [SerializeField] private GameObject mapObjectContainer;
     [SerializeField] private GameObject[] levelList;
 
@@ -32,6 +33,14 @@ public class GameManager : MonoBehaviour
         else Destroy(gameObject);
 
         LoadLevel();
+    }
+
+    void Update()
+    {
+        if (FireManager.instance.FireDangerLevel < 1)
+        {
+            winScreenObject.SetActive(true);
+        }
     }
 
     // Tries to load a level prefab from the `levelList`.
