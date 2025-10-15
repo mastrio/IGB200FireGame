@@ -8060,7 +8060,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 2043364377}
         m_TargetAssemblyTypeName: AudioMixerController, Assembly-CSharp
-        m_MethodName: SetMusicVolume
+        m_MethodName: SetSFXVolume
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
