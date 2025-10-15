@@ -200,6 +200,7 @@ GameObject:
   m_Component:
   - component: {fileID: 167735422}
   - component: {fileID: 167735421}
+  - component: {fileID: 167735423}
   m_Layer: 0
   m_Name: UISoundClick
   m_TagString: Untagged
@@ -216,7 +217,7 @@ AudioSource:
   m_GameObject: {fileID: 167735420}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 5852334376098286528, guid: eb30448f3232ac34cb0261eb9904b8ca, type: 2}
   m_audioClip: {fileID: 8300000, guid: 71358221651c04c43b9cea8a32bdae6c, type: 3}
   m_Resource: {fileID: 8300000, guid: 71358221651c04c43b9cea8a32bdae6c, type: 3}
   m_PlayOnAwake: 0
@@ -319,6 +320,21 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &167735423
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 167735420}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf8587806377c4b46b38cda4f04acb9b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  myAudioMixer: {fileID: 24100000, guid: eb30448f3232ac34cb0261eb9904b8ca, type: 2}
+  backgroundMusicSlider: {fileID: 0}
+  sfxMusicSlider: {fileID: 0}
 --- !u!1 &383769660
 GameObject:
   m_ObjectHideFlags: 0
@@ -1905,7 +1921,7 @@ AudioSource:
   m_GameObject: {fileID: 1461540177}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 4094751653102453900, guid: eb30448f3232ac34cb0261eb9904b8ca, type: 2}
   m_audioClip: {fileID: 8300000, guid: e2de61b287856b44ea74b172838fc53f, type: 3}
   m_Resource: {fileID: 8300000, guid: e2de61b287856b44ea74b172838fc53f, type: 3}
   m_PlayOnAwake: 1
@@ -2682,7 +2698,7 @@ AudioSource:
   m_GameObject: {fileID: 2062542147}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 24300002, guid: eb30448f3232ac34cb0261eb9904b8ca, type: 2}
   m_audioClip: {fileID: 8300000, guid: 4e24a4fb18caf6243bdfa448762e62e0, type: 3}
   m_Resource: {fileID: 8300000, guid: 4e24a4fb18caf6243bdfa448762e62e0, type: 3}
   m_PlayOnAwake: 0

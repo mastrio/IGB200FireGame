@@ -1406,7 +1406,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   myAudioMixer: {fileID: 24100000, guid: eb30448f3232ac34cb0261eb9904b8ca, type: 2}
-  menuMusicSlider: {fileID: 457931275}
+  backgroundMusicSlider: {fileID: 457931275}
+  sfxMusicSlider: {fileID: 2043364374}
 --- !u!114 &457931273
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4016,7 +4017,7 @@ AudioSource:
   m_GameObject: {fileID: 1045250686}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 5852334376098286528, guid: eb30448f3232ac34cb0261eb9904b8ca, type: 2}
   m_audioClip: {fileID: 8300000, guid: 71358221651c04c43b9cea8a32bdae6c, type: 3}
   m_Resource: {fileID: 8300000, guid: 71358221651c04c43b9cea8a32bdae6c, type: 3}
   m_PlayOnAwake: 0
@@ -4502,7 +4503,7 @@ AudioSource:
   m_GameObject: {fileID: 1099213895}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 5852334376098286528, guid: eb30448f3232ac34cb0261eb9904b8ca, type: 2}
   m_audioClip: {fileID: 8300000, guid: 4272a8283c0e2834485b1346c5324ae6, type: 3}
   m_Resource: {fileID: 8300000, guid: 4272a8283c0e2834485b1346c5324ae6, type: 3}
   m_PlayOnAwake: 0
@@ -8142,7 +8143,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   myAudioMixer: {fileID: 24100000, guid: eb30448f3232ac34cb0261eb9904b8ca, type: 2}
-  menuMusicSlider: {fileID: 2043364374}
+  backgroundMusicSlider: {fileID: 457931275}
+  sfxMusicSlider: {fileID: 2043364374}
 --- !u!4 &2049438453 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3233810068867932950, guid: 65e1c171bf45fd54fafddbc0d68207f5, type: 3}
