@@ -99,7 +99,7 @@ public class FireObject : MonoBehaviour
             }
 
         }
-        else if (other.CompareTag(burnableTag)) //&& fireIntensity >= 120f)
+        else if (other.CompareTag(burnableTag) && fireIntensity >= 133f)
         {
           
             other.TryGetComponent<EnviromentalBurnableNonTarget>(out var CollidedEnviromentNonTarget);
