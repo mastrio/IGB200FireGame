@@ -41,7 +41,7 @@ public class GameUI : MonoBehaviour
     {
         pauseUI.Pause();
     }
-    
+
     //Unsure if this actually does anything
     public void StartCoolburnButtonPressed()
     {

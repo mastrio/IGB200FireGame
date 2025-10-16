@@ -1,7 +1,5 @@
-using System;
 using System.Collections;
 using UnityEngine;
-using UnityEngine.SocialPlatforms.Impl;
 using Random = UnityEngine.Random;
 using Vector3 = UnityEngine.Vector3;
 
@@ -14,10 +12,10 @@ public class FireObject : MonoBehaviour
     private float updateIntensity;
 
     private BoxCollider thisBoxCollider;
-    private Vector3 initalColliderSize = new Vector3(5.6f,3.2f,5.6f);
-    private Vector3 initalPSScale = new Vector3(5f,5f,1f);
+    private Vector3 initalColliderSize = new Vector3(5.6f, 3.2f, 5.6f);
+    private Vector3 initalPSScale = new Vector3(5f, 5f, 1f);
     private Vector3 currentPSScale;
-    
+
 
     //FireDirection Variables
     [SerializeField] private float MoveSpeed = 0.1f;
@@ -27,7 +25,7 @@ public class FireObject : MonoBehaviour
     private float medIntensityDirectrionTimer = 20f;
     private Vector3 FiresDirection;
     private float FireDirectionTime;
-    
+
 
     //Fire Intensity
     [HideInInspector] public float fireIntensity = 0f;
@@ -56,7 +54,7 @@ public class FireObject : MonoBehaviour
 
         thisBoxCollider = GetComponent<BoxCollider>();
 
-        
+
         // Added for testing the management UI
         fireIntensity = 50.0f;
 
@@ -81,7 +79,7 @@ public class FireObject : MonoBehaviour
             }
 
         }
-        
+
     }
 
     //Will need to make work with either Child Hitbox or scale mains hitbox
@@ -89,7 +87,7 @@ public class FireObject : MonoBehaviour
     {
         if (other.CompareTag(coolburnTag))
         {
-        
+
             other.TryGetComponent<CoolBurnFuelTarget>(out var CollidedCoolburnable);
             if (!CollidedCoolburnable.burning)
             {
@@ -101,7 +99,7 @@ public class FireObject : MonoBehaviour
         }
         else if (other.CompareTag(burnableTag) && fireIntensity >= 133f)
         {
-          
+
             other.TryGetComponent<EnviromentalBurnableNonTarget>(out var CollidedEnviromentNonTarget);
             if (!CollidedEnviromentNonTarget.burning)
             {
@@ -125,7 +123,7 @@ public class FireObject : MonoBehaviour
         }
         else if (other.CompareTag(burnableTag))
         {
-    
+
             other.TryGetComponent<EnviromentalBurnableNonTarget>(out var CollidedEnviromentNonTarget);
             if (CollidedEnviromentNonTarget.burning)
             {
@@ -179,9 +177,9 @@ public class FireObject : MonoBehaviour
             {
                 if (fireIntensity <= 1f)
                 {
-                    FireManager.instance.ReduceNumberOfFires(); 
+                    FireManager.instance.ReduceNumberOfFires();
                     Destroy(gameObject);
-                    
+
                 }
                 else if (fireIntensity < 50f)
                 {
@@ -191,11 +189,11 @@ public class FireObject : MonoBehaviour
                     {
                         updateIntensity = 1f;
                     }
-                    
+
                     fireIntensity = updateIntensity;
                     FireObjectPSShape.scale = UpdatingIntensityScale;
-                   // FireObjectPSEmission.rateOverTime = Mathf.Lerp(300f, 400f, fireIntensity / 100f);
-                   FireObjectPSEmission.rateOverTime = UpdatingEmission;
+                    // FireObjectPSEmission.rateOverTime = Mathf.Lerp(300f, 400f, fireIntensity / 100f);
+                    FireObjectPSEmission.rateOverTime = UpdatingEmission;
                     fireIntensityTimer = fireIntensityTimerRest;
                 }
                 else if (fireIntensity > 50f && fireIntensity < 150f)
@@ -245,15 +243,15 @@ public class FireObject : MonoBehaviour
                 //Goes long on z cause of rotation
                 currentPSScale = FireObjectPSShape.scale;
                 if (currentPSScale != initalPSScale)
-                { 
-                    Vector3 ScaleRatio = 
+                {
+                    Vector3 ScaleRatio =
                         new Vector3(
-                            currentPSScale.x / initalPSScale.x, 
+                            currentPSScale.x / initalPSScale.x,
                             currentPSScale.y / initalPSScale.y,
                             currentPSScale.z / initalPSScale.z
                             );
 
-                    thisBoxCollider.size = Vector3.Scale(initalColliderSize,ScaleRatio);
+                    thisBoxCollider.size = Vector3.Scale(initalColliderSize, ScaleRatio);
                 }
             }
 
@@ -308,7 +306,7 @@ public class FireObject : MonoBehaviour
 
     private void FixedUpdate()
     {
-        float fireMoveSpeed = Mathf.Lerp(0.1f,1f,fireIntensity/200f);
+        float fireMoveSpeed = Mathf.Lerp(0.1f, 1f, fireIntensity / 200f);
         // Update with current position and then start moving
         transform.Translate(FiresDirection * fireMoveSpeed * Time.deltaTime, Space.World);
     }

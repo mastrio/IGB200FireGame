@@ -1,11 +1,5 @@
-using System;
 using System.Collections;
-using System.Data.Common;
-using System.Numerics;
-using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.SocialPlatforms.Impl;
-using static UnityEngine.Rendering.DebugUI;
 using Quaternion = UnityEngine.Quaternion;
 using Vector3 = UnityEngine.Vector3;
 
@@ -38,15 +32,15 @@ public class EnviromentalBurnableNonTarget : MonoBehaviour
             firePS = fireParticle.GetComponent<ParticleSystem>();
             negativePS = negativeParticle.GetComponent<ParticleSystem>();
         }
-  
+
         /*if (enviroIntensiftyCoroutine != null)
         {
             enviroIntensiftyCoroutine = StartCoroutine(EnviroFireIntensifys(BaseFireObjectRef.fireIntensity));
         }
         if (burning == false) StopCoroutine(enviroIntensiftyCoroutine);*/
 
-       // FireManager.instance.Update
-       // (true); //Increase by one as the fire spread to something unintended
+        // FireManager.instance.Update
+        // (true); //Increase by one as the fire spread to something unintended
     }
 
     public void StoppingBurn()
@@ -84,7 +78,7 @@ public class EnviromentalBurnableNonTarget : MonoBehaviour
             return;
         }
         float tempIntensity = BaseFireObjectRef.fireIntensity;
-        if (Mathf.Approximately(fireIntensity,tempIntensity))
+        if (Mathf.Approximately(fireIntensity, tempIntensity))
         {
             return;
         }
@@ -177,5 +171,5 @@ public class EnviromentalBurnableNonTarget : MonoBehaviour
         
         yield return new WaitForSeconds(3f);
     }*/
-    
+
 }

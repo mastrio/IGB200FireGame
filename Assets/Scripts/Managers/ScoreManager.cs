@@ -7,7 +7,7 @@ public class ScoreManager : MonoBehaviour
 
     [SerializeField] private TextMeshProUGUI ScoreText;
     [SerializeField] public ParticleSystem scorePositiveParticles;
-    
+
 
     [HideInInspector] public int score;
     private float particleTimer = 0.0f;
@@ -34,8 +34,8 @@ public class ScoreManager : MonoBehaviour
     {
         //if (Time.time >= particleTimer)
         //{
-          //  scorePositiveParticles.Stop();
-          //  scoreNegativeParticles.Stop();
+        //  scorePositiveParticles.Stop();
+        //  scoreNegativeParticles.Stop();
         //}
     }
 
@@ -43,10 +43,10 @@ public class ScoreManager : MonoBehaviour
     {
         score += points;
         ScoreText.text = score.ToString();
-     
+
         //particleTimer = Time.time + 1.0f;
         //if (points > 0) scorePositiveParticles.gameObject.SetActive(true);
-       // else if (points < 0) scoreNegativeParticles.gameObject.SetActive(true);
+        // else if (points < 0) scoreNegativeParticles.gameObject.SetActive(true);
     }
 
     public void UpdateScore(int SucessfulBurn) //Change to switch
