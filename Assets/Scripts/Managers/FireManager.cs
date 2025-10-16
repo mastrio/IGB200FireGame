@@ -1,6 +1,4 @@
 using System.Collections;
-using System.Numerics;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using Quaternion = UnityEngine.Quaternion;
@@ -37,13 +35,13 @@ public class FireManager : MonoBehaviour
         coolburnLayer = LayerMask.NameToLayer("Coolburn");
         groundLayer = LayerMask.NameToLayer("Ground");
 
-        if (instance == null) 
-        { 
-            instance = this; 
+        if (instance == null)
+        {
+            instance = this;
             DontDestroyOnLoad(gameObject);
         }
         else Destroy(gameObject);
-        
+
     }
 
     public void GetPlayer()
@@ -62,7 +60,7 @@ public class FireManager : MonoBehaviour
 
     public void NewSceneCamera()
     {
-        
+
 
         if (!mainCamera == Camera.main)
         {
@@ -88,7 +86,7 @@ public class FireManager : MonoBehaviour
 
     public void CoolButtonTrigger()
     {
-        
+
         ClickToMove.movedisabled = true;
         // buttonCoroutine = StartCoroutine(delayCoolbuttonTrigger());
     }
@@ -113,7 +111,7 @@ public class FireManager : MonoBehaviour
 
         player.TryGetComponent<ClickToMove>(out ClickToMove clickToMove);
         Ray ray = mainCamera.ScreenPointToRay(Mouse.current.position.ReadValue());
-      
+
         Physics.Raycast(ray: ray, hitInfo: out RaycastHit rayHit);
         int hitLayer = rayHit.collider.gameObject.layer;
 
@@ -129,7 +127,7 @@ public class FireManager : MonoBehaviour
         CoolbuttonPressed = false;
         return success;
     }
-    public void UpdateFireDangerLevel ()
+    public void UpdateFireDangerLevel()
     {
         if (FireDangerLevel > 0)
         {
@@ -156,7 +154,7 @@ public class FireManager : MonoBehaviour
     {
         CurrentNumberOfFires -= 1;
     }
-    
+
     public int GetNumberOfFires()
     {
         return CurrentNumberOfFires;

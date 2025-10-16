@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class WindManager : MonoBehaviour
 {
-    private static int MAX_COUNTER = 60 * 30;
+    private static int MAX_COUNTER = 60;
 
     [HideInInspector] public static WindManager instance;
 
@@ -11,7 +11,7 @@ public class WindManager : MonoBehaviour
     public float directionDegrees;
 
     private float targetDirection;
-    private int counter = MAX_COUNTER;
+    private int counter;
 
     [HideInInspector]
     public Vector3 Direction
@@ -29,8 +29,6 @@ public class WindManager : MonoBehaviour
     void Awake()
     {
         instance = this;
-
-        ChangeTargetDirection();
     }
 
     void Update()
@@ -46,7 +44,7 @@ public class WindManager : MonoBehaviour
         counter--;
         if (counter <= 0)
         {
-            counter = MAX_COUNTER;
+            counter = MAX_COUNTER * 60;
 
             ChangeTargetDirection();
         }
@@ -56,6 +54,6 @@ public class WindManager : MonoBehaviour
 
     private void ChangeTargetDirection()
     {
-        targetDirection = UnityEngine.Random.Range(0.0f, 360.0f);
+        targetDirection = Random.Range(0.0f, 360.0f);
     }
 }

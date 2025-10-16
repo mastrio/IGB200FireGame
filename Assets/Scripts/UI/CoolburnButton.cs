@@ -19,7 +19,6 @@ public class CoolburnButton : MonoBehaviour
     {
         if (dragging)
         {
-            // TODO: Make this perfectly frame independent
             transform.position = Vector3.Lerp(transform.position, Input.mousePosition, 50.0f * Time.deltaTime);
         }
 
@@ -50,7 +49,6 @@ public class CoolburnButton : MonoBehaviour
 
             GameManager.instance.hasPlacedFire = true;
             gameObject.SetActive(false);
-            gameObject.SetActive(true);
             transform.localPosition = startPos;
         }
         else resetAnimation = new SpringDamperVector3(30.0f, 30.0f, startPos);
