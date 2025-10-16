@@ -53,7 +53,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-Counter Fire is a student developed project for the IGB200 assesment submission for the DES project brief. 
+Counter Fire is currenntly a student developed project for the IGB200 assesment submission for the DES project brief. 
 This is the first prototype which is still lacking animations and a second scenario but features majority of the key fire mechanics. 
 
 It is developed with a future port to iPad systems, so the movement and interaction systems were designed with this basis. 
