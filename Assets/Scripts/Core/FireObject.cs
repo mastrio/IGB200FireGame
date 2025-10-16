@@ -263,7 +263,7 @@ public class FireObject : MonoBehaviour
     {
         float Firex = UnityEngine.Random.Range(-1f, 1f);
         float Firez = UnityEngine.Random.Range(-1f, 1f);
-        FiresDirection = new Vector3(Firex, 0, Firez).normalized + (WindManager.instance.Direction * 1.5f);
+        FiresDirection = (new Vector3(Firex, 0, Firez) + (WindManager.instance.Direction * 2.0f)).normalized;
     }
 
     private void Start()
