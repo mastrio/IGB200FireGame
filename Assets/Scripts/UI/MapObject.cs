@@ -22,11 +22,14 @@ public class MapObject : MonoBehaviour
     {
         sprite.color = new Color(1.0f, 1.0f, 1.0f, 0.0f);
 
-        if (matchRotation) transform.localRotation = Quaternion.Euler(
-            0.0f,
-            0.0f,
-            linkedObject.transform.rotation.eulerAngles.y
-        );
+        if (matchRotation)
+        {
+            transform.rotation = Quaternion.Euler(new Vector3(
+                0.0f,
+                0.0f,
+                linkedObject.transform.rotation.eulerAngles.y
+            ));
+        }
     }
 
     void Update()
