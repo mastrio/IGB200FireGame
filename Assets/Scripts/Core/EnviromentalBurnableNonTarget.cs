@@ -12,8 +12,12 @@ public class EnviromentalBurnableNonTarget : MonoBehaviour
     private float MaxBurnTime = 0f;
     [SerializeField] private GameObject FireParticlePrefab;
     [SerializeField] private GameObject FireNegativePrefab;
+    [SerializeField] private GameObject AshPileObject;
+    [SerializeField] private GameObject ashDestructionParticleGameObject;
+
     private ParticleSystem firePS;
     private ParticleSystem negativePS;
+    private ParticleSystem ashPS;
 
     private float fireIntensity;
 
@@ -73,18 +77,20 @@ public class EnviromentalBurnableNonTarget : MonoBehaviour
 
     private void Update()
     {
-        if (!burning && BaseFireObjectRef == null)
+        if (BaseFireObjectRef != null)
         {
-            return;
-        }
-        float tempIntensity = BaseFireObjectRef.fireIntensity;
-        if (Mathf.Approximately(fireIntensity, tempIntensity))
-        {
-            return;
+            if (burning)
+            {
+                BurnTimer += Time.deltaTime;
+                EnviromentIntensifying(BaseFireObjectRef.fireIntensity);
+            }
+            else
+            {
+                BurnTimer = 0f;
+            }
+
         }
 
-        EnviromentIntensifying(BaseFireObjectRef.fireIntensity);
-        //tempFireTimer = 1f;
     }
 
     private void EnviromentIntensifying(float currentFireIntensity)
@@ -93,6 +99,11 @@ public class EnviromentalBurnableNonTarget : MonoBehaviour
         {
             return;
         }
+        else if (fireIntensity == currentFireIntensity)
+        {
+            return;
+        }
+        
         fireIntensity = currentFireIntensity;
 
         var FirePSShape = firePS.shape;
@@ -118,13 +129,40 @@ public class EnviromentalBurnableNonTarget : MonoBehaviour
         NegPSShape.scale = UpdatingIntensityScale;
         FirePSEmission.rateOverTime = UpdatingFireEmission;
         NegPSEmission.rateOverTime = UpdatingNegEmission;
-        if (fireIntensity <= 0)
+        if (fireIntensity <= 0f)
         {
             burning = false;
+            BurnTimer = 0f;
             Destroy(firePS.gameObject);
             Destroy(negativePS.gameObject);
             firePS = null;
             negativePS = null;
+        }
+        else if (fireIntensity <= 130f)
+        {
+            BurnTimer = 0f;
+        }
+        else if (fireIntensity > 130f && fireIntensity < 200f)
+        {
+
+            if (BurnTimer >= 10f)
+            {
+                Debug.Log(BurnTimer);
+                //Ember Particles
+                burning = false;
+                Instantiate(ashDestructionParticleGameObject, transform.position, transform.rotation);
+                Instantiate(AshPileObject, transform.position, transform.rotation);
+                Destroy(gameObject);
+            }
+        }
+        else if (fireIntensity >= 200f) //Testing
+        {
+            Debug.Log(BurnTimer);
+            //Ember Particles
+            burning = false;
+            Instantiate(ashDestructionParticleGameObject, transform.position, transform.rotation);
+            Instantiate(AshPileObject, transform.position, transform.rotation);
+            Destroy(gameObject);
         }
         //Ask if we want it to burn after x amount of burning at max
         /*else if (fireIntensity >= 200f && BurnTimer >= 30f)

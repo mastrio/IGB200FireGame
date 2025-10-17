@@ -152,3 +152,5 @@ MonoBehaviour:
   burning: 0
   FireParticlePrefab: {fileID: 5023430038305224826, guid: b69c18c3cd016a740ac92bd40357a695, type: 3}
   FireNegativePrefab: {fileID: 5189019935320836193, guid: 044f7268972471247b86fa431e2d615a, type: 3}
+  AshPileObject: {fileID: 5189475591652133799, guid: 4fd03affe7fdf2a4aa87fa6582a9ac5c, type: 3}
+  ashDestructionParticleGameObject: {fileID: 2294827401441237538, guid: 8c6bf8a4e120780469d8714d60f42f85, type: 3}
