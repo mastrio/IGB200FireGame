@@ -196,7 +196,7 @@ public class FireObject : MonoBehaviour
                     // FireObjectPSEmission.rateOverTime = Mathf.Lerp(300f, 400f, fireIntensity / 100f);
                     FireObjectPSEmission.rateOverTime = UpdatingEmission;
                     fireIntensityTimer = fireIntensityTimerRest;
-                    if (ScoreManager.instance.EmberParticles.gameObject.activeInHierarchy) ScoreManager.instance.EmberParticles.gameObject.SetActive(false);
+                    if (ScoreManager.instance.EmberParticles.gameObject.activeInHierarchy /* && FireManager.instance.CurrentNumberOfFires == 1 */) ScoreManager.instance.EmberParticles.gameObject.SetActive(false);
                 }
                 else if (fireIntensity >= 70f && fireIntensity <= 130f)
                 {
@@ -208,7 +208,8 @@ public class FireObject : MonoBehaviour
                     fireIntensityTimer = fireIntensityTimerRest;
                     MaxFireIntensityTimer = 0f;
                     FireWeakTimer = 0f;
-                    if (ScoreManager.instance.EmberParticles.gameObject.activeInHierarchy) ScoreManager.instance.EmberParticles.gameObject.SetActive(true);
+                    //Trying to fix for whrn theres two
+                    if (ScoreManager.instance.EmberParticles.gameObject.activeInHierarchy /*&& FireManager.instance.CurrentNumberOfFires == 1)*/) ScoreManager.instance.EmberParticles.gameObject.SetActive(false);
                 }
             
                 else if (fireIntensity > 130f)
@@ -224,13 +225,12 @@ public class FireObject : MonoBehaviour
                     FireObjectPSShape.scale = UpdatingIntensityScale;
                     FireObjectPSEmission.rateOverTime = UpdatingEmission;
                     FireWeakTimer = 0f;
-                    if (!ScoreManager.instance.EmberParticles.gameObject.activeInHierarchy) ScoreManager.instance.EmberParticles.Play(true);
+                    if (!ScoreManager.instance.EmberParticles.gameObject.activeInHierarchy) ScoreManager.instance.EmberParticles.gameObject.SetActive(true);
                 }
                 else if (fireIntensity >= MaxFireIntensity)
                 {
                     FireObjectPSShape.scale = new Vector3(9.5f, 10f, 3.1f);
                     FireObjectPSEmission.rateOverTime = 550f;
-                    ScoreManager.instance.AddScore(-2);
                     MaxFireIntensityTimer += 1f;
                     FireWeakTimer = 0f;
 
