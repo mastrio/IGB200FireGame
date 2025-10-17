@@ -2247,7 +2247,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5023430038305224826, guid: 9b1d55439aa617440904e64fa15f0783, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5999839727357058256, guid: 9b1d55439aa617440904e64fa15f0783, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2672,6 +2672,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2468911677517679584, guid: ca7136900f6d1e84a8649cd21d0d04e9, type: 3}
   m_PrefabInstance: {fileID: 1092619874}
   m_PrefabAsset: {fileID: 0}
+--- !u!198 &1913157831 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 8780264841503393139, guid: 9b1d55439aa617440904e64fa15f0783, type: 3}
+  m_PrefabInstance: {fileID: 1631060237}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2062542147
 GameObject:
   m_ObjectHideFlags: 0
@@ -2935,6 +2940,10 @@ PrefabInstance:
       propertyPath: ScoreText
       value: 
       objectReference: {fileID: 401879111}
+    - target: {fileID: 8347966048311282841, guid: 790df7a902eda18499058d13cdeb29f8, type: 3}
+      propertyPath: EmberParticles
+      value: 
+      objectReference: {fileID: 1913157831}
     - target: {fileID: 8347966048311282841, guid: 790df7a902eda18499058d13cdeb29f8, type: 3}
       propertyPath: scoreNegativeParticles
       value: 

@@ -7,7 +7,7 @@ public class CoolBurnFuelTarget : MonoBehaviour
     private FireObject FireObjectRef;
     [HideInInspector] public bool burning = false;
     private Coroutine fireExtinguisherCoroutine;
-    private float BurnTimer;
+    private float BurnTimer = 0f;
     private float MaxBurnTime;
     [SerializeField] private GameObject FireParticlePrefab;
     [SerializeField] private GameObject FirePostivePrefab;
@@ -32,7 +32,6 @@ public class CoolBurnFuelTarget : MonoBehaviour
     {
         FireObjectRef = baseFireObject;
         burning = true;
-        BurnTimer = 0f;
         if (firePS == null) //Temp Fix If fire hasnt happend before
         {
             GameObject fireParticle = Instantiate(FireParticlePrefab, transform.position,
@@ -51,10 +50,10 @@ public class CoolBurnFuelTarget : MonoBehaviour
             postivePSScale.scale = PositveScale;
 
             var firePSEmission = firePS.emission;
-            firePSEmission.rateOverTime = Mathf.Lerp(100f, 250f, FireObjectRef.fireIntensity / 200f);
+            firePSEmission.rateOverTime = Mathf.Lerp(50f, 200f, FireObjectRef.fireIntensity / 200f);
             var positivePSEmission = postivePS.emission;
             positivePSEmission.rateOverTime = Mathf.Lerp(10f, 20f, FireObjectRef.fireIntensity / 200f);
-            MaxBurnTime = Time.time;
+            MaxBurnTime = Time.time + 10f;
         }
         else if (firePS != null)
         {
@@ -116,8 +115,13 @@ public class CoolBurnFuelTarget : MonoBehaviour
         {
             if (burning)
             {
+                BurnTimer += Time.deltaTime;
                 CoolburnIntensifying(FireObjectRef.fireIntensity);
                 AddScoreForFire(FireObjectRef.fireIntensity);
+            }
+            else
+            {
+                BurnTimer = 0f;
             }
 
         }
@@ -180,25 +184,39 @@ public class CoolBurnFuelTarget : MonoBehaviour
             firePS = null;
             postivePS = null;
         }
-        else if (currentIntensity <= 100f)
+        else if (currentIntensity <= 70f)
         {
             ScoreManager.instance.scorePositiveParticles.Play(true);
+                BurnTimer = 0f;
         }
-        else if (currentIntensity <= 130f)
+        else if (currentIntensity  > 70f && currentIntensity <= 130f)
         {
-            ScoreManager.instance.scorePositiveParticles.Play(true);
+            Debug.Log(BurnTimer);
+            if (BurnTimer >= 10f)
+            {
+                burning = false;
+                ScoreManager.instance.AddScore(10);
+                ScoreManager.instance.scorePositiveParticles.Play(true);
+                Destroy(gameObject);
+            }
+            else
+            {
+                ScoreManager.instance.scorePositiveParticles.Play(true);
+            }
         }
-        else if (currentIntensity >= 200f)
+        else if (currentIntensity > 130f)
         {
-            //MaxBurnTime = Time.time;
-            //if (MaxBurnTime <= 0f)
-            //{
-            burning = false;
-            ScoreManager.instance.AddScore(10);
+       
+            if (BurnTimer >= 10f)
+            {
 
-            Destroy(gameObject);
+                //Ember Particles
+                burning = false;
+                Destroy(gameObject);
+            }
         }
 
+       
     }
 
     private void AddScoreForFire(float currentIntensity)
@@ -208,7 +226,7 @@ public class CoolBurnFuelTarget : MonoBehaviour
         {
             return;
         }
-        else if (FireObjectRef.fireIntensity <= 100f)
+        else if (FireObjectRef.fireIntensity <= 70f)
         {
             ScoreManager.instance.AddScore(1);
 

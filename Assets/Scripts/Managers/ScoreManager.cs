@@ -7,6 +7,7 @@ public class ScoreManager : MonoBehaviour
 
     [SerializeField] private TextMeshProUGUI ScoreText;
     [SerializeField] public ParticleSystem scorePositiveParticles;
+    [SerializeField] public ParticleSystem EmberParticles;
 
 
     [HideInInspector] public int score;

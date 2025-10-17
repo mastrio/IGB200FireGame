@@ -44,7 +44,7 @@ public class FireObject : MonoBehaviour
 
     private float minFirePSEmission = 200f;
     private float maxFirePSEmission = 500f;
-
+ 
 
     void Awake()
     {
@@ -61,6 +61,7 @@ public class FireObject : MonoBehaviour
         ChangeDirection();
 
         fireObjectPS = GetComponentInChildren<ParticleSystem>();
+        
     }
 
     void OnDestroy()
@@ -181,13 +182,13 @@ public class FireObject : MonoBehaviour
                     Destroy(gameObject);
 
                 }
-                else if (fireIntensity < 50f)
+                else if (fireIntensity < 70f)
                 {
                     float smallFireIncriment = Random.Range(2f, 6f);
                     updateIntensity = fireIntensity + smallFireIncriment;
                     if (updateIntensity <= 0f)
                     {
-                        updateIntensity = 1f;
+                        updateIntensity = 1f; 
                     }
 
                     fireIntensity = updateIntensity;
@@ -195,8 +196,9 @@ public class FireObject : MonoBehaviour
                     // FireObjectPSEmission.rateOverTime = Mathf.Lerp(300f, 400f, fireIntensity / 100f);
                     FireObjectPSEmission.rateOverTime = UpdatingEmission;
                     fireIntensityTimer = fireIntensityTimerRest;
+                    if (ScoreManager.instance.EmberParticles.gameObject.activeInHierarchy) ScoreManager.instance.EmberParticles.gameObject.SetActive(false);
                 }
-                else if (fireIntensity > 50f && fireIntensity < 150f)
+                else if (fireIntensity >= 70f && fireIntensity <= 130f)
                 {
                     float middleFireIncriment = Random.Range(10, 20);
                     fireIntensity += middleFireIncriment;
@@ -206,8 +208,10 @@ public class FireObject : MonoBehaviour
                     fireIntensityTimer = fireIntensityTimerRest;
                     MaxFireIntensityTimer = 0f;
                     FireWeakTimer = 0f;
+                    if (ScoreManager.instance.EmberParticles.gameObject.activeInHierarchy) ScoreManager.instance.EmberParticles.gameObject.SetActive(true);
                 }
-                else if (fireIntensity > 150f)
+            
+                else if (fireIntensity > 130f)
                 {
                     float largeFireIncriment = Random.Range(15, 25);
                     float smallFireIncriment = Random.Range(2f, 6f);
@@ -216,11 +220,11 @@ public class FireObject : MonoBehaviour
                     {
                         updateIntensity = 200f;
                     }
-
                     fireIntensity = updateIntensity;
                     FireObjectPSShape.scale = UpdatingIntensityScale;
                     FireObjectPSEmission.rateOverTime = UpdatingEmission;
                     FireWeakTimer = 0f;
+                    if (!ScoreManager.instance.EmberParticles.gameObject.activeInHierarchy) ScoreManager.instance.EmberParticles.Play(true);
                 }
                 else if (fireIntensity >= MaxFireIntensity)
                 {
