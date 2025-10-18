@@ -80,6 +80,19 @@ public class FireObject : MonoBehaviour
             }
 
         }
+        if (FireManager.instance != null) //Quick Fix for error
+        {
+            if (FireManager.instance.Fire1RefGameObject == gameObject)
+            {
+                FireManager.instance.Fire1RefGameObject = null;
+            }
+
+            if (FireManager.instance.Fire2RefGameObject == gameObject)
+            {
+                FireManager.instance.Fire2RefGameObject = null;
+            }
+        }
+        FireManager.instance.ReduceNumberOfFires();
 
     }
 
@@ -178,7 +191,6 @@ public class FireObject : MonoBehaviour
             {
                 if (fireIntensity <= 1f)
                 {
-                    FireManager.instance.ReduceNumberOfFires();
                     Destroy(gameObject);
 
                 }
@@ -196,7 +208,6 @@ public class FireObject : MonoBehaviour
                     // FireObjectPSEmission.rateOverTime = Mathf.Lerp(300f, 400f, fireIntensity / 100f);
                     FireObjectPSEmission.rateOverTime = UpdatingEmission;
                     fireIntensityTimer = fireIntensityTimerRest;
-                    if (ScoreManager.instance.EmberParticles.gameObject.activeInHierarchy /* && FireManager.instance.CurrentNumberOfFires == 1 */) ScoreManager.instance.EmberParticles.gameObject.SetActive(false);
                 }
                 else if (fireIntensity >= 70f && fireIntensity <= 130f)
                 {
@@ -209,9 +220,8 @@ public class FireObject : MonoBehaviour
                     MaxFireIntensityTimer = 0f;
                     FireWeakTimer = 0f;
                     //Trying to fix for whrn theres two
-                    if (ScoreManager.instance.EmberParticles.gameObject.activeInHierarchy /*&& FireManager.instance.CurrentNumberOfFires == 1)*/) ScoreManager.instance.EmberParticles.gameObject.SetActive(false);
+
                 }
-            
                 else if (fireIntensity > 130f)
                 {
                     float largeFireIncriment = Random.Range(15, 25);
@@ -221,12 +231,14 @@ public class FireObject : MonoBehaviour
                     {
                         updateIntensity = 200f;
                     }
+
                     fireIntensity = updateIntensity;
                     FireObjectPSShape.scale = UpdatingIntensityScale;
                     FireObjectPSEmission.rateOverTime = UpdatingEmission;
                     FireWeakTimer = 0f;
-                    if (!ScoreManager.instance.EmberParticles.gameObject.activeInHierarchy) ScoreManager.instance.EmberParticles.gameObject.SetActive(true);
+
                 }
+                
                 else if (fireIntensity >= MaxFireIntensity)
                 {
                     FireObjectPSShape.scale = new Vector3(9.5f, 10f, 3.1f);
@@ -257,8 +269,10 @@ public class FireObject : MonoBehaviour
 
                     thisBoxCollider.size = Vector3.Scale(initalColliderSize, ScaleRatio);
                 }
+
             }
 
+            FireManager.instance.UpdateEmberParticles();
             yield return new WaitForSeconds(3f);
         }
     }

@@ -26,6 +26,9 @@ public class FireManager : MonoBehaviour
 
     [HideInInspector] public int CurrentNumberOfFires = 0;
 
+    [HideInInspector] public GameObject Fire1RefGameObject;
+    [HideInInspector] public GameObject Fire2RefGameObject;
+
     private void Awake()
     {
         mainCamera = Camera.main;
@@ -117,10 +120,11 @@ public class FireManager : MonoBehaviour
 
         if (hitLayer == groundLayer || hitLayer == coolburnLayer)
         {
-            IncreaseNumberOfFires();
+            ;
             Vector3 rayHitPos = rayHit.point;
             Vector3 spawnPos = new Vector3(rayHitPos.x, 0f, rayHitPos.z);
-            Instantiate(fireObjectPrefab, spawnPos, Quaternion.Euler(Vector3.zero));
+            GameObject FireObject = Instantiate(fireObjectPrefab, spawnPos, Quaternion.Euler(Vector3.zero));
+            IncreaseNumberOfFires(FireObject);
             success = true;
         }
         ClickToMove.movedisabled = false;
@@ -145,9 +149,21 @@ public class FireManager : MonoBehaviour
         FireDangerLevel = 180;
     }
 
-    public void IncreaseNumberOfFires()
+    public void IncreaseNumberOfFires(GameObject fireRef)
     {
+
+        //Makes sure the assigment is correct
+        if (Fire1RefGameObject == null)
+        {
+            Fire1RefGameObject = fireRef;
+        }
+        else if (Fire2RefGameObject == null)
+        {
+            Fire2RefGameObject = fireRef;
+        }
+
         CurrentNumberOfFires += 1;
+
     }
 
     public void ReduceNumberOfFires()
@@ -155,7 +171,7 @@ public class FireManager : MonoBehaviour
         CurrentNumberOfFires -= 1;
     }
 
-    public int GetNumberOfFires()
+    public int GetNumberOfFires(GameObject fireRef)
     {
         return CurrentNumberOfFires;
     }
@@ -163,6 +179,37 @@ public class FireManager : MonoBehaviour
     public void ResetNumOfFires()
     {
         CurrentNumberOfFires = 0;
+    }
+
+    //Stops it from playing diffrent times if two are present at once
+
+    public void UpdateEmberParticles()
+    {
+        if (CurrentNumberOfFires == 0)
+        {
+            if (ScoreManager.instance.EmberParticles.gameObject.activeInHierarchy) ScoreManager.instance.EmberParticles.gameObject.SetActive(false);
+            return;
+        }
+        float fireObject1Intensity = 0f;
+        float fireObject2Intensity = 0f;
+        if (Fire1RefGameObject != null)
+        {
+            fireObject1Intensity = Fire1RefGameObject.GetComponent<FireObject>().fireIntensity;
+        }
+
+        if (Fire2RefGameObject != null)
+        {
+            fireObject2Intensity = Fire2RefGameObject.GetComponent<FireObject>().fireIntensity;
+        }
+
+        if (fireObject1Intensity > 130f || fireObject2Intensity > 130f)
+        {
+            if (!ScoreManager.instance.EmberParticles.gameObject.activeInHierarchy) ScoreManager.instance.EmberParticles.gameObject.SetActive(true);
+        }
+        else
+        {
+            if (ScoreManager.instance.EmberParticles.gameObject.activeInHierarchy) ScoreManager.instance.EmberParticles.gameObject.SetActive(false);
+        }
     }
 }
 //OLD SYSTEM
