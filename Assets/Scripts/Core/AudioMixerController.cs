@@ -4,19 +4,28 @@ using UnityEngine.UI;
 
 public class AudioMixerController : MonoBehaviour
 {
-    [SerializeField] private AudioMixer myAudioMixer;
-    [SerializeField] private Slider backgroundMusicSlider;
-    [SerializeField] private Slider sfxMusicSlider;
+    [SerializeField] private Slider musicSlider;
+    [SerializeField] private Slider sfxSlider;
 
-    public void SetMusicVolume()
+    private void Start()
     {
-        float volume = backgroundMusicSlider.value;
-        myAudioMixer.SetFloat("BackgroundMusic", Mathf.Log10(volume) * 20);
+        if (VolumeSettingsManager.Instance == null) return;
+
+        if (musicSlider != null)
+        {
+            musicSlider.value = VolumeSettingsManager.Instance.GetMusicVolume();
+            musicSlider.onValueChanged.AddListener(VolumeSettingsManager.Instance.SetMusicVolume);
+        }
+        if (sfxSlider != null)
+        {
+            sfxSlider.value = VolumeSettingsManager.Instance.GetSFXVolume();
+            sfxSlider.onValueChanged.AddListener(VolumeSettingsManager.Instance.SetSFXVolume);
+        }
     }
 
-    public void SetSFXVolume()
+    public void SyncSliders()
     {
-        float volume = sfxMusicSlider.value;
-        myAudioMixer.SetFloat("SoundEffectsVolume", Mathf.Log10(volume) * 20);
+        if (musicSlider != null) musicSlider.value = VolumeSettingsManager.Instance.GetMusicVolume();
+        if (sfxSlider != null) sfxSlider.value = VolumeSettingsManager.Instance.GetSFXVolume();
     }
 }

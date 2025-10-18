@@ -1406,9 +1406,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf8587806377c4b46b38cda4f04acb9b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  myAudioMixer: {fileID: 24100000, guid: eb30448f3232ac34cb0261eb9904b8ca, type: 2}
-  backgroundMusicSlider: {fileID: 457931275}
-  sfxMusicSlider: {fileID: 2043364374}
+  musicSlider: {fileID: 457931275}
+  sfxSlider: {fileID: 2043364374}
 --- !u!114 &457931273
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7196,6 +7195,51 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1990700811}
   m_CullTransparentMesh: 1
+--- !u!1 &1990992440
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1990992442}
+  - component: {fileID: 1990992441}
+  m_Layer: 0
+  m_Name: VolumeSettingsManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1990992441
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1990992440}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 84511de300ebdc240818e97b741aa611, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  myAudioMixer: {fileID: 24100000, guid: eb30448f3232ac34cb0261eb9904b8ca, type: 2}
+--- !u!4 &1990992442
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1990992440}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 484.44617, y: 154.98087, z: -48.3182}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1991066433
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8151,9 +8195,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf8587806377c4b46b38cda4f04acb9b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  myAudioMixer: {fileID: 24100000, guid: eb30448f3232ac34cb0261eb9904b8ca, type: 2}
-  backgroundMusicSlider: {fileID: 457931275}
-  sfxMusicSlider: {fileID: 2043364374}
+  musicSlider: {fileID: 457931275}
+  sfxSlider: {fileID: 2043364374}
 --- !u!4 &2049438453 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3233810068867932950, guid: 65e1c171bf45fd54fafddbc0d68207f5, type: 3}
@@ -9800,6 +9843,7 @@ SceneRoots:
   - {fileID: 1045250688}
   - {fileID: 1099213897}
   - {fileID: 1090294989}
+  - {fileID: 1990992442}
   - {fileID: 557721282}
   - {fileID: 1964423908}
   - {fileID: 784193496}
