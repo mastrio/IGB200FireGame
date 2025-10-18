@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using UnityEngine;
 using Random = UnityEngine.Random;
@@ -296,7 +297,7 @@ public class FireObject : MonoBehaviour
     {
         FireDirectionTime -= Time.deltaTime;
 
-        if (fireIntensity < 75f)
+        if (fireIntensity <= 70f)
         {
             if (FireDirectionTime <= 0f)
             {
@@ -304,7 +305,7 @@ public class FireObject : MonoBehaviour
                 FireDirectionTime = lowIntensityDirectionTimer;
             }
         }
-        else if (fireIntensity < 150f)
+        else if (fireIntensity <= 130f)
         {
             if (FireDirectionTime <= 0f)
             {
@@ -312,7 +313,7 @@ public class FireObject : MonoBehaviour
                 FireDirectionTime = medIntensityDirectrionTimer;
             }
         }
-        else if (fireIntensity > 150f)
+        else if (fireIntensity > 130f)
         {
             if (FireDirectionTime <= 0f)
             {
@@ -324,8 +325,26 @@ public class FireObject : MonoBehaviour
 
     private void FixedUpdate()
     {
-        float fireMoveSpeed = Mathf.Lerp(0.1f, 1f, fireIntensity / 200f);
+        //Clamp for the t to prevent it from being outside the fire intensitys min/max
+        float t = Math.Clamp(fireIntensity, 0f, 200f);
+        float fireMoveSpeed;
+
+        //Checks if under 130 intensity - maybe change to stop using slow speed value at a lower intensity
+        if (t <= 130f)
+        {
+            //Edit the 0.1f (min speed), and 0.6f (max speed) to alter what speed it used at low intensity. Could also change the exponent (3f) 
+            fireMoveSpeed = Mathf.Lerp(0.1f, 0.6f, Mathf.Pow(t / 130f, 3f));
+        }
+        else //If above 130 (in red) use fast speed
+        {
+            //Edit the 0.6f (min) and 2.5f (max) to alter the speed it uses across intensity or change the exponent (2f)
+            fireMoveSpeed = Mathf.Lerp(0.6f, 2.5f, Mathf.Pow((t-130f) / 70f, 2f));
+        }
+            //float fireMoveSpeed = Mathf.Lerp(0.1f, 1f, fireIntensity / 200f); - Old System
         // Update with current position and then start moving
+        
+
+        //The actual movement with the direction (Direction affected by wind already in ChangeDirection) multplied by the speed multiplied by Time.deltaTime.
         transform.Translate(FiresDirection * fireMoveSpeed * Time.deltaTime, Space.World);
     }
 }
