@@ -9,6 +9,7 @@ public class FireObject : MonoBehaviour
     public float playerDetectionDistance = 10.0f;
     private string coolburnTag = "Coolburn";
     private string burnableTag = "Burnable";
+    private string boundaryTag = "Boundary";
     private bool currentlyBurning = false;
     private float updateIntensity;
 
@@ -121,6 +122,19 @@ public class FireObject : MonoBehaviour
                 CollidedEnviromentNonTarget.BeginSpreadFire(this);
             }
 
+
+        }
+    }
+
+    public void OnTriggerStay(Collider other)
+    {
+        if (other.CompareTag(boundaryTag))
+        {
+            Vector3 backToCentre = (Vector3.zero - transform.position).normalized;
+
+            backToCentre.y = 0f;
+
+            FiresDirection = backToCentre;
         }
     }
 
@@ -146,6 +160,7 @@ public class FireObject : MonoBehaviour
             }
 
         }
+        
     }
 
     private IEnumerator IntensifyFire(float initalFireIntensity)
@@ -346,5 +361,7 @@ public class FireObject : MonoBehaviour
 
         //The actual movement with the direction (Direction affected by wind already in ChangeDirection) multplied by the speed multiplied by Time.deltaTime.
         transform.Translate(FiresDirection * fireMoveSpeed * Time.deltaTime, Space.World);
+
+
     }
 }

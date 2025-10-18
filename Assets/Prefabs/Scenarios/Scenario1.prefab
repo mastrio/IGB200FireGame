@@ -26593,6 +26593,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BoarderBoulder
       objectReference: {fileID: 0}
+    - target: {fileID: 6703584119639575809, guid: 8f6b30c8fe6ffd448b0ad38411cf3a47, type: 3}
+      propertyPath: m_TagString
+      value: Boundary
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

@@ -54,19 +54,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8780264841503393139, guid: 2b7e3f0906aba764b8a2ed223a3ac40b, type: 3}
       propertyPath: looping
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8780264841503393139, guid: 2b7e3f0906aba764b8a2ed223a3ac40b, type: 3}
       propertyPath: lengthInSec
-      value: 4
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 8780264841503393139, guid: 2b7e3f0906aba764b8a2ed223a3ac40b, type: 3}
       propertyPath: InitialModule.maxNumParticles
-      value: 500
+      value: 2000
       objectReference: {fileID: 0}
     - target: {fileID: 8780264841503393139, guid: 2b7e3f0906aba764b8a2ed223a3ac40b, type: 3}
       propertyPath: InitialModule.startLifetime.scalar
-      value: 4
+      value: 7.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

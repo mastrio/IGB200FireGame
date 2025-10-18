@@ -129,6 +129,9 @@ public class EnviromentalBurnableNonTarget : MonoBehaviour
         NegPSShape.scale = UpdatingIntensityScale;
         FirePSEmission.rateOverTime = UpdatingFireEmission;
         NegPSEmission.rateOverTime = UpdatingNegEmission;
+
+        Vector3 ashSpawnPosition = transform.position;
+        ashSpawnPosition.y = 0f;
         if (fireIntensity <= 0f)
         {
             burning = false;
@@ -150,8 +153,8 @@ public class EnviromentalBurnableNonTarget : MonoBehaviour
                 Debug.Log(BurnTimer);
                 //Ember Particles
                 burning = false;
-                Instantiate(ashDestructionParticleGameObject, transform.position, transform.rotation);
-                Instantiate(AshPileObject, transform.position, transform.rotation);
+                Instantiate(ashDestructionParticleGameObject, ashSpawnPosition, transform.rotation);
+                Instantiate(AshPileObject, ashSpawnPosition, transform.rotation);
                 Destroy(gameObject);
             }
         }
@@ -160,8 +163,9 @@ public class EnviromentalBurnableNonTarget : MonoBehaviour
             Debug.Log(BurnTimer);
             //Ember Particles
             burning = false;
-            Instantiate(ashDestructionParticleGameObject, transform.position, transform.rotation);
-            Instantiate(AshPileObject, transform.position, transform.rotation);
+           
+            Instantiate(ashDestructionParticleGameObject, ashSpawnPosition, transform.rotation);
+            Instantiate(AshPileObject, new Vector3(transform.position.x,0f,transform.position.z), transform.rotation);
             Destroy(gameObject);
         }
         //Ask if we want it to burn after x amount of burning at max
