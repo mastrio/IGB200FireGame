@@ -1,11 +1,18 @@
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
+using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 
 public class FireSoundManager : MonoBehaviour
 {
     public static FireSoundManager Instance { get; private set; }
 
-    private AudioSource fireSound;
+    [SerializeField] private AudioMixer audioMixer;
+    [SerializeField] private AudioSource fireSound;
+    [SerializeField] private AudioSource forestSound;
+    [SerializeField] private AudioSource animalSound;
+    [SerializeField] private AudioSource insectSound;
+
     private List<Transform> activeFireTransforms = new List<Transform>();
     private Transform playerTransform;
     [SerializeField] private float maxHearDistance = 20f; // Fade beyond this.
@@ -21,24 +28,37 @@ public class FireSoundManager : MonoBehaviour
             return;
         }
         Instance = this;
-        fireSound = GetComponent<AudioSource>();
-        playerTransform = GameObject.FindWithTag("Player")?.transform; // Tag your player "Player".
-    }
+        DontDestroyOnLoad(gameObject);
+        playerTransform = GameObject.FindWithTag("Player")?.transform;
 
+        
+        if (forestSound != null)
+            forestSound.Play();
+
+        if (animalSound != null)
+            animalSound.Play();
+
+        if (insectSound != null)
+            insectSound.Play();
+        
+        if (animalSound != null)
+        {
+            animalSound.spatialBlend = 0f; // No spatial effect
+            animalSound.rolloffMode = AudioRolloffMode.Logarithmic; // Default rolloff
+            animalSound.volume = 0.45f;
+        }
+    }
     private void Update()
     {
         int activeCount = activeFireTransforms.Count;
+        float fireIntensity = Mathf.Clamp((float)activeCount / 5f, 0f, 1f);
+
         if (activeCount > 0)
         {
-            if (!fireSound.isPlaying)
-            {
-                fireSound.Play(); // Starts/restarts single playback only when needed.
-            }
+            PlayWithVariation(fireSound);
 
-            // Dynamic volume: base * intensity * proximity.
-            float baseVolume = 0.5f; // Set this to your inspector's base volume.
+            float baseVolume = 0.5f;
             float intensityFactor = Mathf.Clamp(1f + (activeCount - 1) * intensityPerFire, 1f, 2f);
-
             float proximityFactor = minVolumeMultiplier;
             if (playerTransform != null)
             {
@@ -56,10 +76,27 @@ public class FireSoundManager : MonoBehaviour
         }
         else
         {
-            if (fireSound.isPlaying)
-            {
-                fireSound.Stop();
-            }
+            if (fireSound.isPlaying) fireSound.Stop();
+            PlayWithVariation(forestSound);
+            PlayWithVariation(animalSound);
+            PlayWithVariation(insectSound);
+        }
+
+        float ambientVolume = Mathf.Lerp(0.5f, 0.05f, fireIntensity);
+        if (forestSound != null) forestSound.volume = ambientVolume;
+        if (animalSound != null) animalSound.volume = ambientVolume * 0.8f;
+        if (insectSound != null) insectSound.volume = ambientVolume * 0.5f;
+
+        // Ensure sounds keep playing
+        if (animalSound != null && !animalSound.isPlaying) PlayWithVariation(animalSound);
+    }
+    private void PlayWithVariation(AudioSource source)
+    {
+        if (source != null && !source.isPlaying)
+        {
+            source.pitch = Random.Range(0.9f, 1.0f);
+            source.volume = Random.Range(0.8f, 1.0f);
+            source.Play();
         }
     }
 
@@ -78,7 +115,7 @@ public class FireSoundManager : MonoBehaviour
 
     private void LateUpdate()
     {
-        // Clean up any null transforms (e.g., destroyed fires).
+        // Destroy fire
         activeFireTransforms.RemoveAll(t => t == null);
     }
 }
