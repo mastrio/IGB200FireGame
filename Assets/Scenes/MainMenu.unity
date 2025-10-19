@@ -6565,6 +6565,14 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 8284457670961187586, guid: ce0bc84ca7ed1344a867b401fa44eae8, type: 3}
+      propertyPath: globalVolume
+      value: 
+      objectReference: {fileID: 1343000721}
+    - target: {fileID: 8284457670961187586, guid: ce0bc84ca7ed1344a867b401fa44eae8, type: 3}
+      propertyPath: vignetteVolume
+      value: 
+      objectReference: {fileID: 1343000721}
+    - target: {fileID: 8284457670961187586, guid: ce0bc84ca7ed1344a867b401fa44eae8, type: 3}
       propertyPath: FireParticlePrefab
       value: 
       objectReference: {fileID: 5023430038305224826, guid: b69c18c3cd016a740ac92bd40357a695, type: 3}

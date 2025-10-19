@@ -1,6 +1,8 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.Rendering;
+using UnityEngine.Rendering.Universal;
 using Quaternion = UnityEngine.Quaternion;
 using Vector3 = UnityEngine.Vector3;
 
@@ -29,6 +31,13 @@ public class FireManager : MonoBehaviour
     [HideInInspector] public GameObject Fire1RefGameObject;
     [HideInInspector] public GameObject Fire2RefGameObject;
 
+    [Header("Vignette Edge Effect")] // Vignette values and references
+    public Volume globalVolume;
+    private Vignette vignette;
+    public float vignetteMax = 0.5f;
+    public float vignetteFadeSpeed = 1.0f;
+    private float vignetteTargetIntensity = 0f;
+
     private void Awake()
     {
         mainCamera = Camera.main;
@@ -45,6 +54,18 @@ public class FireManager : MonoBehaviour
         }
         else Destroy(gameObject);
 
+        if (globalVolume != null && globalVolume.profile.TryGet(out Vignette v)) // Get vignette ref if volume is assigned & start with 0 intensity
+        {
+            vignette = v;
+            vignette.intensity.value = 0f;
+        }
+    }
+    private void Update()
+    {
+        if (vignette != null) // Vignette fade every frame
+        {
+            vignette.intensity.value = Mathf.MoveTowards(vignette.intensity.value, vignetteTargetIntensity, Time.deltaTime * vignetteFadeSpeed);
+        }
     }
 
     public void GetPlayer()
@@ -188,10 +209,13 @@ public class FireManager : MonoBehaviour
         if (CurrentNumberOfFires == 0)
         {
             if (ScoreManager.instance.EmberParticles.gameObject.activeInHierarchy) ScoreManager.instance.EmberParticles.gameObject.SetActive(false);
+            SetVignetteTarget(0f);
             return;
         }
+
         float fireObject1Intensity = 0f;
         float fireObject2Intensity = 0f;
+
         if (Fire1RefGameObject != null)
         {
             fireObject1Intensity = Fire1RefGameObject.GetComponent<FireObject>().fireIntensity;
@@ -205,11 +229,17 @@ public class FireManager : MonoBehaviour
         if (fireObject1Intensity > 130f || fireObject2Intensity > 130f)
         {
             if (!ScoreManager.instance.EmberParticles.gameObject.activeInHierarchy) ScoreManager.instance.EmberParticles.gameObject.SetActive(true);
+            SetVignetteTarget(vignetteMax); // Fade vignette in
         }
         else
         {
             if (ScoreManager.instance.EmberParticles.gameObject.activeInHierarchy) ScoreManager.instance.EmberParticles.gameObject.SetActive(false);
+            SetVignetteTarget(0f); // Fade vignette out
         }
+    }
+    private void SetVignetteTarget(float intensity)
+    {
+        vignetteTargetIntensity = intensity;
     }
 }
 //OLD SYSTEM
