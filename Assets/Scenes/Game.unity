@@ -542,6 +542,82 @@ PrefabInstance:
       propertyPath: tutorialUI
       value: 
       objectReference: {fileID: 904012899}
+    - target: {fileID: 2917053436241825391, guid: 8af2667baa294c54ca5e26b99e4968b9, type: 3}
+      propertyPath: tutorialClips.Array.size
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2917053436241825391, guid: 8af2667baa294c54ca5e26b99e4968b9, type: 3}
+      propertyPath: tutorialClips.Array.data[0].name
+      value: What is a cool burn?
+      objectReference: {fileID: 0}
+    - target: {fileID: 2917053436241825391, guid: 8af2667baa294c54ca5e26b99e4968b9, type: 3}
+      propertyPath: tutorialClips.Array.data[1].name
+      value: What is ground clutter?
+      objectReference: {fileID: 0}
+    - target: {fileID: 2917053436241825391, guid: 8af2667baa294c54ca5e26b99e4968b9, type: 3}
+      propertyPath: tutorialClips.Array.data[2].name
+      value: Cool burn, ground clutter, danger rating relationship
+      objectReference: {fileID: 0}
+    - target: {fileID: 2917053436241825391, guid: 8af2667baa294c54ca5e26b99e4968b9, type: 3}
+      propertyPath: tutorialClips.Array.data[3].name
+      value: Managing cool burns relationship
+      objectReference: {fileID: 0}
+    - target: {fileID: 2917053436241825391, guid: 8af2667baa294c54ca5e26b99e4968b9, type: 3}
+      propertyPath: tutorialClips.Array.data[4].name
+      value: High fuel area
+      objectReference: {fileID: 0}
+    - target: {fileID: 2917053436241825391, guid: 8af2667baa294c54ca5e26b99e4968b9, type: 3}
+      propertyPath: tutorialClips.Array.data[5].name
+      value: Wind direction
+      objectReference: {fileID: 0}
+    - target: {fileID: 2917053436241825391, guid: 8af2667baa294c54ca5e26b99e4968b9, type: 3}
+      propertyPath: tutorialClips.Array.data[6].name
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2917053436241825391, guid: 8af2667baa294c54ca5e26b99e4968b9, type: 3}
+      propertyPath: tutorialClips.Array.data[4].videoClip
+      value: 
+      objectReference: {fileID: 32900000, guid: c9b4dab26c7091c4ca50ce2fbd7ca7c9, type: 3}
+    - target: {fileID: 2917053436241825391, guid: 8af2667baa294c54ca5e26b99e4968b9, type: 3}
+      propertyPath: tutorialClips.Array.data[5].videoClip
+      value: 
+      objectReference: {fileID: 32900000, guid: c9b4dab26c7091c4ca50ce2fbd7ca7c9, type: 3}
+    - target: {fileID: 2917053436241825391, guid: 8af2667baa294c54ca5e26b99e4968b9, type: 3}
+      propertyPath: tutorialClips.Array.data[6].videoClip
+      value: 
+      objectReference: {fileID: 32900000, guid: c9b4dab26c7091c4ca50ce2fbd7ca7c9, type: 3}
+    - target: {fileID: 2917053436241825391, guid: 8af2667baa294c54ca5e26b99e4968b9, type: 3}
+      propertyPath: tutorialClips.Array.data[0].description
+      value: "Cool burns \u2192 Small, safe fires \u2192 Clear away extra dry fuel"
+      objectReference: {fileID: 0}
+    - target: {fileID: 2917053436241825391, guid: 8af2667baa294c54ca5e26b99e4968b9, type: 3}
+      propertyPath: tutorialClips.Array.data[1].description
+      value: "Ground clutter \u2192 Dry leaves and sticks \u2192 Burn easily if not
+        cleared"
+      objectReference: {fileID: 0}
+    - target: {fileID: 2917053436241825391, guid: 8af2667baa294c54ca5e26b99e4968b9, type: 3}
+      propertyPath: tutorialClips.Array.data[2].description
+      value: "Place cool burns \u2192 Burn ground clutter \u2192 Lower fire danger
+        rating \u2192 Helps prevent big fires!"
+      objectReference: {fileID: 0}
+    - target: {fileID: 2917053436241825391, guid: 8af2667baa294c54ca5e26b99e4968b9, type: 3}
+      propertyPath: tutorialClips.Array.data[3].description
+      value: "Manage cool burns \u2192 Prevent out-of-control fires \u2192 Protect
+        environment"
+      objectReference: {fileID: 0}
+    - target: {fileID: 2917053436241825391, guid: 8af2667baa294c54ca5e26b99e4968b9, type: 3}
+      propertyPath: tutorialClips.Array.data[4].description
+      value: "Avoid high fuel areas \u2192 Condensed bush area \u2192 Use map to
+        plan"
+      objectReference: {fileID: 0}
+    - target: {fileID: 2917053436241825391, guid: 8af2667baa294c54ca5e26b99e4968b9, type: 3}
+      propertyPath: tutorialClips.Array.data[5].description
+      value: "Wind direction \u2192 Changes where fire goes \u2192 Plan cool burn"
+      objectReference: {fileID: 0}
+    - target: {fileID: 2917053436241825391, guid: 8af2667baa294c54ca5e26b99e4968b9, type: 3}
+      propertyPath: tutorialClips.Array.data[6].description
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 3000993229457732159, guid: 8af2667baa294c54ca5e26b99e4968b9, type: 3}
       propertyPath: m_Name
       value: TutorialManager
