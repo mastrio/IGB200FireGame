@@ -252,24 +252,6 @@ public class FireObject : MonoBehaviour
                     FireObjectPSShape.scale = UpdatingIntensityScale;
                     FireObjectPSEmission.rateOverTime = UpdatingEmission;
                     FireWeakTimer = 0f;
-
-                }
-                
-                else if (fireIntensity >= MaxFireIntensity)
-                {
-                    FireObjectPSShape.scale = new Vector3(9.5f, 10f, 3.1f);
-                    FireObjectPSEmission.rateOverTime = 550f;
-                    MaxFireIntensityTimer += 1f;
-                    FireWeakTimer = 0f;
-
-                    //Temporary just for now will change later but is the extreme case 
-
-                    if (MaxFireIntensityTimer >= 35f)
-                    {
-                        FireObjectPSShape.scale = new Vector3(15f, 16f, 4f);
-                        FireObjectPSEmission.rateOverTime = 600f;
-                        ScoreManager.instance.AddScore(-10);
-                    }
                 }
 
                 //Goes long on z cause of rotation
