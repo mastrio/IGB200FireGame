@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using System.Numerics;
 using UnityEngine;
 using Random = UnityEngine.Random;
 using Vector3 = UnityEngine.Vector3;
@@ -10,6 +11,8 @@ public class FireObject : MonoBehaviour
     private string coolburnTag = "Coolburn";
     private string burnableTag = "Burnable";
     private string boundaryTag = "Boundary";
+    private string highFuelTag = "HighFuel";
+    private bool BurningHighFuel = false;
     private bool currentlyBurning = false;
     private float updateIntensity;
 
@@ -41,6 +44,8 @@ public class FireObject : MonoBehaviour
     private ParticleSystem fireObjectPS;
     private Vector3 minFirePsScale;
     private Vector3 maxFirePsScale;
+    private Vector3 minHighFuelFirePsScale;
+    private Vector3 maxHighFuelFirePsScale;
 
     private Coroutine FireIntensityCoroutine;
 
@@ -136,6 +141,19 @@ public class FireObject : MonoBehaviour
 
             FiresDirection = backToCentre;
         }
+
+        if (other.CompareTag(highFuelTag))
+        {
+            other.TryGetComponent<HighFuel>(out var CollidedHighFuel);
+            if (!CollidedHighFuel.burning)
+            {
+                CollidedHighFuel.BeginHighFuelFire(this);
+            }
+            if (!BurningHighFuel)
+            {
+                BurningHighFuel = true;
+            }
+        }
     }
 
     public void OnTriggerExit(Collider other)
@@ -160,7 +178,20 @@ public class FireObject : MonoBehaviour
             }
 
         }
-        
+        else if (other.CompareTag(highFuelTag))
+        {
+            other.TryGetComponent<HighFuel>(out var CollidedHighFuel);
+            if (!CollidedHighFuel.burning)
+            {
+                CollidedHighFuel.StoppingHighFuelBurn();
+            }
+
+            if (BurningHighFuel)
+            {
+                BurningHighFuel = false;
+            }
+        }
+
     }
 
     private IEnumerator IntensifyFire(float initalFireIntensity)
@@ -184,6 +215,8 @@ public class FireObject : MonoBehaviour
         var FireObjectPSEmission = fireObjectPS.emission;
         minFirePsScale = new Vector3(0.5f, 0.8f, 0.5f);
         maxFirePsScale = new Vector3(7.17f, 7.823f, 2f);
+        minHighFuelFirePsScale = new Vector3(2f, 2.5f, 0.6f);
+        maxHighFuelFirePsScale = new Vector3(9.17f, 9.823f, 2.3f);
         minFirePSEmission = 100f;
         maxFirePSEmission = 500f;
 
@@ -202,12 +235,38 @@ public class FireObject : MonoBehaviour
             fireIntensityTimer -= 3f;
             Vector3 UpdatingIntensityScale =
                 Vector3.Lerp(minFirePsScale, maxFirePsScale, fireIntensity / MaxFireIntensity);
+
+            Vector3 HighFuelIntensityScale = Vector3.Lerp(minHighFuelFirePsScale, maxHighFuelFirePsScale,
+                fireIntensity / MaxFireIntensity);
+
             float UpdatingEmission = Mathf.Lerp(minFirePSEmission, maxFirePSEmission, fireIntensity / MaxFireIntensity);
+
+            float UpdatingHighFuelEmission = Mathf.Lerp(200f, 600f, fireIntensity / MaxFireIntensity);
+
             if (fireIntensityTimer <= 0f)
             {
                 if (fireIntensity <= 1f)
                 {
                     Destroy(gameObject);
+
+                }
+                else if (BurningHighFuel)
+                {
+                    float HighFuelIncriment = Random.Range(15f, 30f);
+                    updateIntensity = fireIntensity + HighFuelIncriment;
+                    if (updateIntensity <= 0f)
+                    {
+                        updateIntensity = 1f;
+                    }
+                    else if (updateIntensity > 200f)
+                    {
+                        updateIntensity = 200f;
+                    }
+
+                    fireIntensity = updateIntensity;
+                    FireObjectPSShape.scale = HighFuelIntensityScale;
+                    FireObjectPSEmission.rateOverTime = UpdatingHighFuelEmission;
+
 
                 }
                 else if (fireIntensity < 70f)
@@ -216,7 +275,7 @@ public class FireObject : MonoBehaviour
                     updateIntensity = fireIntensity + smallFireIncriment;
                     if (updateIntensity <= 0f)
                     {
-                        updateIntensity = 1f; 
+                        updateIntensity = 1f;
                     }
 
                     fireIntensity = updateIntensity;
@@ -253,6 +312,7 @@ public class FireObject : MonoBehaviour
                     FireObjectPSEmission.rateOverTime = UpdatingEmission;
                     FireWeakTimer = 0f;
                 }
+                
 
                 //Goes long on z cause of rotation
                 currentPSScale = FireObjectPSShape.scale;

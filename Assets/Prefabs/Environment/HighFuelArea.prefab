@@ -111,11 +111,41 @@ PrefabInstance:
       propertyPath: m_Name
       value: Plant1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 4603239800496830930, guid: 6ea2642d8879762469232c853cac580a, type: 3}
+      propertyPath: m_TagString
+      value: HighFuel
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: -9221427347173278357, guid: 6ea2642d8879762469232c853cac580a, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4603239800496830930, guid: 6ea2642d8879762469232c853cac580a, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5704772589767977557}
   m_SourcePrefab: {fileID: 100100000, guid: 6ea2642d8879762469232c853cac580a, type: 3}
+--- !u!1 &3595246266852317492 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4603239800496830930, guid: 6ea2642d8879762469232c853cac580a, type: 3}
+  m_PrefabInstance: {fileID: 1010248170393149670}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &5704772589767977557
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3595246266852317492}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 028d2513531ab694493e9913da2834d6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  burning: 0
+  FireParticlePrefab: {fileID: 5023430038305224826, guid: b69c18c3cd016a740ac92bd40357a695, type: 3}
+  FireNegativePrefab: {fileID: 5189019935320836193, guid: 044f7268972471247b86fa431e2d615a, type: 3}
+  AshPileObject: {fileID: 5189475591652133799, guid: 4fd03affe7fdf2a4aa87fa6582a9ac5c, type: 3}
+  ashDestructionParticleGameObject: {fileID: 2294827401441237538, guid: 8c6bf8a4e120780469d8714d60f42f85, type: 3}
 --- !u!4 &4228653288670118798 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3794896871722181480, guid: 6ea2642d8879762469232c853cac580a, type: 3}
@@ -185,11 +215,41 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tree_1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 984122884344862721, guid: ace71641151416049aa3e3c14d2b6c54, type: 3}
+      propertyPath: m_TagString
+      value: HighFuel
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 7031993857883539346, guid: ace71641151416049aa3e3c14d2b6c54, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 984122884344862721, guid: ace71641151416049aa3e3c14d2b6c54, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5966802305612330266}
   m_SourcePrefab: {fileID: 100100000, guid: ace71641151416049aa3e3c14d2b6c54, type: 3}
+--- !u!1 &254623557140953085 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 984122884344862721, guid: ace71641151416049aa3e3c14d2b6c54, type: 3}
+  m_PrefabInstance: {fileID: 1018046930789363708}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &5966802305612330266
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 254623557140953085}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 028d2513531ab694493e9913da2834d6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  burning: 0
+  FireParticlePrefab: {fileID: 5023430038305224826, guid: b69c18c3cd016a740ac92bd40357a695, type: 3}
+  FireNegativePrefab: {fileID: 5189019935320836193, guid: 044f7268972471247b86fa431e2d615a, type: 3}
+  AshPileObject: {fileID: 5189475591652133799, guid: 4fd03affe7fdf2a4aa87fa6582a9ac5c, type: 3}
+  ashDestructionParticleGameObject: {fileID: 2294827401441237538, guid: 8c6bf8a4e120780469d8714d60f42f85, type: 3}
 --- !u!4 &631430192566725959 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 496414244250911419, guid: ace71641151416049aa3e3c14d2b6c54, type: 3}
@@ -259,16 +319,46 @@ PrefabInstance:
       propertyPath: m_Name
       value: Plant1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 4603239800496830930, guid: 6ea2642d8879762469232c853cac580a, type: 3}
+      propertyPath: m_TagString
+      value: HighFuel
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: -9221427347173278357, guid: 6ea2642d8879762469232c853cac580a, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4603239800496830930, guid: 6ea2642d8879762469232c853cac580a, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3088763002383192228}
   m_SourcePrefab: {fileID: 100100000, guid: 6ea2642d8879762469232c853cac580a, type: 3}
 --- !u!4 &2314818025936381740 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3794896871722181480, guid: 6ea2642d8879762469232c853cac580a, type: 3}
   m_PrefabInstance: {fileID: 1492323305823536196}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &3122175513643957654 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4603239800496830930, guid: 6ea2642d8879762469232c853cac580a, type: 3}
+  m_PrefabInstance: {fileID: 1492323305823536196}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &3088763002383192228
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3122175513643957654}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 028d2513531ab694493e9913da2834d6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  burning: 0
+  FireParticlePrefab: {fileID: 5023430038305224826, guid: b69c18c3cd016a740ac92bd40357a695, type: 3}
+  FireNegativePrefab: {fileID: 5189019935320836193, guid: 044f7268972471247b86fa431e2d615a, type: 3}
+  AshPileObject: {fileID: 5189475591652133799, guid: 4fd03affe7fdf2a4aa87fa6582a9ac5c, type: 3}
+  ashDestructionParticleGameObject: {fileID: 2294827401441237538, guid: 8c6bf8a4e120780469d8714d60f42f85, type: 3}
 --- !u!1001 &1717805819983792429
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -280,6 +370,10 @@ PrefabInstance:
     - target: {fileID: 8197673384583163336, guid: 8706aca6a800085418f9968de1dc9383, type: 3}
       propertyPath: m_Name
       value: Tree_4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8197673384583163336, guid: 8706aca6a800085418f9968de1dc9383, type: 3}
+      propertyPath: m_TagString
+      value: HighFuel
       objectReference: {fileID: 0}
     - target: {fileID: 8829355645580916594, guid: 8706aca6a800085418f9968de1dc9383, type: 3}
       propertyPath: m_LocalPosition.x
@@ -321,11 +415,37 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 475683248172371547, guid: 8706aca6a800085418f9968de1dc9383, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 8197673384583163336, guid: 8706aca6a800085418f9968de1dc9383, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6293465720588964118}
   m_SourcePrefab: {fileID: 100100000, guid: 8706aca6a800085418f9968de1dc9383, type: 3}
+--- !u!1 &7355824908917236965 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8197673384583163336, guid: 8706aca6a800085418f9968de1dc9383, type: 3}
+  m_PrefabInstance: {fileID: 1717805819983792429}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &6293465720588964118
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7355824908917236965}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 028d2513531ab694493e9913da2834d6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  burning: 0
+  FireParticlePrefab: {fileID: 5023430038305224826, guid: b69c18c3cd016a740ac92bd40357a695, type: 3}
+  FireNegativePrefab: {fileID: 5189019935320836193, guid: 044f7268972471247b86fa431e2d615a, type: 3}
+  AshPileObject: {fileID: 5189475591652133799, guid: 4fd03affe7fdf2a4aa87fa6582a9ac5c, type: 3}
+  ashDestructionParticleGameObject: {fileID: 2294827401441237538, guid: 8c6bf8a4e120780469d8714d60f42f85, type: 3}
 --- !u!4 &7881004011976605279 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8829355645580916594, guid: 8706aca6a800085418f9968de1dc9383, type: 3}
@@ -395,11 +515,41 @@ PrefabInstance:
       propertyPath: m_Name
       value: Log1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 4127939658912626397, guid: 85292898922356445bb9748cd9b9e416, type: 3}
+      propertyPath: m_TagString
+      value: HighFuel
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 4810525472409146702, guid: 85292898922356445bb9748cd9b9e416, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4127939658912626397, guid: 85292898922356445bb9748cd9b9e416, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2765111271120525932}
   m_SourcePrefab: {fileID: 100100000, guid: 85292898922356445bb9748cd9b9e416, type: 3}
+--- !u!1 &2569670268065135458 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4127939658912626397, guid: 85292898922356445bb9748cd9b9e416, type: 3}
+  m_PrefabInstance: {fileID: 1936598699737894335}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2765111271120525932
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2569670268065135458}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 028d2513531ab694493e9913da2834d6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  burning: 0
+  FireParticlePrefab: {fileID: 5023430038305224826, guid: b69c18c3cd016a740ac92bd40357a695, type: 3}
+  FireNegativePrefab: {fileID: 5189019935320836193, guid: 044f7268972471247b86fa431e2d615a, type: 3}
+  AshPileObject: {fileID: 5189475591652133799, guid: 4fd03affe7fdf2a4aa87fa6582a9ac5c, type: 3}
+  ashDestructionParticleGameObject: {fileID: 2294827401441237538, guid: 8c6bf8a4e120780469d8714d60f42f85, type: 3}
 --- !u!4 &2946090635403715032 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3603640096412904551, guid: 85292898922356445bb9748cd9b9e416, type: 3}
@@ -469,11 +619,41 @@ PrefabInstance:
       propertyPath: m_Name
       value: Plant1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 4603239800496830930, guid: 6ea2642d8879762469232c853cac580a, type: 3}
+      propertyPath: m_TagString
+      value: HighFuel
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: -9221427347173278357, guid: 6ea2642d8879762469232c853cac580a, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4603239800496830930, guid: 6ea2642d8879762469232c853cac580a, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4295559119441658834}
   m_SourcePrefab: {fileID: 100100000, guid: 6ea2642d8879762469232c853cac580a, type: 3}
+--- !u!1 &2445717970378086006 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4603239800496830930, guid: 6ea2642d8879762469232c853cac580a, type: 3}
+  m_PrefabInstance: {fileID: 2166532397470936996}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &4295559119441658834
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2445717970378086006}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 028d2513531ab694493e9913da2834d6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  burning: 0
+  FireParticlePrefab: {fileID: 5023430038305224826, guid: b69c18c3cd016a740ac92bd40357a695, type: 3}
+  FireNegativePrefab: {fileID: 5189019935320836193, guid: 044f7268972471247b86fa431e2d615a, type: 3}
+  AshPileObject: {fileID: 5189475591652133799, guid: 4fd03affe7fdf2a4aa87fa6582a9ac5c, type: 3}
+  ashDestructionParticleGameObject: {fileID: 2294827401441237538, guid: 8c6bf8a4e120780469d8714d60f42f85, type: 3}
 --- !u!4 &3079124201196260556 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3794896871722181480, guid: 6ea2642d8879762469232c853cac580a, type: 3}
@@ -543,11 +723,41 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tree_1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 984122884344862721, guid: ace71641151416049aa3e3c14d2b6c54, type: 3}
+      propertyPath: m_TagString
+      value: HighFuel
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 7031993857883539346, guid: ace71641151416049aa3e3c14d2b6c54, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 984122884344862721, guid: ace71641151416049aa3e3c14d2b6c54, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6979735274686965737}
   m_SourcePrefab: {fileID: 100100000, guid: ace71641151416049aa3e3c14d2b6c54, type: 3}
+--- !u!1 &2718600094858946784 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 984122884344862721, guid: ace71641151416049aa3e3c14d2b6c54, type: 3}
+  m_PrefabInstance: {fileID: 2887413112407617761}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &6979735274686965737
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2718600094858946784}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 028d2513531ab694493e9913da2834d6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  burning: 0
+  FireParticlePrefab: {fileID: 5023430038305224826, guid: b69c18c3cd016a740ac92bd40357a695, type: 3}
+  FireNegativePrefab: {fileID: 5189019935320836193, guid: 044f7268972471247b86fa431e2d615a, type: 3}
+  AshPileObject: {fileID: 5189475591652133799, guid: 4fd03affe7fdf2a4aa87fa6582a9ac5c, type: 3}
+  ashDestructionParticleGameObject: {fileID: 2294827401441237538, guid: 8c6bf8a4e120780469d8714d60f42f85, type: 3}
 --- !u!4 &3382687987733721690 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 496414244250911419, guid: ace71641151416049aa3e3c14d2b6c54, type: 3}
@@ -605,16 +815,46 @@ PrefabInstance:
       propertyPath: m_Name
       value: Plant1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 4603239800496830930, guid: 6ea2642d8879762469232c853cac580a, type: 3}
+      propertyPath: m_TagString
+      value: HighFuel
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: -9221427347173278357, guid: 6ea2642d8879762469232c853cac580a, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4603239800496830930, guid: 6ea2642d8879762469232c853cac580a, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2501936582513088276}
   m_SourcePrefab: {fileID: 100100000, guid: 6ea2642d8879762469232c853cac580a, type: 3}
 --- !u!4 &418235931404878897 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3794896871722181480, guid: 6ea2642d8879762469232c853cac580a, type: 3}
   m_PrefabInstance: {fileID: 3560079855205525337}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1046541493336088203 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4603239800496830930, guid: 6ea2642d8879762469232c853cac580a, type: 3}
+  m_PrefabInstance: {fileID: 3560079855205525337}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2501936582513088276
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1046541493336088203}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 028d2513531ab694493e9913da2834d6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  burning: 0
+  FireParticlePrefab: {fileID: 5023430038305224826, guid: b69c18c3cd016a740ac92bd40357a695, type: 3}
+  FireNegativePrefab: {fileID: 5189019935320836193, guid: 044f7268972471247b86fa431e2d615a, type: 3}
+  AshPileObject: {fileID: 5189475591652133799, guid: 4fd03affe7fdf2a4aa87fa6582a9ac5c, type: 3}
+  ashDestructionParticleGameObject: {fileID: 2294827401441237538, guid: 8c6bf8a4e120780469d8714d60f42f85, type: 3}
 --- !u!1001 &3724294773654439388
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -679,16 +919,46 @@ PrefabInstance:
       propertyPath: m_Name
       value: Plant1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 4603239800496830930, guid: 6ea2642d8879762469232c853cac580a, type: 3}
+      propertyPath: m_TagString
+      value: HighFuel
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: -9221427347173278357, guid: 6ea2642d8879762469232c853cac580a, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4603239800496830930, guid: 6ea2642d8879762469232c853cac580a, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7221489275208396589}
   m_SourcePrefab: {fileID: 100100000, guid: 6ea2642d8879762469232c853cac580a, type: 3}
 --- !u!4 &505938920202675892 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3794896871722181480, guid: 6ea2642d8879762469232c853cac580a, type: 3}
   m_PrefabInstance: {fileID: 3724294773654439388}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &886826947148643342 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4603239800496830930, guid: 6ea2642d8879762469232c853cac580a, type: 3}
+  m_PrefabInstance: {fileID: 3724294773654439388}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &7221489275208396589
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 886826947148643342}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 028d2513531ab694493e9913da2834d6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  burning: 0
+  FireParticlePrefab: {fileID: 5023430038305224826, guid: b69c18c3cd016a740ac92bd40357a695, type: 3}
+  FireNegativePrefab: {fileID: 5189019935320836193, guid: 044f7268972471247b86fa431e2d615a, type: 3}
+  AshPileObject: {fileID: 5189475591652133799, guid: 4fd03affe7fdf2a4aa87fa6582a9ac5c, type: 3}
+  ashDestructionParticleGameObject: {fileID: 2294827401441237538, guid: 8c6bf8a4e120780469d8714d60f42f85, type: 3}
 --- !u!1001 &4479296526726881291
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -753,11 +1023,41 @@ PrefabInstance:
       propertyPath: m_Name
       value: Plant1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 4603239800496830930, guid: 6ea2642d8879762469232c853cac580a, type: 3}
+      propertyPath: m_TagString
+      value: HighFuel
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: -9221427347173278357, guid: 6ea2642d8879762469232c853cac580a, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4603239800496830930, guid: 6ea2642d8879762469232c853cac580a, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6264718149582136510}
   m_SourcePrefab: {fileID: 100100000, guid: 6ea2642d8879762469232c853cac580a, type: 3}
+--- !u!1 &128447425676302809 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4603239800496830930, guid: 6ea2642d8879762469232c853cac580a, type: 3}
+  m_PrefabInstance: {fileID: 4479296526726881291}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &6264718149582136510
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 128447425676302809}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 028d2513531ab694493e9913da2834d6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  burning: 0
+  FireParticlePrefab: {fileID: 5023430038305224826, guid: b69c18c3cd016a740ac92bd40357a695, type: 3}
+  FireNegativePrefab: {fileID: 5189019935320836193, guid: 044f7268972471247b86fa431e2d615a, type: 3}
+  AshPileObject: {fileID: 5189475591652133799, guid: 4fd03affe7fdf2a4aa87fa6582a9ac5c, type: 3}
+  ashDestructionParticleGameObject: {fileID: 2294827401441237538, guid: 8c6bf8a4e120780469d8714d60f42f85, type: 3}
 --- !u!4 &757597511858750307 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3794896871722181480, guid: 6ea2642d8879762469232c853cac580a, type: 3}
@@ -774,6 +1074,10 @@ PrefabInstance:
     - target: {fileID: 4665215540439113268, guid: 33d6f5f3586d2b942b0ab5319450d67a, type: 3}
       propertyPath: m_Name
       value: Tree_3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4665215540439113268, guid: 33d6f5f3586d2b942b0ab5319450d67a, type: 3}
+      propertyPath: m_TagString
+      value: HighFuel
       objectReference: {fileID: 0}
     - target: {fileID: 5473558538258285710, guid: 33d6f5f3586d2b942b0ab5319450d67a, type: 3}
       propertyPath: m_LocalPosition.x
@@ -815,16 +1119,42 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5345238571984784036, guid: 33d6f5f3586d2b942b0ab5319450d67a, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4665215540439113268, guid: 33d6f5f3586d2b942b0ab5319450d67a, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2961971923785105433}
   m_SourcePrefab: {fileID: 100100000, guid: 33d6f5f3586d2b942b0ab5319450d67a, type: 3}
 --- !u!4 &560073679842133874 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5473558538258285710, guid: 33d6f5f3586d2b942b0ab5319450d67a, type: 3}
   m_PrefabInstance: {fileID: 5489945630752654332}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &904687684003896776 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4665215540439113268, guid: 33d6f5f3586d2b942b0ab5319450d67a, type: 3}
+  m_PrefabInstance: {fileID: 5489945630752654332}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2961971923785105433
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 904687684003896776}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 028d2513531ab694493e9913da2834d6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  burning: 0
+  FireParticlePrefab: {fileID: 5023430038305224826, guid: b69c18c3cd016a740ac92bd40357a695, type: 3}
+  FireNegativePrefab: {fileID: 5189019935320836193, guid: 044f7268972471247b86fa431e2d615a, type: 3}
+  AshPileObject: {fileID: 5189475591652133799, guid: 4fd03affe7fdf2a4aa87fa6582a9ac5c, type: 3}
+  ashDestructionParticleGameObject: {fileID: 2294827401441237538, guid: 8c6bf8a4e120780469d8714d60f42f85, type: 3}
 --- !u!1001 &6275265476606505186
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -889,16 +1219,46 @@ PrefabInstance:
       propertyPath: m_Name
       value: Plant1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 4603239800496830930, guid: 6ea2642d8879762469232c853cac580a, type: 3}
+      propertyPath: m_TagString
+      value: HighFuel
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: -9221427347173278357, guid: 6ea2642d8879762469232c853cac580a, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4603239800496830930, guid: 6ea2642d8879762469232c853cac580a, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8300405466535767530}
   m_SourcePrefab: {fileID: 100100000, guid: 6ea2642d8879762469232c853cac580a, type: 3}
 --- !u!4 &7186643488884839306 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3794896871722181480, guid: 6ea2642d8879762469232c853cac580a, type: 3}
   m_PrefabInstance: {fileID: 6275265476606505186}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &7563732359244843312 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4603239800496830930, guid: 6ea2642d8879762469232c853cac580a, type: 3}
+  m_PrefabInstance: {fileID: 6275265476606505186}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &8300405466535767530
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7563732359244843312}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 028d2513531ab694493e9913da2834d6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  burning: 0
+  FireParticlePrefab: {fileID: 5023430038305224826, guid: b69c18c3cd016a740ac92bd40357a695, type: 3}
+  FireNegativePrefab: {fileID: 5189019935320836193, guid: 044f7268972471247b86fa431e2d615a, type: 3}
+  AshPileObject: {fileID: 5189475591652133799, guid: 4fd03affe7fdf2a4aa87fa6582a9ac5c, type: 3}
+  ashDestructionParticleGameObject: {fileID: 2294827401441237538, guid: 8c6bf8a4e120780469d8714d60f42f85, type: 3}
 --- !u!1001 &6987272801161219662
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -963,16 +1323,46 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tree_1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 984122884344862721, guid: ace71641151416049aa3e3c14d2b6c54, type: 3}
+      propertyPath: m_TagString
+      value: HighFuel
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 7031993857883539346, guid: ace71641151416049aa3e3c14d2b6c54, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 984122884344862721, guid: ace71641151416049aa3e3c14d2b6c54, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7750538942587386254}
   m_SourcePrefab: {fileID: 100100000, guid: ace71641151416049aa3e3c14d2b6c54, type: 3}
 --- !u!4 &7355602736868723957 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 496414244250911419, guid: ace71641151416049aa3e3c14d2b6c54, type: 3}
   m_PrefabInstance: {fileID: 6987272801161219662}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &7881168622872417871 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 984122884344862721, guid: ace71641151416049aa3e3c14d2b6c54, type: 3}
+  m_PrefabInstance: {fileID: 6987272801161219662}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &7750538942587386254
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7881168622872417871}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 028d2513531ab694493e9913da2834d6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  burning: 0
+  FireParticlePrefab: {fileID: 5023430038305224826, guid: b69c18c3cd016a740ac92bd40357a695, type: 3}
+  FireNegativePrefab: {fileID: 5189019935320836193, guid: 044f7268972471247b86fa431e2d615a, type: 3}
+  AshPileObject: {fileID: 5189475591652133799, guid: 4fd03affe7fdf2a4aa87fa6582a9ac5c, type: 3}
+  ashDestructionParticleGameObject: {fileID: 2294827401441237538, guid: 8c6bf8a4e120780469d8714d60f42f85, type: 3}
 --- !u!1001 &7927157637108582828
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -984,6 +1374,10 @@ PrefabInstance:
     - target: {fileID: 4665215540439113268, guid: 33d6f5f3586d2b942b0ab5319450d67a, type: 3}
       propertyPath: m_Name
       value: Tree_3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4665215540439113268, guid: 33d6f5f3586d2b942b0ab5319450d67a, type: 3}
+      propertyPath: m_TagString
+      value: HighFuel
       objectReference: {fileID: 0}
     - target: {fileID: 5473558538258285710, guid: 33d6f5f3586d2b942b0ab5319450d67a, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1025,16 +1419,42 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5345238571984784036, guid: 33d6f5f3586d2b942b0ab5319450d67a, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4665215540439113268, guid: 33d6f5f3586d2b942b0ab5319450d67a, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 234598604394323948}
   m_SourcePrefab: {fileID: 100100000, guid: 33d6f5f3586d2b942b0ab5319450d67a, type: 3}
 --- !u!4 &2735681289449426210 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5473558538258285710, guid: 33d6f5f3586d2b942b0ab5319450d67a, type: 3}
   m_PrefabInstance: {fileID: 7927157637108582828}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &3367785492612421528 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4665215540439113268, guid: 33d6f5f3586d2b942b0ab5319450d67a, type: 3}
+  m_PrefabInstance: {fileID: 7927157637108582828}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &234598604394323948
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3367785492612421528}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 028d2513531ab694493e9913da2834d6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  burning: 0
+  FireParticlePrefab: {fileID: 5023430038305224826, guid: b69c18c3cd016a740ac92bd40357a695, type: 3}
+  FireNegativePrefab: {fileID: 5189019935320836193, guid: 044f7268972471247b86fa431e2d615a, type: 3}
+  AshPileObject: {fileID: 5189475591652133799, guid: 4fd03affe7fdf2a4aa87fa6582a9ac5c, type: 3}
+  ashDestructionParticleGameObject: {fileID: 2294827401441237538, guid: 8c6bf8a4e120780469d8714d60f42f85, type: 3}
 --- !u!1001 &8326461081953737868
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1046,6 +1466,10 @@ PrefabInstance:
     - target: {fileID: 2858411044530043308, guid: 87a58077fb875314ab1f2a306ba41984, type: 3}
       propertyPath: m_Name
       value: Tree_2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2858411044530043308, guid: 87a58077fb875314ab1f2a306ba41984, type: 3}
+      propertyPath: m_TagString
+      value: HighFuel
       objectReference: {fileID: 0}
     - target: {fileID: 3233810068867932950, guid: 87a58077fb875314ab1f2a306ba41984, type: 3}
       propertyPath: m_LocalScale.x
@@ -1099,11 +1523,37 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8274171807271083207, guid: 87a58077fb875314ab1f2a306ba41984, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2858411044530043308, guid: 87a58077fb875314ab1f2a306ba41984, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5504813814375981229}
   m_SourcePrefab: {fileID: 100100000, guid: 87a58077fb875314ab1f2a306ba41984, type: 3}
+--- !u!1 &6063698386537915680 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2858411044530043308, guid: 87a58077fb875314ab1f2a306ba41984, type: 3}
+  m_PrefabInstance: {fileID: 8326461081953737868}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &5504813814375981229
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6063698386537915680}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 028d2513531ab694493e9913da2834d6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  burning: 0
+  FireParticlePrefab: {fileID: 5023430038305224826, guid: b69c18c3cd016a740ac92bd40357a695, type: 3}
+  FireNegativePrefab: {fileID: 5189019935320836193, guid: 044f7268972471247b86fa431e2d615a, type: 3}
+  AshPileObject: {fileID: 5189475591652133799, guid: 4fd03affe7fdf2a4aa87fa6582a9ac5c, type: 3}
+  ashDestructionParticleGameObject: {fileID: 2294827401441237538, guid: 8c6bf8a4e120780469d8714d60f42f85, type: 3}
 --- !u!4 &6876228222019960730 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3233810068867932950, guid: 87a58077fb875314ab1f2a306ba41984, type: 3}
@@ -1173,11 +1623,41 @@ PrefabInstance:
       propertyPath: m_Name
       value: Plant1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 4603239800496830930, guid: 6ea2642d8879762469232c853cac580a, type: 3}
+      propertyPath: m_TagString
+      value: HighFuel
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: -9221427347173278357, guid: 6ea2642d8879762469232c853cac580a, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4603239800496830930, guid: 6ea2642d8879762469232c853cac580a, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6297731780395048343}
   m_SourcePrefab: {fileID: 100100000, guid: 6ea2642d8879762469232c853cac580a, type: 3}
+--- !u!1 &4865789393903409902 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4603239800496830930, guid: 6ea2642d8879762469232c853cac580a, type: 3}
+  m_PrefabInstance: {fileID: 8964203513222816572}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &6297731780395048343
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4865789393903409902}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 028d2513531ab694493e9913da2834d6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  burning: 0
+  FireParticlePrefab: {fileID: 5023430038305224826, guid: b69c18c3cd016a740ac92bd40357a695, type: 3}
+  FireNegativePrefab: {fileID: 5189019935320836193, guid: 044f7268972471247b86fa431e2d615a, type: 3}
+  AshPileObject: {fileID: 5189475591652133799, guid: 4fd03affe7fdf2a4aa87fa6582a9ac5c, type: 3}
+  ashDestructionParticleGameObject: {fileID: 2294827401441237538, guid: 8c6bf8a4e120780469d8714d60f42f85, type: 3}
 --- !u!4 &5245867836643573844 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3794896871722181480, guid: 6ea2642d8879762469232c853cac580a, type: 3}
