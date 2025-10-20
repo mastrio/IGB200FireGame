@@ -8,6 +8,7 @@ public class TutorialManager : MonoBehaviour
     public static TutorialManager instance;
 
     public static List<TutorialClip> seenClips = new List<TutorialClip>();
+    public static List<string> tutorialQueue = new List<string>();
 
     public TutorialUI tutorialUI;
 

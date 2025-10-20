@@ -15,6 +15,8 @@ public class FireManagementBar : MonoBehaviour
     private LerpAnimationVector3 scaleAnimation;
     private PulseAnimationVector3 pulseAnimation;
 
+    private bool canDoTheThingNowOkayYeah = false;
+
     private FireBarState state = FireBarState.Info;
     [HideInInspector]
     public FireBarState State
@@ -52,11 +54,12 @@ public class FireManagementBar : MonoBehaviour
 
     void OnEnable()
     {
-        if (GameManager.instance != null)
+        if (TutorialManager.instance.tutorialUI != null)
         {
             if (!GameManager.instance.hasManagedFire)
             {
-                //TutorialManager.instance.tutorialUI.ShowTutorial("HowToManageFireTutorial");
+                if (canDoTheThingNowOkayYeah) TutorialManager.instance.tutorialUI.ShowTutorial("FireManagement");
+                else canDoTheThingNowOkayYeah = true;
             }
         }
 

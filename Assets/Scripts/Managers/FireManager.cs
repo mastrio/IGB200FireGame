@@ -32,7 +32,7 @@ public class FireManager : MonoBehaviour
     [HideInInspector] public GameObject Fire2RefGameObject;
 
     [Header("Vignette Edge Effect")] // Vignette values and references
-    public Volume globalVolume;
+    [HideInInspector] public Volume globalVolume;
     private Vignette vignette;
     public float vignetteMax = 0.5f;
     public float vignetteFadeSpeed = 1.0f;
@@ -53,18 +53,25 @@ public class FireManager : MonoBehaviour
             DontDestroyOnLoad(gameObject);
         }
         else Destroy(gameObject);
-
-        if (globalVolume != null && globalVolume.profile.TryGet(out Vignette v)) // Get vignette ref if volume is assigned & start with 0 intensity
-        {
-            vignette = v;
-            vignette.intensity.value = 0f;
-        }
     }
+
     private void Update()
     {
         if (vignette != null) // Vignette fade every frame
         {
             vignette.intensity.value = Mathf.MoveTowards(vignette.intensity.value, vignetteTargetIntensity, Time.deltaTime * vignetteFadeSpeed);
+        }
+    }
+
+    public void SetVolume()
+    {
+        if (globalVolume != null) // Get vignette ref if volume is assigned & start with 0 intensity
+        {
+            if (globalVolume.profile.TryGet(out Vignette v))
+            {
+                vignette = v;
+                vignette.intensity.value = 0f;
+            }
         }
     }
 

@@ -4,7 +4,7 @@ public class TutorialButton : MonoBehaviour
 {
     void Start()
     {
-        if (Global.scenarioNum != 3) gameObject.SetActive(false);
+        if (Global.scenarioNum != 1) gameObject.SetActive(false);
     }
 
     public void ShowTutorial()

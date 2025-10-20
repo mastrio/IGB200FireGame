@@ -15,9 +15,42 @@ public class TutorialUI : MonoBehaviour
 
     private int currentTutIndex = 0;
 
+
     void Update()
     {
         counterText.text = (currentTutIndex + 1) + "/" + TutorialManager.seenClips.Count;
+    }
+
+    void OnEnable()
+    {
+        Time.timeScale = 0.0f;
+    }
+
+    void OnDisable()
+    {
+        Time.timeScale = 1.0f;
+
+        Debug.Log("FUCK");
+        if (TutorialManager.tutorialQueue.Count > 0)
+        {
+            Debug.Log("AHAHHHHHHHH");
+            ShowTutorial(TutorialManager.tutorialQueue[0]);
+            TutorialManager.tutorialQueue.RemoveAt(0);
+        }
+    }
+
+    public bool QueueTutorial(string tutorialName)
+    {
+        TutorialManager.tutorialQueue.Add(tutorialName);
+
+        if (!gameObject.activeSelf)
+        {
+            bool result = ShowTutorial(TutorialManager.tutorialQueue[0]);
+            TutorialManager.tutorialQueue.RemoveAt(0);
+            return result;
+        }
+
+        return true;
     }
 
     public void ShowTutorial(int index)
@@ -39,7 +72,7 @@ public class TutorialUI : MonoBehaviour
 
     public bool ShowTutorial(string tutorialName, bool force = false)
     {
-        if (Global.scenarioNum != 3) return false;
+        if (Global.scenarioNum != 1) return false;
 
         for (int i = 0; i < TutorialManager.instance.tutorialClips.Length; i++)
         {
