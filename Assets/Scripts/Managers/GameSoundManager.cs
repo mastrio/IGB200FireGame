@@ -1,24 +1,28 @@
 using UnityEngine;
 using UnityEngine.Audio;
 using System.Collections.Generic;
-using UnityEngine.SceneManagement;
 
-public class FireSoundManager : MonoBehaviour
+public class GameSoundManager : MonoBehaviour
 {
-    public static FireSoundManager Instance { get; private set; }
+    public static GameSoundManager Instance { get; private set; }
 
     [SerializeField] private AudioMixer audioMixer;
     [SerializeField] private AudioSource fireSound;
     [SerializeField] private AudioSource forestSound;
     [SerializeField] private AudioSource animalSound;
     [SerializeField] private AudioSource insectSound;
+    [SerializeField] private AudioSource screamSound; 
 
     private List<Transform> activeFireTransforms = new List<Transform>();
     private Transform playerTransform;
-    [SerializeField] private float maxHearDistance = 20f; // Fade beyond this.
-    [SerializeField] private float minHearDistance = 5f;  // Full volume within this.
-    [SerializeField] private float minVolumeMultiplier = 0.2f; // Min when far.
-    [SerializeField] private float intensityPerFire = 0.1f; // +10% per extra fire.
+    [SerializeField] private float maxHearDistance = 20f;
+    [SerializeField] private float minHearDistance = 5f;
+    [SerializeField] private float minVolumeMultiplier = 0.2f;
+    [SerializeField] private float intensityPerFire = 0.1f;
+    [SerializeField] private int highIntensityThreshold = 3; 
+
+    private bool hasPlayedScream = false; 
+    private bool wasHighIntensity = false; 
 
     private void Awake()
     {
@@ -31,27 +35,23 @@ public class FireSoundManager : MonoBehaviour
         DontDestroyOnLoad(gameObject);
         playerTransform = GameObject.FindWithTag("Player")?.transform;
 
-        
-        if (forestSound != null)
-            forestSound.Play();
+        if (forestSound != null) forestSound.Play();
+        if (animalSound != null) animalSound.Play();
+        if (insectSound != null) insectSound.Play();
 
-        if (animalSound != null)
-            animalSound.Play();
-
-        if (insectSound != null)
-            insectSound.Play();
-        
         if (animalSound != null)
         {
-            animalSound.spatialBlend = 0f; // No spatial effect
-            animalSound.rolloffMode = AudioRolloffMode.Logarithmic; // Default rolloff
-            animalSound.volume = 0.45f;
+            animalSound.spatialBlend = 0f;
+            animalSound.rolloffMode = AudioRolloffMode.Logarithmic;
+            animalSound.volume = 0.2f;
         }
     }
+
     private void Update()
     {
         int activeCount = activeFireTransforms.Count;
         float fireIntensity = Mathf.Clamp((float)activeCount / 5f, 0f, 1f);
+        bool isHighIntensity = activeCount >= highIntensityThreshold;
 
         if (activeCount > 0)
         {
@@ -65,31 +65,54 @@ public class FireSoundManager : MonoBehaviour
                 float minDist = float.MaxValue;
                 foreach (Transform fireTrans in activeFireTransforms)
                 {
-                    if (fireTrans == null) continue; // Skip destroyed.
+                    if (fireTrans == null) continue;
                     float dist = Vector3.Distance(playerTransform.position, fireTrans.position);
                     if (dist < minDist) minDist = dist;
                 }
                 proximityFactor = Mathf.Clamp(1f - ((minDist - minHearDistance) / (maxHearDistance - minHearDistance)), minVolumeMultiplier, 1f);
             }
-
             fireSound.volume = baseVolume * intensityFactor * proximityFactor;
+
+            // Play screaming sound once when intensity goes high
+            if (isHighIntensity && !wasHighIntensity && !hasPlayedScream && screamSound != null)
+            {
+                screamSound.PlayOneShot(screamSound.clip); 
+                hasPlayedScream = true;
+            }
+            else if (!isHighIntensity)
+            {
+                hasPlayedScream = false; // Reset for next high intensity event
+            }
         }
         else
         {
-            if (fireSound.isPlaying) fireSound.Stop();
+            if (fireSound != null && fireSound.isPlaying) fireSound.Stop();
             PlayWithVariation(forestSound);
             PlayWithVariation(animalSound);
             PlayWithVariation(insectSound);
         }
 
-        float ambientVolume = Mathf.Lerp(0.5f, 0.05f, fireIntensity);
-        if (forestSound != null) forestSound.volume = ambientVolume;
-        if (animalSound != null) animalSound.volume = ambientVolume * 0.8f;
-        if (insectSound != null) insectSound.volume = ambientVolume * 0.5f;
+        wasHighIntensity = isHighIntensity; // Update previous state
 
-        // Ensure sounds keep playing
-        if (animalSound != null && !animalSound.isPlaying) PlayWithVariation(animalSound);
+        float ambientVolume = Mathf.Lerp(0.5f, 0.05f, fireIntensity);
+        if (forestSound != null)
+        {
+            forestSound.volume = ambientVolume * Random.Range(0.8f, 1.0f);
+            forestSound.pitch = Random.Range(0.9f, 1.0f);
+        }
+        if (animalSound != null)
+        {
+            animalSound.volume = (ambientVolume * 0.2f) * Random.Range(0.8f, 1.0f);
+            animalSound.pitch = Random.Range(0.9f, 1.0f);
+            if (!animalSound.isPlaying) PlayWithVariation(animalSound);
+        }
+        if (insectSound != null)
+        {
+            insectSound.volume = (ambientVolume * 0.8f) * Random.Range(0.8f, 1.0f);
+            insectSound.pitch = Random.Range(0.9f, 1.0f);
+        }
     }
+
     private void PlayWithVariation(AudioSource source)
     {
         if (source != null && !source.isPlaying)
@@ -115,7 +138,6 @@ public class FireSoundManager : MonoBehaviour
 
     private void LateUpdate()
     {
-        // Destroy fire
         activeFireTransforms.RemoveAll(t => t == null);
     }
 }
