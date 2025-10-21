@@ -77,19 +77,46 @@ public class EnviromentalBurnableNonTarget : MonoBehaviour
 
     private void Update()
     {
-        if (BaseFireObjectRef != null)
+        if (BaseFireObjectRef == null)
         {
-            if (burning)
+            return;
+        }
+
+        if (burning)
+        {
+            EnviromentIntensifying(BaseFireObjectRef.fireIntensity);
+            if (BaseFireObjectRef.fireIntensity > 130f && BaseFireObjectRef.fireIntensity < 200f)
             {
                 BurnTimer += Time.deltaTime;
-                EnviromentIntensifying(BaseFireObjectRef.fireIntensity);
+                if (BurnTimer >= 10f)
+                {
+                    burning = false;
+                    Instantiate(ashDestructionParticleGameObject, new Vector3(transform.position.x, 1f, transform.position.z), transform.rotation);
+                    Instantiate(AshPileObject, new Vector3(transform.position.x, 0f, transform.position.z), transform.rotation);
+                    Destroy(gameObject);
+                }
+            }
+            else if (BaseFireObjectRef.fireIntensity >= 200f)
+            {
+                BurnTimer += Time.deltaTime;
+                if (BurnTimer >= 3f)
+                {
+                    burning = false;
+                    Instantiate(ashDestructionParticleGameObject, new Vector3(transform.position.x, 1f, transform.position.z), transform.rotation);
+                    Instantiate(AshPileObject, new Vector3(transform.position.x, 0f, transform.position.z), transform.rotation);
+                    Destroy(gameObject);
+                }
             }
             else
             {
                 BurnTimer = 0f;
             }
-
         }
+        else
+        {
+            BurnTimer = 0f;
+        }
+
 
     }
 
@@ -110,18 +137,21 @@ public class EnviromentalBurnableNonTarget : MonoBehaviour
         var FirePSEmission = firePS.emission;
         var NegPSShape = negativePS.shape;
         var NegPSEmission = negativePS.emission;
+
+        //Change the min and max fires scales here (lerps across from min at low intensity up to max at high) 
         Vector3 minFirePsScale = new Vector3(0.8f, 1.3f, 0.5f);
-        Vector3 maxFirePsScale = new Vector3(7.17f, 7.823f, 2f);
-        float minFirePSEmission = 100f;
-        float maxFirePSEmission = 500f;
+        Vector3 maxFirePsScale = new Vector3(5.17f, 5.823f, 1.5f);
+        //Fires rate over time valyes change here 
+        float minFirePSEmission = 50f;
+        float maxFirePSEmission = 200f;
         Vector3 UpdatingIntensityScale =
             Vector3.Lerp(minFirePsScale, maxFirePsScale, fireIntensity / 200);
         float UpdatingFireEmission =
             Mathf.Lerp(minFirePSEmission, maxFirePSEmission, fireIntensity / 200);
 
-
-        float minNegPSEmission = 20f;
-        float maxNegPSEmission = 60f;
+        //Negative particles rate overtime variables change here 
+        float minNegPSEmission = 1f;
+        float maxNegPSEmission = 10f;
         float UpdatingNegEmission =
             Mathf.Lerp(minNegPSEmission, maxNegPSEmission, fireIntensity / 200);
 
@@ -133,38 +163,10 @@ public class EnviromentalBurnableNonTarget : MonoBehaviour
         if (fireIntensity <= 0f)
         {
             burning = false;
-            BurnTimer = 0f;
             Destroy(firePS.gameObject);
             Destroy(negativePS.gameObject);
             firePS = null;
             negativePS = null;
-        }
-        else if (fireIntensity <= 130f)
-        {
-            BurnTimer = 0f;
-        }
-        else if (fireIntensity > 130f && fireIntensity < 200f)
-        {
-
-            if (BurnTimer >= 10f)
-            {
-                Debug.Log(BurnTimer);
-                //Ember Particles
-                burning = false;
-                Instantiate(ashDestructionParticleGameObject, new Vector3(transform.position.x, 1f, transform.position.z), transform.rotation);
-                Instantiate(AshPileObject, new Vector3(transform.position.x, 0f, transform.position.z), transform.rotation);
-                Destroy(gameObject);
-            }
-        }
-        else if (fireIntensity >= 200f) //Testing
-        {
-            Debug.Log(BurnTimer);
-            //Ember Particles
-            burning = false;
-           
-            Instantiate(ashDestructionParticleGameObject, new Vector3(transform.position.x, 1f, transform.position.z), transform.rotation);
-            Instantiate(AshPileObject, new Vector3(transform.position.x,0f,transform.position.z), transform.rotation);
-            Destroy(gameObject);
         }
         //Ask if we want it to burn after x amount of burning at max
         /*else if (fireIntensity >= 200f && BurnTimer >= 30f)

@@ -40,6 +40,8 @@ public class CoolBurnFuelTarget : MonoBehaviour
                 Quaternion.Euler(new Vector3(-90.0f, 0.0f, 0.0f)), transform);
             firePS = fireParticle.GetComponent<ParticleSystem>();
             postivePS = positiveParticle.GetComponent<ParticleSystem>();
+
+            //Change the min and max scales here as well
             Vector3 FireScale = Vector3.Lerp(new Vector3(0.5f, 0.8f, 0.5f), new Vector3(4.17f, 4.823f, 1.4f),
                 FireObjectRef.fireIntensity / 200f);
             Vector3 PositveScale = Vector3.Lerp(new Vector3(0.5f, 0.8f, 0.5f), new Vector3(7f, 7f, 4f),
@@ -50,13 +52,15 @@ public class CoolBurnFuelTarget : MonoBehaviour
             postivePSScale.scale = PositveScale;
 
             var firePSEmission = firePS.emission;
-            firePSEmission.rateOverTime = Mathf.Lerp(50f, 200f, FireObjectRef.fireIntensity / 200f);
+            //Change min and max emission here as well
+            firePSEmission.rateOverTime = Mathf.Lerp(20f, 100f, FireObjectRef.fireIntensity / 200f);
             var positivePSEmission = postivePS.emission;
-            positivePSEmission.rateOverTime = Mathf.Lerp(10f, 20f, FireObjectRef.fireIntensity / 200f);
+            positivePSEmission.rateOverTime = Mathf.Lerp(1f, 5f, FireObjectRef.fireIntensity / 200f);
             MaxBurnTime = Time.time + 10f;
         }
         else if (firePS != null)
         {
+            //Change min and max scales here as well
             Vector3 FireScale = Vector3.Lerp(new Vector3(0.5f, 0.8f, 0.5f), new Vector3(4.17f, 4.823f, 1.4f),
                 FireObjectRef.fireIntensity / 200f);
             Vector3 PositveScale = Vector3.Lerp(new Vector3(0.5f, 0.8f, 0.5f), new Vector3(12f, 12f, 5f),
@@ -67,9 +71,10 @@ public class CoolBurnFuelTarget : MonoBehaviour
             postivePSScale.scale = PositveScale;
 
             var firePSEmission = firePS.emission;
-            firePSEmission.rateOverTime = Mathf.Lerp(100f, 300f, FireObjectRef.fireIntensity / 200f);
+            //Change min and max emmissions here as well
+            firePSEmission.rateOverTime = Mathf.Lerp(20f, 100f, FireObjectRef.fireIntensity / 200f);
             var positivePSEmission = postivePS.emission;
-            positivePSEmission.rateOverTime = Mathf.Lerp(10f, 20f, FireObjectRef.fireIntensity / 200f);
+            positivePSEmission.rateOverTime = Mathf.Lerp(1f, 5f, FireObjectRef.fireIntensity / 200f);
         }
     }
 
@@ -186,21 +191,27 @@ public class CoolBurnFuelTarget : MonoBehaviour
         var FirePSEmission = firePS.emission;
         var PositvePSShape = postivePS.shape;
         var PositivePSEmission = postivePS.emission;
-        minFirePSScale = new Vector3(0.5f, 0.8f, 0.5f);
-        maxFirePSScale = new Vector3(4.17f, 4.823f, 1.4f);
-        minFireEmissionRate = 100f;
-        maxFireEmissionRate = 250f;
+
+        //Change the min and max fires scales here (lerps across from min at low intensity up to max at high) 
+        minFirePSScale = new Vector3(0.2f, 0.4f, 0.2f);
+        maxFirePSScale = new Vector3(2.8f, 3.3f, 1.4f);
+
+        //Change fires min and max emission rateovertime here
+        minFireEmissionRate = 20f;
+        maxFireEmissionRate = 100f;
         Vector3 UpdatingIntensityScale =
            Vector3.Lerp(minFirePSScale, maxFirePSScale, currentIntensity / 200);
 
+        //Change the positve scale min and max directly within the lerp
         Vector3 PositveScale = Vector3.Lerp(new Vector3(0.5f, 0.8f, 0.5f), new Vector3(7f, 7f, 4f),
             FireObjectRef.fireIntensity / 200f);
 
         float UpdatingFireEmission =
             Mathf.Lerp(minFireEmissionRate, maxFireEmissionRate, currentIntensity / 200);
 
-        float minPositvePSEmission = 10f;
-        float maxPositvePSEmission = 20f;
+        //Change the min and max postive particles emission rateovertime directly here
+        float minPositvePSEmission = 1f;
+        float maxPositvePSEmission = 5f;
         float UpdatingPositveEmission =
             Mathf.Lerp(minPositvePSEmission, maxPositvePSEmission, currentIntensity / 200);
 

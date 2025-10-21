@@ -213,10 +213,14 @@ public class FireObject : MonoBehaviour
 
         var FireObjectPSShape = fireObjectPS.shape;
         var FireObjectPSEmission = fireObjectPS.emission;
+
+        //Change this for the main Fire Objects Scale x and y are the length and width, z is the height (cause of the rotation)
         minFirePsScale = new Vector3(0.5f, 0.8f, 0.5f);
-        maxFirePsScale = new Vector3(7.17f, 7.823f, 2f);
+        maxFirePsScale = new Vector3(5.17f, 5.823f, 1.5f);
+        //Change this for the max fuels scales
         minHighFuelFirePsScale = new Vector3(2f, 2.5f, 0.6f);
-        maxHighFuelFirePsScale = new Vector3(9.17f, 9.823f, 2.3f);
+        maxHighFuelFirePsScale = new Vector3(7.17f, 7.823f, 2f);
+        //Fire Objects emission values (lerps across the emission change here for the main object)
         minFirePSEmission = 100f;
         maxFirePSEmission = 500f;
 
