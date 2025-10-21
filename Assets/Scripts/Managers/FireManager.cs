@@ -5,6 +5,7 @@ using UnityEngine.Rendering;
 using UnityEngine.Rendering.Universal;
 using Quaternion = UnityEngine.Quaternion;
 using Vector3 = UnityEngine.Vector3;
+using UnityEngine.SceneManagement;
 
 public class FireManager : MonoBehaviour
 {
@@ -106,13 +107,23 @@ public class FireManager : MonoBehaviour
     private void OnEnable()
     {
         MouseClick.Enable();
+        SceneManager.sceneLoaded += OnSceneLoaded;
         //MouseClick.performed += mouseActionCheck;
     }
 
     private void OnDisable()
     {
         MouseClick.Disable();
+        SceneManager.sceneLoaded -= OnSceneLoaded;
         //MouseClick.performed -= mouseActionCheck;
+    }
+
+    private void OnSceneLoaded(Scene scene, LoadSceneMode mode) // sets Vignette to 0 on main menu load
+    {
+        if (scene.name == "MainMenu")
+        {
+            SetVignetteTarget(0f);
+        }
     }
 
     public void CoolButtonTrigger()
