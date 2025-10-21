@@ -21,15 +21,8 @@ public class TutorialUI : MonoBehaviour
         counterText.text = (currentTutIndex + 1) + "/" + TutorialManager.seenClips.Count;
     }
 
-    void OnEnable()
-    {
-        Time.timeScale = 0.0f;
-    }
-
     void OnDisable()
     {
-        Time.timeScale = 1.0f;
-
         if (TutorialManager.tutorialQueue.Count > 0)
         {
             ShowTutorial(TutorialManager.tutorialQueue[0]);

@@ -225,6 +225,7 @@ MonoBehaviour:
   startDelay: 0.2
   spring: 50
   damp: 10
+  runOnUpdate: 0
 --- !u!114 &1536314312590829465
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -506,6 +507,7 @@ MonoBehaviour:
   startDelay: 0.1
   spring: 50
   damp: 10
+  runOnUpdate: 0
 --- !u!114 &3621433960160444546
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -778,6 +780,7 @@ MonoBehaviour:
   startDelay: 0.3
   spring: 50
   damp: 10
+  runOnUpdate: 0
 --- !u!1 &3566521114704172497
 GameObject:
   m_ObjectHideFlags: 0
@@ -830,6 +833,7 @@ MonoBehaviour:
   startDelay: 0.2
   spring: 50
   damp: 25
+  runOnUpdate: 0
 --- !u!1 &3705844446833309692
 GameObject:
   m_ObjectHideFlags: 0
@@ -1336,6 +1340,7 @@ MonoBehaviour:
   startDelay: 0.3
   spring: 50
   damp: 10
+  runOnUpdate: 0
 --- !u!114 &5696332807269589225
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1579,6 +1584,7 @@ MonoBehaviour:
   startDelay: 0.4
   spring: 50
   damp: 10
+  runOnUpdate: 0
 --- !u!1 &6691310904805340828
 GameObject:
   m_ObjectHideFlags: 0
@@ -1903,6 +1909,7 @@ MonoBehaviour:
   startDelay: 0.1
   spring: 50
   damp: 25
+  runOnUpdate: 0
 --- !u!114 &8179909582531143904
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2065,6 +2072,7 @@ MonoBehaviour:
   startDelay: 0.5
   spring: 50
   damp: 10
+  runOnUpdate: 0
 --- !u!114 &494261792286010885
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2294,6 +2302,7 @@ MonoBehaviour:
   startDelay: 0.3
   spring: 50
   damp: 10
+  runOnUpdate: 0
 --- !u!1 &8263035981242460351
 GameObject:
   m_ObjectHideFlags: 0
@@ -2496,6 +2505,7 @@ MonoBehaviour:
   startDelay: 0.3
   spring: 50
   damp: 25
+  runOnUpdate: 0
 --- !u!1 &9172179397765630760
 GameObject:
   m_ObjectHideFlags: 0

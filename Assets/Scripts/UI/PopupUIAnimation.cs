@@ -4,6 +4,7 @@ public class PopupUIAnimation : MonoBehaviour
 {
     [SerializeField] private GameObject motionRootObject;
     [SerializeField] private GameObject bgCloseButtonObject;
+    [SerializeField] private bool runOnUpdate = false;
 
     [HideInInspector] public bool open = false;
 
@@ -19,15 +20,14 @@ public class PopupUIAnimation : MonoBehaviour
 
     void Update()
     {
-        // Movement Animation
-        if (movementAnimation == null) return;
-        motionRootObject.transform.localPosition = movementAnimation.Update(motionRootObject.transform.localPosition);
+        if (!runOnUpdate) return;
+        UpdateCode();
+    }
 
-        if (motionRootObject.transform.localPosition.y < -600.0f)
-        {
-            gameObject.SetActive(false);
-            movementAnimation = null;
-        }
+    void FixedUpdate()
+    {
+        if (runOnUpdate) return;
+        UpdateCode();
     }
 
     public void BgCloseButtonPressed()
@@ -59,5 +59,18 @@ public class PopupUIAnimation : MonoBehaviour
             40.0f,
             startPos + new Vector3(0.0f, -600.0f)
         );
+    }
+
+    private void UpdateCode()
+    {
+        // Movement Animation
+        if (movementAnimation == null) return;
+        motionRootObject.transform.localPosition = movementAnimation.Update(motionRootObject.transform.localPosition);
+
+        if (motionRootObject.transform.localPosition.y < -600.0f)
+        {
+            gameObject.SetActive(false);
+            movementAnimation = null;
+        }
     }
 }

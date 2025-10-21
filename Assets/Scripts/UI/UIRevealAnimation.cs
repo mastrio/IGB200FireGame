@@ -5,11 +5,19 @@ public class UIRevealAnimation : MonoBehaviour
     [SerializeField] private float startDelay = 0.0f;
     [SerializeField] private float spring = 50.0f;
     [SerializeField] private float damp = 25.0f;
+    [SerializeField] private bool runOnUpdate = false;
 
     private SpringDamperVector3 scaleAnimation;
 
     void Update()
     {
+        if (!runOnUpdate) return;
+        transform.localScale = scaleAnimation.Update(transform.localScale);
+    }
+
+    void FixedUpdate()
+    {
+        if (runOnUpdate) return;
         transform.localScale = scaleAnimation.Update(transform.localScale);
     }
 

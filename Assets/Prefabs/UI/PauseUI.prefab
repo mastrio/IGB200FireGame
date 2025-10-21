@@ -195,6 +195,7 @@ MonoBehaviour:
   startDelay: 0
   spring: 50
   damp: 10
+  runOnUpdate: 1
 --- !u!114 &1217864114900787088
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -464,6 +465,7 @@ MonoBehaviour:
   startDelay: 0
   spring: 50
   damp: 10
+  runOnUpdate: 1
 --- !u!114 &1368072221161900830
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -658,6 +660,7 @@ MonoBehaviour:
   startDelay: 0
   spring: 50
   damp: 10
+  runOnUpdate: 1
 --- !u!114 &7108419130299879815
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -961,3 +964,4 @@ MonoBehaviour:
   startDelay: 0
   spring: 50
   damp: 10
+  runOnUpdate: 1
