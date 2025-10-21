@@ -11,7 +11,7 @@ public class GameSoundManager : MonoBehaviour
     [SerializeField] private AudioSource forestSound;
     [SerializeField] private AudioSource animalSound;
     [SerializeField] private AudioSource insectSound;
-    [SerializeField] private AudioSource screamSound; 
+    [SerializeField] private AudioSource steamingSound; 
 
     private List<Transform> activeFireTransforms = new List<Transform>();
     private Transform playerTransform;
@@ -32,7 +32,7 @@ public class GameSoundManager : MonoBehaviour
             return;
         }
         Instance = this;
-        DontDestroyOnLoad(gameObject);
+        fireSound = GetComponent<AudioSource>();
         playerTransform = GameObject.FindWithTag("Player")?.transform;
 
         if (forestSound != null) forestSound.Play();
@@ -74,14 +74,11 @@ public class GameSoundManager : MonoBehaviour
             fireSound.volume = baseVolume * intensityFactor * proximityFactor;
 
             // Play screaming sound once when intensity goes high
-            if (isHighIntensity && !wasHighIntensity && !hasPlayedScream && screamSound != null)
+            if (isHighIntensity && !wasHighIntensity && !hasPlayedScream && steamingSound != null)
             {
-                screamSound.PlayOneShot(screamSound.clip); 
-                hasPlayedScream = true;
-            }
-            else if (!isHighIntensity)
-            {
-                hasPlayedScream = false; // Reset for next high intensity event
+                steamingSound.volume = 0.1f; //Subtle volume
+                steamingSound.loop = false;
+                steamingSound.PlayOneShot(steamingSound.clip);                
             }
         }
         else
