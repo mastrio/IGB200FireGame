@@ -10,7 +10,7 @@ public class ScoreManager : MonoBehaviour
     [SerializeField] public ParticleSystem EmberParticles;
 
 
-    [HideInInspector] public int score;
+    [HideInInspector] public float score;
     private float particleTimer = 0.0f;
 
     private void Awake()
@@ -40,15 +40,17 @@ public class ScoreManager : MonoBehaviour
         //}
     }
 
-    public void AddScore(int points)
+    public void AddScore(float points)
     {
         score += points;
-        ScoreText.text = score.ToString();
+        ScoreText.text = Mathf.RoundToInt(score).ToString();
 
         //particleTimer = Time.time + 1.0f;
         //if (points > 0) scorePositiveParticles.gameObject.SetActive(true);
         // else if (points < 0) scoreNegativeParticles.gameObject.SetActive(true);
     }
+
+ 
 
     public void UpdateScore(int SucessfulBurn) //Change to switch
     {

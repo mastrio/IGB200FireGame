@@ -111,20 +111,54 @@ public class CoolBurnFuelTarget : MonoBehaviour
     private void Update()
     {
 
-        if (FireObjectRef != null)
+        if (FireObjectRef == null)
         {
-            if (burning)
+            return;
+        }
+
+        if (burning)
+        {
+            CoolburnIntensifying(FireObjectRef.fireIntensity);
+
+            if (FireObjectRef.fireIntensity > 70f && FireObjectRef.fireIntensity <= 130f)
             {
                 BurnTimer += Time.deltaTime;
-                CoolburnIntensifying(FireObjectRef.fireIntensity);
-                AddScoreForFire(FireObjectRef.fireIntensity);
+                Debug.Log(BurnTimer);
+
+                if (BurnTimer >= 5f)
+                {
+                    burning = false;
+                    ScoreManager.instance.AddScore(1);
+                    ScoreManager.instance.scorePositiveParticles.Play(true);
+                    Destroy(gameObject);
+                }
+            }
+            else if (FireObjectRef.fireIntensity > 130f)
+            {
+                BurnTimer += Time.deltaTime;
+                Debug.Log(BurnTimer);
+                if (BurnTimer >= 5f)
+                {
+
+                    //Ember Particles
+                    burning = false;
+                    Destroy(gameObject);
+                }
             }
             else
             {
                 BurnTimer = 0f;
             }
 
+            AddScoreForFire(FireObjectRef.fireIntensity);
+
         }
+        else
+        {
+            BurnTimer = 0f;
+        }
+    }
+
 
         //if (burning & tempFireTimer <= 0f)
         // {
@@ -136,7 +170,6 @@ public class CoolBurnFuelTarget : MonoBehaviour
         //         tempFireTimer -= Time.deltaTime;
         //   }
 
-    }
 
     private void CoolburnIntensifying(float FireIntensity)
     {
@@ -187,36 +220,7 @@ public class CoolBurnFuelTarget : MonoBehaviour
         else if (currentIntensity <= 70f)
         {
             ScoreManager.instance.scorePositiveParticles.Play(true);
-                BurnTimer = 0f;
         }
-        else if (currentIntensity  > 70f && currentIntensity <= 130f)
-        {
-            Debug.Log(BurnTimer);
-            if (BurnTimer >= 10f)
-            {
-                burning = false;
-                ScoreManager.instance.AddScore(10);
-                ScoreManager.instance.scorePositiveParticles.Play(true);
-                Destroy(gameObject);
-            }
-            else
-            {
-                ScoreManager.instance.scorePositiveParticles.Play(true);
-            }
-        }
-        else if (currentIntensity > 130f)
-        {
-       
-            if (BurnTimer >= 10f)
-            {
-
-                //Ember Particles
-                burning = false;
-                Destroy(gameObject);
-            }
-        }
-
-       
     }
 
     private void AddScoreForFire(float currentIntensity)
@@ -228,13 +232,13 @@ public class CoolBurnFuelTarget : MonoBehaviour
         }
         else if (FireObjectRef.fireIntensity <= 70f)
         {
-            ScoreManager.instance.AddScore(1);
+            ScoreManager.instance.AddScore(0.1f);
 
 
         }
         else if (FireObjectRef.fireIntensity <= 130f)
         {
-            ScoreManager.instance.AddScore(2);
+            ScoreManager.instance.AddScore(0.2f);
 
 
         }

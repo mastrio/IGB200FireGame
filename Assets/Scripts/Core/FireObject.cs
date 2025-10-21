@@ -63,7 +63,7 @@ public class FireObject : MonoBehaviour
 
 
         // Added for testing the management UI
-        fireIntensity = 50.0f;
+        fireIntensity = 20.0f;
 
         ChangeDirection();
 
@@ -390,12 +390,13 @@ public class FireObject : MonoBehaviour
         if (t <= 130f)
         {
             //Edit the 0.1f (min speed), and 0.6f (max speed) to alter what speed it used at low intensity. Could also change the exponent (3f) 
-            fireMoveSpeed = Mathf.Lerp(0.1f, 0.6f, Mathf.Pow(t / 130f, 3f));
+            //fireMoveSpeed = Mathf.Lerp(0.1f, 0.6f, Mathf.Pow(t / 130f, 3f));
+            fireMoveSpeed = Mathf.Lerp(0.2f, 0.8f, Mathf.Pow(t / 130f, 3f));
         }
         else //If above 130 (in red) use fast speed
         {
             //Edit the 0.6f (min) and 2.5f (max) to alter the speed it uses across intensity or change the exponent (2f)
-            fireMoveSpeed = Mathf.Lerp(0.6f, 2.5f, Mathf.Pow((t-130f) / 70f, 2f));
+            fireMoveSpeed = Mathf.Lerp(0.8f, 2.5f, Mathf.Pow((t-130f) / 70f, 2f));
         }
             //float fireMoveSpeed = Mathf.Lerp(0.1f, 1f, fireIntensity / 200f); - Old System
         // Update with current position and then start moving
