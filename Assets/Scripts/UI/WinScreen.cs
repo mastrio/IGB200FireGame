@@ -9,7 +9,7 @@ public class WinScreen : MonoBehaviour
     void OnEnable()
     {
         Time.timeScale = 0.0f;
-        scoreText.text = ScoreManager.instance.score + "!";
+        scoreText.text = "<sprite index=0> " + Mathf.RoundToInt(ScoreManager.instance.score) + "!";
     }
 
     public void HomeButtonPressed()

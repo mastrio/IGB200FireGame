@@ -1,3 +1,4 @@
+using System;
 using TMPro;
 using UnityEngine;
 
@@ -43,7 +44,7 @@ public class ScoreManager : MonoBehaviour
     public void AddScore(float points)
     {
         score += points;
-        ScoreText.text = Mathf.RoundToInt(score).ToString();
+        ScoreText.text = "<sprite index=0> " + Mathf.RoundToInt(score);
 
         //particleTimer = Time.time + 1.0f;
         //if (points > 0) scorePositiveParticles.gameObject.SetActive(true);
