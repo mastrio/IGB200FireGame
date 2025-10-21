@@ -185,7 +185,7 @@ public class FireManager : MonoBehaviour
 
     public void SetFireDangerLevel()
     {
-        FireDangerLevel = 60;
+        FireDangerLevel = 90;
     }
 
     public void IncreaseNumberOfFires(GameObject fireRef)
