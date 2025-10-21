@@ -128,7 +128,6 @@ public class CoolBurnFuelTarget : MonoBehaviour
             if (FireObjectRef.fireIntensity > 70f && FireObjectRef.fireIntensity <= 130f)
             {
                 BurnTimer += Time.deltaTime;
-                Debug.Log(BurnTimer);
 
                 if (BurnTimer >= 5f)
                 {
@@ -141,7 +140,7 @@ public class CoolBurnFuelTarget : MonoBehaviour
             else if (FireObjectRef.fireIntensity > 130f)
             {
                 BurnTimer += Time.deltaTime;
-                Debug.Log(BurnTimer);
+
                 if (BurnTimer >= 5f)
                 {
 

@@ -38,7 +38,7 @@ public class CoolburnButton : MonoBehaviour
 
     public void PointerUp()
     {
-        bool worked = FireManager.instance.mouseActionCheck(fireObjectPrefab); ;
+        bool worked = FireManager.instance.mouseActionCheck(fireObjectPrefab);
 
         if (worked)
         {

@@ -61,14 +61,11 @@ public class FireObject : MonoBehaviour
 
         thisBoxCollider = GetComponent<BoxCollider>();
 
-
-        // Added for testing the management UI
-        fireIntensity = 20.0f;
-
         ChangeDirection();
 
         fireObjectPS = GetComponentInChildren<ParticleSystem>();
-        
+
+        fireIntensity = 80.0f;
     }
 
     void OnDestroy()
@@ -226,8 +223,6 @@ public class FireObject : MonoBehaviour
 
         while (currentlyBurning)
         {
-            Debug.Log(fireIntensity);
-
             if (fireIntensity <= 0)
             {
                 fireIntensity = 1;
@@ -343,7 +338,7 @@ public class FireObject : MonoBehaviour
     {
         float Firex = UnityEngine.Random.Range(-1f, 1f);
         float Firez = UnityEngine.Random.Range(-1f, 1f);
-        FiresDirection = (new Vector3(Firex, 0, Firez) + (WindManager.instance.Direction * 2.0f)).normalized;
+        FiresDirection = new Vector3(Firex, 0, Firez).normalized;
     }
 
     private void Start()
@@ -407,7 +402,7 @@ public class FireObject : MonoBehaviour
         
 
         //The actual movement with the direction (Direction affected by wind already in ChangeDirection) multplied by the speed multiplied by Time.deltaTime.
-        transform.Translate(FiresDirection * fireMoveSpeed * Time.deltaTime, Space.World);
+        transform.Translate((FiresDirection + (WindManager.instance.Direction * 2.0f)).normalized * fireMoveSpeed * Time.deltaTime, Space.World);
 
 
     }

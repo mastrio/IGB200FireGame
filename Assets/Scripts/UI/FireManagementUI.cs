@@ -3,13 +3,18 @@ using UnityEngine;
 public class FireManagementUI : MonoBehaviour
 {
     [SerializeField] private PopupUIAnimation popupAnimation;
+    [SerializeField] private GameObject backgroundCloseButton;
     [SerializeField] private FireManagementBar fireManagementBar;
 
     void Update()
     {
         if (GameManager.instance.fireObjects.Count == 0)
         {
-            if (popupAnimation.open) popupAnimation.CloseUI();
+            if (popupAnimation.open)
+            {
+                popupAnimation.CloseUI();
+                backgroundCloseButton.SetActive(false);
+            }
             return;
         }
 
@@ -30,9 +35,13 @@ public class FireManagementUI : MonoBehaviour
             }
         }
 
-        if (closestDistance <= detectionRange && !popupAnimation.open)
+        if (closestDistance <= detectionRange)
         {
             fireManagementBar.fireObject = closestFireObject.GetComponent<FireObject>();
+        }
+
+        if (closestDistance <= detectionRange && !popupAnimation.open)
+        {
             popupAnimation.OpenUI();
         }
         else if (closestDistance > detectionRange && popupAnimation.open)

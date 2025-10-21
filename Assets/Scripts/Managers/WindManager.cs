@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class WindManager : MonoBehaviour
 {
-    private static int MAX_COUNTER = 60;
+    private static int DIRECTION_CHANGE_DELAY = 30; // Time in seconds
 
     [HideInInspector] public static WindManager instance;
 
@@ -44,7 +44,7 @@ public class WindManager : MonoBehaviour
         counter--;
         if (counter <= 0)
         {
-            counter = MAX_COUNTER * 60;
+            counter = DIRECTION_CHANGE_DELAY * 60;
 
             ChangeTargetDirection();
         }

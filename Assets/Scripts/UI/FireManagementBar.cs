@@ -6,6 +6,8 @@ public class FireManagementBar : MonoBehaviour
     [SerializeField] private GameObject minigamePosObj;
     [SerializeField] private GameObject bgButton;
     [SerializeField] private GameObject fireLevelObject;
+    [SerializeField] private GameObject tooColdText;
+    [SerializeField] private GameObject tooHotText;
     [SerializeField] private ObjectShaker objectShaker;
 
     [HideInInspector] public FireObject fireObject;
@@ -14,6 +16,8 @@ public class FireManagementBar : MonoBehaviour
     private LerpAnimationQuaternion rotAnimation;
     private LerpAnimationVector3 scaleAnimation;
     private PulseAnimationVector3 pulseAnimation;
+
+    private LerpAnimationVector3 fireLevelAnimation;
 
     private bool canDoTheThingNowOkayYeah = false;
 
@@ -52,9 +56,14 @@ public class FireManagementBar : MonoBehaviour
         }
     }
 
+    void Start()
+    {
+        fireLevelAnimation = new LerpAnimationVector3(Vector3.zero, 30.0f);
+    }
+
     void OnEnable()
     {
-        if (TutorialManager.instance.tutorialUI != null)
+        if (TutorialManager.instance != null && GameManager.instance != null)
         {
             if (!GameManager.instance.hasManagedFire)
             {
@@ -78,16 +87,23 @@ public class FireManagementBar : MonoBehaviour
         if (scaleAnimation != null) transform.localScale = scaleAnimation.Update(transform.localScale);
         if (pulseAnimation != null) transform.localScale = pulseAnimation.Update(transform.localScale);
 
+        fireLevelAnimation.targetVal = new Vector3(0.0f, -230.0f, 0.0f) + new Vector3(
+            0.0f,
+            Mathf.Clamp((fireObject.fireIntensity / fireObject.MaxFireIntensity) * 460.0f, 0.0f, 460.0f)
+        );
+        fireLevelObject.transform.localPosition = fireLevelAnimation.Update(fireLevelObject.transform.localPosition);
+
+        if (fireObject.fireIntensity <= 60.0f) tooColdText.SetActive(true);
+        else tooColdText.SetActive(false);
+
+        if (fireObject.fireIntensity >= 140.0f) tooHotText.SetActive(true);
+        else tooHotText.SetActive(false);
+
         switch (State)
         {
             case FireBarState.Info: StateInfo(); break;
             case FireBarState.Minigame: StateMinigame(); break;
         }
-
-        fireLevelObject.transform.localPosition = new Vector3(
-            0.0f,
-            (fireObject.fireIntensity - 100.0f) * 2.3f
-        );
     }
 
     public void ClickyClicked()
@@ -101,16 +117,16 @@ public class FireManagementBar : MonoBehaviour
             case FireBarState.Minigame:
                 pulseAnimation.Pulse();
                 objectShaker.ApplySharpShake(4.0f);
-                if (fireObject.fireIntensity > 0.0f) fireObject.fireIntensity -= 5.0f;
+                if (fireObject.fireIntensity > 0.0f) fireObject.fireIntensity -= 10.0f;
                 break;
         }
     }
 
     private void StateInfo()
     {
-        if (fireObject.fireIntensity > 100.0f)
+        if (fireObject.fireIntensity > 135.0f)
         {
-            objectShaker.SetSharpShake(Mathf.Clamp(fireObject.fireIntensity - 100.0f, 0.0f, 100.0f) * 0.15f);
+            objectShaker.SetSharpShake(Mathf.Clamp(fireObject.fireIntensity - 135.0f, 0.0f, 100.0f) * 0.15f);
         }
 
         transform.localScale = new Vector3(
@@ -121,10 +137,8 @@ public class FireManagementBar : MonoBehaviour
 
     private void StateMinigame()
     {
-        //if (fireObject.fireIntensity > 100.0f)
-        //{
-        //    objectShaker.SetSharpShake(Mathf.Clamp(fireObject.fireIntensity - 100.0f, 0.0f, 100.0f) * 0.01f);
-        //}
+        tooColdText.SetActive(false);
+        tooHotText.SetActive(false);
     }
 }
 
