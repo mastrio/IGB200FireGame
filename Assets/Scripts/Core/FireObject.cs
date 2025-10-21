@@ -15,6 +15,7 @@ public class FireObject : MonoBehaviour
     private bool BurningHighFuel = false;
     private bool currentlyBurning = false;
     private float updateIntensity;
+    private bool goingBackToCentre = false;
 
     private BoxCollider thisBoxCollider;
     private Vector3 initalColliderSize = new Vector3(5.6f, 3.2f, 5.6f);
@@ -133,10 +134,10 @@ public class FireObject : MonoBehaviour
         if (other.CompareTag(boundaryTag))
         {
             Vector3 backToCentre = (Vector3.zero - transform.position).normalized;
-
             backToCentre.y = 0f;
 
             FiresDirection = backToCentre;
+            goingBackToCentre = true;
         }
 
         if (other.CompareTag(highFuelTag))
@@ -339,6 +340,7 @@ public class FireObject : MonoBehaviour
         float Firex = UnityEngine.Random.Range(-1f, 1f);
         float Firez = UnityEngine.Random.Range(-1f, 1f);
         FiresDirection = new Vector3(Firex, 0, Firez).normalized;
+        goingBackToCentre = false;
     }
 
     private void Start()
@@ -397,12 +399,15 @@ public class FireObject : MonoBehaviour
             //Edit the 0.6f (min) and 2.5f (max) to alter the speed it uses across intensity or change the exponent (2f)
             fireMoveSpeed = Mathf.Lerp(0.8f, 2.5f, Mathf.Pow((t-130f) / 70f, 2f));
         }
-            //float fireMoveSpeed = Mathf.Lerp(0.1f, 1f, fireIntensity / 200f); - Old System
+        //float fireMoveSpeed = Mathf.Lerp(0.1f, 1f, fireIntensity / 200f); - Old System
         // Update with current position and then start moving
-        
+
 
         //The actual movement with the direction (Direction affected by wind already in ChangeDirection) multplied by the speed multiplied by Time.deltaTime.
-        transform.Translate((FiresDirection + (WindManager.instance.Direction * 2.0f)).normalized * fireMoveSpeed * Time.deltaTime, Space.World);
+        Vector3 windInfluence = WindManager.instance.Direction * 2.0f;
+        if (goingBackToCentre) windInfluence = Vector3.zero;
+        Vector3 velocity = (FiresDirection + windInfluence).normalized * fireMoveSpeed * Time.deltaTime;
+        transform.Translate(velocity, Space.World);
 
 
     }
