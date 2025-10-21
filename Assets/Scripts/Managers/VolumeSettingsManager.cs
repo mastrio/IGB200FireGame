@@ -26,7 +26,7 @@ public class VolumeSettingsManager : MonoBehaviour
 
         // Load saved volumes or use defaults if not set
         backgroundMusic = PlayerPrefs.GetFloat("BackgroundMusic", 0.5f);
-        soundEffectsVolume = PlayerPrefs.GetFloat("SoundEffetcsVolume", 0.5f);
+        soundEffectsVolume = PlayerPrefs.GetFloat("SoundEffectsVolume", 0.5f);
 
         // Apply loaded volumes
         isInitializing = true;

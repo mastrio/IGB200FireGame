@@ -1518,19 +1518,7 @@ MonoBehaviour:
   m_Value: 0.5
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 457931272}
-        m_TargetAssemblyTypeName: AudioMixerController, Assembly-CSharp
-        m_MethodName: SetMusicVolume
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!4 &505429067 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 3a5ce0fd19862ea41bc2dbb1d946b81d, type: 3}
@@ -4017,7 +4005,7 @@ AudioSource:
   m_GameObject: {fileID: 1045250686}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 5852334376098286528, guid: eb30448f3232ac34cb0261eb9904b8ca, type: 2}
+  OutputAudioMixerGroup: {fileID: -3013067796737936207, guid: eb30448f3232ac34cb0261eb9904b8ca, type: 2}
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 8300000, guid: 71358221651c04c43b9cea8a32bdae6c, type: 3}
   m_PlayOnAwake: 0
@@ -4503,7 +4491,7 @@ AudioSource:
   m_GameObject: {fileID: 1099213895}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 5852334376098286528, guid: eb30448f3232ac34cb0261eb9904b8ca, type: 2}
+  OutputAudioMixerGroup: {fileID: -3013067796737936207, guid: eb30448f3232ac34cb0261eb9904b8ca, type: 2}
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 8300000, guid: 4272a8283c0e2834485b1346c5324ae6, type: 3}
   m_PlayOnAwake: 0
@@ -8170,19 +8158,7 @@ MonoBehaviour:
   m_Value: 0.5
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 2043364377}
-        m_TargetAssemblyTypeName: AudioMixerController, Assembly-CSharp
-        m_MethodName: SetSFXVolume
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &2043364375
 MonoBehaviour:
   m_ObjectHideFlags: 0
