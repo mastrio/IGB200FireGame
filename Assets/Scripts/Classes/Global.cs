@@ -8,7 +8,7 @@ public static class Global
     // Enables dev cheat keys (F1, etc.)
     public static bool devMode = true;
 
-    public static int scenarioNum = 1;
+    public static int scenarioNum = 2;
 
     // Method for resetting global data.
     // Should only be called when returning to the main menu / scenario select menu after winning/losing a scenario.

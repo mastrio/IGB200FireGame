@@ -30,10 +30,8 @@ public class TutorialUI : MonoBehaviour
     {
         Time.timeScale = 1.0f;
 
-        Debug.Log("FUCK");
         if (TutorialManager.tutorialQueue.Count > 0)
         {
-            Debug.Log("AHAHHHHHHHH");
             ShowTutorial(TutorialManager.tutorialQueue[0]);
             TutorialManager.tutorialQueue.RemoveAt(0);
         }
@@ -72,7 +70,7 @@ public class TutorialUI : MonoBehaviour
 
     public bool ShowTutorial(string tutorialName, bool force = false)
     {
-        if (Global.scenarioNum != 1) return false;
+        if (Global.scenarioNum != 1 && !force) return false;
 
         for (int i = 0; i < TutorialManager.instance.tutorialClips.Length; i++)
         {

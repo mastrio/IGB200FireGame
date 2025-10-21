@@ -3,7 +3,7 @@ using UnityEngine.SceneManagement;
 
 public class PauseUI : MonoBehaviour
 {
-    [SerializeField] private GameObject gameUIObject;
+    [SerializeField] private GameObject[] hideableObjects;
 
     void Start()
     {
@@ -14,14 +14,22 @@ public class PauseUI : MonoBehaviour
     {
         Time.timeScale = 0.0f;
         gameObject.SetActive(true);
-        gameUIObject.SetActive(false);
+
+        foreach (GameObject thing in hideableObjects)
+        {
+            thing.SetActive(false);
+        }
     }
 
     public void Unpause()
     {
         Time.timeScale = 1.0f;
         gameObject.SetActive(false);
-        gameUIObject.SetActive(true);
+
+        foreach (GameObject thing in hideableObjects)
+        {
+            thing.SetActive(true);
+        }
     }
 
     public void UnpauseButtonPressed()

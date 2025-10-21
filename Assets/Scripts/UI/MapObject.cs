@@ -15,10 +15,14 @@ public class MapObject : MonoBehaviour
     private float updateTimer = maxTimerVal;
     private Vector3 linkedObjPos;
 
+    private Vector3 baseScale;
+
     private bool objectReady = false;
 
     void Start()
     {
+        baseScale = transform.localScale;
+
         sprite.color = new Color(1.0f, 1.0f, 1.0f, 0.0f);
 
         if (matchRotation)
@@ -26,7 +30,7 @@ public class MapObject : MonoBehaviour
             transform.rotation = Quaternion.Euler(new Vector3(
                 0.0f,
                 0.0f,
-                linkedObject.transform.rotation.eulerAngles.y
+                -linkedObject.transform.rotation.eulerAngles.y
             ));
         }
     }
@@ -41,10 +45,10 @@ public class MapObject : MonoBehaviour
 
         if (scaleWithZoom)
         {
-            transform.localScale = new Vector3(
-                GameManager.instance.mapZoomLevel,
-                GameManager.instance.mapZoomLevel,
-                1.0f
+            transform.localScale = baseScale + new Vector3(
+                GameManager.instance.mapZoomLevel - 1.0f,
+                GameManager.instance.mapZoomLevel - 1.0f,
+                0.0f
             );
         }
     }
