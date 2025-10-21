@@ -222,7 +222,7 @@ public class FireObject : MonoBehaviour
         maxHighFuelFirePsScale = new Vector3(7.17f, 7.823f, 2f);
         //Fire Objects emission values (lerps across the emission change here for the main object)
         minFirePSEmission = 100f;
-        maxFirePSEmission = 500f;
+        maxFirePSEmission = 800f;
 
         while (currentlyBurning)
         {
