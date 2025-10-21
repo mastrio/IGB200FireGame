@@ -4,8 +4,9 @@ public class FireDangerArrow : MonoBehaviour
 {
     //[SerializeField] private GameObject fireParticles;
     [SerializeField] private ParticleSystem fireParticles;
-
+    [SerializeField] private float rotationSpeed = 5f;
     public Transform needle;
+
 
     void Update()
     {
@@ -13,9 +14,13 @@ public class FireDangerArrow : MonoBehaviour
         //If you want to change it basically need the max to be something that will be able to = 180 max for the the clamp value so 30 * 6, 60 * 3, 90 *2 
         float angle = 90 - (clampValue*2);
 
-        needle.localRotation = Quaternion.Euler(0f, 0f, angle);
+        Quaternion presentRotation = needle.localRotation;
 
-        if (FireManager.instance.FireDangerLevel >= 90f) fireParticles.Play();
+        Quaternion targetRotation = Quaternion.Euler(0f, 0f, angle);
+
+        needle.localRotation = Quaternion.Lerp(presentRotation,targetRotation,Time.deltaTime * 5f);
+
+        if (FireManager.instance.FireDangerLevel >= 45f) fireParticles.Play();
         else fireParticles.Stop();
     }
 }
