@@ -130,7 +130,7 @@ public class CoolBurnManager : MonoBehaviour
                 FireManager.instance.UpdateFireDangerLevel();
                 Destroy(firePS.gameObject); //Change too stop particle emission later
                 currentlyBurning = false;
-                ScoreManager.instance.UpdateScore(2);
+                //ScoreManager.instance.UpdateScore(2);
             }
 
 
@@ -148,7 +148,7 @@ public class CoolBurnManager : MonoBehaviour
                     Debug.Log("Destoryed");
                     FireManager.instance.UpdateFireDangerLevel();
                     currentlyBurning = false;
-                    ScoreManager.instance.UpdateScore(5);
+                    //ScoreManager.instance.UpdateScore(5);
                     Destroy(this.GameObject());
                 }
             }

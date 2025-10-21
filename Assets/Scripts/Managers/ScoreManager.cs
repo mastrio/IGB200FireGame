@@ -49,47 +49,20 @@ public class ScoreManager : MonoBehaviour
         //if (points > 0) scorePositiveParticles.gameObject.SetActive(true);
         // else if (points < 0) scoreNegativeParticles.gameObject.SetActive(true);
     }
-
- 
-
-    public void UpdateScore(int SucessfulBurn) //Change to switch
+}
+/*
+    public void AddHighScore()
     {
-        if (SucessfulBurn == 1) //Coolburn Managed
+        if (score > PlayerPrefs.GetInt("HighScore", 0))
         {
-            AddScore(150);
-        }
-        else if (SucessfulBurn == 2) //Burnable Managed
-        {
-            AddScore(75);
-        }
-        else if (SucessfulBurn == 3)
-        {
-            AddScore(-10);
-        }
-        else if (SucessfulBurn == 4)
-        {
-            AddScore(90);
-        }
-        else if (SucessfulBurn == 5)
-        {
-            AddScore(50);
+            PlayerPrefs.SetInt("HighScore", score);
+            highScore.text = score.ToString();
         }
     }
 
-    /*
-        public void AddHighScore()
-        {
-            if (score > PlayerPrefs.GetInt("HighScore", 0))
-            {
-                PlayerPrefs.SetInt("HighScore", score);
-                highScore.text = score.ToString();
-            }
-        }
-
-        public void Reset()
-        {
-            PlayerPrefs.DeleteKey("HighScore");
-            highScore.text = "Highscore: None";
-        }
-    */
-}
+    public void Reset()
+    {
+        PlayerPrefs.DeleteKey("HighScore");
+        highScore.text = "Highscore: None";
+    }
+*/

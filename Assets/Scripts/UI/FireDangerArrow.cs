@@ -9,9 +9,9 @@ public class FireDangerArrow : MonoBehaviour
 
     void Update()
     {
-        int clampValue = Mathf.Clamp(FireManager.instance.FireDangerLevel, 0, 90);
+        int clampValue = Mathf.Clamp(FireManager.instance.FireDangerLevel, 0, 60);
 
-        float angle = 90 - (clampValue*2);
+        float angle = 90 - (clampValue*3);
 
         needle.localRotation = Quaternion.Euler(0f, 0f, angle);
 
