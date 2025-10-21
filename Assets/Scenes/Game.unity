@@ -1870,6 +1870,14 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 6475722818207994734, guid: ca7136900f6d1e84a8649cd21d0d04e9, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 35
+      objectReference: {fileID: 0}
+    - target: {fileID: 6475722818207994734, guid: ca7136900f6d1e84a8649cd21d0d04e9, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6691310904805340828, guid: ca7136900f6d1e84a8649cd21d0d04e9, type: 3}
       propertyPath: m_Layer
       value: 5
