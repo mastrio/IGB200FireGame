@@ -234,135 +234,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 5176716803544275067, guid: 155fbdda967cba74e9f132a94c5245be, type: 3}
   m_PrefabInstance: {fileID: 79329028}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &121265027
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 121265028}
-  - component: {fileID: 121265029}
-  m_Layer: 0
-  m_Name: FireExtinguishSound
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &121265028
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 121265027}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1336228718}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!82 &121265029
-AudioSource:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 121265027}
-  m_Enabled: 1
-  serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 5852334376098286528, guid: eb30448f3232ac34cb0261eb9904b8ca, type: 2}
-  m_audioClip: {fileID: 0}
-  m_Resource: {fileID: 8300000, guid: e2ac7f32820a6124fb7e622c05fc73ce, type: 3}
-  m_PlayOnAwake: 0
-  m_Volume: 1
-  m_Pitch: 1
-  Loop: 0
-  Mute: 0
-  Spatialize: 0
-  SpatializePostEffects: 0
-  Priority: 128
-  DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
-  Pan2D: 0
-  rolloffMode: 0
-  BypassEffects: 0
-  BypassListenerEffects: 0
-  BypassReverbZones: 0
-  rolloffCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  panLevelCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  spreadCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  reverbZoneMixCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
 --- !u!1 &147282358 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6663361652103868329, guid: 0ee4f6d712494f845a55793f81f627d1, type: 3}
@@ -394,7 +265,7 @@ AudioSource:
   m_GameObject: {fileID: 167735420}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 5852334376098286528, guid: eb30448f3232ac34cb0261eb9904b8ca, type: 2}
+  OutputAudioMixerGroup: {fileID: -3013067796737936207, guid: eb30448f3232ac34cb0261eb9904b8ca, type: 2}
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 8300000, guid: 71358221651c04c43b9cea8a32bdae6c, type: 3}
   m_PlayOnAwake: 0
@@ -1415,7 +1286,7 @@ AudioSource:
   m_GameObject: {fileID: 906222923}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 5852334376098286528, guid: eb30448f3232ac34cb0261eb9904b8ca, type: 2}
+  OutputAudioMixerGroup: {fileID: -3013067796737936207, guid: eb30448f3232ac34cb0261eb9904b8ca, type: 2}
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 8300000, guid: b3701f21263615d47850401911f138b6, type: 3}
   m_PlayOnAwake: 1
@@ -2208,7 +2079,7 @@ GameObject:
   - component: {fileID: 1253381282}
   - component: {fileID: 1253381283}
   m_Layer: 0
-  m_Name: ScreamingSFX
+  m_Name: SteamingSFX
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2238,9 +2109,9 @@ AudioSource:
   m_GameObject: {fileID: 1253381281}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 5852334376098286528, guid: eb30448f3232ac34cb0261eb9904b8ca, type: 2}
+  OutputAudioMixerGroup: {fileID: -3013067796737936207, guid: eb30448f3232ac34cb0261eb9904b8ca, type: 2}
   m_audioClip: {fileID: 0}
-  m_Resource: {fileID: 8300000, guid: 1e81a057b8ddff841bac95967bc91f3d, type: 3}
+  m_Resource: {fileID: 8300000, guid: 947bb790934354a42950bfcf2b6b3c13, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -2365,7 +2236,6 @@ Transform:
   - {fileID: 906222925}
   - {fileID: 167735422}
   - {fileID: 1253381282}
-  - {fileID: 121265028}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1389839446
@@ -2938,7 +2808,7 @@ AudioSource:
   m_GameObject: {fileID: 1657488375}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 5852334376098286528, guid: eb30448f3232ac34cb0261eb9904b8ca, type: 2}
+  OutputAudioMixerGroup: {fileID: -3013067796737936207, guid: eb30448f3232ac34cb0261eb9904b8ca, type: 2}
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 8300000, guid: 020662b56df7638459f1d893060bbdaf, type: 3}
   m_PlayOnAwake: 1
@@ -3419,7 +3289,7 @@ MonoBehaviour:
   forestSound: {fileID: 1461540178}
   animalSound: {fileID: 1657488376}
   insectSound: {fileID: 906222924}
-  screamSound: {fileID: 1253381283}
+  steamingSound: {fileID: 1253381283}
   maxHearDistance: 20
   minHearDistance: 5
   minVolumeMultiplier: 0.2
@@ -3449,7 +3319,7 @@ AudioSource:
   m_GameObject: {fileID: 2062542147}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 5852334376098286528, guid: eb30448f3232ac34cb0261eb9904b8ca, type: 2}
+  OutputAudioMixerGroup: {fileID: -3013067796737936207, guid: eb30448f3232ac34cb0261eb9904b8ca, type: 2}
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 8300000, guid: 4e24a4fb18caf6243bdfa448762e62e0, type: 3}
   m_PlayOnAwake: 0
