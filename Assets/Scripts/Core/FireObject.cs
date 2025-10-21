@@ -124,8 +124,18 @@ public class FireObject : MonoBehaviour
             {
                 CollidedEnviromentNonTarget.BeginSpreadFire(this);
             }
-
-
+        }
+        else if (other.CompareTag(highFuelTag))
+        {
+            other.TryGetComponent<HighFuel>(out var CollidedHighFuel);
+            if (!CollidedHighFuel.burning)
+            {
+                CollidedHighFuel.BeginHighFuelFire(this);
+            }
+            if (!BurningHighFuel)
+            {
+                BurningHighFuel = true;
+            }
         }
     }
 
@@ -138,19 +148,6 @@ public class FireObject : MonoBehaviour
 
             FiresDirection = backToCentre;
             goingBackToCentre = true;
-        }
-
-        if (other.CompareTag(highFuelTag))
-        {
-            other.TryGetComponent<HighFuel>(out var CollidedHighFuel);
-            if (!CollidedHighFuel.burning)
-            {
-                CollidedHighFuel.BeginHighFuelFire(this);
-            }
-            if (!BurningHighFuel)
-            {
-                BurningHighFuel = true;
-            }
         }
     }
 
@@ -179,13 +176,9 @@ public class FireObject : MonoBehaviour
         else if (other.CompareTag(highFuelTag))
         {
             other.TryGetComponent<HighFuel>(out var CollidedHighFuel);
-            if (!CollidedHighFuel.burning)
+            if (CollidedHighFuel.burning)
             {
                 CollidedHighFuel.StoppingHighFuelBurn();
-            }
-
-            if (BurningHighFuel)
-            {
                 BurningHighFuel = false;
             }
         }

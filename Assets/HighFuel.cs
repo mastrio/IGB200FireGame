@@ -51,13 +51,13 @@ public class HighFuel : MonoBehaviour
     {
         burning = false;
 
-        if (fireExtinguisherCoroutine != null) StopCoroutine(fireExtinguisherCoroutine);
+        if (HighFuelBurningCoroutine != null) StopCoroutine(HighFuelBurningCoroutine);
 
         if (!gameObject.activeInHierarchy)
         {
             return;
         }
-        fireExtinguisherCoroutine = StartCoroutine(SpreadFireExtinguisher());
+        HighFuelBurningCoroutine = StartCoroutine(SpreadFireExtinguisher());
     }
 
     private IEnumerator SpreadFireExtinguisher()
