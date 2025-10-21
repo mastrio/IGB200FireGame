@@ -5132,6 +5132,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2098804955553287460, guid: 656d9ebb846b71c499c9a35902fec906, type: 3}
+      propertyPath: m_Transition
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2098804955553287460, guid: 656d9ebb846b71c499c9a35902fec906, type: 3}
+      propertyPath: m_SpriteState.m_PressedSprite
+      value: 
+      objectReference: {fileID: -1908409091, guid: c5a378a8eeda2e9458311109100ab707, type: 3}
     - target: {fileID: 2919208151415642872, guid: 656d9ebb846b71c499c9a35902fec906, type: 3}
       propertyPath: m_text
       value: Tutorial
@@ -5160,6 +5168,14 @@ PrefabInstance:
       propertyPath: m_hasFontAssetChanged
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3718905930449737369, guid: 656d9ebb846b71c499c9a35902fec906, type: 3}
+      propertyPath: m_Type
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3718905930449737369, guid: 656d9ebb846b71c499c9a35902fec906, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -1547399687, guid: c5a378a8eeda2e9458311109100ab707, type: 3}
     - target: {fileID: 5505339083377104671, guid: 656d9ebb846b71c499c9a35902fec906, type: 3}
       propertyPath: m_SizeDelta.x
       value: 150
@@ -5171,14 +5187,6 @@ PrefabInstance:
     - target: {fileID: 5505339083377104671, guid: 656d9ebb846b71c499c9a35902fec906, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 40
-      objectReference: {fileID: 0}
-    - target: {fileID: 8164922372065984360, guid: 656d9ebb846b71c499c9a35902fec906, type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 150
-      objectReference: {fileID: 0}
-    - target: {fileID: 8164922372065984360, guid: 656d9ebb846b71c499c9a35902fec906, type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 150
       objectReference: {fileID: 0}
     - target: {fileID: 8761255180238354367, guid: 656d9ebb846b71c499c9a35902fec906, type: 3}
       propertyPath: m_Name
@@ -8998,6 +9006,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2098804955553287460, guid: 656d9ebb846b71c499c9a35902fec906, type: 3}
+      propertyPath: m_Transition
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2098804955553287460, guid: 656d9ebb846b71c499c9a35902fec906, type: 3}
+      propertyPath: m_SpriteState.m_PressedSprite
+      value: 
+      objectReference: {fileID: -553485964, guid: c33aa9735d1efca4eaceaa679a8d619d, type: 3}
     - target: {fileID: 2919208151415642872, guid: 656d9ebb846b71c499c9a35902fec906, type: 3}
       propertyPath: m_text
       value: Scenario
@@ -9022,6 +9038,14 @@ PrefabInstance:
       propertyPath: m_hasFontAssetChanged
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3718905930449737369, guid: 656d9ebb846b71c499c9a35902fec906, type: 3}
+      propertyPath: m_Type
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3718905930449737369, guid: 656d9ebb846b71c499c9a35902fec906, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 1086399510, guid: c33aa9735d1efca4eaceaa679a8d619d, type: 3}
     - target: {fileID: 5505339083377104671, guid: 656d9ebb846b71c499c9a35902fec906, type: 3}
       propertyPath: m_SizeDelta.x
       value: 150
@@ -9033,14 +9057,6 @@ PrefabInstance:
     - target: {fileID: 5505339083377104671, guid: 656d9ebb846b71c499c9a35902fec906, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 40
-      objectReference: {fileID: 0}
-    - target: {fileID: 8164922372065984360, guid: 656d9ebb846b71c499c9a35902fec906, type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 150
-      objectReference: {fileID: 0}
-    - target: {fileID: 8164922372065984360, guid: 656d9ebb846b71c499c9a35902fec906, type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 150
       objectReference: {fileID: 0}
     - target: {fileID: 8761255180238354367, guid: 656d9ebb846b71c499c9a35902fec906, type: 3}
       propertyPath: m_Name

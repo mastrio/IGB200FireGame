@@ -95,8 +95,6 @@ public class TutorialUI : MonoBehaviour
                 tutorialText.text = clip.description;
 
                 popupAnimation.OpenUI();
-
-                Debug.Log("Showing tutorial \"" + tutorialName + "\"");
                 return true;
             }
         }

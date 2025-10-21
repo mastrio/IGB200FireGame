@@ -1,4 +1,4 @@
-// static class for storing any data that needs to be shared across scenes.
+// Static class for storing any data that needs to be shared across scenes.
 // e.g. what scenario is being played
 public static class Global
 {
