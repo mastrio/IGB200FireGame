@@ -22,6 +22,7 @@ public class EnviromentalBurnableNonTarget : MonoBehaviour
     private float fireIntensity;
 
     private Coroutine enviroIntensiftyCoroutine;
+
     public void BeginSpreadFire(FireObject baseFireObject)
     {
         BaseFireObjectRef = baseFireObject;
@@ -73,6 +74,11 @@ public class EnviromentalBurnableNonTarget : MonoBehaviour
             negativePS = null;
         }
 
+    }
+
+    private void OnDestroy()
+    {
+        RuntimeNavMesh.doRebuildNavmesh = true;
     }
 
     private void Update()
