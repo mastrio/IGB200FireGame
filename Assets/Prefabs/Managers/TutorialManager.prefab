@@ -53,20 +53,20 @@ MonoBehaviour:
   - name: PlayerMoved2
     description: "Ground clutter \u2192 Dry leaves and sticks \u2192 Burn easily
       if not cleared"
-    videoClip: {fileID: 32900000, guid: c9b4dab26c7091c4ca50ce2fbd7ca7c9, type: 3}
+    videoClip: {fileID: 32900000, guid: cbc2f74655474ed4382e55e1e9d08a5f, type: 3}
   - name: FirePlaced
     description: "Place cool burns \u2192 Burn ground clutter \u2192 Lower fire danger
       rating \u2192 Helps prevent big fires!"
-    videoClip: {fileID: 32900000, guid: c9b4dab26c7091c4ca50ce2fbd7ca7c9, type: 3}
+    videoClip: {fileID: 32900000, guid: 94a07fd63b398bd42a18234a5eb97f94, type: 3}
   - name: FireManagement
     description: "Manage cool burns \u2192 Prevent out-of-control fires \u2192 Protect
       environment"
-    videoClip: {fileID: 32900000, guid: c9b4dab26c7091c4ca50ce2fbd7ca7c9, type: 3}
+    videoClip: {fileID: 32900000, guid: d7b30ed6b6ee30f448ca0976d8940399, type: 3}
   - name: MapOpened
-    description: "Avoid high fuel areas \u2192 Condensed bush area \u2192 Use map
+    description: "Avoid high fuel areas! \u2192 Condensed bush area \u2192 Use map
       to plan"
-    videoClip: {fileID: 32900000, guid: c9b4dab26c7091c4ca50ce2fbd7ca7c9, type: 3}
+    videoClip: {fileID: 32900000, guid: b480dc9c362bc2d45bb4407e1424889a, type: 3}
   - name: WindDirection
     description: "Wind direction \u2192 Changes where fire goes \u2192 Plan cool
       burn"
-    videoClip: {fileID: 32900000, guid: c9b4dab26c7091c4ca50ce2fbd7ca7c9, type: 3}
+    videoClip: {fileID: 32900000, guid: 7d5919d9e393ae14fba638ec02b1a37d, type: 3}
