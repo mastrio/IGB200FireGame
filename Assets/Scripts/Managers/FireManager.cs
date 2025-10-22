@@ -118,10 +118,10 @@ public class FireManager : MonoBehaviour
         //MouseClick.performed -= mouseActionCheck;
     }
 
-    private void OnSceneLoaded(Scene scene, LoadSceneMode mode) // sets Vignette to 0 on main menu load
+    private void OnSceneLoaded(Scene scene, LoadSceneMode mode) // sets Vignette to 0 on scene load
     {
-        if (scene.name == "MainMenu")
-        {
+        if (scene.name == "MainMenu" || scene.name == "Game")
+            {
             SetVignetteTarget(0f);
         }
     }
