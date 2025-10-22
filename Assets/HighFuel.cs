@@ -148,7 +148,12 @@ public class HighFuel : MonoBehaviour
 
             if (BurnTimer >= 10f)
             {
-                Debug.Log(BurnTimer);
+                
+                
+                
+                
+                
+               
                 //Ember Particles
                 burning = false;
                 Instantiate(ashDestructionParticleGameObject,
@@ -160,7 +165,7 @@ public class HighFuel : MonoBehaviour
         }
         else if (fireIntensity >= 200f) //Testing
         {
-            Debug.Log(BurnTimer);
+           
             //Ember Particles
             burning = false;
 
