@@ -1278,6 +1278,7 @@ MonoBehaviour:
   startDelay: 0.1
   spring: 50
   damp: 10
+  runOnUpdate: 0
 --- !u!4 &430035426 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5473558538258285710, guid: b82582bb4de8b0d4c9a1ef81a5662ab7, type: 3}
@@ -1468,6 +1469,7 @@ MonoBehaviour:
   startDelay: 0.25
   spring: 50
   damp: 10
+  runOnUpdate: 0
 --- !u!114 &457931275
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1760,6 +1762,7 @@ MonoBehaviour:
   startDelay: 0.5
   spring: 50
   damp: 10
+  runOnUpdate: 0
 --- !u!114 &529747620
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2001,6 +2004,7 @@ MonoBehaviour:
   startDelay: 0.2
   spring: 50
   damp: 25
+  runOnUpdate: 0
 --- !u!114 &611183926
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2835,6 +2839,7 @@ MonoBehaviour:
   startDelay: 0.6
   spring: 50
   damp: 10
+  runOnUpdate: 0
 --- !u!114 &805803072
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3345,6 +3350,7 @@ MonoBehaviour:
   startDelay: 0.5
   spring: 50
   damp: 10
+  runOnUpdate: 0
 --- !u!114 &908213823
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3823,6 +3829,7 @@ MonoBehaviour:
   startDelay: 0.1
   spring: 50
   damp: 10
+  runOnUpdate: 0
 --- !u!114 &1024627813
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5472,6 +5479,7 @@ MonoBehaviour:
   startDelay: 0.2
   spring: 50
   damp: 25
+  runOnUpdate: 0
 --- !u!1 &1504253621
 GameObject:
   m_ObjectHideFlags: 0
@@ -5633,6 +5641,7 @@ MonoBehaviour:
   startDelay: 0.4
   spring: 50
   damp: 10
+  runOnUpdate: 0
 --- !u!114 &1504253628
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6059,6 +6068,7 @@ MonoBehaviour:
   startDelay: 0.4
   spring: 50
   damp: 10
+  runOnUpdate: 0
 --- !u!114 &1613838930
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8174,6 +8184,7 @@ MonoBehaviour:
   startDelay: 0.25
   spring: 50
   damp: 10
+  runOnUpdate: 0
 --- !u!114 &2043364376
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8694,6 +8705,7 @@ MonoBehaviour:
   startDelay: 0.1
   spring: 50
   damp: 10
+  runOnUpdate: 0
 --- !u!4 &2112876775 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3794896871722181480, guid: 156459ccd534ad847bbac87d85f8076a, type: 3}
