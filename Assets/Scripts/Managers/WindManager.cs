@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class WindManager : MonoBehaviour
 {
-    private static int DIRECTION_CHANGE_DELAY = 30; // Time in seconds
+    private static int DIRECTION_CHANGE_DELAY = 60; // Time in seconds
 
     [HideInInspector] public static WindManager instance;
 
@@ -12,6 +12,8 @@ public class WindManager : MonoBehaviour
 
     private float targetDirection;
     private int counter;
+
+    private int blah = 1;
 
     [HideInInspector]
     public Vector3 Direction
@@ -49,11 +51,20 @@ public class WindManager : MonoBehaviour
             ChangeTargetDirection();
         }
 
-        directionDegrees = Mathf.MoveTowards(directionDegrees, targetDirection, 0.2f);
+        directionDegrees = Mathf.MoveTowards(directionDegrees, targetDirection, blah * 0.2f);
     }
 
     private void ChangeTargetDirection()
     {
         targetDirection = Random.Range(0.0f, 360.0f);
+        
+        if (Random.Range(0, 1) == 0)
+        {
+            blah = 1;
+        }
+        else
+        {
+            blah = -1;
+        }
     }
 }
