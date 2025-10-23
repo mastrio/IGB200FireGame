@@ -15,7 +15,6 @@ public class MainMenu : MonoBehaviour
         Global.ResetData();
 
         if (!Global.playtestMode) playtestBuildText.SetActive(false);
-
     }
 
     public void PlayButtonPressed()

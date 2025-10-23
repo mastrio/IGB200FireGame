@@ -11,7 +11,6 @@ public class GameUI : MonoBehaviour
     private PopupUIAnimation phoneUIAnim;
     private PopupUIAnimation mapUIAnim;
     private PauseUI pauseUI;
-    private FireManager coolBurnStarter;
 
     private int UiFireDangerLevel;
 

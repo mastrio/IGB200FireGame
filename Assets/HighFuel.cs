@@ -50,7 +50,6 @@ public class HighFuel : MonoBehaviour
 
     private IEnumerator SpreadFireExtinguisher()
     {
-        //float delay = UnityEngine.Random.Range(15f, 20f);
         yield return new WaitForSeconds(4f);
 
         if (firePS != null && negativePS != null) //Temp fix to stop errors
