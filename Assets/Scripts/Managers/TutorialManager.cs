@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Video;
@@ -17,6 +18,20 @@ public class TutorialManager : MonoBehaviour
     void Awake()
     {
         instance = this;
+    }
+
+    public void DisplayTutorial(string tutorialName, bool force = false, float delay = 0.0f)
+    {
+        StartCoroutine(DisplayTutorialThingy(tutorialName, force, delay));
+    }
+
+    private IEnumerator DisplayTutorialThingy(string tutorialName, bool force = false, float delay = 0.0f)
+    {
+        yield return new WaitForSeconds(delay);
+
+        tutorialUI.ShowTutorial(tutorialName, force);
+
+        yield return null;
     }
 }
 

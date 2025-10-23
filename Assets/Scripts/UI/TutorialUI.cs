@@ -1,3 +1,4 @@
+using System.Collections;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Video;
@@ -23,9 +24,10 @@ public class TutorialUI : MonoBehaviour
 
     void OnDisable()
     {
+        Debug.Log("FUCK FUCKING FUCK FUCKY WUCKY FUCK SHIT");
         if (TutorialManager.tutorialQueue.Count > 0)
         {
-            ShowTutorial(TutorialManager.tutorialQueue[0]);
+            TutorialManager.instance.DisplayTutorial(TutorialManager.tutorialQueue[0], false, 0.1f);
             TutorialManager.tutorialQueue.RemoveAt(0);
         }
     }
@@ -55,7 +57,7 @@ public class TutorialUI : MonoBehaviour
             if (clip.name == TutorialManager.seenClips[index].name)
             {
                 currentTutIndex = index;
-                ShowTutorial(clip.name, true);
+                TutorialManager.instance.DisplayTutorial(clip.name, true);
                 return;
             }
         }

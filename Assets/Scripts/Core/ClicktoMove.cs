@@ -123,8 +123,8 @@ public class ClickToMove : MonoBehaviour
             if (!GameManager.instance.hasMoved)
             {
                 bool result = TutorialManager.instance.tutorialUI.QueueTutorial("PlayerMoved");
-                TutorialManager.instance.tutorialUI.QueueTutorial("PlayerMoved2"); // bad
-                TutorialManager.instance.tutorialUI.QueueTutorial("WindDirection"); // also bad
+                TutorialManager.instance.tutorialUI.QueueTutorial("PlayerMoved2");
+                TutorialManager.instance.tutorialUI.QueueTutorial("WindDirection");
 
                 if (result)
                 {

@@ -170,7 +170,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -200, y: 0}
-  m_SizeDelta: {x: 75, y: 75}
+  m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7826543191414455839
 CanvasRenderer:
@@ -281,6 +281,7 @@ MonoBehaviour:
   startDelay: 0
   spring: 50
   damp: 10
+  runOnUpdate: 0
 --- !u!114 &6008790927337590959
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -532,14 +533,12 @@ VideoPlayer:
   m_TimeUpdateMode: 2
   m_PlaybackSpeed: 1
   m_AudioOutputMode: 2
-  m_TargetAudioSources:
-  - {fileID: 0}
-  m_DirectAudioVolumes:
-  - 0
+  m_TargetAudioSources: []
+  m_DirectAudioVolumes: []
   m_Url: 
-  m_EnabledAudioTracks: 01
-  m_DirectAudioMutes: 00
-  m_ControlledAudioTrackCount: 1
+  m_EnabledAudioTracks: 
+  m_DirectAudioMutes: 
+  m_ControlledAudioTrackCount: 0
   m_PlayOnAwake: 1
   m_SkipOnDrop: 1
   m_Looping: 1
@@ -730,6 +729,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   motionRootObject: {fileID: 3100092926890266391}
   bgCloseButtonObject: {fileID: 280710239786609180}
+  runOnUpdate: 0
   open: 0
 --- !u!1 &4181023910803270910
 GameObject:
@@ -769,7 +769,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 200, y: 0}
-  m_SizeDelta: {x: 75, y: 75}
+  m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4897537271343888559
 CanvasRenderer:
@@ -880,6 +880,7 @@ MonoBehaviour:
   startDelay: 0
   spring: 50
   damp: 10
+  runOnUpdate: 0
 --- !u!114 &7628865648713658309
 MonoBehaviour:
   m_ObjectHideFlags: 0

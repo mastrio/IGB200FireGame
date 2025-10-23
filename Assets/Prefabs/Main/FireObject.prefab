@@ -47,7 +47,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f7895f7786ae22f4db47085c869e42f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerDetectionDistance: 7
+  playerDetectionDistance: 10
   MoveSpeed: 5
   fireIntensity: 0
   MaxFireIntensity: 200

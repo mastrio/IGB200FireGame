@@ -17,13 +17,11 @@ public class MapObject : MonoBehaviour
 
     private Vector3 baseScale;
 
-    private bool objectReady = false;
-
     void Start()
     {
-        baseScale = transform.localScale;
+        if (!CheckLinkedObject()) return;
 
-        sprite.color = new Color(1.0f, 1.0f, 1.0f, 0.0f);
+        baseScale = transform.localScale;
 
         if (matchRotation)
         {
@@ -64,18 +62,18 @@ public class MapObject : MonoBehaviour
         }
         else return;
 
-        if (!objectReady)
-        {
-            objectReady = true;
-            sprite.color = Color.white;
-        }
+        if (!CheckLinkedObject()) return;
+    }
 
+    private bool CheckLinkedObject()
+    {
         if (linkedObject == null)
         {
             Destroy(gameObject);
-            return;
+            return false;
         }
 
         linkedObjPos = linkedObject.transform.position;
+        return true;
     }
 }
