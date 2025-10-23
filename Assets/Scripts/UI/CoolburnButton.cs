@@ -44,7 +44,7 @@ public class CoolburnButton : MonoBehaviour
         {
             if (!GameManager.instance.hasPlacedFire)
             {
-                TutorialManager.instance.tutorialUI.ShowTutorial("FirePlaced");
+                TutorialManager.instance.tutorialUI.QueueTutorial("FirePlaced");
             }
 
             GameManager.instance.hasPlacedFire = true;

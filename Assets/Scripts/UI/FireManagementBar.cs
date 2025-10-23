@@ -67,7 +67,7 @@ public class FireManagementBar : MonoBehaviour
         {
             if (!GameManager.instance.hasManagedFire)
             {
-                if (canDoTheThingNowOkayYeah) TutorialManager.instance.tutorialUI.ShowTutorial("FireManagement");
+                if (canDoTheThingNowOkayYeah) TutorialManager.instance.tutorialUI.QueueTutorial("FireManagement");
                 else canDoTheThingNowOkayYeah = true;
             }
         }

@@ -51,7 +51,7 @@ public class GameUI : MonoBehaviour
     {
         if (!GameManager.instance.hasPannedMap)
         {
-            TutorialManager.instance.tutorialUI.ShowTutorial("MapOpened");
+            TutorialManager.instance.tutorialUI.QueueTutorial("MapOpened");
         }
 
         mapUIAnim.OpenUI();
