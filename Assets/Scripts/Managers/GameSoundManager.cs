@@ -21,7 +21,7 @@ public class GameSoundManager : MonoBehaviour
     [SerializeField] private float intensityPerFire = 0.1f;
     [SerializeField] private int highIntensityThreshold = 3;
 
-    private bool hasPlayedScream = false;
+    private bool hasPlayedSteaming = false;
     private bool wasHighIntensity = false;
 
     private void Awake()
@@ -35,9 +35,14 @@ public class GameSoundManager : MonoBehaviour
         fireSound = GetComponent<AudioSource>();
         playerTransform = GameObject.FindWithTag("Player")?.transform;
 
-        if (forestSound != null) forestSound.Play();
-        if (animalSound != null) animalSound.Play();
-        if (insectSound != null) insectSound.Play();
+        if (forestSound != null)
+            forestSound.Play();
+
+        if (animalSound != null)
+            animalSound.Play();
+        
+        if (insectSound != null) 
+        insectSound.Play();
 
         if (animalSound != null)
         {
@@ -63,27 +68,32 @@ public class GameSoundManager : MonoBehaviour
             if (playerTransform != null)
             {
                 float minDist = float.MaxValue;
-                foreach (Transform fireTrans in activeFireTransforms)
+                foreach (Transform fireTransform in activeFireTransforms)
                 {
-                    if (fireTrans == null) continue;
-                    float dist = Vector3.Distance(playerTransform.position, fireTrans.position);
-                    if (dist < minDist) minDist = dist;
+                    if (fireTransform == null)
+                        continue;
+                    float dist = Vector3.Distance(playerTransform.position, fireTransform.position);
+                    if (dist < minDist)
+                        minDist = dist;                    
                 }
                 proximityFactor = Mathf.Clamp(1f - ((minDist - minHearDistance) / (maxHearDistance - minHearDistance)), minVolumeMultiplier, 1f);
             }
+
+            // Fire sound volume plays based on fire intensity and player distance
             fireSound.volume = baseVolume * intensityFactor * proximityFactor;
 
             // Play screaming sound once when intensity goes high
-            if (isHighIntensity && !wasHighIntensity && !hasPlayedScream && steamingSound != null)
+            if (isHighIntensity && !wasHighIntensity && !hasPlayedSteaming && steamingSound != null)
             {
-                steamingSound.volume = 0.1f; //Subtle volume
+                steamingSound.volume = 0.1f; // Play with ubtle volume
                 steamingSound.loop = false;
                 steamingSound.PlayOneShot(steamingSound.clip);
             }
         }
         else
         {
-            if (fireSound != null && fireSound.isPlaying) fireSound.Stop();
+            if (fireSound != null && fireSound.isPlaying)
+                fireSound.Stop();           
             PlayWithVariation(forestSound);
             PlayWithVariation(animalSound);
             PlayWithVariation(insectSound);
@@ -97,12 +107,15 @@ public class GameSoundManager : MonoBehaviour
             forestSound.volume = ambientVolume * Random.Range(0.8f, 1.0f);
             forestSound.pitch = Random.Range(0.9f, 1.0f);
         }
+
         if (animalSound != null)
         {
             animalSound.volume = (ambientVolume * 0.2f) * Random.Range(0.8f, 1.0f);
             animalSound.pitch = Random.Range(0.9f, 1.0f);
-            if (!animalSound.isPlaying) PlayWithVariation(animalSound);
+            if (!animalSound.isPlaying)
+                PlayWithVariation(animalSound);
         }
+        
         if (insectSound != null)
         {
             insectSound.volume = (ambientVolume * 0.8f) * Random.Range(0.8f, 1.0f);
@@ -120,7 +133,7 @@ public class GameSoundManager : MonoBehaviour
         }
     }
 
-    public void RegisterFireStart(Transform fireTransform)
+    public void FireStart(Transform fireTransform)
     {
         if (!activeFireTransforms.Contains(fireTransform))
         {
@@ -128,7 +141,7 @@ public class GameSoundManager : MonoBehaviour
         }
     }
 
-    public void RegisterFireStop(Transform fireTransform)
+    public void FireStop(Transform fireTransform)
     {
         activeFireTransforms.Remove(fireTransform);
     }

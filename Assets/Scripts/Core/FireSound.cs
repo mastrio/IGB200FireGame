@@ -16,12 +16,12 @@ public class FireSound : MonoBehaviour
 
         if (isAlive && !wasAlive)
         {
-            GameSoundManager.Instance?.RegisterFireStart(transform);
+            GameSoundManager.Instance?.FireStart(transform);
             wasAlive = true;
         }
         else if (!isAlive && wasAlive)
         {
-            GameSoundManager.Instance?.RegisterFireStop(transform);
+            GameSoundManager.Instance?.FireStop(transform);
             wasAlive = false;
         }
     }
@@ -30,7 +30,7 @@ public class FireSound : MonoBehaviour
     {
         if (wasAlive)
         {
-            GameSoundManager.Instance?.RegisterFireStop(transform);
+            GameSoundManager.Instance?.FireStop(transform);
         }
     }
 }
