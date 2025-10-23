@@ -22,6 +22,7 @@ public class GameManager : MonoBehaviour
     [HideInInspector] public bool hasManagedFire = false;
 
     [SerializeField] private GameObject winScreenObject;
+    [SerializeField] private GameObject winParticles;
     [SerializeField] private GameObject mapObjectContainer;
     [SerializeField] private GameObject[] levelList;
 
@@ -38,6 +39,7 @@ public class GameManager : MonoBehaviour
     {
         if (FireManager.instance.FireDangerLevel < 1)
         {
+            winParticles.SetActive(true);
             winScreenObject.SetActive(true);
         }
     }
