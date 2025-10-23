@@ -6,7 +6,7 @@ public static class Global
     public static bool playtestMode = false;
     // Disable before release.
     // Enables dev cheat keys (F1, etc.)
-    public static bool devMode = true;
+    public static bool devMode = false;
 
     public static int scenarioNum = 2;
 
