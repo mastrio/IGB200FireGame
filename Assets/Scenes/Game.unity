@@ -1389,6 +1389,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1336228718}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &991459112 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2161459460208414652, guid: 50e132f83e8acdd42b1d7d38e012af94, type: 3}
+  m_PrefabInstance: {fileID: 718720801}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1001967206
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1958,7 +1963,7 @@ PrefabInstance:
       objectReference: {fileID: 1912746693}
     - target: {fileID: 1963340682981885794, guid: cd4e02046dfca0d40ad311c0e74315e7, type: 3}
       propertyPath: hideableObjects.Array.size
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 1963340682981885794, guid: cd4e02046dfca0d40ad311c0e74315e7, type: 3}
       propertyPath: 'hideableObjects.Array.data[0]'
@@ -1972,6 +1977,10 @@ PrefabInstance:
       propertyPath: 'hideableObjects.Array.data[2]'
       value: 
       objectReference: {fileID: 147282358}
+    - target: {fileID: 1963340682981885794, guid: cd4e02046dfca0d40ad311c0e74315e7, type: 3}
+      propertyPath: 'hideableObjects.Array.data[3]'
+      value: 
+      objectReference: {fileID: 991459112}
     - target: {fileID: 3992371486998565984, guid: cd4e02046dfca0d40ad311c0e74315e7, type: 3}
       propertyPath: m_LocalScale.x
       value: 1.1
