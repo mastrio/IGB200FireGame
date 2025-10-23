@@ -7,9 +7,7 @@ public class HighFuel : MonoBehaviour
 {
     private FireObject BaseFireObjectRef;
     [HideInInspector] public bool burning = false;
-    private Coroutine fireExtinguisherCoroutine;
     private float BurnTimer;
-    private float MaxBurnTime = 0f;
     [SerializeField] private GameObject FireParticlePrefab;
     [SerializeField] private GameObject FireNegativePrefab;
     [SerializeField] private GameObject AshPileObject;
@@ -17,7 +15,6 @@ public class HighFuel : MonoBehaviour
 
     private ParticleSystem firePS;
     private ParticleSystem negativePS;
-    private ParticleSystem ashPS;
 
     private float fireIntensity;
 
@@ -36,15 +33,6 @@ public class HighFuel : MonoBehaviour
             firePS = fireParticle.GetComponent<ParticleSystem>();
             negativePS = negativeParticle.GetComponent<ParticleSystem>();
         }
-
-        /*if (enviroIntensiftyCoroutine != null)
-        {
-            enviroIntensiftyCoroutine = StartCoroutine(EnviroFireIntensifys(BaseFireObjectRef.fireIntensity));
-        }
-        if (burning == false) StopCoroutine(enviroIntensiftyCoroutine);*/
-
-        // FireManager.instance.Update
-        // (true); //Increase by one as the fire spread to something unintended
     }
 
     public void StoppingHighFuelBurn()
@@ -148,12 +136,6 @@ public class HighFuel : MonoBehaviour
 
             if (BurnTimer >= 10f)
             {
-                
-                
-                
-                
-                
-               
                 //Ember Particles
                 burning = false;
                 Instantiate(ashDestructionParticleGameObject,
@@ -165,7 +147,6 @@ public class HighFuel : MonoBehaviour
         }
         else if (fireIntensity >= 200f) //Testing
         {
-           
             //Ember Particles
             burning = false;
 

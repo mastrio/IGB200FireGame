@@ -3,27 +3,23 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.Rendering;
 using UnityEngine.Rendering.Universal;
+using UnityEngine.SceneManagement;
 using Quaternion = UnityEngine.Quaternion;
 using Vector3 = UnityEngine.Vector3;
-using UnityEngine.SceneManagement;
 
 public class FireManager : MonoBehaviour
 {
     [SerializeField] private InputAction MouseClick;
     [SerializeField] private GameObject player;
     [SerializeField] private GameObject FireParticlePrefab;
-    //[SerializeField] private Canvas gameUICanvas;
 
     public static FireManager instance;
 
     private Camera mainCamera;
 
     public Coroutine buttonCoroutine;
-    private int burnableLayer;
     private int coolburnLayer;
     private int groundLayer;
-
-    private bool CoolbuttonPressed = false;
 
     [HideInInspector] public int FireDangerLevel;
 
@@ -44,7 +40,6 @@ public class FireManager : MonoBehaviour
         mainCamera = Camera.main;
         GetPlayer();
         SetFireDangerLevel();
-        burnableLayer = LayerMask.NameToLayer("Burnable");
         coolburnLayer = LayerMask.NameToLayer("Coolburn");
         groundLayer = LayerMask.NameToLayer("Ground");
 
@@ -121,7 +116,7 @@ public class FireManager : MonoBehaviour
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode) // sets Vignette to 0 on scene load
     {
         if (scene.name == "MainMenu" || scene.name == "Game")
-            {
+        {
             SetVignetteTarget(0f);
         }
     }
@@ -146,7 +141,6 @@ public class FireManager : MonoBehaviour
         if (CurrentNumberOfFires >= 2)
         {
             ClickToMove.movedisabled = false;
-            CoolbuttonPressed = false;
             return success;
         }
 
@@ -167,7 +161,6 @@ public class FireManager : MonoBehaviour
             success = true;
         }
         ClickToMove.movedisabled = false;
-        CoolbuttonPressed = false;
         return success;
     }
     public void UpdateFireDangerLevel()

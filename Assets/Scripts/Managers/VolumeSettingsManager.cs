@@ -10,8 +10,8 @@ public class VolumeSettingsManager : MonoBehaviour
     private float backgroundMusic = 0.5f;
     private float soundEffectsVolume = 0.5f;
 
-    private bool isInitializing = true; 
-    private float lastSoundTime; 
+    private bool isInitializing = true;
+    private float lastSoundTime;
     private float soundCooldown = 0.5f;
 
     private void Awake()
@@ -37,7 +37,7 @@ public class VolumeSettingsManager : MonoBehaviour
         // Initialize slider sound effect
         if (sliderSoundEffect != null)
         {
-            sliderSoundEffect.outputAudioMixerGroup = myAudioMixer.FindMatchingGroups("SoundEffectsVolume")[0]; 
+            sliderSoundEffect.outputAudioMixerGroup = myAudioMixer.FindMatchingGroups("SoundEffectsVolume")[0];
             sliderSoundEffect.playOnAwake = false;
             sliderSoundEffect.loop = false;
         }
@@ -46,8 +46,8 @@ public class VolumeSettingsManager : MonoBehaviour
     public void SetMusicVolume(float volume)
     {
         backgroundMusic = Mathf.Clamp01(volume);
-        myAudioMixer.SetFloat("BackgroundMusic", Mathf.Log10(backgroundMusic) * 20); 
-        PlayerPrefs.SetFloat("BackgroundMusic", backgroundMusic); 
+        myAudioMixer.SetFloat("BackgroundMusic", Mathf.Log10(backgroundMusic) * 20);
+        PlayerPrefs.SetFloat("BackgroundMusic", backgroundMusic);
     }
 
     public void SetSFXVolume(float volume)
@@ -55,7 +55,7 @@ public class VolumeSettingsManager : MonoBehaviour
         soundEffectsVolume = Mathf.Clamp01(volume);
         myAudioMixer.SetFloat("SoundEffectsVolume", Mathf.Log10(soundEffectsVolume) * 20);
         PlayerPrefs.SetFloat("SoundEffectsVolume", soundEffectsVolume);
-        
+
         // Play slider sound effect 
         if (!isInitializing && sliderSoundEffect != null && sliderSoundEffect.clip != null)
         {
@@ -83,6 +83,6 @@ public class VolumeSettingsManager : MonoBehaviour
         // Reset to defaults when quit the game
         PlayerPrefs.SetFloat("BackgroundMusic", 0.5f);
         PlayerPrefs.SetFloat("SoundEffectsVolume", 0.5f);
-        PlayerPrefs.Save(); 
+        PlayerPrefs.Save();
     }
 }

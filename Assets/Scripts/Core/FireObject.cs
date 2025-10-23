@@ -1,6 +1,5 @@
 using System;
 using System.Collections;
-using System.Numerics;
 using UnityEngine;
 using Random = UnityEngine.Random;
 using Vector3 = UnityEngine.Vector3;
@@ -24,7 +23,6 @@ public class FireObject : MonoBehaviour
 
 
     //FireDirection Variables
-    [SerializeField] private float MoveSpeed = 0.1f;
     private float changeDirectionTime = 10f;
     private float highDirectionTimer = 5f;
     private float lowIntensityDirectionTimer = 12f;
@@ -38,8 +36,6 @@ public class FireObject : MonoBehaviour
     [HideInInspector] public float MaxFireIntensity = 200f;
     private float fireIntensityTimer = 3f;
     private float fireIntensityTimerRest = 3f;
-    private float MaxFireIntensityTimer = 0f;
-    private float FireWeakTimer = 0f;
 
     //PS system
     private ParticleSystem fireObjectPS;
@@ -52,7 +48,7 @@ public class FireObject : MonoBehaviour
 
     private float minFirePSEmission = 200f;
     private float maxFirePSEmission = 500f;
- 
+
 
     void Awake()
     {
@@ -285,8 +281,6 @@ public class FireObject : MonoBehaviour
                     FireObjectPSEmission.rateOverTime = UpdatingEmission;
                     fireIntensityTimer = fireIntensityTimerRest;
                     fireIntensityTimer = fireIntensityTimerRest;
-                    MaxFireIntensityTimer = 0f;
-                    FireWeakTimer = 0f;
                     //Trying to fix for whrn theres two
 
                 }
@@ -303,9 +297,8 @@ public class FireObject : MonoBehaviour
                     fireIntensity = updateIntensity;
                     FireObjectPSShape.scale = UpdatingIntensityScale;
                     FireObjectPSEmission.rateOverTime = UpdatingEmission;
-                    FireWeakTimer = 0f;
                 }
-                
+
 
                 //Goes long on z cause of rotation
                 currentPSScale = FireObjectPSShape.scale;
@@ -390,7 +383,7 @@ public class FireObject : MonoBehaviour
         else //If above 130 (in red) use fast speed
         {
             //Edit the 0.6f (min) and 2.5f (max) to alter the speed it uses across intensity or change the exponent (2f)
-            fireMoveSpeed = Mathf.Lerp(0.8f, 2.5f, Mathf.Pow((t-130f) / 70f, 2f));
+            fireMoveSpeed = Mathf.Lerp(0.8f, 2.5f, Mathf.Pow((t - 130f) / 70f, 2f));
         }
         //float fireMoveSpeed = Mathf.Lerp(0.1f, 1f, fireIntensity / 200f); - Old System
         // Update with current position and then start moving

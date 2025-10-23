@@ -8,7 +8,6 @@ public class CoolBurnFuelTarget : MonoBehaviour
     [HideInInspector] public bool burning = false;
     private Coroutine fireExtinguisherCoroutine;
     private float BurnTimer = 0f;
-    private float MaxBurnTime;
     [SerializeField] private GameObject FireParticlePrefab;
     [SerializeField] private GameObject FirePostivePrefab;
     private ParticleSystem firePS;
@@ -19,11 +18,6 @@ public class CoolBurnFuelTarget : MonoBehaviour
 
     private float minFireEmissionRate;
     private float maxFireEmissionRate;
-
-    private Coroutine coolburnIntensifycoroutine;
-
-    private float tempFireTimer = 1f;
-    private float FireCounterTime = 1f;
 
     private float currentIntensity;
 
@@ -56,7 +50,6 @@ public class CoolBurnFuelTarget : MonoBehaviour
             firePSEmission.rateOverTime = Mathf.Lerp(20f, 100f, FireObjectRef.fireIntensity / 200f);
             var positivePSEmission = postivePS.emission;
             positivePSEmission.rateOverTime = Mathf.Lerp(1f, 5f, FireObjectRef.fireIntensity / 200f);
-            MaxBurnTime = Time.time + 10f;
         }
         else if (firePS != null)
         {
@@ -162,18 +155,6 @@ public class CoolBurnFuelTarget : MonoBehaviour
             BurnTimer = 0f;
         }
     }
-
-
-        //if (burning & tempFireTimer <= 0f)
-        // {
-
-        // tempFireTimer = 1f;
-
-        //else if (burning)
-        //       {
-        //         tempFireTimer -= Time.deltaTime;
-        //   }
-
 
     private void CoolburnIntensifying(float FireIntensity)
     {

@@ -18,6 +18,7 @@ public class TutorialManager : MonoBehaviour
     void Awake()
     {
         instance = this;
+        seenClips.Clear();
     }
 
     public void DisplayTutorial(string tutorialName, bool force = false, float delay = 0.0f)

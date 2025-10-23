@@ -1,6 +1,6 @@
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Audio;
-using System.Collections.Generic;
 
 public class GameSoundManager : MonoBehaviour
 {
@@ -11,7 +11,7 @@ public class GameSoundManager : MonoBehaviour
     [SerializeField] private AudioSource forestSound;
     [SerializeField] private AudioSource animalSound;
     [SerializeField] private AudioSource insectSound;
-    [SerializeField] private AudioSource steamingSound; 
+    [SerializeField] private AudioSource steamingSound;
 
     private List<Transform> activeFireTransforms = new List<Transform>();
     private Transform playerTransform;
@@ -19,10 +19,10 @@ public class GameSoundManager : MonoBehaviour
     [SerializeField] private float minHearDistance = 5f;
     [SerializeField] private float minVolumeMultiplier = 0.2f;
     [SerializeField] private float intensityPerFire = 0.1f;
-    [SerializeField] private int highIntensityThreshold = 3; 
+    [SerializeField] private int highIntensityThreshold = 3;
 
-    private bool hasPlayedScream = false; 
-    private bool wasHighIntensity = false; 
+    private bool hasPlayedScream = false;
+    private bool wasHighIntensity = false;
 
     private void Awake()
     {
@@ -78,7 +78,7 @@ public class GameSoundManager : MonoBehaviour
             {
                 steamingSound.volume = 0.1f; //Subtle volume
                 steamingSound.loop = false;
-                steamingSound.PlayOneShot(steamingSound.clip);                
+                steamingSound.PlayOneShot(steamingSound.clip);
             }
         }
         else
