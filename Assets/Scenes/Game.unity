@@ -591,18 +591,6 @@ PrefabInstance:
       propertyPath: tutorialUI
       value: 
       objectReference: {fileID: 904012899}
-    - target: {fileID: 2917053436241825391, guid: 8af2667baa294c54ca5e26b99e4968b9, type: 3}
-      propertyPath: tutorialClips.Array.data[6].name
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 2917053436241825391, guid: 8af2667baa294c54ca5e26b99e4968b9, type: 3}
-      propertyPath: tutorialClips.Array.data[6].videoClip
-      value: 
-      objectReference: {fileID: 32900000, guid: c9b4dab26c7091c4ca50ce2fbd7ca7c9, type: 3}
-    - target: {fileID: 2917053436241825391, guid: 8af2667baa294c54ca5e26b99e4968b9, type: 3}
-      propertyPath: tutorialClips.Array.data[6].description
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 3000993229457732159, guid: 8af2667baa294c54ca5e26b99e4968b9, type: 3}
       propertyPath: m_Name
       value: TutorialManager
