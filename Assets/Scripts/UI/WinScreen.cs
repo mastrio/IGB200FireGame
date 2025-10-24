@@ -14,6 +14,7 @@ public class WinScreen : MonoBehaviour
 
     public void HomeButtonPressed()
     {
+        Time.timeScale = 1.0f;
         SceneManager.LoadScene("MainMenu");
     }
 }
