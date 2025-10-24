@@ -3122,7 +3122,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01459eee1e80d84498b16e29bde81c15, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectiveText: "Cool burn ground clutter \u2192 Reach safe fire danger rating"
+  objectiveText: "<color=yellow>Goal: </color><color=orange>Cool burn</color> ground
+    clutter \u2192 Reach safe fire danger rating!"
 --- !u!1 &2060148200113526515
 GameObject:
   m_ObjectHideFlags: 0

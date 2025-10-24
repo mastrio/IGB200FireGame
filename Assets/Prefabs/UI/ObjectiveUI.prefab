@@ -152,6 +152,7 @@ MonoBehaviour:
   startDelay: 0.1
   spring: 50
   damp: 25
+  runOnUpdate: 0
 --- !u!1 &2876264935162936953
 GameObject:
   m_ObjectHideFlags: 0
@@ -402,7 +403,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontStyle: 1
   m_HorizontalAlignment: 1
   m_VerticalAlignment: 256
   m_textAlignment: 65535
@@ -455,3 +456,4 @@ MonoBehaviour:
   startDelay: 0.2
   spring: 50
   damp: 25
+  runOnUpdate: 0

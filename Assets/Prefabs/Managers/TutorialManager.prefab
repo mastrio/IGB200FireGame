@@ -47,26 +47,30 @@ MonoBehaviour:
   tutorialUI: {fileID: 0}
   tutorialClips:
   - name: PlayerMoved
-    description: "Cool burns \u2192 Small, safe fires \u2192 Clear away extra dry
-      fuel"
+    description: "<color=orange>Cool burns</color> \u2192 Small, safe fires \u2192
+      Clears old bush \u2192 Keeps bush <color=green>healthy</color> \u2192 <color=yellow>Drag
+      and drop to start!</color>"
     videoClip: {fileID: 32900000, guid: c9b4dab26c7091c4ca50ce2fbd7ca7c9, type: 3}
   - name: PlayerMoved2
-    description: "Ground clutter \u2192 Dry leaves and sticks \u2192 Burn easily
-      if not cleared"
+    description: "<color=yellow>Ground clutter</color> \u2192 Dry leaves and sticks
+      \u2192 Burns easily if not cleared \u2192 Clear away with <color=orange>cool
+      burns</color>"
     videoClip: {fileID: 32900000, guid: cbc2f74655474ed4382e55e1e9d08a5f, type: 3}
   - name: FirePlaced
-    description: "Place cool burns \u2192 Burn ground clutter \u2192 Lower fire danger
-      rating \u2192 Helps prevent big fires!"
+    description: "Place <color=orange>cool burns</color> \u2192 Burn <color=yellow>ground
+      clutter</color>\u2192 <color=green>Lower fire danger rating</color> \u2192
+      Helps prevent big fires \u2192 <color=yellow>Gain Score!</color>"
     videoClip: {fileID: 32900000, guid: 94a07fd63b398bd42a18234a5eb97f94, type: 3}
   - name: FireManagement
-    description: "Manage cool burns \u2192 Prevent out-of-control fires \u2192 Protect
-      environment"
+    description: "Manage <color=orange>cool burns</color> \u2192 Prevent out-of-control
+      fires \u2192 <color=green>Protect environment!</color>"
     videoClip: {fileID: 32900000, guid: d7b30ed6b6ee30f448ca0976d8940399, type: 3}
   - name: MapOpened
-    description: "Avoid high fuel areas! \u2192 Condensed bush area \u2192 Use map
-      to plan"
+    description: "<color=red>Avoid high fuel areas!</color> \u2192 Thick bush \u2192
+      Quickly makes fires out-of-cotrol \u2192 Marked with <color=red>red</color>
+      on <color=green>map!</color>"
     videoClip: {fileID: 32900000, guid: b480dc9c362bc2d45bb4407e1424889a, type: 3}
   - name: WindDirection
-    description: "Wind direction \u2192 Changes where fire goes \u2192 Plan cool
-      burn"
+    description: "Wind direction \u2192 Changes where <color=orange>fire</color>
+      goes \u2192 Plan <color=orange>cool burns</color>"
     videoClip: {fileID: 32900000, guid: 7d5919d9e393ae14fba638ec02b1a37d, type: 3}
