@@ -21,7 +21,7 @@ public class GameManager : MonoBehaviour
     [HideInInspector] public bool hasPannedMap = false;
     [HideInInspector] public bool hasManagedFire = false;
 
-    [SerializeField] private GameObject winScreenObject;
+    [SerializeField] public GameObject winScreenObject;
     [SerializeField] private GameObject winParticles;
     [SerializeField] private GameObject mapObjectContainer;
     [SerializeField] private GameObject[] levelList;

@@ -31,6 +31,10 @@ public class ScoreManager : MonoBehaviour
 
     public void AddScore(float points)
     {
+        if (GameManager.instance.winScreenObject.activeInHierarchy)
+        {
+            return;
+        }
         score += points;
         ScoreText.text = "<sprite index=0> " + Mathf.RoundToInt(score);
     }
