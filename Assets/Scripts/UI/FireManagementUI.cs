@@ -8,6 +8,9 @@ public class FireManagementUI : MonoBehaviour
 
     void Update()
     {
+        if (popupAnimation.open && Time.timeScale == 0.0f) fireManagementBar.gameObject.SetActive(false);
+        if (popupAnimation.open && Time.timeScale == 1.0f) fireManagementBar.gameObject.SetActive(true);
+
         if (GameManager.instance.fireObjects.Count == 0)
         {
             if (popupAnimation.open)

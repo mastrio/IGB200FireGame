@@ -2072,7 +2072,7 @@ MonoBehaviour:
   startDelay: 0.5
   spring: 50
   damp: 10
-  runOnUpdate: 0
+  runOnUpdate: 1
 --- !u!114 &494261792286010885
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -281,7 +281,7 @@ MonoBehaviour:
   startDelay: 0
   spring: 50
   damp: 10
-  runOnUpdate: 0
+  runOnUpdate: 1
 --- !u!114 &6008790927337590959
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -729,7 +729,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   motionRootObject: {fileID: 3100092926890266391}
   bgCloseButtonObject: {fileID: 280710239786609180}
-  runOnUpdate: 0
+  runOnUpdate: 1
   open: 0
 --- !u!1 &4181023910803270910
 GameObject:
@@ -880,7 +880,7 @@ MonoBehaviour:
   startDelay: 0
   spring: 50
   damp: 10
-  runOnUpdate: 0
+  runOnUpdate: 1
 --- !u!114 &7628865648713658309
 MonoBehaviour:
   m_ObjectHideFlags: 0

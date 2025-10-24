@@ -5,7 +5,7 @@ public class UIRevealAnimation : MonoBehaviour
     [SerializeField] private float startDelay = 0.0f;
     [SerializeField] private float spring = 50.0f;
     [SerializeField] private float damp = 25.0f;
-    [SerializeField] private bool runOnUpdate = false;
+    [SerializeField] private bool runOnUpdate = true;
 
     private SpringDamperVector3 scaleAnimation;
 
