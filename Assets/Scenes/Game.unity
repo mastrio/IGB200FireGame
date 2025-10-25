@@ -151,6 +151,10 @@ PrefabInstance:
       propertyPath: m_hasFontAssetChanged
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5163267816602511310, guid: 155fbdda967cba74e9f132a94c5245be, type: 3}
+      propertyPath: m_Color.a
+      value: 0.5882353
+      objectReference: {fileID: 0}
     - target: {fileID: 5176716803544275067, guid: 155fbdda967cba74e9f132a94c5245be, type: 3}
       propertyPath: m_Name
       value: WinScreen
