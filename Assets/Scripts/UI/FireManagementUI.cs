@@ -5,6 +5,7 @@ public class FireManagementUI : MonoBehaviour
     [SerializeField] private PopupUIAnimation popupAnimation;
     [SerializeField] private GameObject backgroundCloseButton;
     [SerializeField] private FireManagementBar fireManagementBar;
+    [SerializeField] private TutorialDragThingy tutorialThing;
 
     void Update()
     {
@@ -46,6 +47,7 @@ public class FireManagementUI : MonoBehaviour
         if (closestDistance <= detectionRange && !popupAnimation.open)
         {
             popupAnimation.OpenUI();
+            if (tutorialThing != null) tutorialThing.StartTutorial();
         }
         else if (closestDistance > detectionRange && popupAnimation.open)
         {

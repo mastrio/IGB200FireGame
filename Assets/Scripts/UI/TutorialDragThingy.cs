@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -5,6 +6,8 @@ public class TutorialDragThingy : MonoBehaviour
 {
     static readonly private float DRAG_SPEED = 400.0f;
 
+    [SerializeField] private bool manuallyDisabled = false;
+    [SerializeField] private float startWaitTime;
     [SerializeField] private Vector3 startPos;
     [SerializeField] private Vector3 endPos;
     [SerializeField] private GameObject image;
@@ -12,26 +15,38 @@ public class TutorialDragThingy : MonoBehaviour
 
     private TutorialDragThingyState state = TutorialDragThingyState.Disabled;
     private float timer = 0.0f;
-
-    private GameObject sourceObject;
+    private bool hasDoneDelay = false;
 
     private SpringDamperVector3 scaleAnimation;
     private LerpAnimationColour colourAnimation;
 
-    void OnEnable()
+    void Start()
     {
-        StartAnimation();
-    }
+        if (Global.scenarioNum != 1) Destroy(gameObject);
 
-    void OnDisable()
-    {
-        sourceObject.SetActive(true);
+        if (gameObject.activeSelf) StartAnimation();
     }
 
     void Update()
     {
-        if (Input.GetMouseButtonDown(0)) gameObject.SetActive(false);
+        if (Input.GetMouseButtonDown(0) && !manuallyDisabled) Destroy(gameObject);
 
+        if (state == TutorialDragThingyState.DelayedStart)
+        {
+            if (Time.time >= timer)
+            {
+                state = TutorialDragThingyState.Starting;
+                timer = Time.time + 1.0f;
+            }
+            else
+            {
+                image.transform.localScale = Vector3.zero;
+            }
+        }
+    }
+
+    void FixedUpdate()
+    {
         if (scaleAnimation != null) image.transform.localScale = scaleAnimation.Update(image.transform.localScale);
         if (colourAnimation != null) imageComponent.color = colourAnimation.Update(imageComponent.color);
 
@@ -43,11 +58,9 @@ public class TutorialDragThingy : MonoBehaviour
         }
     }
 
-    public void StartTutorial(GameObject sourceObject)
+    public void StartTutorial()
     {
-        this.sourceObject = sourceObject;
-        sourceObject.SetActive(false);
-        gameObject.SetActive(true);
+        StartAnimation();
     }
 
     private void StateStarting()
@@ -80,10 +93,20 @@ public class TutorialDragThingy : MonoBehaviour
 
     private void StartAnimation()
     {
-        state = TutorialDragThingyState.Starting;
-        image.transform.localPosition = startPos;
-        timer = Time.time + 1.0f;
+        if (startWaitTime > 0.0f && !hasDoneDelay)
+        {
+            state = TutorialDragThingyState.DelayedStart;
+            timer = Time.time + startWaitTime;
+            hasDoneDelay = true;
+        }
+        else
+        {
+            state = TutorialDragThingyState.Starting;
+            timer = Time.time + 1.0f;
+        }
 
+        gameObject.SetActive(true);
+        image.transform.localPosition = startPos;
         image.transform.localScale = new Vector3(8.0f, 8.0f, 1.0f);
         scaleAnimation = new SpringDamperVector3(15.0f, 25.0f, Vector3.one);
         imageComponent.color = new Color(1.0f, 1.0f, 1.0f, 0.0f);
@@ -94,6 +117,7 @@ public class TutorialDragThingy : MonoBehaviour
 enum TutorialDragThingyState
 {
     Disabled,
+    DelayedStart,
     Starting,
     Moving,
     Waiting

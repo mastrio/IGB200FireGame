@@ -8,6 +8,7 @@ public class FireManagementBar : MonoBehaviour
     [SerializeField] private GameObject fireLevelObject;
     [SerializeField] private GameObject tooColdText;
     [SerializeField] private GameObject tooHotText;
+    [SerializeField] private GameObject tutorialThingy;
     [SerializeField] private ObjectShaker objectShaker;
 
     [HideInInspector] public FireObject fireObject;
@@ -113,6 +114,7 @@ public class FireManagementBar : MonoBehaviour
             case FireBarState.Info:
                 State = FireBarState.Minigame;
                 GameManager.instance.hasManagedFire = true;
+                if (tutorialThingy != null) Destroy(tutorialThingy);
                 break;
             case FireBarState.Minigame:
                 pulseAnimation.Pulse();
