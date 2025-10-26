@@ -47,6 +47,7 @@ public class FireManagementUI : MonoBehaviour
         if (closestDistance <= detectionRange && !popupAnimation.open)
         {
             popupAnimation.OpenUI();
+            TutorialManager.instance.DisplayTutorial("FireManagementBar");
             if (tutorialThing != null) tutorialThing.StartTutorial();
         }
         else if (closestDistance > detectionRange && popupAnimation.open)

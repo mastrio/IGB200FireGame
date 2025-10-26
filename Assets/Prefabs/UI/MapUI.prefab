@@ -229,6 +229,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   motionRootObject: {fileID: 7151342504363531340}
   bgCloseButtonObject: {fileID: 4226041311454581153}
+  runOnUpdate: 1
   open: 0
 --- !u!1 &1414965590382245542
 GameObject:

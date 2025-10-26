@@ -29,7 +29,7 @@ public class TutorialDragThingy : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetMouseButtonDown(0) && !manuallyDisabled) Destroy(gameObject);
+        if (Input.GetMouseButtonDown(0) && !manuallyDisabled && Time.timeScale != 0.0f) Destroy(gameObject);
 
         if (state == TutorialDragThingyState.DelayedStart)
         {
@@ -43,10 +43,7 @@ public class TutorialDragThingy : MonoBehaviour
                 image.transform.localScale = Vector3.zero;
             }
         }
-    }
 
-    void FixedUpdate()
-    {
         if (scaleAnimation != null) image.transform.localScale = scaleAnimation.Update(image.transform.localScale);
         if (colourAnimation != null) imageComponent.color = colourAnimation.Update(imageComponent.color);
 
@@ -56,6 +53,10 @@ public class TutorialDragThingy : MonoBehaviour
             case TutorialDragThingyState.Moving: StateMoving(); break;
             case TutorialDragThingyState.Waiting: StateWaiting(); break;
         }
+    }
+
+    void FixedUpdate()
+    {
     }
 
     public void StartTutorial()

@@ -2,12 +2,23 @@ using UnityEngine;
 
 public class UIRevealAnimation : MonoBehaviour
 {
-    [SerializeField] private float startDelay = 0.0f;
-    [SerializeField] private float spring = 50.0f;
-    [SerializeField] private float damp = 25.0f;
-    [SerializeField] private bool runOnUpdate = false;
+    public float startDelay = 0.0f;
+    public float spring = 50.0f;
+    public float damp = 25.0f;
+    [SerializeField] private bool runOnUpdate = true;
 
-    private SpringDamperVector3 scaleAnimation;
+    [HideInInspector] public SpringDamperVector3 scaleAnimation;
+
+    void OnDisable()
+    {
+        transform.localScale = new Vector3(0.0f, 0.0f, 1.0f);
+    }
+
+    void OnEnable()
+    {
+        transform.localScale = new Vector3(0.0f, 0.0f, 1.0f);
+        scaleAnimation = new SpringDamperVector3(spring, damp, Vector3.one, startDelay);
+    }
 
     void Update()
     {
@@ -19,17 +30,6 @@ public class UIRevealAnimation : MonoBehaviour
     {
         if (runOnUpdate) return;
         transform.localScale = scaleAnimation.Update(transform.localScale);
-    }
-
-    void OnDisable()
-    {
-        transform.localScale = new Vector3(0.0f, 0.0f, 1.0f);
-    }
-
-    void OnEnable()
-    {
-        transform.localScale = new Vector3(0.0f, 0.0f, 1.0f);
-        scaleAnimation = new SpringDamperVector3(spring, damp, Vector3.one, startDelay);
     }
 
     public void OnHover()
