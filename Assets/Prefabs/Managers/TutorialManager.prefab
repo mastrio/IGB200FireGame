@@ -72,7 +72,7 @@ MonoBehaviour:
     videoClip: {fileID: 32900000, guid: d7b30ed6b6ee30f448ca0976d8940399, type: 3}
   - name: MapOpened
     description: "<color=red>Avoid high fuel areas!</color> \u2192 Thick bush \u2192
-      Quickly makes fires out-of-cotrol \u2192 <color=red>Red</color> icon on <color=green>map!</color>"
+      Quickly makes fires out-of-cotrol \u2192 <color=red>Red</color> icons on <color=green>map!</color>"
     videoClip: {fileID: 32900000, guid: b480dc9c362bc2d45bb4407e1424889a, type: 3}
   - name: WindDirection
     description: "Wind direction \u2192 Changes where <color=orange>fire</color>
